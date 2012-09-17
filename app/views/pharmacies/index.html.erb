@@ -1,0 +1,25 @@
+<h1>Listing pharmacies</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>User</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @pharmacies.each do |pharmacy| %>
+  <tr>
+    <td><%= pharmacy.name %></td>
+    <td><%= pharmacy.user_id %></td>
+    <td><%= link_to 'Show', pharmacy %></td>
+    <td><%= link_to 'Edit', edit_pharmacy_path(pharmacy) %></td>
+    <td><%= link_to 'Destroy', pharmacy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Pharmacy', new_pharmacy_path %>
