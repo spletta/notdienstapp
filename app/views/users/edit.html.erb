@@ -1,5 +1,5 @@
 <% provide(:title, "Edit user") %> 
-<h1>Update your profile</h1>
+<h1><%= t "update_your_profile", default: "Update your profile" %></h1>
 
 <div class="row">
   <div class="span6 offset3">
@@ -14,13 +14,19 @@
       <%= f.label :password %>
       <%= f.password_field :password %>
 
-      <%= f.label :password_confirmation, "Confirm Password" %>
+      <%= f.label :password_confirmation do %>
+        <%= t "confirm_password", default: "Confirm Password" %>
+      <% end %>
       <%= f.password_field :password_confirmation %>
 
-      <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+      <%= f.submit class: "btn btn-large btn-primary" do %>
+			  <%= t "save_changes" %>
+      <% end %>
     <% end %>
 
     <%= gravatar_for @user %>
-    <a href="http://gravatar.com/emails">change</a>
+    <%= link_to "http://gravatar.com/emails", :target => "_blank" do %>
+		  <%= t "change_link", default: "change" %>
+    <% end %>
   </div>
 </div>

@@ -184,3 +184,31 @@ input, textarea, select, .uneditable-input {
     }
   }
 }
+
+/* Remington's custom styles */
+
+/* Dropdown User */
+
+.user-information {
+		background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, transparent), color-stop(100%, rgba(0, 0, 0, 0.05)));
+  border-bottom: 1px solid #CCC;
+  cursor: text;
+  font-size: 16px;
+  margin-bottom: 7px;
+  padding: 10px 20px 10px 15px;
+  text-shadow: 0 1px 0 white;
+  white-space: nowrap;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  user-select: auto;
+  color: $grayDarker;
+}
+
+.user-information > span {
+  color: #888;
+  font-size: 13px;
+  font-weight: 500;
+}

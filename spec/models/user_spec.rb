@@ -19,6 +19,10 @@ describe User do
   
   it { should be_valid }
   it { should_not be_admin }
+  
+  describe User do
+    it { should_not allow_mass_assignment_of(:admin) }
+  end
     
   describe "when name is not present" do
     before { @user.name = " " }

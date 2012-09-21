@@ -22,6 +22,9 @@ class UsersController < ApplicationController
   # GET /users/new
   # GET /users/new.json
   def new
+    if signed_in?
+      redirect_to(root_path)
+    end
     @user = User.new
   end
 
@@ -32,6 +35,9 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
+    if signed_in?
+      redirect_to(root_path)
+    end
     @user = User.new(params[:user])
 
     respond_to do |format|
