@@ -7,18 +7,18 @@
           <li><%= link_to "Home", root_path %></li>
           <li>
           <%= link_to help_path do %>
-            <%= t "help_link", default: "Help" %>
+            <%= t "help.link", default: "Help" %>
           <% end %>
           </li>
           <% if signed_in? %>
             <li>
 	          	<%= link_to users_path do %>
-		            <%= t "users_link", default: "Users" %>
+		            <%= t "users.link", default: "Users" %>
 		          <% end %>
 	          </li>
             <li id="fat-menu" class="dropdown">
               <%= link_to "#", :class => "dropdown-toggle", :data => {:toggle=>"dropdown"}  do %>
-                <%= t "account_link", default: "Account" %><b class="caret"></b>
+                <%= t "account.link", default: "Account" %><b class="caret"></b>
               <% end %>
               <ul class="dropdown-menu">
 	              <div class="user-information">
@@ -28,13 +28,13 @@
                 <li><%= link_to "Profile", current_user %></li>
                 <li>
                   <%= link_to edit_user_path(current_user) do %>
-                    <%= t "settings_link", default: "Settings" %>
+                    <%= t "settings.link", default: "Settings" %>
                   <% end %>
                 </li>
                 <li class="divider"></li>
                 <li>
                   <%= link_to signout_path, method: "delete" do %>
-                    <%= t "signout_link", default: "Sign out" %>
+                    <%= t "signout.link", default: "Sign out" %>
                   <% end %>
                 </li>
               </ul>

@@ -79,8 +79,7 @@ describe "User pages" do
       end
 
       describe "with invalid information" do
-        let(:update_user) { t('helpers.submit.user.update') }
-        before { click_button update_user }
+        before { click_button 'Save_changes' }
 
         it { should have_content('error') }
       end
@@ -93,7 +92,7 @@ describe "User pages" do
           fill_in "Email",            with: new_email
           fill_in "Password",         with: user.password
           fill_in "Confirm Password", with: user.password
-          click_button "Save changes"
+          click_button 'Save changes'
         end
 
         it { should have_selector('title', text: new_name) }
