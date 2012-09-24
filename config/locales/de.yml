@@ -130,7 +130,7 @@ de:
     submit:
       create: ! '%{model} erstellen'
       submit: ! '%{model} speichern'
-      update: ! '%{model} aktualisieren'
+      update: ! 'aktualisieren'
   number:
     currency:
       format:

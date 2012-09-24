@@ -136,7 +136,7 @@ en:
     submit:
       create: Create %{model}
       submit: Save %{model}
-      update: Update %{model}
+      update: Update
   number:
     currency:
       format:
