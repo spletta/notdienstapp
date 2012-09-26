@@ -17,18 +17,24 @@ namespace :db do
                    password_confirmation: password)
     end
     
-#    users = User.all(limit: 6)
-#    50.times do |n|
-#      name = "Test Pharmacy #{n+1}"
-#      owner_name = "Test Owner #{n+1}"
-#      address = "#{n+1}234 Some Address"
-#      phone_number = "123-456-789#{n+1}"
-#      fax_number = "123-456-788#{n+1}"
-#      users.each { |user| user.pharmacies.create!(name: name, 
-#                                                  owner_name: owner_name, 
-#                                                  address: address, 
-#                                                  phone_number: phone_number,
-#                                                  fax_number: fax_number) }
-#    end
+    users = User.all(limit: 1)
+    1..5.times do |n|
+      name = Faker::Company.name
+      owner_name = Faker::Name.name
+      email = Faker::Internet.email
+      website_url = Faker::Internet.domain_name
+      bga_number = rand(7 ** 7).to_s.rjust(7,'0')
+      address = Faker::Address.street_address
+      phone_number = Faker::PhoneNumber.phone_number
+      fax_number = Faker::PhoneNumber.phone_number
+      users.each { |user| user.pharmacies.create!(name: name, 
+                                                  owner_name: owner_name,
+                                                  email: email,
+                                                  website_url: website_url,
+                                                  bga_number: bga_number, 
+                                                  address: address, 
+                                                  phone_number: phone_number,
+                                                  fax_number: fax_number) }
+   end
   end
 end

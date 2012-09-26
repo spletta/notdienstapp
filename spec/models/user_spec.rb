@@ -124,4 +124,19 @@ describe User do
 
     it { should be_admin }
   end
+  
+  describe "pharmacy associations" do
+
+    before { @user.save }
+    #let!(:b_pharmacy) do 
+    #  FactoryGirl.create(:pharmacy, user: @user, name: "BCD Pharmacy")
+    #end
+    #let!(:a_pharmacy) do
+    #  FactoryGirl.create(:pharmacy, user: @user, name: "ABC Pharmacy")
+    #end
+
+    #it "should have the right pharmacies in the right order" do
+    #  @user.pharmacies.should == [a_pharmacy, b_pharmacy]
+    #end
+  end
 end

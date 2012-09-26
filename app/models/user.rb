@@ -12,7 +12,7 @@
 class User < ActiveRecord::Base
   attr_accessible :email, :name, :password, :password_confirmation
   has_secure_password
-  #has_many :pharmacies
+  has_many :pharmacies, dependent: :destroy
   #validate :pharmacy_count_within_bounds, :on => :create
   
   before_save { self.email.downcase! }

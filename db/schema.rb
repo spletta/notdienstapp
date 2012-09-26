@@ -11,7 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120920135320) do
+ActiveRecord::Schema.define(:version => 20120926093507) do
+
+  create_table "pharmacies", :force => true do |t|
+    t.string   "name"
+    t.text     "address"
+    t.string   "phone_number"
+    t.string   "fax_number"
+    t.string   "email"
+    t.string   "website_url"
+    t.string   "owner_name"
+    t.time     "start_hours"
+    t.time     "end_hours"
+    t.integer  "bga_number"
+    t.integer  "user_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "pharmacies", ["user_id", "created_at"], :name => "index_pharmacies_on_user_id_and_created_at"
 
   create_table "users", :force => true do |t|
     t.string   "name"

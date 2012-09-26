@@ -9,7 +9,9 @@ FactoryGirl.define do
       admin true
     end
     
-    factory :pharmacy
+    factory :pharmacy do |f|
+      f.name "Lorem ipsum"
+      f.user
     end
   end
 end

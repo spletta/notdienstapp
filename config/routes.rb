@@ -13,6 +13,7 @@ NdtAppV6::Application.routes.draw do
     #resources :pharmacies
     resources :users
     resources :sessions, only: [:new, :create, :destroy]
+    resources :pharmacies, only: [:create, :destroy]
   end
   match '*path', to: redirect("/#{I18n.default_locale}/%{path}"), 
                  constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }
