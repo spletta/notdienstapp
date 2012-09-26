@@ -10,7 +10,7 @@ NdtAppV6::Application.routes.draw do
     match '/about',   to: 'static_pages#about'
     match '/contact', to: 'static_pages#contact'
 
-    resources :pharmacies
+    #resources :pharmacies
     resources :users
     resources :sessions, only: [:new, :create, :destroy]
   end

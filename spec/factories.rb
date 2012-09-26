@@ -8,5 +8,8 @@ FactoryGirl.define do
     factory :admin do
       admin true
     end
+    
+    factory :pharmacy
+    end
   end
 end

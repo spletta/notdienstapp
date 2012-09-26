@@ -13,13 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20120920135320) do
 
-  create_table "pharmacies", :force => true do |t|
-    t.string   "name"
-    t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"

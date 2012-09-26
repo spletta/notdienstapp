@@ -12,7 +12,8 @@
 class User < ActiveRecord::Base
   attr_accessible :email, :name, :password, :password_confirmation
   has_secure_password
-  has_many :pharmacies
+  #has_many :pharmacies
+  #validate :pharmacy_count_within_bounds, :on => :create
   
   before_save { self.email.downcase! }
   before_save :create_remember_token
@@ -27,6 +28,11 @@ class User < ActiveRecord::Base
   
   private
 
+    #def pharmacy_count_within_bounds
+    #  return if pharmacies.blank?
+    #  errors.add("Too many pharmacies") if pharmacies.length > 5
+    #end
+    
     def create_remember_token
       self.remember_token = SecureRandom.urlsafe_base64
     end
