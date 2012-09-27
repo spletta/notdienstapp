@@ -1,0 +1,25 @@
+<%= form_for(@pharmacy) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+	<%= f.text_field :name, placeholder: "Name of the Pharmacy" %>
+	
+	<%= f.text_field :owner_name, placeholder: "Name of the Owner" %>
+	
+	<%= f.text_area :address, placeholder: "Insert street name and number here..." %>
+	
+	<%= f.text_field :phone_number, placeholder: "Phone number" %>
+	
+	<%= f.text_field :fax_number, placeholder: "Fax number" %>
+	
+	<%= f.text_field :email, placeholder: "email" %>
+	
+	<%= f.text_field :website_url, placeholder: "website address" %>
+	
+	<%= f.text_field :start_hours, placeholder: "opening hour" %>
+	
+	<%= f.text_field :end_hours, placeholder: "closing hour" %>
+	
+	<%= f.text_field :bga_number, placeholder: "BGA number, ex. 1234567" %>
+	
+	<%= f.text_area :address, placeholder: "Insert street name and number here..." %>
+  <%= f.submit "Save", class: "btn btn-large btn-primary" %>
+<% end %>

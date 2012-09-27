@@ -1,3 +1,15 @@
+<% if signed_in? %>
+  <div class="row">
+    <aside class="span4">
+      <section>
+        <%= render 'shared/user_info' %>
+      </section>
+      <section>
+        <%= render 'shared/pharmacy_form' %>
+      </section>
+    </aside>
+  </div>  
+<% else %>
 <div class="center hero-unit">
   <h1><%= t ".headline", default: "Welcome to the Notdienst-Touch App" %></h1>
   <h2>We are currently finishing up the software for it's first release, we will notify you as soon as we GO LIVE!</h2>
@@ -5,3 +17,4 @@
 </div>
 
 <%= link_to image_tag("ndt-v9.png", alt: "notdienst-touch.de"), 'http://notdienst-touch.de/' %>
+<% end %>

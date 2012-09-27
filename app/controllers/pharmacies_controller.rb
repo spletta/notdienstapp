@@ -5,6 +5,13 @@ class PharmaciesController < ApplicationController
   end
   
   def create
+    @pharmacy = current_user.pharmacies.build(params[:pharmacy])
+    if @pharmacy.save
+      flash[:success] = "Pharmacy created!"
+      redirect_to root_url
+    else
+      render 'static_pages/home'
+    end
   end
   
   def destroy
