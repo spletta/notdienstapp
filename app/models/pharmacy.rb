@@ -4,4 +4,12 @@ class Pharmacy < ActiveRecord::Base
   validates :user_id, :address, :bga_number, :name, :owner_name, :phone_number, presence: true
   
   default_scope order: 'pharmacies.name ASC'
+  
+  def self.search(search)
+    if search
+      find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+    else
+      find(:all)
+    end
+  end
 end

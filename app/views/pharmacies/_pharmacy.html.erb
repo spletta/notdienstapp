@@ -10,3 +10,7 @@
     BGA Number: <%= pharmacy.bga_number %>
   </span>
 </li>
+<% if current_user %>
+   <%= link_to "edit", pharmacy, method: :edit %> | <%= link_to "delete", pharmacy, method: :delete,
+                                data: { confirm: "You sure?" } %>
+<% end %>

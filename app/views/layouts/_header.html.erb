@@ -1,25 +1,33 @@
 <header class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
-      <%= link_to "notdienst-touch", root_path, id: "logo" %>
       <nav>
+				<ul class="nav pull-left">	
+					<li class="<%= 'active' if current_page?(root_path) || 
+					                           current_page?(welcome_path) || 
+					                           current_page?(dashboard_path) || 
+					                           current_page?(referrals_path) %>"><%= link_to root_path do %>
+					                                                                      <i class="icon-home icon-white"></i>
+					                                                                    <% end %></li>				
+					<li class="<%= 'active' if current_page?(calendar_path) %>"><%= link_to "Calendar", calendar_path %></li>
+					<li class="<%= 'active' if current_page?(manage_path) || 
+					                           current_page?(planner_path) || 
+					                           current_page?(pharmacies_path) || 
+					                           current_page?(emergency_groups_path) ||
+					                           current_page?(websites_path) ||
+					                           current_page?(customer_service_path) %>"><%= link_to "Manage", pharmacies_path %></li>
+        </ul>
         <ul class="nav pull-right">
-          <li><%= link_to "Home", root_path %></li>
           <li>
           <%= link_to help_path do %>
             <%= t "help.link", default: "Help" %>
           <% end %>
           </li>
           <% if signed_in? %>
-            <li>
-	          	<%= link_to users_path do %>
-		            <%= t "users.link", default: "Users" %>
-		          <% end %>
-	          </li>
             <li id="fat-menu" class="dropdown">
               <%= link_to "#", :class => "dropdown-toggle", :data => {:toggle=>"dropdown"}  do %>
-                <%= t "account.link", default: "Account" %><b class="caret"></b>
-              <% end %>
+							                <i class="icon-user icon-white"></i> <b class="caret"></b>
+							              <% end %>
               <ul class="dropdown-menu">
 	              <div class="user-information">
 		              <strong><%= current_user.name %></strong><br />

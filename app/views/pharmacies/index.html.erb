@@ -1,0 +1,51 @@
+<% provide(:title, 'Manage Pharmacies') %>
+<div class="row">
+  <aside class="span4">
+    <section>
+    <h1>Manage Pharmacies</h1>
+    </section>
+  </aside>
+	<div class="span8">
+  </div>
+</div>
+<div class="row">
+  <div class="span8">
+	<p>Search for a pharmacy</p>
+		<%= form_tag pharmacies_path, :method => 'get', class: "form-search" do %>
+		  <p>
+		    <%= text_field_tag :search, params[:search], class: "input-medium search-query" %>
+		    <%= submit_tag "Search", :name => nil, class: "btn" %>
+		  </p>
+		<% end %>
+		<ol class="pharmacies">
+		<% for pharmacy in @pharmacies %>
+		  <li>
+			  <%= link_to pharmacy.name, pharmacy_path(pharmacy) %>
+			  | <%= link_to "Edit", edit_pharmacy_path(pharmacy) %>
+			  | <%= link_to "Destroy", pharmacy_path(pharmacy), :method => :delete %>
+			</li>	
+			<% end %>
+		</ol>
+		</br>
+		<p>or <%= link_to "add", new_pharmacy_path %> a new pharmacy.</p>
+  </div>
+</div>
+</br>
+<div class="row">
+  <aside class="span4">
+    <section>
+    <h1>Associated Pharmacies</h1>
+    </section>
+  </aside>
+	<div class="span8">
+  </div>
+</div>
+<div class="row">
+  <div class="span8">
+	<p>User has_many :followed_pharmacies, through: :users_pharmacies, source: "followed_id"</p>
+  </div>
+</div>
+
+
+
+
