@@ -10,7 +10,10 @@
     BGA Number: <%= pharmacy.bga_number %>
   </span>
 </li>
-<% if current_user %>
-   <%= link_to "edit", pharmacy, method: :edit %> | <%= link_to "delete", pharmacy, method: :delete,
-                                data: { confirm: "You sure?" } %>
-<% end %>
+
+  <li>
+	  <%= link_to "Back", :back %>
+	  | <%= link_to "Edit", edit_pharmacy_path(pharmacy) %>
+	  | <%= link_to "Destroy", pharmacy_path(pharmacy), :method => :delete %>
+	</li>	
+

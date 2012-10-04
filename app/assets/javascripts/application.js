@@ -14,3 +14,13 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
+$(function() {
+  $("#pharmacies th a, #pharmacies .pagination a").live("click", function() {
+    $.getScript(this.href);
+    return false;
+  });
+  $("#pharmacies_search input").keyup(function() {
+    $.get($("#pharmacies_search").attr("action"), $("#pharmacies_search").serialize(), null, "script");
+    return false;
+  });
+});

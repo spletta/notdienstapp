@@ -1,0 +1,19 @@
+<% provide(:title, @pharmacy.name) %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= @pharmacy.name %>
+      </h1>
+    </section>
+  </aside>
+	<div class="span8">
+  
+      
+      <ol class="pharmacies">
+        <%= render @pharmacy %>
+      </ol>
+      
+
+  </div>
+</div>

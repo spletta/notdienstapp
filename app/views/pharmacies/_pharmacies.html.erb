@@ -1,0 +1,22 @@
+<%= hidden_field_tag :direction, params[:direction] %>
+<%= hidden_field_tag :sort, params[:sort] %>
+<table class="table table-hover">
+	<tr>
+		<th><%= sortable "bga_number", "BGA Number" %></th>
+		<th><%= sortable "name" %></th>
+		<th><%= sortable "owner_name", "Owner" %></th>
+		<th>City</th>
+		<th>Action</th>
+	<tr>
+<% for pharmacy in @pharmacies %>
+  <tr>
+	  <td><%= link_to pharmacy.bga_number, pharmacy_path(pharmacy) %></td>
+	  <td><%= pharmacy.name %></td>
+	  <td><%= pharmacy.owner_name %></td>
+	  <td>Berlin</td>
+	  <td><%= link_to "Edit", edit_pharmacy_path(pharmacy) %>
+	  | <%= link_to "Destroy", pharmacy_path(pharmacy), :method => :delete %></td>
+	</tr>	
+	<% end %>
+</table>
+<%= will_paginate @pharmacies %>

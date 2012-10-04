@@ -10,22 +10,14 @@
 </div>
 <div class="row">
   <div class="span8">
-	<p>Search for a pharmacy</p>
-		<%= form_tag pharmacies_path, :method => 'get', class: "form-search" do %>
-		  <p>
-		    <%= text_field_tag :search, params[:search], class: "input-medium search-query" %>
-		    <%= submit_tag "Search", :name => nil, class: "btn" %>
-		  </p>
-		<% end %>
-		<ol class="pharmacies">
-		<% for pharmacy in @pharmacies %>
-		  <li>
-			  <%= link_to pharmacy.name, pharmacy_path(pharmacy) %>
-			  | <%= link_to "Edit", edit_pharmacy_path(pharmacy) %>
-			  | <%= link_to "Destroy", pharmacy_path(pharmacy), :method => :delete %>
-			</li>	
+		<p>Search for a pharmacy</p>
+			<%= form_tag pharmacies_path, :method => 'get', class: "form-search" do %>
+			  <p>
+			    <%= text_field_tag :search, params[:search], class: "input-large search-query" %>
+			    <%= submit_tag "Search", :name => nil, class: "btn" %>
+			  </p>
+			<div id="pharmacies"><%= render 'pharmacies' %></div>
 			<% end %>
-		</ol>
 		</br>
 		<p>or <%= link_to "add", new_pharmacy_path %> a new pharmacy.</p>
   </div>

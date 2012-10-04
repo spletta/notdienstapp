@@ -240,3 +240,17 @@ aside {
     margin-bottom: 5px;
   }
 }
+
+.table th .current {
+  padding-right: 12px;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+.table th .asc {
+  background-image: url(/icon-arrow-up);
+}
+
+.table th .desc {
+  background-image: url(/icon-arrow-down);
+}
