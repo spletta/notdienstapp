@@ -19,6 +19,10 @@
     <%= f.label :email %><br />
     <%= f.text_field :email %>
   </div>
+	<div class="field">
+	  <%= f.label :pharmacy_tokens, "Pharmacies" %><br />
+	  <%= f.text_field :pharmacy_tokens, data: {load: @user.pharmacies} %>
+	</div>
   <div class="actions">
     <%= f.submit %>
   </div>

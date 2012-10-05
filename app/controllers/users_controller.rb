@@ -2,21 +2,15 @@ class UsersController < ApplicationController
   before_filter :signed_in_user, only: [:edit, :update]
   before_filter :correct_user,   only: [:edit, :update]
   before_filter :admin_user,     only: [:index, :edit, :update, :destroy]
-  # GET /users
-  # GET /users.json
+
   def index
     @users = User.paginate(page: params[:page])
   end
 
-  # GET /users/1
-  # GET /users/1.json
   def show
     @user = User.find(params[:id])
-    @pharmacies = @user.pharmacies.paginate(page: params[:page])
   end
 
-  # GET /users/new
-  # GET /users/new.json
   def new
     if signed_in?
       redirect_to(root_path)
@@ -24,12 +18,9 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  # GET /users/1/edit
   def edit
   end
 
-  # POST /users
-  # POST /users.json
   def create
     if signed_in?
       redirect_to(root_path)
@@ -59,8 +50,6 @@ class UsersController < ApplicationController
       redirect_to home_url
   end
 
-  # PUT /users/1
-  # PUT /users/1.json
   def update
     if @user.update_attributes(params[:user])
       flash[:success] = "Profile updated"
@@ -71,8 +60,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # DELETE /users/1
-  # DELETE /users/1.json
   def destroy
     User.find(params[:id]).destroy
     flash[:success] = "User destroyed."

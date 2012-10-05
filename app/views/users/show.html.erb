@@ -9,12 +9,17 @@
     </section>
   </aside>
 	<div class="span8">
-    <% if @user.pharmacies.any? %>
-      <h3>Pharmacies (<%= @user.pharmacies.count %>)</h3>
-      <ol class="pharmacies">
-        <%= render @pharmacies %>
-      </ol>
-      <%= will_paginate @pharmacies %>
-    <% end %>
+    <strong>Pharmacies:</strong>
+		<ul>
+		<% @user.pharmacies.each do |pharmacy| %>
+		  <li><%= pharmacy.name %></li>
+		<% end %>
+		</ul>
+
+		<p>
+		  <%= link_to "Edit", edit_user_path(@user) %> |
+		  <%= link_to "Destroy", @user, :confirm => 'Are you sure?', :method => :delete %> |
+		  <%= link_to "View All", users_path %>
+		</p>
   </div>
 </div>

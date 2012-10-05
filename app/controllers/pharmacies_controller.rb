@@ -3,9 +3,30 @@ class PharmaciesController < ApplicationController
   helper_method :sort_column, :sort_direction
   
   def index
-    @pharmacies = Pharmacy.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:page])
-    #@projects = Project.search(params[:search])
-    #@user = User.find(params[current_user.id])
+    @pharmacies = Pharmacy.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 10, :page => params[:page])
+    #@pharmacies = Pharmacy.order(:name)
+    respond_to do |format|
+      format.html
+      format.json { render json: @pharmacies.where("name like ?", "%#{params[:query]}%") }
+    end
+  end
+  
+  def show
+    @pharmacy = Pharmacy.find(params[:id])
+  end
+  
+  def new
+    @pharmacy = Pharmacy.new
+  end
+  
+  def create
+    @pharmacy = Pharmacy.find(params[:id])
+    if @pharmacy.save
+      flash[:success] = "Pharmacy created!"
+      redirect_to pharmacies_url
+    else
+      render 'static_pages/home'
+    end
   end
   
   def edit
@@ -13,8 +34,6 @@ class PharmaciesController < ApplicationController
   end
 
   def update
-    #update_params_with_new_values(params)
-
     @pharmacy = Pharmacy.find(params[:id])
 
     if @pharmacy.update_attributes(params[:pharmacy])
@@ -22,26 +41,6 @@ class PharmaciesController < ApplicationController
       redirect_to(:pharmacy => 'index')
     else
       render('edit')
-    end
-  end
-  
-#  def update_params_with_new_values(params)
-#    params[:product][:shop_id] = Shop.create(:name => params[:new_shop]).id if params[:product][:shop_id] == "new_shop"
-#    params[:product][:brand_id] = Brand.create(:name => params[:new_brand]).id if params[:product][:brand_id] == "new_brand"
-#  end
-  
-  def show
-    @pharmacy = Pharmacy.find(params[:id])
-    #@pharmacies = @user.pharmacies.paginate(page: params[:page])
-  end
-  
-  def create
-    @pharmacy = current_user.pharmacies.build(params[:pharmacy])
-    if @pharmacy.save
-      flash[:success] = "Pharmacy created!"
-      redirect_to pharmacies_url
-    else
-      render 'static_pages/home'
     end
   end
   

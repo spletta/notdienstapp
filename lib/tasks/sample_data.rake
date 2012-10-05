@@ -17,8 +17,7 @@ namespace :db do
                    password_confirmation: password)
     end
     
-    users = User.all(limit: 1)
-    1..5.times do |n|
+    25.times do |n|
       name = Faker::Company.name
       owner_name = Faker::Name.name
       email = Faker::Internet.email
@@ -27,14 +26,14 @@ namespace :db do
       address = Faker::Address.street_address
       phone_number = Faker::PhoneNumber.phone_number
       fax_number = Faker::PhoneNumber.phone_number
-      users.each { |user| user.pharmacies.create!(name: name, 
-                                                  owner_name: owner_name,
-                                                  email: email,
-                                                  website_url: website_url,
-                                                  bga_number: bga_number, 
-                                                  address: address, 
-                                                  phone_number: phone_number,
-                                                  fax_number: fax_number) }
-   end
+      Pharmacy.create!(name: name, 
+                       owner_name: owner_name,
+                       email: email,
+                       website_url: website_url,
+                       bga_number: bga_number, 
+                       address: address, 
+                       phone_number: phone_number,
+                       fax_number: fax_number)
+    end
   end
 end

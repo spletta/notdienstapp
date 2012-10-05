@@ -11,10 +11,8 @@ class CreatePharmacies < ActiveRecord::Migration
       t.time :start_hours
       t.time :end_hours
       t.integer :bga_number
-      t.integer :user_id
-
+    
       t.timestamps
     end
-    add_index :pharmacies, [:user_id, :created_at]
   end
 end
