@@ -7,7 +7,7 @@ class PharmaciesController < ApplicationController
     #@pharmacies = Pharmacy.order(:name)
     respond_to do |format|
       format.html
-      format.json { render json: @pharmacies.where("name like ?", "%#{params[:query]}%") }
+      format.json { render json: @pharmacies.where("name LIKE ?", "%#{params[:query]}%") }
     end
   end
   

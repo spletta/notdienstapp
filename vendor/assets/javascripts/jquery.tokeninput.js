@@ -21,18 +21,18 @@ var DEFAULT_SETTINGS = {
     contentType: "json",
 
     // Prepopulation settings
-    prePopulate: null,
-    processPrePopulate: false,
+    //prePopulate: null,
+    //processPrePopulate: false,
 
     // Display settings
-    hintText: "Type in a search term",
-    noResultsText: "No results",
-    searchingText: "Searching...",
+    //hintText: "Type in a search term",
+    //noResultsText: "No results",
+    //searchingText: "Searching...",
     deleteText: "&times;",
     animateDropdown: true,
-    theme: null,
+    //theme: null,
     zindex: 999,
-    resultsLimit: null,
+    //resultsLimit: null,
 
     enableHTML: false,
 

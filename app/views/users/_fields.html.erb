@@ -14,7 +14,7 @@
 <%= f.password_field :password_confirmation %>
 
 <div class="field">
-  <%= f.label :pharmacy_tokens, "Pharmacies" %><br />
+  <%= f.label :pharmacy_tokens, "Pharmacies (separated by commas)" %><br />
   <%= f.text_field :pharmacy_tokens, data: {load: @user.pharmacies} %>
 </div>
 <br />
