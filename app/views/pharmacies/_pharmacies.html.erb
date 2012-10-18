@@ -14,8 +14,15 @@
 	  <td><%= pharmacy.name %></td>
 	  <td><%= pharmacy.owner_name %></td>
 	  <td>Berlin</td>
-	  <td><%= link_to "Edit", edit_pharmacy_path(pharmacy) %>
-	  | <%= link_to "Destroy", pharmacy_path(pharmacy), :method => :delete %></td>
+	  <td>
+     <% if pharmacy.users == current_user.id %>
+        <%= link_to 'Withdraw From Pharmacy', withdraw_pharmacy_path(pharmacy.id), :method => :post, :class => 'btn btn-warning' %>
+     <% else %>
+        <%= link_to 'Connect to Pharmacy', attend_pharmacy_path(pharmacy.id), :method => :post, :class => 'btn btn-success' %>
+     <% end %>
+    
+    <%= link_to "Edit", edit_pharmacy_path(pharmacy) %>
+	  <%= link_to "Destroy", pharmacy_path(pharmacy), :method => :delete %></td>
 	</tr>	
 	<% end %>
 </table>

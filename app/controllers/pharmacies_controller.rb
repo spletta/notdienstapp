@@ -2,12 +2,13 @@ class PharmaciesController < ApplicationController
   before_filter :signed_in_user, only: [:create, :destroy]
   helper_method :sort_column, :sort_direction
   
+      #@pharmacies = Pharmacy.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 10, :page => params[:page])
+      
   def index
-    @pharmacies = Pharmacy.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 10, :page => params[:page])
-    #@pharmacies = Pharmacy.order(:name)
+    @pharmacies = Pharmacy.order(:name).paginate(:per_page => 10, :page => params[:page])
     respond_to do |format|
       format.html
-      format.json { render json: @pharmacies.where("name LIKE ?", "%#{params[:query]}%") }
+      format.json { render json: @pharmacies.where("name ILIKE ?", "%#{params[:q]}%") }
     end
   end
   
@@ -48,6 +49,28 @@ class PharmaciesController < ApplicationController
     Pharmacy.find(params[:id]).destroy
     flash[:success] = "Pharmacy destroyed."
     redirect_to(:back)
+  end
+  
+  def attend
+     @pharmacy = Pharmacy.find(params[:id])
+     current_user.pharmacies << @pharmacy
+     redirect_to(:back)
+     flash[:success] = 'You have been connected to this pharmacy.'
+   end
+
+  def withdraw
+     pharmacy = Pharmacy.find(params[:id])
+     users = PharmaciesUser.find_by_user_id_and_pharmacy_id(current_user.id, pharmacy.id)
+
+     if users.blank?
+       redirect_to(:back)
+       flash[:error] = 'There are no users available???'
+     end
+
+     users.delete
+
+     redirect_to(:back)
+     flash[:warning] = 'You are no longer connected to this pharmacy.'
   end
   
   private

@@ -11,7 +11,7 @@ class Pharmacy < ActiveRecord::Base
   default_scope order: 'pharmacies.name ASC'
   
   def self.tokens(query)
-    pharmacies = where("name like ?", "%#{query}%")
+    pharmacies = where("lower(name) LIKE ? or name LIKE ?", "%#{query}%", "%#{query}%")
     if pharmacies.empty?
       [{id: "<<<#{query}>>>", name: "New: \"#{query}\""}]
     else
@@ -26,7 +26,7 @@ class Pharmacy < ActiveRecord::Base
   
   def self.search(search)
       if search
-        where('name LIKE ?', "%#{search}%")
+        where('lower(name) LIKE ? or name LIKE ?', '%ank%', '%ank%')#{}"%#{search}%", "%#{search}%")
       else
         scoped
       end

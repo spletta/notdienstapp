@@ -4,6 +4,9 @@ class User < ActiveRecord::Base
   
   has_many :pharmacies_users
   has_many :pharmacies, :through => :pharmacies_users
+  
+  accepts_nested_attributes_for :pharmacies
+  
   attr_reader :pharmacy_tokens
   
   before_save { self.email.downcase! }

@@ -22,8 +22,13 @@
             match '/about',   to: 'static_pages#about'
             match '/contact', to: 'static_pages#contact'
 
-            resources :pharmacies
+            resources :pharmacies do
+              post :withdraw, on: :member
+              post :attend, on: :member
+            end
+            
             resources :users
+            
             resources :sessions, only: [:new, :create, :destroy]
             #resources :pharmacies, only: [:create, :destroy]
           end
