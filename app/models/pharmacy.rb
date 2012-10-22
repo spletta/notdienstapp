@@ -26,7 +26,7 @@ class Pharmacy < ActiveRecord::Base
   
   def self.search(search)
       if search
-        where('lower(name) LIKE ? or name LIKE ?', '%ank%', '%ank%')#{}"%#{search}%", "%#{search}%")
+        where('lower(name) LIKE ? or name LIKE ?', "%#{search}%", "%#{search}%")
       else
         scoped
       end

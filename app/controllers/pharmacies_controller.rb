@@ -8,7 +8,7 @@ class PharmaciesController < ApplicationController
     @pharmacies = Pharmacy.order(:name).paginate(:per_page => 10, :page => params[:page])
     respond_to do |format|
       format.html
-      format.json { render json: @pharmacies.where("name ILIKE ?", "%#{params[:q]}%") }
+      format.json { render json: @pharmacies.tokens(params[:q]) }
     end
   end
   

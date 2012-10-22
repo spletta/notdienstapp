@@ -16,12 +16,12 @@
 	  <td>Berlin</td>
 	  <td>
      <% if pharmacy.users == current_user.id %>
-        <%= link_to 'Withdraw From Pharmacy', withdraw_pharmacy_path(pharmacy.id), :method => :post, :class => 'btn btn-warning' %>
+        <%= link_to 'Disconnect', withdraw_pharmacy_path(pharmacy.id), :method => :post %> |
      <% else %>
-        <%= link_to 'Connect to Pharmacy', attend_pharmacy_path(pharmacy.id), :method => :post, :class => 'btn btn-success' %>
+        <%= link_to 'Connect', attend_pharmacy_path(pharmacy.id), :method => :post %> |
      <% end %>
     
-    <%= link_to "Edit", edit_pharmacy_path(pharmacy) %>
+    <%= link_to "Edit", edit_pharmacy_path(pharmacy) %> |
 	  <%= link_to "Destroy", pharmacy_path(pharmacy), :method => :delete %></td>
 	</tr>	
 	<% end %>
