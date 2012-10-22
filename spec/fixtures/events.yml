@@ -1,0 +1,15 @@
+one:
+  pharmacy_id: 1
+  starttime: 2012-10-22 15:42:29
+  endtime: 2012-10-22 15:42:29
+  description: MyText
+  title: MyString
+  all_day: false
+
+two:
+  pharmacy_id: 1
+  starttime: 2012-10-22 15:42:29
+  endtime: 2012-10-22 15:42:29
+  description: MyText
+  title: MyString
+  all_day: false
