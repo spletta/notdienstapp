@@ -1,4 +1,6 @@
         NdtAppV6::Application.routes.draw do
+  resources :emergency_groups
+
           scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
             root to: 'static_pages#home'
 

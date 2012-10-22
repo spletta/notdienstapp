@@ -9,7 +9,12 @@
   </aside>
 	<div class="span8">
   
-      
+    <strong>Emergency Group:</strong>
+		<ul>
+
+		  <li><%= @pharmacy.emergency_group.name %></li>
+
+		</ul>
       <ol class="pharmacies">
         <%= render @pharmacy %>
       </ol>

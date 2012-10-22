@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121005102908) do
+ActiveRecord::Schema.define(:version => 20121022130354) do
+
+  create_table "emergency_groups", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "pharmacy_id"
+  end
 
   create_table "pharmacies", :force => true do |t|
     t.string   "name"
@@ -24,8 +31,9 @@ ActiveRecord::Schema.define(:version => 20121005102908) do
     t.time     "start_hours"
     t.time     "end_hours"
     t.integer  "bga_number"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.integer  "emergency_group_id"
   end
 
   create_table "pharmacies_users", :force => true do |t|

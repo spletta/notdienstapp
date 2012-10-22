@@ -9,9 +9,11 @@ gem 'faker', '1.0.1'
 gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.6'
 gem 'copycopter_client', '~> 2.0.1'
+gem 'simple_form'
 
 group :development, :test do
   gem 'rspec-rails', '2.11.0'
+  gem "nifty-generators"
 end
 
 # Gems used only for assets and not required
@@ -30,3 +32,5 @@ group :test do
   gem 'factory_girl_rails', '1.4.0'
   gem "shoulda-matchers"
 end
+
+gem "mocha", :group => :test

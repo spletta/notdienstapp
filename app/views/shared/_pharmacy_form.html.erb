@@ -1,4 +1,4 @@
-<%= form_for(@pharmacy) do |f| %>
+<%= simple_form_for(@pharmacy, :html => {:class => 'form-horizontal' }) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
 	<%= f.text_field :name, placeholder: "Name of the Pharmacy" %>
 	
@@ -21,5 +21,8 @@
 	<%= f.text_field :bga_number, placeholder: "BGA number, ex. 1234567" %>
 	
 	<%= f.text_area :address, placeholder: "Insert street name and number here..." %>
+	
+	<%= f.association :emergency_group %>
+
   <%= f.submit "Save", class: "btn btn-large btn-primary" %>
 <% end %>

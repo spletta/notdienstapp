@@ -1,0 +1,16 @@
+<% provide(:title, 'Emergency Groups') %>
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+  <% for emergency_group in @emergency_groups %>
+    <tr>
+      <td><%= emergency_group.name %></td>
+      <td><%= link_to "Show", emergency_group %></td>
+      <td><%= link_to "Edit", edit_emergency_group_path(emergency_group) %></td>
+      <td><%= link_to "Destroy", emergency_group, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Emergency Group", new_emergency_group_path %></p>
