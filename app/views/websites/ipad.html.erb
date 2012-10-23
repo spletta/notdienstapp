@@ -1,0 +1,24 @@
+<% provide(:title, 'iPad Version of Website') %>
+<h2>iPad Version of Website</h2>
+<p>
+  <strong>Name:</strong>
+  <%= @website.name %>
+</p>
+<p>
+  <strong>Subdomain:</strong>
+  <%= @website.subdomain %>
+</p>
+<p>
+  <strong>Note:</strong>
+  <%= @website.note %>
+</p>
+<p>
+  <strong>User:</strong>
+  <%= @website.user_id %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_website_path(@website) %> |
+  <%= link_to "Destroy", @website, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", websites_path %>
+</p>

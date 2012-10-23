@@ -6,7 +6,8 @@ class WebsitesController < ApplicationController
   end
 
   def show
-    @website = Website.find_by_subdomain!(request.subdomain)
+    #@website = Website.find_by_subdomain!(request.subdomain)
+    @website = Website.find(params[:id])
   end
 
   def new
@@ -39,5 +40,9 @@ class WebsitesController < ApplicationController
     @website = Website.find(params[:id])
     @website.destroy
     redirect_to websites_url, :notice => "Successfully destroyed website."
+  end
+  
+  def ipad
+    @website = Website.find(params[:id])
   end
 end

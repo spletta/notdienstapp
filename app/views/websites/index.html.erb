@@ -10,13 +10,19 @@
 </div>
 <div class="row">
   <div class="span8">
-		<% @websites.each do |website| %>
-    <h2><%= link_to website.name, root_url(subdomain: website.subdomain) %></h2>
-	    <%= link_to "Show", website %> |
-      <%= link_to "Edit", edit_website_path(website) %> |
-      <%= link_to "Destroy", website, :confirm => 'Are you sure?', :method => :delete %>
-<% end %>
+		<table class="table table-hover">
+			<% @websites.each do |website| %>
+			  <tr>
+				  <td><%= link_to website.name, root_url(subdomain: website.subdomain) %></td>
+				  <td><%= link_to "Show", website %> |
+					  <%= link_to "iPad", ipad_website_path(website) %> |
+			      <%= link_to "Edit", edit_website_path(website) %> |
+			      <%= link_to "Destroy", website, :confirm => 'Are you sure?', :method => :delete %></td>
+				</tr>
+			<% end %>
+		</table>
 		</br>
-		<p>or <%= link_to "add", new_pharmacy_path %> a new website</p>
+		<p>or <%= link_to "add", new_website_path %> a new website</p>
   </div>
 </div>
+

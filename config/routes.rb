@@ -1,6 +1,7 @@
 NdtAppV6::Application.routes.draw do
   scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
-    match '', to: 'websites#show', constraints: lambda { |r| r.subdomain.present? && r.subdomain != 'www' }
+    #match '', to: 'websites#show', constraints: lambda { |r| r.subdomain.present? && r.subdomain != 'www' }
+   #match '/websites/:id/ipad', to: 'websites#ipad', :as => :ipad
     root to: 'websites#index'
     #root to: 'static_pages#home'
     
@@ -26,7 +27,10 @@ NdtAppV6::Application.routes.draw do
       post :attend, on: :member
     end
     
-    resources :websites
+    resources :websites do
+      get :ipad, on: :member
+    end
+    
     resources :events
     resources :emergency_groups
     resources :users
