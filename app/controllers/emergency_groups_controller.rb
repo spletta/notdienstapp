@@ -1,4 +1,5 @@
 class EmergencyGroupsController < ApplicationController
+  before_filter :signed_in_user
   def index
     @emergency_groups = EmergencyGroup.all
   end

@@ -1,5 +1,7 @@
 class PharmaciesController < ApplicationController
-  before_filter :signed_in_user, only: [:create, :destroy]
+  before_filter :signed_in_user
+  #before_filter :correct_user
+  before_filter :admin_user,     only: [:index, :edit, :update, :destroy]
   helper_method :sort_column, :sort_direction
   
       #@pharmacies = Pharmacy.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 10, :page => params[:page])
@@ -72,9 +74,21 @@ class PharmaciesController < ApplicationController
      redirect_to(:back)
      flash[:warning] = 'You are no longer connected to this pharmacy.'
   end
-  
+      
   private
-
+  
+    def correct_user
+      pharmacy = Pharmacy.find(params[:id])
+      @user = PharmaciesUser.find_by_user_id_and_pharmacy_id(current_user.id, pharmacy.id)
+      
+      #@user = User.find(params[:id])
+      redirect_to(root_path) unless current_user?(@user)
+    end
+    
+    def admin_user
+      redirect_to(root_path) unless current_user.admin?
+    end
+    
     def sort_column
       Pharmacy.column_names.include?(params[:sort]) ? params[:sort] : "name"
     end

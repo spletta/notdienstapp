@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  before_filter :signed_in_user
   def index
     @events = Event.all
     @events_by_date = @events.group_by(&:starttime)

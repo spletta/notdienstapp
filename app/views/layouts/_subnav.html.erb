@@ -2,7 +2,7 @@
 <div class="container">
   <nav>
     <ul class="nav nav-tabs">
-	    <% if request.path == welcome_path || request.path == root_path || request.path == dashboard_path || request.path == referrals_path %>
+	    <% if request.path == welcome_path || request.path == dashboard_path || request.path == referrals_path %>
         <li class="<%= 'active' if current_page?(welcome_path) || current_page?(root_path) %>"><%= link_to "Welcome", welcome_path %></li>
         <li class="<%= 'active' if current_page?(dashboard_path) %>"><%= link_to "Dashboard", dashboard_path %></li>
         <li class="<%= 'active' if current_page?(referrals_path) %>"><%= link_to "Referrals", referrals_path %></li>
@@ -11,12 +11,11 @@
 								request.path == emergency_groups_path || 
 								request.path == websites_path || 
 								request.path == customer_service_path ||
-								request.path == planner_path %>
+								request.path == root_path %>
 				<li class="<%= 'active' if current_page?(pharmacies_path) %>"><%= link_to "Pharmacies", pharmacies_path %></li>
 				<li class="<%= 'active' if current_page?(emergency_groups_path) %>"><%= link_to "Emergency Groups", emergency_groups_path %></li>
-				<li class="<%= 'active' if current_page?(websites_path) %>"><%= link_to "Websites", websites_path %></li>
+				<li class="<%= 'active' if current_page?(websites_path) || current_page?(root_path) %>"><%= link_to "Websites", websites_path %></li>
 				<li class="<%= 'active' if current_page?(customer_service_path) %>"><%= link_to "Customer service feed", customer_service_path %></li>
-				<li class="<%= 'active' if current_page?(planner_path) %>"><%= link_to "Planner", planner_path %></li>
       <% else %>
         <%# //.. %>
       <% end %>

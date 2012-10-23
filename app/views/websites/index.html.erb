@@ -1,0 +1,22 @@
+<% provide(:title, "All Websites") %>
+<div class="row">
+  <aside class="span4">
+    <section>
+    <h1>Manage Websites</h1>
+    </section>
+  </aside>
+	<div class="span8">
+  </div>
+</div>
+<div class="row">
+  <div class="span8">
+		<% @websites.each do |website| %>
+    <h2><%= link_to website.name, root_url(subdomain: website.subdomain) %></h2>
+	    <%= link_to "Show", website %> |
+      <%= link_to "Edit", edit_website_path(website) %> |
+      <%= link_to "Destroy", website, :confirm => 'Are you sure?', :method => :delete %>
+<% end %>
+		</br>
+		<p>or <%= link_to "add", new_pharmacy_path %> a new website</p>
+  </div>
+</div>
