@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121023134409) do
+ActiveRecord::Schema.define(:version => 20121024081739) do
 
   create_table "emergency_groups", :force => true do |t|
     t.string   "name"
@@ -29,7 +29,10 @@ ActiveRecord::Schema.define(:version => 20121023134409) do
     t.boolean  "all_day"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "website_id"
   end
+
+  add_index "events", ["website_id"], :name => "index_events_on_website_id"
 
   create_table "pharmacies", :force => true do |t|
     t.string   "name"
@@ -64,7 +67,6 @@ ActiveRecord::Schema.define(:version => 20121023134409) do
     t.string   "password_digest"
     t.string   "remember_token"
     t.boolean  "admin",           :default => false
-    t.integer  "website_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
@@ -72,9 +74,7 @@ ActiveRecord::Schema.define(:version => 20121023134409) do
 
   create_table "websites", :force => true do |t|
     t.string   "name"
-    t.string   "subdomain"
     t.text     "note"
-    t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

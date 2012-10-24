@@ -2,11 +2,8 @@
   <div class="navbar-inner">
     <div class="container">
       <nav>
-	    <% if request.path == website_path(request.subdomain) %>
-	      <%# //.. %>
-	    <% else %>
 				<ul class="nav pull-left">
-					<li class="<%= 'active' if  
+					<li class="<%= 'active' if current_page?(root_path) ||
 					                           current_page?(welcome_path) || 
 					                           current_page?(dashboard_path) || 
 					                           current_page?(referrals_path) %>">
@@ -19,8 +16,7 @@
 					<% if signed_in? %><%= link_to "Planner", events_path %><% end %>
 					</li>
 					
-					<li class="<%= 'active' if current_page?(root_path) ||
-					current_page?(manage_path) || 
+					<li class="<%= 'active' if current_page?(manage_path) || 
 					                           current_page?(pharmacies_path) || 
 					                           current_page?(emergency_groups_path) ||
 					                           current_page?(websites_path) ||
@@ -76,7 +72,6 @@
               <li><%= link_to image_tag('de.png') + "  Deutsch", locale: "de" %></li>
           </li>
         </ul>
-      <% end %>
       </nav>
     </div>
   </div>

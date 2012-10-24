@@ -15,14 +15,6 @@
 		  <li><%= pharmacy.name %></li>
 		<% end %>
 		</ul>
-		
-		<strong>Websites:</strong>
-		<ul>
-		<% @user.websites.each do |website| %>
-		  <li>Name: <%= website.name %></li>
-		  <li>Subdomain: <%= website.subdomain %></li>
-		<% end %>
-		</ul>
 
 		<p>
 		  <%= link_to "Edit", edit_user_path(@user) %> |

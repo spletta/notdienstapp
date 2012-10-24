@@ -1,11 +1,10 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :name, :password, :password_confirmation, :pharmacy_ids, :pharmacy_tokens, :website_ids
+  attr_accessible :email, :name, :password, :password_confirmation, :pharmacy_ids, :pharmacy_tokens
   has_secure_password
   
   has_many :pharmacies_users
   has_many :pharmacies, :through => :pharmacies_users
-  has_many :websites
-  accepts_nested_attributes_for :pharmacies, :websites
+  accepts_nested_attributes_for :pharmacies
   
   attr_reader :pharmacy_tokens
   

@@ -5,18 +5,17 @@
   <%= @website.name %>
 </p>
 <p>
-  <strong>Subdomain:</strong>
-  <%= @website.subdomain %>
-</p>
-<p>
   <strong>Note:</strong>
   <%= @website.note %>
 </p>
 <p>
-  <strong>User:</strong>
-  <%= @website.user_id %>
-</p>
-
+	<strong>Events:</strong>
+	<ul>
+	<% @website.events.each do |event| %>
+	  <li>Title: <%= event.title %></li>
+	  <li>Pharmacy: <%= event.pharmacy.name %></li>
+	<% end %>
+	</ul>
 <p>
   <%= link_to "Edit", edit_website_path(@website) %> |
   <%= link_to "Destroy", @website, :confirm => 'Are you sure?', :method => :delete %> |

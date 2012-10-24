@@ -13,7 +13,7 @@
 		<table class="table table-hover">
 			<% @websites.each do |website| %>
 			  <tr>
-				  <td><%= link_to website.name, root_url(subdomain: website.subdomain) %></td>
+				  <td><%= link_to website.name %></td>
 				  <td><%= link_to "Show", website %> |
 					  <%= link_to "iPad", ipad_website_path(website) %> |
 			      <%= link_to "Edit", edit_website_path(website) %> |

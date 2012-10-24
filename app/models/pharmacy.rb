@@ -5,7 +5,6 @@ class Pharmacy < ActiveRecord::Base
   has_many :users, :through => :pharmacies_users
   belongs_to :emergency_group
   has_many :events, :dependent => :destroy
-  
   accepts_nested_attributes_for :users, :emergency_group, :events
   
   validates :address, :bga_number, :name, :owner_name, :phone_number, presence: true

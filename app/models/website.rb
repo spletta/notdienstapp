@@ -1,7 +1,6 @@
 class Website < ActiveRecord::Base
-  attr_accessible :name, :subdomain, :note, :user_id
-  
-  belongs_to :user
-  
-  accepts_nested_attributes_for :user
+  attr_accessible :name, :note, :event_ids
+
+  has_many :events
+  accepts_nested_attributes_for :events
 end

@@ -1,11 +1,11 @@
 <%= simple_form_for @emergency_group do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
-  <p>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.association :pharmacies %>
-  </p>
-  <p><%= f.submit %></p>
+<table class="table table-hover">
+  <tr><%= f.association :pharmacies %></tr>
+  <tr>
+  	<td><%= f.label :name %></td>
+    <td><%= f.text_field :name %></td>
+  </tr>
+</table>
+<%= f.submit "Save", class: "btn btn-large btn-primary" %>
 <% end %>

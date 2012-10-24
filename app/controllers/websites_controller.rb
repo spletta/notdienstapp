@@ -44,5 +44,6 @@ class WebsitesController < ApplicationController
   
   def ipad
     @website = Website.find(params[:id])
+    #@pharmacy = Pharmacy.find()
   end
 end
