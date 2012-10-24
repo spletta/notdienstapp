@@ -11,14 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121024081739) do
+ActiveRecord::Schema.define(:version => 20121024141006) do
 
   create_table "emergency_groups", :force => true do |t|
     t.string   "name"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.integer  "pharmacy_id"
+    t.integer  "website_id"
+    t.integer  "event_id"
   end
+
+  add_index "emergency_groups", ["event_id"], :name => "index_emergency_groups_on_event_id"
+  add_index "emergency_groups", ["website_id"], :name => "index_emergency_groups_on_website_id"
 
   create_table "events", :force => true do |t|
     t.integer  "pharmacy_id"
@@ -27,12 +32,12 @@ ActiveRecord::Schema.define(:version => 20121024081739) do
     t.text     "description"
     t.string   "title"
     t.boolean  "all_day"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-    t.integer  "website_id"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.integer  "emergency_group_id"
   end
 
-  add_index "events", ["website_id"], :name => "index_events_on_website_id"
+  add_index "events", ["emergency_group_id"], :name => "index_events_on_emergency_group_id"
 
   create_table "pharmacies", :force => true do |t|
     t.string   "name"
@@ -71,12 +76,5 @@ ActiveRecord::Schema.define(:version => 20121024081739) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
-
-  create_table "websites", :force => true do |t|
-    t.string   "name"
-    t.text     "note"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
 
 end

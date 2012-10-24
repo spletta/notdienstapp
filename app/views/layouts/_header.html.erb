@@ -19,7 +19,6 @@
 					<li class="<%= 'active' if current_page?(manage_path) || 
 					                           current_page?(pharmacies_path) || 
 					                           current_page?(emergency_groups_path) ||
-					                           current_page?(websites_path) ||
 					                           current_page?(customer_service_path) %>">
 					<% if signed_in? %><%= link_to "Manage", pharmacies_path %><% end %>
 					</li>

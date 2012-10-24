@@ -1,9 +1,22 @@
 <% provide(:title, 'Events') %>
-
+<p>
+  <strong>Title:</strong>
+  <%= @event.title %>
+</p>
+<p>
+	<strong>Emergency Group:</strong>
+  <%= @event.emergency_group.name %>
+<p>
+<p>
+	<strong>Pharmacies from Group:</strong>
+  <% @event.emergency_group.pharmacies.each do |pharmacy| %>
+    <li><%= pharmacy.name %></li>
+  <% end %>
+</p>
 <p>
 	<strong>Pharmacy:</strong>
   <%= @event.pharmacy.name %></li>
-<p>
+</p>
 <p>
   <strong>Start time:</strong>
   <%= @event.starttime %>
@@ -16,10 +29,7 @@
   <strong>Description:</strong>
   <%= @event.description %>
 </p>
-<p>
-  <strong>Title:</strong>
-  <%= @event.title %>
-</p>
+
 <p>
   <strong>All Day:</strong>
   <%= @event.all_day %>

@@ -1,0 +1,28 @@
+<% provide(:title, 'Manage iPad Events') %>
+<div class="row">
+  <aside class="span4">
+    <section>
+    <h1>Manage iPad Events</h1>
+    </section>
+  </aside>
+	<div class="span8">
+  </div>
+</div>
+<div class="row">
+  <div class="span8">
+		<table class="table table-hover">
+			<% @events.each do |event| %>
+			  <tr>
+				  <td><%= link_to event.title %></td>
+				  <td><%= link_to "Show", event %> |
+			      <%= link_to "Edit", edit_event_path(event) %> |
+			      <%= link_to "Destroy", event, :confirm => 'Are you sure?', :method => :delete %></td>
+				</tr>
+			<% end %>
+		</table>
+		</br>
+		<p>or <%= link_to "add", new_event_path %> a new event</p>
+  </div>
+</div>
+
+

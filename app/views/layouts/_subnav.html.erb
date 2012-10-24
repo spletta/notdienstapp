@@ -8,12 +8,10 @@
         <li class="<%= 'active' if current_page?(referrals_path) %>"><%= link_to "Referrals", referrals_path %></li>
       <% elsif request.path == manage_path || 
 								request.path == pharmacies_path || 
-								request.path == emergency_groups_path || 
-								request.path == websites_path ||
+								request.path == emergency_groups_path ||
 								request.path == customer_service_path %>
 				<li class="<%= 'active' if current_page?(pharmacies_path) %>"><%= link_to "Pharmacies", pharmacies_path %></li>
 				<li class="<%= 'active' if current_page?(emergency_groups_path) %>"><%= link_to "Emergency Groups", emergency_groups_path %></li>
-				<li class="<%= 'active' if current_page?(websites_path) %>"><%= link_to "Websites", websites_path %></li>
 				<li class="<%= 'active' if current_page?(customer_service_path) %>"><%= link_to "Customer service feed", customer_service_path %></li>
       <% else %>
         <%# //.. %>

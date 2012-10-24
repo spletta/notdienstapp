@@ -27,11 +27,11 @@ NdtAppV6::Application.routes.draw do
       post :attend, on: :member
     end
     
-    resources :websites do
-      get :ipad, on: :member
+    resources :events do
+      get :ipad, :on => :collection
+      #match '/events/ipad', to: 'events#ipad'
     end
     
-    resources :events
     resources :emergency_groups
     resources :users
     
