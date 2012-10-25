@@ -11,6 +11,7 @@ gem 'bootstrap-will_paginate', '0.0.6'
 gem 'copycopter_client', '~> 2.0.1'
 gem 'simple_form'
 
+
 group :development, :test do
   gem 'rspec-rails', '2.11.0'
   gem "nifty-generators"
@@ -21,6 +22,7 @@ end
 group :assets do
   gem 'jquery-rails', '2.0.2'
   gem 'jquery-ui-rails', '2.0.2'
+  gem "jquerymobile-rails"
   gem 'sass-rails',   '3.2.5'
   gem 'coffee-rails', '3.2.2'
   gem 'uglifier', '1.2.3'

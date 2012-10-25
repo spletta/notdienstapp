@@ -1,5 +1,6 @@
 @import "bootstrap";
 
+
 /* mixins, variables, etc. */
 
 $grayMediumLight: #eaeaea;
@@ -259,3 +260,53 @@ aside {
 .table th .desc {
   background-image: url(/icon-arrow-down);
 }
+
+/* importing mobile responsive style at the end on purpose */
+@import "bootstrap-responsive";
+
+/* ipad fullscreen styles for single event*/
+
+.white_container {
+	background: #e6e5e7;
+	border-radius: 15px;
+	padding-top: 12px;
+	padding-left: 10px;
+	padding-bottom: 2px;
+}
+
+.white_container_middle {
+	background: #e6e5e7;
+	border-radius: 15px;
+	padding-top: 20px;
+	padding-left: 10px;
+	padding-bottom: 20px;
+}
+
+.mb {
+	margin-bottom:5px;
+}
+
+h1b {
+  font-size: 5.5em;
+  letter-spacing: 0px;
+  line-height: 1em;
+  margin-bottom: 30px;
+  font-family: 'BitterRegular', Georgia, sans-serif;
+}
+
+h2b {
+  font-size: 4em;
+  letter-spacing: 0px;
+  line-height: 1.7em;
+  margin-bottom: 30px;
+  font-family: 'BitterRegular', Georgia, sans-serif;
+}
+
+h3b {
+  font-size: 2.3em;
+  letter-spacing: 0px;
+  line-height: 1.7em;
+  margin-bottom: 30px;
+  font-family: 'BitterRegular', Georgia, sans-serif;
+}
+

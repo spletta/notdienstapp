@@ -80,6 +80,7 @@ GEM
     jquery-ui-rails (2.0.2)
       jquery-rails
       railties (>= 3.1.0)
+    jquerymobile-rails (0.2.3)
     json (1.7.5)
     libwebsocket (0.1.5)
       addressable
@@ -185,6 +186,7 @@ DEPENDENCIES
   faker (= 1.0.1)
   jquery-rails (= 2.0.2)
   jquery-ui-rails (= 2.0.2)
+  jquerymobile-rails
   mocha
   nifty-generators
   pg (= 0.12.2)

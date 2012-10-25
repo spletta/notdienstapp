@@ -1,5 +1,7 @@
 class EventsController < ApplicationController
   before_filter :signed_in_user
+  before_filter :prepare_for_mobile, :only => [ :index ] 
+  
   def index
     @events = Event.all
     @events_by_date = @events.group_by(&:starttime)
@@ -46,5 +48,6 @@ class EventsController < ApplicationController
     @events = Event.all
     @events_by_date = @events.group_by(&:starttime)
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
+    @event = Event.find(params[:id])
   end
 end
