@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   
   attr_reader :pharmacy_tokens
   
+  default_scope { where(account_id: Account.current_id) }
+  
   before_save { self.email.downcase! }
   before_save :create_remember_token
   
@@ -19,6 +21,14 @@ class User < ActiveRecord::Base
   validates :password, presence: true, length: { minimum: 6 }
   validates :password_confirmation, presence: true
   
+      def self.current
+      Thread.current[:user]
+    end
+    
+    def self.current=(user)
+      Thread.current[:user] = user
+    end
+    
   def pharmacy_tokens=(tokens)
     self.pharmacy_ids = Pharmacy.ids_from_tokens(tokens)
   end
@@ -28,4 +38,5 @@ class User < ActiveRecord::Base
     def create_remember_token
       self.remember_token = SecureRandom.urlsafe_base64
     end
+  
 end

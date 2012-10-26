@@ -1,13 +1,25 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   include SessionsHelper
-  #include Mobylette::RespondToMobileRequests
   
   before_filter :set_locale
-  #before_filter :prepare_for_mobile
+  
+  around_filter :scope_current_account  
   
   private
   
+    def current_account
+      Account.find_by_subdomain! request.subdomain
+    end
+    helper_method :current_account
+    
+    def scope_current_account
+      Account.current_id = current_account.id
+      yield
+    ensure
+      Account.current_id = nil
+    end
+    
     def set_locale
       I18n.locale = params[:locale] || session[:locale] || I18n.default_locale
       session[:locale] = I18n.locale  # store locale to session
@@ -36,5 +48,18 @@ class ApplicationController < ActionController::Base
     def prepare_for_mobile
       session[:mobile_param] = params[:mobile] if params[:mobile]
       request.format = :mobile if mobile_device?
+    end
+    
+    #def set_current_user
+    #  User.current = current_user
+    #end
+    
+    def correct_user
+      @user = User.find_by_remember_token(cookies[:remember_token])
+      redirect_to(root_path) unless current_user?(@user)
+    end
+    
+    def admin_user
+      redirect_to(root_path) unless current_user.admin?
     end
 end
