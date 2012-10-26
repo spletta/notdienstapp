@@ -43,11 +43,4 @@ class EventsController < ApplicationController
     @event.destroy
     redirect_to events_url, :notice => "Successfully destroyed event."
   end
-  
-  def ipad
-    @events = Event.all
-    @events_by_date = @events.group_by(&:starttime)
-    @date = params[:date] ? Date.parse(params[:date]) : Date.today
-    @event = Event.find(params[:id])
-  end
 end

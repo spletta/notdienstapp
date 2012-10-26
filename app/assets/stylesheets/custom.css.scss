@@ -261,9 +261,6 @@ aside {
   background-image: url(/icon-arrow-down);
 }
 
-/* importing mobile responsive style at the end on purpose */
-@import "bootstrap-responsive";
-
 /* ipad fullscreen styles for single event*/
 
 .white_container {
@@ -287,7 +284,7 @@ aside {
 }
 
 h1b {
-  font-size: 5.5em;
+  font-size: 7em;
   letter-spacing: 0px;
   line-height: 1em;
   margin-bottom: 30px;
@@ -310,3 +307,5 @@ h3b {
   font-family: 'BitterRegular', Georgia, sans-serif;
 }
 
+/* importing mobile responsive style at the end on purpose */
+@import "bootstrap-responsive";

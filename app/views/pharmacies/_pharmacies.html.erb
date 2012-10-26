@@ -5,7 +5,7 @@
 		<th><%= sortable "bga_number", "BGA Number" %></th>
 		<th><%= sortable "name" %></th>
 		<th><%= sortable "owner_name", "Owner" %></th>
-		<th>City</th>
+		<th><%= sortable "city", "City" %></th>
 		<th>Action</th>
 	<tr>
 <% for pharmacy in @pharmacies %>
@@ -13,7 +13,7 @@
 	  <td><%= link_to pharmacy.bga_number, pharmacy_path(pharmacy) %></td>
 	  <td><%= pharmacy.name %></td>
 	  <td><%= pharmacy.owner_name %></td>
-	  <td>Berlin</td>
+	  <td><%= pharmacy.city %></td>
 	  <td>
      <% if pharmacy.users == current_user.id %>
         <%= link_to 'Disconnect', withdraw_pharmacy_path(pharmacy.id), :method => :post %> |

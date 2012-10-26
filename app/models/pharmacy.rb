@@ -1,5 +1,5 @@
 class Pharmacy < ActiveRecord::Base
-  attr_accessible :address, :bga_number, :email, :end_hours, :fax_number, :name, :owner_name, :phone_number, :start_hours, :website_url, :users_attributes, :emergency_group_id
+  attr_accessible :address, :bga_number, :email, :end_hours, :fax_number, :name, :owner_name, :phone_number, :start_hours, :website_url, :users_attributes, :emergency_group_id, :city, :zipcode, :emergency_hours_starttime, :emergency_hours_endtime
   
   has_many :pharmacies_users
   has_many :users, :through => :pharmacies_users

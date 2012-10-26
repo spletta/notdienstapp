@@ -23,7 +23,7 @@ class PharmaciesController < ApplicationController
   end
   
   def create
-    @pharmacy = Pharmacy.find(params[:id])
+    @pharmacy = Pharmacy.new(params[:pharmacy])
     if @pharmacy.save
       flash[:success] = "Pharmacy created!"
       redirect_to pharmacies_url

@@ -11,33 +11,28 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121024141006) do
+ActiveRecord::Schema.define(:version => 20121026111918) do
 
   create_table "emergency_groups", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
     t.integer  "pharmacy_id"
     t.integer  "website_id"
-    t.integer  "event_id"
+    t.string   "website_title"
+    t.string   "website_note"
   end
 
-  add_index "emergency_groups", ["event_id"], :name => "index_emergency_groups_on_event_id"
   add_index "emergency_groups", ["website_id"], :name => "index_emergency_groups_on_website_id"
 
   create_table "events", :force => true do |t|
     t.integer  "pharmacy_id"
     t.date     "starttime"
     t.date     "endtime"
-    t.text     "description"
-    t.string   "title"
     t.boolean  "all_day"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
-    t.integer  "emergency_group_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
-
-  add_index "events", ["emergency_group_id"], :name => "index_events_on_emergency_group_id"
 
   create_table "pharmacies", :force => true do |t|
     t.string   "name"
@@ -50,10 +45,14 @@ ActiveRecord::Schema.define(:version => 20121024141006) do
     t.time     "start_hours"
     t.time     "end_hours"
     t.integer  "bga_number"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
     t.integer  "emergency_group_id"
     t.integer  "event_id"
+    t.string   "city"
+    t.string   "zipcode"
+    t.time     "emergency_hours_starttime"
+    t.time     "emergency_hours_endtime"
   end
 
   create_table "pharmacies_users", :force => true do |t|

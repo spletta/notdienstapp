@@ -19,6 +19,14 @@
 		<td><%= f.label :address %></td>
 	  <td><%= f.text_area :address %></td>
 	</tr>
+  <tr> 
+		<td><%= f.label :city %></td>
+	  <td><%= f.text_field :city %></td>
+	</tr>
+  <tr> 
+		<td><%= f.label :zipcode %></td>
+	  <td><%= f.text_field :zipcode %></td>
+	</tr>	
 	<tr> 
 		<td><%= f.label :phone_number %></td>
 	  <td><%= f.text_field :phone_number %></td>	
@@ -36,12 +44,20 @@
 	  <td><%= f.text_field :website_url %></td>	
   </tr>
   <tr> 
-		<td><%= f.label :start_hours %></td>
+		<td><%= f.label "Open daily from" %></td>
 	  <td><%= f.text_field :start_hours %></td>	
   </tr>
   <tr> 
-		<td><%= f.label :end_hours %></td>
+		<td><%= f.label "Closed daily at" %></td>
 	  <td><%= f.text_field :end_hours %></td>	
+	</tr>
+	<tr> 
+		<td><%= f.label "Emergency hours from" %></td>
+	  <td><%= f.text_field :emergency_hours_starttime %></td>	
+  </tr>
+  <tr> 
+		<td><%= f.label "Emergency hours to" %></td>
+	  <td><%= f.text_field :emergency_hours_endtime %></td>	
 	</tr>
 </table>
 <%= f.submit "Save", class: "btn btn-large btn-primary" %>

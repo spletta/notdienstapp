@@ -3,8 +3,16 @@
 <table class="table table-hover">
   <tr><%= f.association :pharmacies %></tr>
   <tr>
-  	<td><%= f.label :name %></td>
+  	<td><%= f.label "Group Name" %></td>
     <td><%= f.text_field :name %></td>
+  </tr>
+  <tr>
+  	<td><%= f.label :website_title %></td>
+    <td><%= f.text_field :website_title %></td>
+  </tr>
+  <tr>
+  	<td><%= f.label :website_note %></td>
+    <td><%= f.text_field :website_note %></td>
   </tr>
 </table>
 <%= f.submit "Save", class: "btn btn-large btn-primary" %>

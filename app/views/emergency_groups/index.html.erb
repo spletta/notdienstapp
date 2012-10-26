@@ -13,7 +13,7 @@
 		<table class="table table-hover">
 			<% @emergency_groups.each do |emergency_group| %>
 			  <tr>
-				  <td><%= link_to emergency_group.name %></td>
+				  <td><%= link_to emergency_group.name, emergency_group %></td>
 				  <td><%= link_to "Show", emergency_group %> |
 			      <%= link_to "Edit", edit_emergency_group_path(emergency_group) %> |
 			      <%= link_to "Destroy", emergency_group, :confirm => 'Are you sure?', :method => :delete %></td>
