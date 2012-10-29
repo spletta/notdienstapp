@@ -7,3 +7,8 @@ test:
         adapter: postgresql
         database: ndt_app_v6_test
         host: localhost
+        
+production:
+        adapter: postgresql
+        database: ndt_app_v6_test
+        host: localhost
