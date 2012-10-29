@@ -4,7 +4,7 @@ NdtAppV6::Application.routes.draw do
     
     root to: 'static_pages#home'
     
-    match '/signup',  to: 'users#new'
+    match '/signup',  to: 'accounts#new'
     match '/signin',  to: 'sessions#new'
     match '/signout', to: 'sessions#destroy', via: :delete
 
@@ -35,7 +35,7 @@ NdtAppV6::Application.routes.draw do
     resources :users
     
     resources :sessions, only: [:new, :create, :destroy]
-    #resources :pharmacies, only: [:create, :destroy]
+    resources :accounts, only: [:index, :new, :create, :destroy]
     
   end
   match '*path', to: redirect("/#{I18n.default_locale}/%{path}"), 

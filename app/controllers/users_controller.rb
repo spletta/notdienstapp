@@ -16,6 +16,9 @@ class UsersController < ApplicationController
       redirect_to(root_path)
     end
     @user = User.new
+    account = @user.account.build(:name, :subdomain)
+    
+    #@account = Account.new[name, subdomain]
   end
 
   def edit

@@ -1,6 +1,10 @@
 <%= render 'shared/error_messages', object: f.object %>
-<%= f.label :name %>
+<%= f.label "First Name" %>
 <%= f.text_field :name %>
+
+<%= f.fields_for :accounts do |account_form| %>
+  <%= render :partial => 'shared/account', :locals => { :form => account_form } %>
+<% end %>
 
 <%= f.label :email %>
 <%= f.text_field :email %>

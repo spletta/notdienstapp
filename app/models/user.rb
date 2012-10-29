@@ -4,7 +4,9 @@ class User < ActiveRecord::Base
   
   has_many :pharmacies_users
   has_many :pharmacies, :through => :pharmacies_users
-  accepts_nested_attributes_for :pharmacies
+  belongs_to :account, :inverse_of => :users
+  
+  accepts_nested_attributes_for :pharmacies, :account
   
   attr_reader :pharmacy_tokens
   
@@ -20,6 +22,7 @@ class User < ActiveRecord::Base
                     uniqueness: { case_sensitive: false }
   validates :password, presence: true, length: { minimum: 6 }
   validates :password_confirmation, presence: true
+  validates :account, :presence => true
   
       def self.current
       Thread.current[:user]
