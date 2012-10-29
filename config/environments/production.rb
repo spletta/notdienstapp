@@ -31,7 +31,7 @@ NdtAppV6::Application.configure do
   config.force_ssl = true
 
   # If you have a longer top level domain such as "example.co.uk"
-  #config.action_dispatch.tld_length = 2
+  config.action_dispatch.tld_length = 1
   
   # See everything in the log (default is :info)
   # config.log_level = :debug
