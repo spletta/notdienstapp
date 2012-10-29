@@ -19,7 +19,7 @@ end
 
 # Gems used only for assets and not required
 # in production environments by default.
-group :assets do
+#group :assets do
   gem 'jquery-rails', '2.0.2'
   gem 'jquery-ui-rails', '2.0.2'
   gem "jquerymobile-rails"
@@ -28,7 +28,7 @@ group :assets do
   gem 'uglifier', '1.2.3'
   gem 'chosen-rails'
   gem "select2-rails"
-end
+#end
 
 group :test do
   gem 'capybara', '1.1.2'

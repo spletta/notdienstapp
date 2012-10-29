@@ -22,15 +22,10 @@ ActiveRecord::Schema.define(:version => 20121026134948) do
 
   create_table "emergency_groups", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.integer  "pharmacy_id"
-    t.integer  "website_id"
-    t.string   "website_title"
-    t.string   "website_note"
   end
-
-  add_index "emergency_groups", ["website_id"], :name => "index_emergency_groups_on_website_id"
 
   create_table "events", :force => true do |t|
     t.integer  "pharmacy_id"
