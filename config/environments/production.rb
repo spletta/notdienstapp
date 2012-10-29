@@ -30,6 +30,9 @@ NdtAppV6::Application.configure do
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   config.force_ssl = true
 
+  # If you have a longer top level domain such as "example.co.uk"
+  config.action_dispatch.tld_length = 2
+  
   # See everything in the log (default is :info)
   # config.log_level = :debug
 
