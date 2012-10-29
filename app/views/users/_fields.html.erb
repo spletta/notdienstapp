@@ -13,11 +13,4 @@
 <% end %>
 <%= f.password_field :password_confirmation %>
 
-<%= f.association :pharmacies %>
-
-<div class="field">
-  <%= f.label :pharmacy_tokens, "Pharmacies" %><br />
-  <%= f.text_field :pharmacy_tokens, data: {load: @user.pharmacies} %>
-</div>
-
 <br />
