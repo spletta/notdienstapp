@@ -1,13 +1,20 @@
 NdtAppV6::Application.routes.draw do
   scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
-    match '', to: 'static_pages#home', constraints: lambda { |r| r.subdomain.present? && r.subdomain != 'www' }
+    match '', to: 'sessions#new', constraints: lambda { |r| r.subdomain.present? && r.subdomain != 'www' }
+    #match '/signup', to: 'accounts#new', constraints: lambda { |r| r.subdomain.present? && r.subdomain != 'www' }
           
-    constraints(:host => /www.ndt.dev/) do
-      root :to => redirect("http://example.com")
-      match '/*path', :to => redirect {|params| "http://example.com/#{params[:path]}"}
+    # development      
+    constraints(:host => /ndt.dev/) do
+      root :to => 'accounts#new'
+      match '/signup', :to => redirect {|params| "http://ndt.dev/#{params[:path]}"}
     end
     
-    root to: 'static_pages#home'
+    # production
+    #constraints(:host => /notdienstapp.com/) do
+      #match '/signup', :to => redirect {|params| "https://notdienstapp.com/#{params[:path]}"}
+    #end
+    
+    root to: 'sessions#new'
     
     match '/signup',  to: 'accounts#new'
     match '/signin',  to: 'sessions#new'

@@ -16,9 +16,6 @@ class UsersController < ApplicationController
       redirect_to(root_path)
     end
     @user = User.new
-    account = @user.account.build(:name, :subdomain)
-    
-    #@account = Account.new[name, subdomain]
   end
 
   def edit
@@ -29,19 +26,15 @@ class UsersController < ApplicationController
       redirect_to(root_path)
     end
     @user = User.new(params[:user])
-
-    respond_to do |format|
+    @account = Account.find_by_subdomain!(request.subdomain)
+    #respond_to do |format|
       if @user.save
         sign_in @user
-        flash[:success] = "Welcome to the Sample App!"
-        format.html { redirect_to @user }
-        format.json { render json: @user, status: :created, location: @user }
+        redirect_to "http://#{@account.subdomain}.#{request.domain}#{request.port_string}/welcome", notice: 'Account was successfully created.'
       else
-        format.html { render action: "new" }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        render 'new'
       end
-    end
-    
+
     rescue ActiveRecord::StatementInvalid
       # Handle duplicate email addresses gracefully by redirecting.
       redirect_to home_url
