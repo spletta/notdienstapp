@@ -37,9 +37,9 @@
               <ul class="dropdown-menu">
 	              <div class="user-information">
 		              <strong><%= current_user.name %></strong><br />
-		              <span>Company Name</span>
+		              <span><%= current_account.name %></span>
 		            </div>
-                <li><%= link_to "Profile", current_user %></li>
+                <li><%= link_to "Profile", edit_user_path(current_user) %></li>
                 <li>
                   <%= link_to accounts_path do %>
                     <%= t "settings.link", default: "Settings" %>
