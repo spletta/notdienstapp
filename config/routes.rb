@@ -1,6 +1,11 @@
 NdtAppV6::Application.routes.draw do
   scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
     match '', to: 'static_pages#home', constraints: lambda { |r| r.subdomain.present? && r.subdomain != 'www' }
+          
+    constraints(:host => /www.ndt.dev/) do
+      root :to => redirect("http://example.com")
+      match '/*path', :to => redirect {|params| "http://example.com/#{params[:path]}"}
+    end
     
     root to: 'static_pages#home'
     
