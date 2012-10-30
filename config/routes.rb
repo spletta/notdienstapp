@@ -47,7 +47,7 @@ NdtAppV6::Application.routes.draw do
     resources :users
     
     resources :sessions, only: [:new, :create, :destroy]
-    resources :accounts, only: [:index, :new, :create, :destroy]
+    resources :accounts, only: [:new, :create, :destroy, :index]
     
   end
   match '*path', to: redirect("/#{I18n.default_locale}/%{path}"), 

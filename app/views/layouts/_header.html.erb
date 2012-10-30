@@ -7,7 +7,7 @@
 					                           current_page?(welcome_path) || 
 					                           current_page?(dashboard_path) || 
 					                           current_page?(referrals_path) %>">
-					<%= link_to root_path do %>
+					<%= link_to welcome_path do %>
 					  <i class="icon-home icon-white"></i>
 					<% end %>
 					</li>				
@@ -41,7 +41,7 @@
 		            </div>
                 <li><%= link_to "Profile", current_user %></li>
                 <li>
-                  <%= link_to edit_user_path(current_user) do %>
+                  <%= link_to accounts_path do %>
                     <%= t "settings.link", default: "Settings" %>
                   <% end %>
                 </li>
