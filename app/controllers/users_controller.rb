@@ -27,13 +27,12 @@ class UsersController < ApplicationController
     end
     @user = User.new(params[:user])
     @account = Account.find_by_subdomain!(request.subdomain)
-    #respond_to do |format|
-      if @user.save
-        sign_in @user
-        redirect_to "http://#{@account.subdomain}.#{request.domain}#{request.port_string}/welcome", notice: 'Account was successfully created.'
-      else
-        render 'new'
-      end
+    if @user.save
+      sign_in @user
+      redirect_to "http://#{@account.subdomain}.#{request.domain}#{request.port_string}/welcome", notice: 'Account was successfully created.'
+    else
+      render 'new'
+    end
 
     rescue ActiveRecord::StatementInvalid
       # Handle duplicate email addresses gracefully by redirecting.

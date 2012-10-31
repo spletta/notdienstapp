@@ -187,6 +187,7 @@ DEPENDENCIES
   jquery-rails (= 2.0.2)
   jquery-ui-rails (= 2.0.2)
   jquerymobile-rails
+  mail
   mocha
   nifty-generators
   pg (= 0.12.2)

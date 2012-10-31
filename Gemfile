@@ -18,6 +18,7 @@ gem 'coffee-rails', '3.2.2'
 gem 'uglifier', '1.2.3'
 gem 'chosen-rails'
 gem "select2-rails"
+gem "mail"
 
 group :development, :test do
   gem 'rspec-rails', '2.11.0'

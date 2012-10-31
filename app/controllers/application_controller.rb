@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
       end
     end
     helper_method :current_account
-    
+  
     def scope_current_account
       if request.subdomain.present?
         Account.current_id = current_account.id   
