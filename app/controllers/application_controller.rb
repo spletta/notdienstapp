@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
   
   before_filter :set_locale
+  before_filter :prepare_for_mobile
   
   around_filter :scope_current_account  
   

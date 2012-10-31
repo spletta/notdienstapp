@@ -1,7 +1,12 @@
 <% provide(:title, 'All Events') %>
 
-<p><%= link_to "New Event", new_event_path %></p>
-
+<p><%= link_to "New Event", new_event_path %> |
+	<% if mobile_device? %>
+    <%= link_to "Monthly View", :mobile => 0 %>
+  <% else %>
+    <%= link_to "Daily View", :mobile => 1 %>
+  <% end %>
+</p>
 <div id="events">
   <h2 id="month">
     <%= link_to "<", date: @date.prev_month %>
