@@ -17,6 +17,9 @@ NdtAppV6::Application.routes.draw do
         
     root to: 'sessions#new'
     
+    match 'contact' => 'contact#new', :as => 'contact', :via => :get
+    match 'contact' => 'contact#create', :as => 'contact', :via => :post
+
     match '/signup',  to: 'accounts#new'
     match '/signin',  to: 'sessions#new'
     match '/signout', to: 'sessions#destroy', via: :delete
