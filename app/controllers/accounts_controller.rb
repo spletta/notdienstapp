@@ -16,6 +16,7 @@ class AccountsController < ApplicationController
       @user = User.find_by_account_id(@account)
       #@user = @account.users(params[:user_id])
       UserMailer.signup_confirmation(@account, @user).deliver
+      AdminMailer.new_user_registration(@account, @user).deliver
       # sign_in current_user
       redirect_to "http://#{@account.subdomain}.#{request.domain}#{request.port_string}#{new_session_path}", notice: 'Account was successfully created.'
     else
