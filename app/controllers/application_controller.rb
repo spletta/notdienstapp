@@ -8,11 +8,6 @@ class ApplicationController < ActionController::Base
   around_filter :scope_current_account  
   
   private
-  
-    def current_user
-      @current_user ||= User.find(session[:user_id]) if session[:user_id]
-    end
-    helper_method :current_user
     
     def current_account
       if request.subdomain.present?
