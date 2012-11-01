@@ -4,5 +4,24 @@
 	  <br/>
 	  <h1><%= t 'welcome.hello', default: 'Hello, ' %><%= current_user.name + '!' %></h1>
     <h3><%= t 'welcome.getting.started', default: 'Here are a few simple steps to get started with Notdienst-Touch:' %></h3>
+    <br/>
+    <ul class="start-tasks">
+      <li>
+        <a href="/emergency_groups">Create Emergency Groups</a>        First create an Emergency Groups.
+        <span class="start-create"></span>
+      </li>
+      <li>
+        <a href="/pharmacies">Create Pharmacies</a>        Then add your pharmacy to it.
+        <span class="start-tracking"></span>
+      </li>
+      <li>
+        <a href="/events">Manage your Events</a>        Get an overview of this months duties.
+        <span class="start-invoicing"></span>
+      </li>
+      <li>
+        <a href="/events?mobile=1">Open the iPad Version</a>        This is what you put in your window.
+        <span class="start-invite"></span>
+      </li>
+    </ul>
   </div>
 </div>
