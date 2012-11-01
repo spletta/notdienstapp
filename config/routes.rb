@@ -2,18 +2,18 @@ NdtAppV6::Application.routes.draw do
   scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
     match '', to: 'sessions#new', constraints: lambda { |r| r.subdomain.present? && r.subdomain != 'www' }
     #match '/signup', to: 'accounts#new', constraints: lambda { |r| r.subdomain.present? && r.subdomain != 'www' }
-          
-    # development      
-    #constraints(:host => /ndt.dev/) do
-    #  root :to => 'accounts#new'
-    #  match '/signup', :to => redirect {|params| "http://ndt.dev/#{params[:path]}"}
-    #end
     
-    production
-    constraints(:host => /notdienstapp.com/) do
-      match '/signup', :to => redirect {|params| "https://notdienstapp.com/#{params[:path]}"}
-    end
-    
+    if Rails.env.production?
+      constraints(:host => /notdienstapp.com/) do
+        match '/signup', :to => redirect {|params| "https://notdienstapp.com/#{params[:path]}"}
+      end
+    else
+      constraints(:host => /ndt.dev/) do
+        root :to => 'accounts#new'
+        match '/signup', :to => redirect {|params| "http://ndt.dev/#{params[:path]}"}
+      end
+    end   
+        
     root to: 'sessions#new'
     
     match '/signup',  to: 'accounts#new'
