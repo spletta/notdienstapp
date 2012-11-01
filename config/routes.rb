@@ -4,15 +4,15 @@ NdtAppV6::Application.routes.draw do
     #match '/signup', to: 'accounts#new', constraints: lambda { |r| r.subdomain.present? && r.subdomain != 'www' }
           
     # development      
-    constraints(:host => /ndt.dev/) do
-      root :to => 'accounts#new'
-      match '/signup', :to => redirect {|params| "http://ndt.dev/#{params[:path]}"}
-    end
-    
-    # production
-    #constraints(:host => /notdienstapp.com/) do
-      #match '/signup', :to => redirect {|params| "https://notdienstapp.com/#{params[:path]}"}
+    #constraints(:host => /ndt.dev/) do
+    #  root :to => 'accounts#new'
+    #  match '/signup', :to => redirect {|params| "http://ndt.dev/#{params[:path]}"}
     #end
+    
+    production
+    constraints(:host => /notdienstapp.com/) do
+      match '/signup', :to => redirect {|params| "https://notdienstapp.com/#{params[:path]}"}
+    end
     
     root to: 'sessions#new'
     
