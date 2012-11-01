@@ -1,4 +1,4 @@
 CopycopterClient.configure do |config|
-  config.api_key = '3ed34fdabc7624f112b0379cb48c45c308f39110c184aa86'
-  config.host = 'powerful-sea-8481.herokuapp.com'
+  config.api_key = '3b32d20479d0a9718acd10c95bbe2cdb5d85e46b8db32760'
+  config.host = 'signaleast-copter.herokuapp.com'
 end
