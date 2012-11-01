@@ -18,4 +18,8 @@ class SessionsController < ApplicationController
     sign_out
     redirect_to root_url
   end
+  
+  def signin_error
+
+  end
 end
