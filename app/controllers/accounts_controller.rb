@@ -11,14 +11,15 @@ class AccountsController < ApplicationController
 
   def create
     @account = Account.new(params[:account])
-    #@user = @account.users.build
     #@quotation.update_attributes(params[:quotation])
-    if @account.save #&& @user.save
-      UserMailer.signup_confirmation(@account).deliver
+    if @account.save
+      @user = User.find_by_account_id(@account)
+      #@user = @account.users(params[:user_id])
+      UserMailer.signup_confirmation(@account, @user).deliver
       # sign_in current_user
       redirect_to "http://#{@account.subdomain}.#{request.domain}#{request.port_string}#{new_session_path}", notice: 'Account was successfully created.'
     else
-      flash.now[:error] = 'Invalid email/password combination' # Not quite right!
+      flash.now[:error] = 'User was not found'
       render 'new'
     end
   end

@@ -6,9 +6,10 @@ class UserMailer < ActionMailer::Base
   #
   #   en.user_mailer.signup_confirmation.subject
   #
-  def signup_confirmation(account)
+  def signup_confirmation(account, user)
     @account = account
+    @user = user
     @url = "https://#{account.subdomain}.notdienstapp.com"
-    mail(to: "service@notdienstapp.com", subject: "Welcome to Notdienst Touch")
+    mail(to: user.email, subject: "Welcome to Notdienst Touch, #{user.name}")
   end
 end

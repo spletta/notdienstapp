@@ -9,6 +9,11 @@ class ApplicationController < ActionController::Base
   
   private
   
+    def current_user
+      @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    end
+    helper_method :current_user
+    
     def current_account
       if request.subdomain.present?
         @account ||= Account.find_by_subdomain!(request.subdomain)
