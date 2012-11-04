@@ -19,6 +19,7 @@ gem 'uglifier', '1.2.3'
 gem 'chosen-rails'
 gem "select2-rails"
 gem "mail"
+gem 'thin'
 
 group :development, :test do
   gem 'rspec-rails', '2.11.0'
