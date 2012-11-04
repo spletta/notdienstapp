@@ -2,3 +2,5 @@
 
 require ::File.expand_path('../config/environment',  __FILE__)
 run NdtAppV6::Application
+
+$stdout.sync = true
