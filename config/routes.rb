@@ -4,7 +4,7 @@ NdtAppV6::Application.routes.draw do
     #match '/signup', to: 'accounts#new', constraints: lambda { |r| r.subdomain.present? && r.subdomain != 'www' }
     
     if Rails.env.production?
-      constraints(:host => /www.notdienstapp.com/) do
+      constraints(:host => /notdienstapp.com/) do
         root :to => 'accounts#new'
         match '/signup', :to => redirect {|params| "https://www.notdienstapp.com/#{params[:path]}"}
       end
