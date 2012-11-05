@@ -2,26 +2,23 @@
 <div class="row">
   <div class="span8 offset2">
 	  <br/>
-	  <h1><%= t 'welcome.hello', default: 'Hello, ' %><%= current_user.name + '!' %></h1>
-    <h3><%= t 'welcome.getting.started', default: 'Here are a few simple steps to get started with Notdienst-Touch:' %></h3>
+	  <h3c><strong><%= t 'welcome.hello', default: 'Hello, ' %><%= current_user.name + '!' %></strong></h3c>
+	  </br>
+	  <br/>
+    <h2e><%= t 'welcome.getting.started', default: 'Here are a few simple steps to get started with Notdienst-Touch.' %></h2e>
     <br/>
-    <ul class="start-tasks">
-      <li>
-        <a href="/emergency_groups">Create Emergency Groups</a>        First create an Emergency Groups.
-        <span class="start-create"></span>
-      </li>
-      <li>
-        <a href="/pharmacies">Create Pharmacies</a>        Then add your pharmacy to it.
-        <span class="start-tracking"></span>
-      </li>
-      <li>
-        <a href="/events">Manage your Events</a>        Get an overview of this months duties.
-        <span class="start-invoicing"></span>
-      </li>
-      <li>
-        <a href="/events?mobile=1">Open the iPad Version</a>        This is what you put in your window.
-        <span class="start-invite"></span>
-      </li>
-    </ul>
+    <br/>
+    <br/>
+    <h2d><%= link_to t('welcome.step.one', default: 'Create an Emergency Group'), new_emergency_group_path %></h2d></br>
+    <%= t 'welcome.step.one.desc', default: "Define the Emergency Group your pharmacy belongs to." %>
+		</br>
+		</br>
+    <h2d><%= link_to t('welcome.step.two', default: 'Create some Pharmacies'), new_pharmacy_path %></h2d></br>
+    <%= t 'welcome.step.two.desc', default: "Add the pharmacies you want to keep track of in your calendar." %>
+		</br>
+		</br>
+    <h2d><%= link_to t('welcome.step.three', default: 'Add new Events to your Calendar'), new_event_path %></h2d></br>
+    <%= t 'welcome.step.three.desc', default: "Fill your Calendar with Events to display in the front window." %>
+
   </div>
 </div>

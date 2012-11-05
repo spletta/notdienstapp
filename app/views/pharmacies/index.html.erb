@@ -1,13 +1,16 @@
 <% provide(:title, 'Manage Pharmacies') %>
 <div class="row">
-  <div class="span8">
-	  <h1><%= t 'pharmacies.title', default: "Manage Pharmacies" %></h1>
+	</br>
+  <div class="span8 offset2">
+	  <h3c><%= t 'pharmacies.title', default: "Manage Pharmacies" %></h3c>
 		<p><%= t 'pharmacies.search', default: "Search for a pharmacy" %></p>
 			<%= form_tag pharmacies_path, :method => 'get', class: "form-search" do %>
-			  <p>
-			    <%= text_field_tag :search, params[:search], class: "input-large search-query" %>
+			<p>
+			<div class="input-append">
+			    <%= text_field_tag :search, params[:search], class: "span2 search-query" %>
 			    <%= submit_tag t('pharmacies.search.button', default: "Search"), :name => nil, class: "btn" %>
-			  </p>
+			</div>
+			</p>
 			<div id="pharmacies"><%= render 'pharmacy_table' %></div>
 			<% end %>
 		</br>
@@ -15,6 +18,3 @@
   </div>
 </div>
 </br>
-
-
-

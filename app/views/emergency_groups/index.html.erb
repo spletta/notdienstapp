@@ -1,28 +1,27 @@
 <% provide(:title, 'All Emergency Groups') %>
 <div class="row">
-  <aside class="span4">
-    <section>
-    <h1>Manage Emergency Groups</h1>
-    </section>
-  </aside>
-	<div class="span8">
-  </div>
-</div>
-<div class="row">
-  <div class="span8">
+	</br>
+  <div class="span8 offset2">
+	  <h3c><%= t 'emergency.group.index.title', default: 'Manage Emergency Groups' %></h3c>
 		<table class="table table-hover">
+		  <tr>
+				<th><%=  t "emergency.group.name", default: "Name" %></th>
+				<th>&nbsp;</th>
+	    <tr>
 			<% @emergency_groups.each do |emergency_group| %>
 			  <tr>
-				  <td><%= link_to emergency_group.name, emergency_group %></td>
-				  <td><%= link_to "Show", emergency_group %> |
-			      <%= link_to "Edit", edit_emergency_group_path(emergency_group) %> |
-			      <%= link_to "Destroy", emergency_group, :confirm => 'Are you sure?', :method => :delete %></td>
+				  <td><%= emergency_group.name %></td>
+				  <td>
+					  <%= link_to t('pharmacies.edit', default: "Edit"), edit_emergency_group_path(emergency_group), class: "btn btn-mini" %>
+				    <%= link_to t('pharmacies.delete', default: "Destroy"), emergency_group, :confirm => t('pharmacies.confirm.delete', default: 'Are you sure?'), :method => :delete, class: "btn btn-mini btn-danger" %>
+			    </td> 
 				</tr>
 			<% end %>
 		</table>
 		</br>
-		<p>or <%= link_to "add", new_emergency_group_path %> a new emergency group</p>
+		<p><%= t 'emergency.group.add.text', default: 'Add a new emergency group ' %><%= link_to t('pharmacies.add.link', default: "here"), new_emergency_group_path %>.</p>
   </div>
 </div>
+
 
 
