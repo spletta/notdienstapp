@@ -11,7 +11,7 @@
   </span>
 </li>
 <li>
- <%= link_to "Back", :back, :class => 'btn' %>
+ <%= link_to "Back", pharmacies_path, :class => 'btn' %>
   <%= link_to 'Connect', attend_pharmacy_path(@pharmacy.id), :method => :post, :class => 'btn btn-success' %>
  <%= link_to 'Disconnect', withdraw_pharmacy_path(@pharmacy.id), :confirm => 'Are you sure?', :method => :post, :class => 'btn btn-danger' %>
   <% if current_user.admin? %>

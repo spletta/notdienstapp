@@ -1,7 +1,7 @@
 class PharmaciesController < ApplicationController
-  before_filter :signed_in_user,  only: [:index, :update]
-  before_filter :correct_user,    only: [:index, :update]
-  before_filter :admin_user,      only: [:edit, :destroy]
+  before_filter :signed_in_user,  only: [:index, :update, :edit, :destroy, :new, :show]
+  before_filter :correct_user,    only: [:index, :update, :edit, :destroy, :new, :show]
+#  before_filter :admin_user,      only: [:edit, :destroy]
   helper_method :sort_column, :sort_direction
       
   def index
@@ -20,14 +20,13 @@ class PharmaciesController < ApplicationController
   def new
     @pharmacy = Pharmacy.new
   end
-  
+
   def create
     @pharmacy = Pharmacy.new(params[:pharmacy])
     if @pharmacy.save
-      flash[:success] = "Pharmacy created!"
-      redirect_to pharmacies_url
+      redirect_to @pharmacy, :notice => "Successfully created new pharmacy."
     else
-      render 'static_pages/home'
+      render :action => 'new'
     end
   end
   
@@ -49,7 +48,7 @@ class PharmaciesController < ApplicationController
   def destroy
     Pharmacy.find(params[:id]).destroy
     flash[:success] = "Pharmacy destroyed."
-    redirect_to(:back)
+    redirect_to pharmacies_url
   end
   
   def attend

@@ -1,5 +1,7 @@
 class EventsController < ApplicationController
-  before_filter :signed_in_user
+  before_filter :signed_in_user,  only: [:index, :update, :edit, :destroy]
+  before_filter :correct_user,    only: [:index, :update]
+  #before_filter :admin_user,      only: [ :destroy]
   before_filter :prepare_for_mobile, :only => [ :index ] 
   
   def index

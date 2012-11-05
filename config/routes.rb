@@ -1,6 +1,6 @@
 NdtAppV6::Application.routes.draw do
   scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
-    match '', to: 'sessions#new', constraints: lambda { |r| r.subdomain.present? && r.subdomain != 'www' }
+    match '', to: 'events#index', constraints: lambda { |r| r.subdomain.present? && r.subdomain != 'www' }
     #match '/signup', to: 'accounts#new', constraints: lambda { |r| r.subdomain.present? && r.subdomain != 'www' }
     
     if Rails.env.production?
@@ -15,7 +15,7 @@ NdtAppV6::Application.routes.draw do
       end
     end   
         
-    root to: 'sessions#new'
+    root to: 'events#index'
     
     match 'contact' => 'contact#new', :as => 'contact', :via => :get
     match 'contact' => 'contact#create', :as => 'contact', :via => :post
@@ -38,6 +38,7 @@ NdtAppV6::Application.routes.draw do
     match '/contact', to: 'static_pages#contact'
 
     resources :pharmacies do
+      match 'pharmacies/new', to: 'pharmacies#new'
       post :withdraw, on: :member
       post :attend, on: :member
     end

@@ -3,8 +3,7 @@
     <div class="container">
       <nav>
 				<ul class="nav pull-left">
-					<li class="<%= 'active' if current_page?(root_path) ||
-					                           current_page?(welcome_path) || 
+					<li class="<%= 'active' if current_page?(welcome_path) || 
 					                           current_page?(dashboard_path) || 
 					                           current_page?(referrals_path) %>">
 					<%= link_to welcome_path do %>
@@ -12,7 +11,8 @@
 					<% end %>
 					</li>				
 					
-					<li class="<%= 'active' if current_page?(events_path) %>">
+					<li class="<%= 'active' if current_page?(root_path) ||
+					                           current_page?(events_path) %>">
 					<% if signed_in? %><%= link_to "Planner", events_path %><% end %>
 					</li>
 					

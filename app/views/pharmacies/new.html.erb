@@ -1,14 +1,11 @@
 <% provide(:title, 'Create a new Pharmacy') %>
-<h2>Create a new Pharmacy</h2>
 <div class="row">
-  <aside class="span8">
+  <aside class="span6 offset3">
+	<h1><%= t 'pharmacies.create.title', default: 'Create a new Pharmacy' %></h1>
     <section>
       <%= render 'shared/pharmacy_form' %>
-    </section>
+    </section>      
   </aside>
 	<div class="span4">
   </div>
 </div>
-<p>
-  <%= link_to "Back to List", pharmacies_path %>
-</p>
