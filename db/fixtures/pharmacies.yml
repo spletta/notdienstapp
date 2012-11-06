@@ -1,0 +1,17 @@
+development:
+    id: 1
+    emergency_group_id: 1
+    name: 'Neue Apotheke am Markt'
+    owner_name: 'Lutz Splettstößer'
+    bga_number: '1234567'
+    address: 'Am Markt 1'
+    city: 'Pasewalk'
+    zipcode: '17309'
+    phone_number: '(03973) 280800'
+    fax_number: '(03973) 280801'
+    email: 'service@apothekevital.de'
+    website_url: 'http://apothekevital.de'
+    start_hours: '2000-01-01 07:00:00 +0100'
+    end_hours: '2000-01-01 18:00:00 +0100'
+    emergency_hours_starttime: '2000-01-01 08:00:00 +0100'
+    emergency_hours_endtime: '2000-01-01 08:00:00 +0100'

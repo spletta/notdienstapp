@@ -1,0 +1,14 @@
+namespace :db do
+  desc "Create new Pharmacies, Events, and Emergency Groups"
+  task :populate => :environment do
+    require 'populator'
+    require 'faker'
+    
+    EmergencyGroup.populate 1 do |emergency_group|
+      emergency_group.name = 'Notdienst für Pasewalk und Strasburg'
+      emergency_group.website_title = 'Notdienst für Heute'
+      emergency_group.website_note = 'Notdienstgebühr außerhalb der gesetzlichen Öffnungszeiten 2,50 €'
+    end
+    
+    Pharmacy.populate 1 do |pharmacy|
+      
