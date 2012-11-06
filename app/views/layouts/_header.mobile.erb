@@ -26,9 +26,9 @@
         <ul class="nav pull-right">
 	        <li>
 	          <% if mobile_device? %>
-              <%= link_to "Monthly View", :mobile => 0 %>
+              <%= link_to "Desktop", :mobile => 0, class: "btn btn-mini" %>
             <% else %>
-              <%= link_to "Daily View", :mobile => 1 %>
+              <%= link_to "Mobile", :mobile => 1, class: "btn btn-mini" %>
             <% end %>
 		      </li>
           <li>

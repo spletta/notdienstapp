@@ -18,7 +18,9 @@
     <% if @events_by_date[date] %>
       <ul>
         <% @events_by_date[date].each do |event| %>
+          <% if event.pharmacy != nil %>
           <li><%= link_to event.pharmacy.name, event %></li>
+          <% end %>
         <% end %>
       </ul>
     <% end %>

@@ -24,6 +24,13 @@
 					</li>
         </ul>
         <ul class="nav pull-right">
+	        <li>
+	          <% if mobile_device? %>
+              <%= link_to "Desktop", :mobile => 0, class: "btn btn-mini" %>
+            <% else %>
+              <%= link_to "Mobile", :mobile => 1, class: "btn btn-mini" %>
+            <% end %>
+		      </li>
           <li>
           <%= link_to help_path do %>
             <%= t "help.link", default: "Help" %>

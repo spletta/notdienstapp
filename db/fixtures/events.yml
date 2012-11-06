@@ -4,3 +4,22 @@ development:
     starttime: '2012-11-06 08:00:00 +0100'
     endtime: '2012-11-07 08:00:00 +0100'
     all_day: false
+    
+    id: 2
+    pharmacy_id: 2
+    starttime: '2012-11-07 08:00:00 +0100'
+    endtime: '2012-11-08 08:00:00 +0100'
+    all_day: false
+    
+    id: 3
+    pharmacy_id: 3
+    starttime: '2012-11-08 08:00:00 +0100'
+    endtime: '2012-11-09 08:00:00 +0100'
+    all_day: false
+    
+    id: 4
+    pharmacy_id: 1
+    starttime: '2012-11-09 08:00:00 +0100'
+    endtime: '2012-11-10 08:00:00 +0100'
+    all_day: false
+    
