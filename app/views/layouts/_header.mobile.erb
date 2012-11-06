@@ -1,15 +1,15 @@
 <header class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
-      <nav style="padding-top: 1.3em;">
+      <nav style="padding-top: 1.6em;">
 				<ul class="nav pull-left">
 					<li class="<%= 'active' if current_page?(root_path) ||
 					                           current_page?(welcome_path) || 
 					                           current_page?(dashboard_path) || 
 					                           current_page?(referrals_path) %>">
-					<%= link_to root_path do %>
-					  <i class="icon-home icon-white"></i>
-					<% end %>
+			    <%= link_to welcome_path, :class => 'brand' do %>
+			      <%= image_tag "logo-vivesco.png" %>
+			    <% end %>
 					</li>				
 					
 					<li class="<%= 'active' if current_page?(events_path) %>">

@@ -95,9 +95,9 @@ en:
       month: Month
       second: Seconds
       year: Year
-  errors: &errors
+  errors:
     format: ! '%{attribute} %{message}'
-    messages:
+    messages: &70124458672160
       accepted: must be accepted
       blank: can't be blank
       confirmation: doesn't match confirmation
@@ -125,7 +125,7 @@ en:
       wrong_length:
         one: is the wrong length (should be 1 character)
         other: is the wrong length (should be %{count} characters)
-    template:
+    template: &70124458694200
       body: ! 'There were problems with the following fields:'
       header:
         one: 1 error prohibited this %{model} from being saved
@@ -197,10 +197,30 @@ en:
       short: ! '%d %b %H:%M'
       custom: ! '%A, %d.%B %Y'
     pm: pm
-  # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
   activemodel:
     errors:
-      <<: *errors
+      format: ! '%{attribute} %{message}'
+      messages: *70124458672160
+      template: *70124458694200
   activerecord:
     errors:
-      <<: *errors
+      format: ! '%{attribute} %{message}'
+      messages: *70124458672160
+      template: *70124458694200
+  session:
+    forgot:
+      password:
+        question: or Forgot Password?
+    new:
+      submit: Sign in
+      user: New user?
+    signup: Sign up now!
+    user:
+      password: Password
+  sessions:
+    new:
+      title: Sign in
+  settings:
+    link: Settings
+  signout:
+    link: Sign out

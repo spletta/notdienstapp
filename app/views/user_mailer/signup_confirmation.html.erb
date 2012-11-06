@@ -7,11 +7,17 @@
     <h1>Welcome to the Notdienst Touch Application,  <%= @user.name %></h1>
     <p>
       You have successfully signed up to the Notdienst Touch Application,
-      your username is: <%= @user.email %>.<br/>
+      your username is: <%= @user.email %></br>
+      If you have forgotten your password, please Contact us here: <%= @contact %>
+    <br/>
     </p>
     <p>
       To log in to your Secure Site, just follow this link: <%= @url %>.
+      Then once you've logged in using the Safari browser on your iPad, bookmark this website by adding it to your homepage as shown in the image below.
     </p>
+    <p>
+	    <%= image_tag attachments['add-to-homescreen.png'].url %>
+	  </p>
     <p>Thanks for joining and have a great day!</p>
   </body>
 </html>

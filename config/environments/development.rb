@@ -39,6 +39,9 @@ NdtAppV6::Application.configure do
   # Raise exception on mass assignment protection for Active Record models
   config.active_record.mass_assignment_sanitizer = :strict
 
+  # If you have a longer top level domain such as "example.co.uk"
+  config.action_dispatch.tld_length = 1
+  
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   config.active_record.auto_explain_threshold_in_seconds = 0.5

@@ -1,14 +1,15 @@
 <% @events.each do |event| %>
   <% if event.starttime == Date.today %>
+    <div class="mc"></div>
 		<div class="white_container">
 		  <center>
-			  <h1b><%= event.pharmacy.emergency_group.website_title %></h1b>
+			  <h1b><strong><%= event.pharmacy.emergency_group.website_title %></strong></h1b>
 			</center>
 		</div>
 		<div class="mb"></div>
-		<div class="white_container_middle"><br>
+		<div class="white_container_middle">
 			<center>
-				<h1f><%= event.pharmacy.name %></h1f>
+				<h2b><%= event.pharmacy.name %></h2b>
 			</center><br>
 			<center>
 				<h3b>Von <%= l(event.starttime, :format => '%A, %d.%B %Y') %> <%= event.pharmacy.emergency_hours_starttime.strftime('%H:%M') %> Uhr<br>
@@ -23,7 +24,7 @@
 		<div class="mb"></div>
 		<div class="white_container">
 		  <center>
-			  <h3b><%= event.pharmacy.emergency_group.website_note %></h3b>
+			  <h4b><%= event.pharmacy.emergency_group.website_note %></h4b>
 			</center>
 		</div>
 	<% end %>

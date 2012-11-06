@@ -10,12 +10,12 @@
 					  <i class="icon-home icon-white"></i>
 					<% end %>
 					</li>				
-					
+
 					<li class="<%= 'active' if current_page?(root_path) ||
 					                           current_page?(events_path) %>">
 					<% if signed_in? %><%= link_to t('planner.link', default: "Planner"), events_path %><% end %>
 					</li>
-					
+
 					<li class="<%= 'active' if current_page?(manage_path) || 
 					                           current_page?(pharmacies_path) || 
 					                           current_page?(emergency_groups_path) ||
