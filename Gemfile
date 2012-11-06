@@ -20,6 +20,7 @@ gem 'chosen-rails'
 gem "select2-rails"
 gem "mail"
 gem 'thin'
+gem 'localeapp'
 
 group :development, :test do
   gem 'rspec-rails', '2.11.0'

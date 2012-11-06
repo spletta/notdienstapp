@@ -13,11 +13,6 @@
 				<li class="<%= 'active' if current_page?(pharmacies_path) %>"><%= link_to t('pharmacies.link', default: "Pharmacies"), pharmacies_path %></li>
 				<li class="<%= 'active' if current_page?(emergency_groups_path) %>"><%= link_to t('emergency.group.link', default: "Emergency Groups"), emergency_groups_path %></li>
 				<li class="<%= 'active' if current_page?(customer_service_path) %>"><%= link_to t('customer.service.feed.link', default: "Customer service feed"), customer_service_path %></li>
-      <% elsif request.path == edit_pharmacy_path || 
-								request.path == edit_emergency_group_path %>
-				<li class="<%= 'active' if current_page?(edit_pharmacy_path) %>"><%= link_to t('pharmacies.link', default: "Pharmacies"), pharmacies_path %></li>
-				<li class="<%= 'active' if current_page?(edit_emergency_group_path) %>"><%= link_to t('emergency.group.link', default: "Emergency Groups"), emergency_groups_path %></li>
-				<li class="<%= 'active' if current_page?(customer_service_path) %>"><%= link_to t('customer.service.feed.link', default: "Customer service feed"), customer_service_path %></li>
       <% else %>
         <%# //.. %>
       <% end %>
