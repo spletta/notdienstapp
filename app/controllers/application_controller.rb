@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
   
   before_filter :set_locale
   before_filter :prepare_for_mobile
-  before_filter :prepend_view_path_if_mobile
   
   around_filter :scope_current_account  
   
@@ -44,12 +43,6 @@ class ApplicationController < ActionController::Base
 
     def default_url_options(options = {})
       {locale: I18n.locale}
-    end
-
-    def prepend_view_path_if_mobile
-      if mobile_request?
-        prepend_view_path Rails.root + 'app' + 'mobile_views'
-      end
     end
       
     def mobile_device?
