@@ -1,4 +1,7 @@
 class StaticPagesController < ApplicationController
+  before_filter :signed_in_user,  except: [:help, :about, :contact, :news]
+  before_filter :correct_user, except: [:help, :about, :contact, :news]
+  
   def home
     @pharmacy = current_user.pharmacies.build if signed_in?
   end

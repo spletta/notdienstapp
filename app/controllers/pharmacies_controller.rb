@@ -1,7 +1,7 @@
 class PharmaciesController < ApplicationController
   before_filter :signed_in_user,  only: [:index, :update, :edit, :destroy, :new, :show]
   before_filter :correct_user,    only: [:index, :update, :edit, :destroy, :new, :show]
-#  before_filter :admin_user,      only: [:edit, :destroy]
+  #before_filter :admin_user,      only: [:destroy]
   helper_method :sort_column, :sort_direction
       
   def index
