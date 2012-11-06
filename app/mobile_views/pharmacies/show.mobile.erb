@@ -1,0 +1,26 @@
+<% provide(:title, @pharmacy.name) %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= @pharmacy.name %>
+      </h1>
+    </section>
+  </aside>
+	<div class="span8">
+  
+    <strong>Emergency Group:</strong>
+		<ul>
+      <% if @pharmacy.emergency_group.nil? %>
+		    <li>This Pharmacy is currently not associated with an Emergency Group, go <%= link_to "here", edit_pharmacy_path %> to change that.</li>
+      <% else %>
+        <li><%= @pharmacy.emergency_group.name %></li>
+      <% end %>
+		</ul>
+      <ol class="pharmacies">
+        <%= render @pharmacy %>
+      </ol>
+      
+
+  </div>
+</div>

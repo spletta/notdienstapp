@@ -1,0 +1,20 @@
+<%= simple_form_for @event do |f| %>
+<%= render 'shared/error_messages', object: f.object %>
+<table class="table table-hover">
+  <tr><%= f.association :pharmacy %></tr>
+  <tr>
+  	<td><%= f.label "Start time" %></td>
+    <td><%= f.text_field :starttime %></td>
+  </tr>
+  <tr>
+  	<td><%= f.label "End time" %></td>
+    <td><%= f.text_field :endtime %></td>
+  </tr>
+  <tr>
+  	<td><%= f.label :all_day %></td>
+    <td><%= f.check_box :all_day %></td>
+  </tr>
+</table>
+<%= f.submit "Save", class: "btn btn-large btn-primary" %>
+<% end %>
+

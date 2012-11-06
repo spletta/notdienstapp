@@ -1,0 +1,27 @@
+<% provide(:title, 'Events') %>
+<p>
+	<strong>Pharmacy:</strong>
+  <%= @event.pharmacy.name %></li>
+</p>
+<p>
+	<strong>Pharamacy's Emergency Group:</strong>
+  <%= @event.pharmacy.emergency_group.name %>
+<p>
+<p>
+  <strong>Start time:</strong>
+  <%= @event.starttime %>
+</p>
+<p>
+  <strong>End time:</strong>
+  <%= @event.endtime %>
+</p>
+<p>
+  <strong>All Day:</strong>
+  <%= @event.all_day %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_event_path(@event) %> |
+  <%= link_to "Destroy", @event, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", events_path %>
+</p>

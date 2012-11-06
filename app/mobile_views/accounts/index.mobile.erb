@@ -1,0 +1,65 @@
+<% provide(:title, 'Account Settings') %>
+<div class="row">
+  <aside class="span4">
+    <section>
+    <h1>Account Settings</h1>
+    </section>
+  </aside>
+	<div class="span8">
+  </div>
+</div>
+<div class="row">
+  <div class="span8">
+		<table class="table table-hover">
+			  <tr><h4>Billing Information</h4></tr>
+			  <tr>
+				  <td>Secure Site</td>
+				  <td><%= link_to @account.subdomain + ".notdienstapp.com" %></td>
+				</tr>
+			  <tr>
+				  <td>Member Since</td>
+				  <td><%= l(@account.created_at, :format => '%A, %d.%B %Y') %></td>
+				</tr>
+			  <tr>
+				  <td>Subscription Plan</td>
+				  <td><strong>Basic Plan</strong></td>
+				</tr>
+			  <tr>
+				  <td>Receipts</td>
+				  <td><%= link_to "22 Mar 2012, (Notdienst Basic Plan: 1 user, EUR 15,00"%></td>
+				</tr>
+		</table>
+		<%= link_to 'Upgrade', "",:class => 'btn btn-success' %>&nbsp;
+		<%= link_to 'Change Secure Site', "", :class => 'btn' %>&nbsp;
+		<%= link_to 'Close Account', "", :method => :delete, :class => 'btn' %>
+		</br>
+		</br>
+		</br>
+		<table class="table table-hover">
+			  <tr><h4>Preferences</h4></tr>
+			  <tr>
+				  <td>Company Name</td>
+				  <td><%= @account.name %></td>
+				</tr>
+			  <tr>
+				  <td>Timezone</td>
+				  <td><%= link_to "Berlin (GMT+1)" %></td>
+				</tr>
+			  <tr>
+				  <td>Date Format</td>
+				  <td>25/04/2012</td>
+				</tr>
+			  <tr>
+				  <td>Time Format</td>
+				  <td>24-hour clock</td>
+				</tr>
+				<tr>
+				  <td>Time Display</td>
+				  <td>HH:MM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				</tr>
+		</table>
+		<%= link_to 'Edit Preferences', "",:class => 'btn btn-success' %>	
+  </div>
+</div>
+
+

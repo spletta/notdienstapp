@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>We have a new customer named: <%= @user.name %></h1>
+    <p>
+      Her are his/her account details:
+    </p>
+    <p>
+	    <ul>
+		  <li>First Name: <%= @user.name %></li>
+	    <li>E-Mail: <%= @user.email %></li>
+	    <li>Company Name: <%= @account.name %></li>
+      <li>Secure Site: <%= @url %>.</li>
+		  </ul>
+    </p>
+    <p>Rollin Rollin Rollin, keep those wheels turnin...</p>
+  </body>
+</html>

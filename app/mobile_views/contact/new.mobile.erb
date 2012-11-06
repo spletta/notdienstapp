@@ -1,0 +1,78 @@
+
+
+<% provide(:title, "Welcome") %> 
+<div class="row">
+  <div class="span5 offset1">
+	<p>
+		<h1c><strong><%= t 'contact.form.title', default: 'You have questions?' %></strong></h1c></br>
+	  <h2c><strong><%= t 'contact.form.subtitle', default: "We'd love to help you" %></h2c></strong></br>
+	</p>
+	<p>
+		<h3c><%= t 'contact.form.new.customer', default: "You're interested in our product and would like more information?"%></h3c></br>
+	</p>
+	<p>
+		<h3c><%= t 'contact.form.new.customer.two', default: "You're already a Notdienst-Touch customer and have questions about your account?"%></h3c></br>
+	</p>	
+
+        <table class="table table-striped">
+            <tbody><tr>
+                <td><h6>Product Manager:</h6></td>
+                <td><i class="icon-user"></i> <a href="#employees/2">Remington Splettstößer</a></td>
+            </tr>
+            <tr>
+                <td><h6><%= t 'contact.office.phone', default: "Office Phone (DE)" %>:</h6></td>
+                <td><i class="icon-home"></i> +49 3973 436 3398</td>
+            </tr>
+            <tr>
+                <td><h6><%= t 'contact.cell.phone', default: "Cell Phone (DE)" %>:</h6></td>
+                <td><i class="icon-headphones"></i> +49 151 4042 7103</td>
+            </tr>
+            <tr>
+                <td><h6><%= t 'contact.office.fax', default: "Office Fax (DE)" %>:</h6></td>
+                <td><i class="icon-home"></i> +49 3221 1226 80808</td>
+            </tr>
+            <tr>
+                <td><h6><%= t 'contact.office.phone.us', default: "Office Phone (US)" %>:</h6></td>
+                <td><i class="icon-home"></i> +1 650 318 3882</td>
+            </tr>
+            <tr>
+                <td><h6>Email:</h6></td>
+                <td><i class="icon-envelope"></i> <a href="mailto:service@notdienstapp.com">service@notdienstapp.com</a></td>
+            </tr>
+        </tbody></table>
+        <h4><%= t 'contact.fill.out', default: "Write us an email by filling out this form or call us." %></h4></br>
+        <div class="alert alert-success">
+          <h4 class="alert-heading"><%= t 'contact.alert.heading', default: "Hours of operation:" %></h4>
+          <%= t 'contact.alert.content', default: 'Monday to Friday 8am to 5pm Europe/Berlin Time.' %>
+        </div>
+  </div>
+  <div class="span5">
+    <h3c><%= t 'contact.form.heading', default: "Write to us..." %></h3c></br></br>
+		<%= form_for @message, :url => contact_path do |form| %>
+		  <fieldset class="fields">
+		    <div class="field">
+		      <%= form.label :name %>
+		      <%= form.text_field :name %>
+		    </div>
+    
+		    <div class="field">
+		      <%= form.label :email %>
+		      <%= form.text_field :email %>
+		    </div>
+		    <div class="field">
+		      <%= form.label :subject %>
+		      <%= form.text_field :subject %>
+		    </div>
+    
+		    <div class="field">
+		      <%= form.label :body %>
+		      <%= form.text_area :body, :rows => 13 %>
+		    </div>
+		  </fieldset>
+  
+		  <fieldset class="actions">
+		    <%= form.submit "Send", :class => 'btn btn-large btn-primary' %>
+		  </fieldset>
+		<% end %>
+  </div>
+</div>

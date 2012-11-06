@@ -1,0 +1,19 @@
+<% provide(:title, @emergency_group.name) %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @emergency_group.name %>
+</p>
+<p>
+    <strong>Pharmacies:</strong>
+		<ul>
+		<% @emergency_group.pharmacies.each do |pharmacy| %>
+		  <li><%= pharmacy.name %></li>
+		<% end %>
+		</ul>
+</p>
+<p>
+  <%= link_to "Edit", edit_emergency_group_path(@emergency_group) %> |
+  <%= link_to "Destroy", @emergency_group, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", emergency_groups_path %>
+</p>

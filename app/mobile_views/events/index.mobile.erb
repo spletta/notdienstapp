@@ -1,0 +1,33 @@
+<% @events.each do |event| %>
+  <% if event.starttime == Date.today %>
+		<div class="white_container">
+		  <center>
+			  <h1b><%= event.pharmacy.emergency_group.website_title %></h1b>
+			</center>
+		</div>
+		<div class="mb"></div>
+		<div class="white_container_middle"><br>
+			<center>
+				<h1b><%= event.pharmacy.name %></h1b>
+			</center><br>
+			<center>
+				<h2b>Pasewalk und Strasburg</h2b>
+			</center><br>
+			<center>
+				<h3b>Von <%= l(event.starttime, :format => '%A, %d.%B %Y') %> <%= event.pharmacy.emergency_hours_starttime.strftime('%H:%M') %> Uhr<br>
+		         bis <%= l(event.endtime, :format => '%A, %d.%B %Y') %> <%= event.pharmacy.emergency_hours_endtime.strftime('%H:%M') %> Uhr</h3b>
+		  </center>
+		  <center>
+			  <h3b><%= event.pharmacy.address %><br>
+		         <%= event.pharmacy.zipcode %> <%= event.pharmacy.city %><br>
+		         <strong>Tel. <%= event.pharmacy.phone_number %></strong></h3b>
+		  </center>
+		</div>	
+		<div class="mb"></div>
+		<div class="white_container">
+		  <center>
+			  <h3b><%= event.pharmacy.emergency_group.website_note %></h3b>
+			</center>
+		</div>
+	<% end %>
+<% end %>

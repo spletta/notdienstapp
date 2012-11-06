@@ -1,0 +1,23 @@
+<div class="tabbable tabs-left">
+  <ul class="nav nav-tabs">
+	  <h1>
+      <%= gravatar_for @user %>
+      <%= @user.name %>
+    </h1>
+    </br>
+    <li class="<%= 'active' if @is_on_pharmacies %>"><%= link_to render(:partial => 'shared/pharmacies') + "Pharmacies & Groups", user_path %></li>
+    <li class="<%= 'active' if current_page?(user_path) %>"><%= link_to "Basic Info", edit_user_path %></li>
+    <li class="<%= 'active' if @is_on_password %>"><%= link_to render(:partial => 'shared/password') + "Password", user_path %></li>
+  </ul>
+  <div class="tab-content">
+	  <div class="<%= 'tab-pane active' if current_page?(user_path) %>" id="tab1">
+      <p>I'm in Section 1.</p>
+    </div>
+    <div class="tab-pane" id="tab2">
+      <p>Howdy, I'm in Section 2.</p>
+    </div>
+    <div class="tab-pane" id="tab3">
+      <p>Howdy, I'm in Section 3.</p>
+    </div>
+  </div>
+</div>

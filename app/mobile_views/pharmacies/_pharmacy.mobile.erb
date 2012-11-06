@@ -1,0 +1,21 @@
+<li>
+  <span class="content"><%= pharmacy.name %></span>
+  <span class="content">Owner: <%= pharmacy.owner_name %></span>
+	<span class="content"><%= pharmacy.address %></span>
+	<span class="content">Tel. <%= pharmacy.phone_number %></span>
+	<span class="content">Fax. <%= pharmacy.fax_number %></span>
+	<span class="content">E-Mail. <%= pharmacy.email %></span>
+	<span class="content">Web. <%= pharmacy.website_url %></span>
+  <span class="timestamp">
+    BGA Number: <%= pharmacy.bga_number %>
+  </span>
+</li>
+<li>
+ <%= link_to "Back", pharmacies_path, :class => 'btn' %>
+  <%= link_to 'Connect', attend_pharmacy_path(@pharmacy.id), :method => :post, :class => 'btn btn-success' %>
+ <%= link_to 'Disconnect', withdraw_pharmacy_path(@pharmacy.id), :confirm => 'Are you sure?', :method => :post, :class => 'btn btn-danger' %>
+  <% if current_user.admin? %>
+   <%= link_to "Edit", edit_pharmacy_path(pharmacy), :class => 'btn btn-inverse' %>
+   <%= link_to "Destroy", pharmacy_path(pharmacy), :method => :delete, :class => 'btn btn-inverse' %>
+ <% end %>   
+</li>	

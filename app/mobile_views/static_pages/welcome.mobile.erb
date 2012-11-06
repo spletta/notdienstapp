@@ -1,0 +1,24 @@
+<% provide(:title, "Welcome") %> 
+<div class="row">
+  <div class="span8 offset2">
+	  <br/>
+	  <h3c><strong><%= t 'welcome.hello', default: 'Hello, ' %><%= current_user.name + '!' %></strong></h3c>
+	  </br>
+	  <br/>
+    <h2e><%= t 'welcome.getting.started', default: 'Here are a few simple steps to get started with Notdienst-Touch.' %></h2e>
+    <br/>
+    <br/>
+    <br/>
+    <h2d><%= link_to t('welcome.step.one', default: 'Create an Emergency Group'), new_emergency_group_path %></h2d></br>
+    <%= t 'welcome.step.one.desc', default: "Define the Emergency Group your pharmacy belongs to." %>
+		</br>
+		</br>
+    <h2d><%= link_to t('welcome.step.two', default: 'Create some Pharmacies'), new_pharmacy_path %></h2d></br>
+    <%= t 'welcome.step.two.desc', default: "Add the pharmacies you want to keep track of in your calendar." %>
+		</br>
+		</br>
+    <h2d><%= link_to t('welcome.step.three', default: 'Add new Events to your Calendar'), new_event_path %></h2d></br>
+    <%= t 'welcome.step.three.desc', default: "Fill your Calendar with Events to display in the front window." %>
+
+  </div>
+</div>
