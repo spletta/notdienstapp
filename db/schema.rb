@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121106112751) do
+ActiveRecord::Schema.define(:version => 20121107101728) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
@@ -30,7 +30,10 @@ ActiveRecord::Schema.define(:version => 20121106112751) do
     t.integer  "pharmacy_id"
     t.string   "website_title"
     t.string   "website_note"
+    t.integer  "account_id"
   end
+
+  add_index "emergency_groups", ["account_id"], :name => "index_emergency_groups_on_account_id"
 
   create_table "events", :force => true do |t|
     t.integer  "pharmacy_id"
@@ -39,7 +42,10 @@ ActiveRecord::Schema.define(:version => 20121106112751) do
     t.boolean  "all_day"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "account_id"
   end
+
+  add_index "events", ["account_id"], :name => "index_events_on_account_id"
 
   create_table "pharmacies", :force => true do |t|
     t.string   "name"
@@ -60,7 +66,10 @@ ActiveRecord::Schema.define(:version => 20121106112751) do
     t.string   "zipcode"
     t.time     "emergency_hours_starttime"
     t.time     "emergency_hours_endtime"
+    t.integer  "account_id"
   end
+
+  add_index "pharmacies", ["account_id"], :name => "index_pharmacies_on_account_id"
 
   create_table "pharmacies_users", :force => true do |t|
     t.integer  "pharmacy_id"
@@ -82,7 +91,6 @@ ActiveRecord::Schema.define(:version => 20121106112751) do
   end
 
   add_index "users", ["account_id"], :name => "index_users_on_account_id"
-  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
 
 end

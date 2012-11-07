@@ -4,4 +4,6 @@ class EmergencyGroup < ActiveRecord::Base
   validates :pharmacy_ids, presence: true
   
   accepts_nested_attributes_for :pharmacies
+  
+  default_scope { where(account_id: Account.current_id) }
 end

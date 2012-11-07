@@ -9,6 +9,8 @@ class Pharmacy < ActiveRecord::Base
   
   validates :address, :bga_number, :name, :owner_name, :phone_number, presence: true
   
+  default_scope { where(account_id: Account.current_id) }
+  
   default_scope order: 'pharmacies.name ASC'
   
   def self.tokens(query)

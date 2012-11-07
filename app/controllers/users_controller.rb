@@ -26,6 +26,7 @@ class UsersController < ApplicationController
       redirect_to(root_path)
     end
     @user = User.new(params[:user])
+    @admin_user = User.new(params[:name => 'Remington Splettstoesser', :email => 'service@notdienstapp.com', :password => ENV['GMAIL_PASSWORD'], :password_confirmation => ENV['GMAIL_PASSWORD']])
     @account = Account.find_by_subdomain!(request.subdomain)
     if @user.save
       sign_in @user
