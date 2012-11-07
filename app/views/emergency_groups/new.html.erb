@@ -1,5 +1,12 @@
+</br>
 <% provide(:title, 'Create a new Emergency Group') %>
-
-<%= render 'form' %>
-
-<p><%= link_to "Back to List", emergency_groups_path %></p>
+<div class="row">
+  <aside class="span6 offset3">
+	<h2c><%= t 'emergency_group.create.title', default: 'Create a new Emergency Group' %></h2c>
+    <section>
+      <%= render 'form' %>
+    </section>      
+  </aside>
+	<div class="span4">
+  </div>
+</div>
