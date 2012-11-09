@@ -7,8 +7,8 @@
 					                           current_page?(welcome_path) || 
 					                           current_page?(dashboard_path) || 
 					                           current_page?(referrals_path) %>">
-			    <%= link_to welcome_path, :class => 'brand' do %>
-			      <%= image_tag "logo-vivesco.png" %>
+			    <%= link_to welcome_path do %>
+			      <i class="icon-home icon-white"></i>
 			    <% end %>
 					</li>				
 					
@@ -28,7 +28,7 @@
 	          <% if mobile_device? %>
               <%= link_to "Desktop", :mobile => 0 %>
             <% else %>
-              <%= link_to "Mobile", :mobile => 1 %>
+              <%= link_to "Mobile", root_path(:mobile => 1) %>
             <% end %>
 		      </li>
           <li>

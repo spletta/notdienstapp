@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   has_many :pharmacies_users
   has_many :pharmacies, :through => :pharmacies_users
   belongs_to :account, :inverse_of => :users
+  #before_create { generate_token(:auth_token) }
   
   accepts_nested_attributes_for :pharmacies, :account
   
@@ -21,17 +22,34 @@ class User < ActiveRecord::Base
                     format: { with: VALID_EMAIL_REGEX }, 
                     uniqueness: { scope: :account_id, case_sensitive: false }
                     
-  validates :password, presence: true, length: { minimum: 6 }
-  validates :password_confirmation, presence: true
+  validates :password, 
+          # you only need presence on create
+          :presence => { :on => :create },
+          # allow_nil for length (presence will handle it on create)
+          :length   => { :minimum => 6, :allow_nil => true }
+
+      
+  validates :password_confirmation, :presence => { :on => :create }
+
   validates :account, :presence => true
-  
-      def self.current
-      Thread.current[:user]
+
+  def send_password_reset
+    generate_token(:password_reset_token)
+    self.password_reset_sent_at = Time.zone.now
+    save!
+    @account = Account.find_by_id(Account.current_id)
+    if @account != nil
+      UserMailer.password_reset(self, @account).deliver
+    else
+      flash.now[:error] = 'Account was not found'
     end
-    
-    def self.current=(user)
-      Thread.current[:user] = user
-    end
+  end
+
+  def generate_token(column)
+    begin
+      self[column] = SecureRandom.urlsafe_base64
+    end while User.exists?(column => self[column])
+  end  
     
   def pharmacy_tokens=(tokens)
     self.pharmacy_ids = Pharmacy.ids_from_tokens(tokens)

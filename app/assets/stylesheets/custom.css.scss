@@ -1,6 +1,5 @@
 @import "bootstrap";
 
-
 /* mixins, variables, etc. */
 
 $grayMediumLight: #eaeaea;
@@ -378,5 +377,8 @@ h4b {
   color: #0F1CAA;
   font-family: 'BitterRegular', Georgia, sans-serif;
 }
+
+/*.modal-backdrop, .modal-backdrop.fade.in { background-color: rgba(0,0,0,0); }*/
+
 /* importing mobile responsive style at the end on purpose */
 @import "bootstrap-responsive";

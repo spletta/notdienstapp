@@ -1,10 +1,10 @@
 <% provide(:title, 'Create Account') %>
 <div class="row">
   <div class="span4 offset3">
-	  <h1><%= t "new.account.headline", default: "Create Account" %></h1>
+	  <h2c><%= t "new.account.headline", default: "Create Account" %></h2c>
     <%= form_for(@account) do |f| %>
       <%= render 'fields', f: f %>
-      <%= f.submit t("account.submit", default: "Create my account"), class: "btn btn-large btn-primary" %> <%= link_to t('no.email', default: 'I do not have an E-Mail'), 'https://accounts.google.com', :class => "btn btn-large" %>
+      <%= f.submit t("account.submit", default: "Create my account"), class: "btn btn-mini btn-primary" %> <%= link_to t('no.email', default: 'I do not have an E-Mail'), 'https://accounts.google.com', :class => "btn btn-mini" %>
     <% end %>
   </div>
 </div>

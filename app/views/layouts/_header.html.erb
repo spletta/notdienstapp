@@ -28,7 +28,7 @@
 	          <% if mobile_device? %>
               <%= link_to "Desktop", :mobile => 0 %>
             <% else %>
-              <%= link_to "Mobile", :mobile => 1 %>
+              <%= link_to "Mobile", root_path(:mobile => 1) %>
             <% end %>
 		      </li>
           <li>
@@ -46,7 +46,7 @@
 		              <strong><%= current_user.name %></strong><br />
 		              <span><%= current_account.name %></span>
 		            </div>
-                <li><%= link_to "Profile", edit_user_path(current_user) %></li>
+                <li><%= link_to "Profile", edit_account_path(current_account) %></li>
                 <li>
                   <%= link_to accounts_path do %>
                     <%= t "settings.link", default: "Settings" %>
@@ -61,7 +61,13 @@
               </ul>
             </li>
           <% else %>
-            <li><%= link_to "Sign in", signin_path %></li>
+            <% if request.subdomain.present? %>
+              <li><%= link_to "Sign in", signin_path %></li>
+            <% else %>
+              <li>
+				        <a href="#myModal" data-toggle="modal">Sign in</a>
+              </li>
+            <% end %>
           <% end %>
           <li id="fat-menu" class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -79,6 +85,5 @@
           </li>
         </ul>
       </nav>
-    </div>
   </div>
 </header>

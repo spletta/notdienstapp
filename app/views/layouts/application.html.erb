@@ -20,5 +20,17 @@
       <%= render 'layouts/footer' %>
       <%= debug(params) if Rails.env.development? %>
     </div>
+    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		    <div class="modal-header">
+		      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		      <h3 id="myModalLabel">How to Sign In to Notdienst-Touch</h3>
+		    </div>
+		    <div class="modal-body">
+		      <p>When you signed up for Notdienst-Touch, we sent you an email with your Secure Site. You can sign in from your Secure Site, which looks like this:</p>
+		      <p><strong>https://COMPANYNAME.notdienstapp.com</strong></p>
+		      <p><%= link_to 'Forget your Secure Site?', contact_path %></p>
+		    </div>
+		  </div>
+    </div>
   </body>
 </html>

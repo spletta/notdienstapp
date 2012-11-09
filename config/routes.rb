@@ -14,7 +14,8 @@ NdtAppV6::Application.routes.draw do
         match '/signup', :to => redirect {|params| "http://ndt.dev/#{params[:path]}"}
       end
     end   
-        
+      
+    resources :password_resets    
     root to: 'events#index'
     
     match 'contact' => 'contact#new', :as => 'contact', :via => :get
@@ -52,7 +53,7 @@ NdtAppV6::Application.routes.draw do
     resources :users
     
     resources :sessions, only: [:new, :create, :destroy]
-    resources :accounts, only: [:new, :create, :destroy, :index]
+    resources :accounts, only: [:new, :create, :destroy, :index, :edit, :update]
     
   end
   match '*path', to: redirect("/#{I18n.default_locale}/%{path}"), 

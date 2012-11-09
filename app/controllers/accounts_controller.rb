@@ -6,6 +6,19 @@ class AccountsController < ApplicationController
     #respond_with(@user)
   end
 
+  def edit
+    @account = Account.find(params[:id])
+  end
+
+  def update  
+    @account = Account.find(params[:id])
+    if @account.update_attributes(params[:account])
+      flash[:notice] = "Successfully updated account."
+    else
+      render :action => 'edit'
+    end
+  end
+  
   def create
     @account = Account.new(params[:account])
     if @account.save

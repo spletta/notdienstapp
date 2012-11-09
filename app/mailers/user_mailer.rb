@@ -10,8 +10,15 @@ class UserMailer < ActionMailer::Base
     attachments.inline['add-to-homescreen.png'] = File.read('app/assets/images/add-to-homescreen.png')
     @account = account
     @user = user
-    @contact = 'https://notdienstapp.com/contact'
+    @contact = "https://notdienstapp.com/contact"
     @url = "https://#{account.subdomain}.notdienstapp.com"
     mail(to: user.email, subject: "Welcome to Notdienst Touch, #{user.name}")
+  end
+  
+  def password_reset(user, account)
+    @user = user
+    @account = account
+    @reset_url = "https://#{account.subdomain}.notdienstapp.com/password_resets/#{user.password_reset_token}/edit"
+    mail :to => user.email, :subject => "Password Reset"
   end
 end

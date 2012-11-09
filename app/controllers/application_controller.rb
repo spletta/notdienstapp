@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   around_filter :scope_current_account  
   
   private
-    
+
     def current_account
       if request.subdomain.present? && request.subdomain != 'www'
         @account ||= Account.find_by_subdomain!(request.subdomain)
@@ -28,17 +28,7 @@ class ApplicationController < ActionController::Base
     end
     
     def set_locale
-      #I18n.default_locale = :de
       I18n.locale = params[:locale] if params[:locale].present?
-      #I18n.locale = params[:locale] || session[:locale] || I18n.default_locale
-      #session[:locale] = I18n.locale  # store locale to session
-      #I18n.locale = params[:locale] if params[:locale].present?
-      #I18n.default_locale = :de
-      #I18n.default_locale = :en
-      # current_user.locale
-      # request.subdomain
-      # request.env["HTTP_ACCEPT_LANGUAGE"]
-      # request.remote_ip
     end
 
     def default_url_options(options = {})
@@ -71,4 +61,9 @@ class ApplicationController < ActionController::Base
     def admin_user
       redirect_to(root_path) unless current_user.admin?
     end
+    
+    def authorize
+      redirect_to login_url, alert: "Not authorized" if current_user.nil?
+    end
+
 end
