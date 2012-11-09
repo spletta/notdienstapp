@@ -1,0 +1,15 @@
+  <%= render 'shared/error_messages', :object => f.object %>
+  </br>
+	<%= f.label t "account.name", default: "Company Name" %>
+	<%= f.text_field :name %>
+	<%= f.label t "account.subdomain", default: "Secure Site" %>
+	<span class="notdienst-sub">.notdienstapp.com</span>
+	<%= f.text_field :subdomain, :class => "account-url" %>
+
+  <%= f.fields_for :users do |user_form| %>
+    <%= user_form.label t "user.name", default: "Vollständiger Name" %>
+    <%= user_form.text_field :name %>
+    <%= user_form.label :email %>
+    <%= user_form.email_field :email %>
+  <% end %>
+</br>

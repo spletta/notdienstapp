@@ -1,0 +1,12 @@
+<% provide(:title, 'Edit Event') %>
+<div class="row">
+  <div class="span4 offset3">
+	  <h2c>Edit Profile</h2c>
+    <%= form_for(@account) do |f| %>
+      <%= render 'edit_fields', f: f %>
+      <%= f.submit "Update", class: "btn btn-mini btn-primary" %>
+      <%= link_to 'Change Password', new_password_reset_path, class: 'btn btn-mini' %>
+    <% end %>
+  </div>
+</div>
+
