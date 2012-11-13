@@ -11,11 +11,7 @@
   </span>
 </li>
 <li>
- <%= link_to "Back", pharmacies_path, :class => 'btn' %>
-  <%= link_to 'Connect', attend_pharmacy_path(@pharmacy.id), :method => :post, :class => 'btn btn-success' %>
- <%= link_to 'Disconnect', withdraw_pharmacy_path(@pharmacy.id), :confirm => 'Are you sure?', :method => :post, :class => 'btn btn-danger' %>
-  <% if current_user.admin? %>
-   <%= link_to "Edit", edit_pharmacy_path(pharmacy), :class => 'btn btn-inverse' %>
-   <%= link_to "Destroy", pharmacy_path(pharmacy), :method => :delete, :class => 'btn btn-inverse' %>
- <% end %>   
+ <%= link_to "Back", pharmacies_path, :class => 'btn btn-mini' %>
+ <%= link_to "Edit", edit_pharmacy_path(pharmacy), :class => 'btn btn-mini' %>
+ <%= link_to "Destroy", pharmacy_path(pharmacy), :method => :delete, :class => 'btn btn-mini' %>
 </li>	

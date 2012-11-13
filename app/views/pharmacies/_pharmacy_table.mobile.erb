@@ -16,8 +16,6 @@
 	  <td><%= pharmacy.city %></td>
 	  <td>
 		  <%= link_to t('pharmacies.edit', default: "Edit"), edit_pharmacy_path(pharmacy), class: "btn btn-mini" %>
-		  <%= link_to t('pharmacies.connect', default: "Connect"), attend_pharmacy_path(pharmacy.id), :method => :post, class: "btn btn-mini btn-success" %>    
-      <%= link_to t('pharmacies.disconnect', default: "Disconnect"), withdraw_pharmacy_path(pharmacy.id), :method => :post, class: "btn btn-mini btn-warning"%>
 	    <%= link_to t('pharmacies.delete', default: "Destroy"), pharmacy_path(pharmacy), :confirm => t('pharmacies.confirm.delete', default: 'Are you sure?'), :method => :delete, class: "btn btn-mini btn-danger" %>
     </td>
 		</tr>	
