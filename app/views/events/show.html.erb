@@ -1,27 +1,33 @@
 <% provide(:title, 'Events') %>
-<p>
-	<strong>Pharmacy:</strong>
-  <%= @event.pharmacy.name %></li>
+	<div class="span6 offset3">      
+<table class="table table-striped">
+  <tbody>
+	  <tr>
+	    <td><h6>Pharmacy's Emergency Group:</h6></td>
+	      <% if @event.pharmacy.emergency_group.nil? %>
+		      <td>This Event is currently associated with a Pharmacy that does not belong to an Emergency Group, go <%= link_to "here", edit_pharmacy_path %> to change that.</td>
+        <% else %>
+          <td><i class="icon-th"></i> <%= @event.pharmacy.emergency_group.name %></td>
+        <% end %>
+	  </tr>
+		<tr>
+	      <td><h6>Event Start:</h6></td>
+	      <td><i class="icon-time"></i> <%= @event.starttime %></td>
+	  </tr>
+		<tr>
+	      <td><h6>Event End:</h6></td>
+	      <td><i class="icon-time"></i> <%= @event.endtime %></td>
+	  </tr>
+		<tr>
+	      <td><h6>BGA Number:</h6></td>
+	      <td><i class="icon-cog"></i> <%= @event.all_day %></td>
+	  </tr>
+  </tbody>
+</table>
 </p>
-<p>
-	<strong>Pharamacy's Emergency Group:</strong>
-  <%= @event.pharmacy.emergency_group.name %>
-<p>
-<p>
-  <strong>Start time:</strong>
-  <%= @event.starttime %>
+  <%= link_to "View All", events_path, :class => 'btn btn-mini' %>
+  <%= link_to "Edit", edit_event_path(@event), :class => 'btn btn-mini' %>
+  <%= link_to "Destroy", @event, :confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-mini btn-danger' %>
 </p>
-<p>
-  <strong>End time:</strong>
-  <%= @event.endtime %>
-</p>
-<p>
-  <strong>All Day:</strong>
-  <%= @event.all_day %>
-</p>
-
-<p>
-  <%= link_to "Edit", edit_event_path(@event) %> |
-  <%= link_to "Destroy", @event, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", events_path %>
-</p>
+  </div>
+</div>

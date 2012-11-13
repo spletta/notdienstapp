@@ -7,7 +7,7 @@ class Pharmacy < ActiveRecord::Base
   has_many :events, :dependent => :destroy
   accepts_nested_attributes_for :users, :emergency_group, :events
   
-  validates :address, :bga_number, :name, :owner_name, :phone_number, presence: true
+  validates :address, :bga_number, :name, :owner_name, :phone_number, :emergency_hours_starttime, :emergency_hours_endtime, :address, presence: true
   
   default_scope { where(account_id: Account.current_id) }
   

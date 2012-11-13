@@ -1,7 +1,7 @@
 class EmergencyGroupsController < ApplicationController
-  before_filter :signed_in_user,  only: [:index, :edit, :update, :new]
-  before_filter :correct_user,    only: [:index, :edit, :update, :new]
-  before_filter :admin_user,      only: [:destroy]
+  before_filter :signed_in_user,  only: [:index, :edit, :update, :new, :destroy]
+  before_filter :correct_user,    only: [:index, :edit, :update, :new, :destroy]
+  #before_filter :admin_user,      only: [:destroy]
   
   def index
     @emergency_groups = EmergencyGroup.all
@@ -18,7 +18,7 @@ class EmergencyGroupsController < ApplicationController
   def create
     @emergency_group = EmergencyGroup.new(params[:emergency_group])
     if @emergency_group.save
-      redirect_to @emergency_group, :notice => "Successfully created emergency group."
+      redirect_to emergency_groups_url, :notice => "Successfully created emergency group."
     else
       render :action => 'new'
     end
@@ -31,7 +31,7 @@ class EmergencyGroupsController < ApplicationController
   def update
     @emergency_group = EmergencyGroup.find(params[:id])
     if @emergency_group.update_attributes(params[:emergency_group])
-      redirect_to @emergency_group, :notice  => "Successfully updated emergency group."
+      redirect_to emergency_groups_url, :notice  => "Successfully updated emergency group."
     else
       render :action => 'edit'
     end

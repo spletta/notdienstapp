@@ -14,7 +14,7 @@
 			<div id="pharmacies"><%= render 'pharmacy_table' %></div>
 			<% end %>
 		</br>
-		<p><%= t 'pharmacies.add.text', default: 'Add a new pharmacy ' %><%= link_to t('pharmacies.add.link', default: "here"), new_pharmacy_path %>.</p>
+		<p><%= link_to 'Create Pharmacy', new_pharmacy_path, :class => 'btn btn-mini btn-primary' %></p>
   </div>
 </div>
 </br>

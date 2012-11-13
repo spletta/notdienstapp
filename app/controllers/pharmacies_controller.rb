@@ -24,7 +24,8 @@ class PharmaciesController < ApplicationController
   def create
     @pharmacy = Pharmacy.new(params[:pharmacy])
     if @pharmacy.save
-      redirect_to @pharmacy, :notice => "Successfully created new pharmacy."
+      flash[:success] = "Successfully created new pharmacy."
+      redirect_to pharmacies_url
     else
       render :action => 'new'
     end
@@ -38,8 +39,8 @@ class PharmaciesController < ApplicationController
     @pharmacy = Pharmacy.find(params[:id])
 
     if @pharmacy.update_attributes(params[:pharmacy])
-      flash[:notice] = "Pharmacy updated successfully."
-      redirect_to(:pharmacy => 'index')
+      flash[:success] = "Pharmacy updated successfully."
+      redirect_to pharmacies_url
     else
       render('edit')
     end

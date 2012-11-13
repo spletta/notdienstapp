@@ -1,17 +1,41 @@
-<li>
-  <span class="content"><%= pharmacy.name %></span>
-  <span class="content">Owner: <%= pharmacy.owner_name %></span>
-	<span class="content"><%= pharmacy.address %></span>
-	<span class="content">Tel. <%= pharmacy.phone_number %></span>
-	<span class="content">Fax. <%= pharmacy.fax_number %></span>
-	<span class="content">E-Mail. <%= pharmacy.email %></span>
-	<span class="content">Web. <%= pharmacy.website_url %></span>
-  <span class="timestamp">
-    BGA Number: <%= pharmacy.bga_number %>
-  </span>
-</li>
-<li>
+<table class="table table-striped">
+  <tbody>
+		<tr>
+	      <td><h6>Name:</h6></td>
+	      <td><i class="icon-user"></i> <%= pharmacy.name %></td>
+	  </tr>
+		<tr>
+	      <td><h6>Owner Name:</h6></td>
+	      <td><i class="icon-user"></i> <%= pharmacy.owner_name %></td>
+	  </tr>
+		<tr>
+	      <td><h6>BGA Number:</h6></td>
+	      <td><i class="icon-user"></i> <%= pharmacy.bga_number %></td>
+	  </tr>
+	  <tr>
+	      <td><h6>Tel:</h6></td>
+	      <td><i class="icon-home"></i> <%= pharmacy.phone_number %></td>
+	  </tr>
+	  <tr>
+	      <td><h6>Fax:</h6></td>
+	      <td><i class="icon-home"></i> <%= pharmacy.fax_number %></td>
+	  </tr>
+	  <tr>
+	      <td><h6>Email:</h6></td>
+	      <td><i class="icon-envelope"></i> <%= pharmacy.email %></td>
+	  </tr>
+	  	  <tr>
+	      <td><h6>Address:</h6></td>
+	      <td><i class="icon-home"></i>
+		      <%= pharmacy.address %>,
+		      <%= pharmacy.zipcode %> <%= pharmacy.city %>
+		    </td>
+	  </tr>
+  </tbody>
+</table>
+<p>
  <%= link_to "Back", pharmacies_path, :class => 'btn btn-mini' %>
  <%= link_to "Edit", edit_pharmacy_path(pharmacy), :class => 'btn btn-mini' %>
- <%= link_to "Destroy", pharmacy_path(pharmacy), :method => :delete, :class => 'btn btn-mini' %>
-</li>	
+ <%= link_to "Destroy", pharmacy_path(pharmacy), :method => :delete, :class => 'btn btn-mini btn-danger' %>
+</p>
+

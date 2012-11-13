@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
-  before_filter :signed_in_user,  only: [:index]
-  before_filter :correct_user,    only: [:index]
-  before_filter :admin_user,      only: [:destroy]
+  before_filter :signed_in_user,  only: [:index, :edit, :update, :new, :destroy]
+  before_filter :correct_user,    only: [:index, :edit, :update, :new, :destroy]
+  #before_filter :admin_user,      only: [:index, :edit, :update, :new, :destroy]
   before_filter :prepare_for_mobile, :only => [:index] 
   
   def index
@@ -21,7 +21,8 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(params[:event])
     if @event.save
-      redirect_to @event, :notice => "Successfully created event."
+      flash[:success] = "Successfully created event."
+      redirect_to events_url
     else
       render :action => 'new'
     end
@@ -34,7 +35,8 @@ class EventsController < ApplicationController
   def update
     @event = Event.find(params[:id])
     if @event.update_attributes(params[:event])
-      redirect_to @event, :notice  => "Successfully updated event."
+      flash[:success] = "Successfully updated event."
+      redirect_to events_url
     else
       render :action => 'edit'
     end
@@ -43,6 +45,7 @@ class EventsController < ApplicationController
   def destroy
     @event = Event.find(params[:id])
     @event.destroy
-    redirect_to events_url, :notice => "Successfully destroyed event."
+    flash[:success] = "Successfully destroyed event."
+    redirect_to events_url
   end
 end

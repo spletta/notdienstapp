@@ -19,7 +19,7 @@
 			<% end %>
 		</table>
 		</br>
-		<p><%= t 'emergency.group.add.text', default: 'Add a new emergency group ' %><%= link_to t('pharmacies.add.link', default: "here"), new_emergency_group_path %>.</p>
+		<p><%= link_to "Create Emergency Group", new_emergency_group_path, :class => 'btn btn-mini btn-primary' %></p>
   </div>
 </div>
 

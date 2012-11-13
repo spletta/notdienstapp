@@ -1,7 +1,10 @@
 <%= simple_form_for @event do |f| %>
 <%= render 'shared/error_messages', object: f.object %>
 <table class="table table-hover">
-  <tr><%= f.association :pharmacy %></tr>
+    <tr>
+    <td><%= f.label 'Pharmacy' %></td>
+    <td><%= f.collection_select :pharmacy_id, Pharmacy.all, :id, :name, :include_blank => t('pharmacies.emergency.group.select', default: 'Please select'), :required => true %></td>
+  </tr>
   <tr>
   	<td><%= f.label "Start time" %></td>
     <td><%= f.text_field :starttime %></td>
@@ -15,6 +18,8 @@
     <td><%= f.check_box :all_day %></td>
   </tr>
 </table>
+<%= link_to "Back", events_path, :class => 'btn btn-mini' %>
+<%= link_to "Show", @event, :class => 'btn btn-mini' %>
 <%= f.submit "Save", class: "btn btn-mini btn-primary" %>
 <% end %>
 
