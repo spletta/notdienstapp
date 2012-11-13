@@ -18,7 +18,8 @@ class EmergencyGroupsController < ApplicationController
   def create
     @emergency_group = EmergencyGroup.new(params[:emergency_group])
     if @emergency_group.save
-      redirect_to emergency_groups_url, :notice => "Successfully created emergency group."
+      flash[:success] = "Successfully created emergency group."
+      redirect_to emergency_groups_url
     else
       render :action => 'new'
     end
@@ -31,7 +32,8 @@ class EmergencyGroupsController < ApplicationController
   def update
     @emergency_group = EmergencyGroup.find(params[:id])
     if @emergency_group.update_attributes(params[:emergency_group])
-      redirect_to emergency_groups_url, :notice  => "Successfully updated emergency group."
+      flash[:success] = "Successfully updated emergency group."
+      redirect_to emergency_groups_url
     else
       render :action => 'edit'
     end
@@ -40,6 +42,7 @@ class EmergencyGroupsController < ApplicationController
   def destroy
     @emergency_group = EmergencyGroup.find(params[:id])
     @emergency_group.destroy
-    redirect_to emergency_groups_url, :notice => "Successfully destroyed emergency group."
+    flash[:success] = "Successfully destroyed emergency group."
+    redirect_to emergency_groups_url
   end
 end

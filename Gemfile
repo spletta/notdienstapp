@@ -21,6 +21,7 @@ gem "select2-rails"
 gem "mail"
 gem 'thin'
 gem 'localeapp'
+gem 'seed-fu'
 
 group :development, :test do
   gem 'rspec-rails', '2.11.0'
