@@ -97,7 +97,7 @@ en:
       year: Year
   errors:
     format: ! '%{attribute} %{message}'
-    messages: &70318847090680
+    messages: &70318845471700
       accepted: must be accepted
       blank: can't be blank
       confirmation: doesn't match confirmation
@@ -125,7 +125,7 @@ en:
       wrong_length:
         one: is the wrong length (should be 1 character)
         other: is the wrong length (should be %{count} characters)
-    template: &70318847081580
+    template: &70318845481300
       body: ! 'There were problems with the following fields:'
       header:
         one: 1 error prohibited this %{model} from being saved
@@ -200,13 +200,13 @@ en:
   activemodel:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: *70318847090680
-      template: *70318847081580
+      messages: *70318845471700
+      template: *70318845481300
   activerecord:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: *70318847090680
-      template: *70318847081580
+      messages: *70318845471700
+      template: *70318845481300
   session:
     forgot:
       password:
@@ -274,6 +274,8 @@ en:
     office:
       fax: Office Fax
       phone: Office Phone
+    phone:
+      us: US Office
   help:
     link: Help
   news:
@@ -408,3 +410,9 @@ en:
       html: Required
       mark: ! '*'
       text: this is a required field
+  contactform:
+    body: What can we do for you?
+    email: Email
+    name: Full Name
+    subject: Subject
+    send: Send

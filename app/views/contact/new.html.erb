@@ -31,7 +31,7 @@
 					      <td><i class="icon-home"></i> +49 3221 1226 80808</td>
 					  </tr>
 					  <tr>
-					      <td><h6><%= t 'contact.office.phone.us' %>:</h6></td>
+					      <td><h6><%= t 'contact.phone.us' %>:</h6></td>
 					      <td><i class="icon-home"></i> +1 650 318 3882</td>
 					  </tr>
 					  <tr>
@@ -51,27 +51,27 @@
 		<%= form_for @message, :url => contact_path do |form| %>
 		  <fieldset class="fields">
 		    <div class="field">
-		      <%= form.label :name %>
+		      <%= form.label t 'contactform.name' %>
 		      <%= form.text_field :name %>
 		    </div>
     
 		    <div class="field">
-		      <%= form.label :email %>
+		      <%= form.label t 'contactform.email' %>
 		      <%= form.text_field :email %>
 		    </div>
 		    <div class="field">
-		      <%= form.label :subject %>
+		      <%= form.label t 'contactform.subject' %>
 		      <%= form.text_field :subject %>
 		    </div>
     
 		    <div class="field">
-		      <%= form.label :body %>
+		      <%= form.label t 'contactform.body' %>
 		      <%= form.text_area :body, :rows => 13 %>
 		    </div>
 		  </fieldset>
   
 		  <fieldset class="actions">
-		    <%= form.submit "Send", :class => 'btn btn-mini btn-primary' %>
+		    <%= form.submit t('contactform.send'), :class => 'btn btn-mini btn-primary' %>
 		  </fieldset>
 		<% end %>
   </div>

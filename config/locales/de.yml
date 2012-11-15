@@ -197,7 +197,7 @@ de:
   activemodel:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: &70318848330560
+      messages: &70318846061620
         accepted: muss akzeptiert werden
         blank: muss ausgefüllt werden
         confirmation: stimmt nicht mit der Bestätigung überein
@@ -219,7 +219,7 @@ de:
         too_long: ist zu lang (nicht mehr als %{count} Zeichen)
         too_short: ist zu kurz (nicht weniger als %{count} Zeichen)
         wrong_length: hat die falsche Länge (muss genau %{count} Zeichen haben)
-      template: &70318848328420
+      template: &70318846058720
         body: ! 'Bitte überprüfen Sie die folgenden Felder:'
         header:
           one: ! 'Konnte %{model} nicht speichern: ein Fehler.'
@@ -227,8 +227,8 @@ de:
   activerecord:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: *70318848330560
-      template: *70318848328420
+      messages: *70318846061620
+      template: *70318846058720
   manage:
     link: Verwalten
   planner:
@@ -297,6 +297,8 @@ de:
     office:
       fax: Büro Fax
       phone: Büro Tel.
+    phone:
+      us: Büro US
   help:
     link: Hilfe
   news:
@@ -338,7 +340,7 @@ de:
         title: Ihre Password ändern oder zurücksetzen
       button: Ändern oder Zurücksetzen
   modal:
-    body: ! 'Als Sie sich bei Notdienst-Touch angemeldet haben wir Ihnen eine E-Mail geschickt mit die Adresse zu Ihre Sichere Seite. Sie können sich nur von Ihre eigene Sicher Seite aus einloggen. Unten ist ein beispeil:'
+    body: ! 'Als Sie sich bei Notdienst-Touch angemeldet, haben wir Ihnen eine E-Mail geschickt mit die Adresse zu Ihre Sichere Seite. Sie können sich nur von Ihre eigene Sicher Seite aus einloggen. Unten ist ein beispeil:'
     link: Sichere Seite vergessen?
     title: Wir man sich im Notdienst-Touch einloggen kann.
   pharmacies:
@@ -431,3 +433,9 @@ de:
       html: <abbr title="required">*</abbr>
       mark: ! '*'
       text: required
+  contactform:
+    body: Was können wir tun für Sie?
+    email: E-Mail
+    name: Vollständiger Name
+    subject: Betreff
+    send: Schicken
