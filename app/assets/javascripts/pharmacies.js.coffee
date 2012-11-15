@@ -2,10 +2,12 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 jQuery ->
-	 $('.timepicker-1').timepicker({
-    template : 'dropdown',
-    showInputs: false,
-    showSeconds: false,
-    showMeridian: false,
-    defaultTime: '08:00'
-  });
+$('#datetimepicker').timepicker({
+	timeOnlyTitle: 'Выберите время',
+	timeText: 'Время',
+	hourText: 'Часы',
+	minuteText: 'Минуты',
+	secondText: 'Секунды',
+	currentText: 'Теперь',
+	closeText: 'Закрыть'
+});

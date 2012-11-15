@@ -12,8 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.ui.datepicker
-//= require bootstrap-timepicker
-//= require jquery.tokeninput
+//= require jquery.ui.all
+//= require jquery-ui-timepicker-addon.js
+//= jquery-ui-sliderAccess.js
 //= require bootstrap
 //= require_tree .

@@ -97,7 +97,7 @@ en:
       year: Year
   errors:
     format: ! '%{attribute} %{message}'
-    messages: &70130211803840
+    messages: &70318847090680
       accepted: must be accepted
       blank: can't be blank
       confirmation: doesn't match confirmation
@@ -125,7 +125,7 @@ en:
       wrong_length:
         one: is the wrong length (should be 1 character)
         other: is the wrong length (should be %{count} characters)
-    template: &70130221162320
+    template: &70318847081580
       body: ! 'There were problems with the following fields:'
       header:
         one: 1 error prohibited this %{model} from being saved
@@ -200,13 +200,13 @@ en:
   activemodel:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: *70130211803840
-      template: *70130221162320
+      messages: *70318847090680
+      template: *70318847081580
   activerecord:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: *70130211803840
-      template: *70130221162320
+      messages: *70318847090680
+      template: *70318847081580
   session:
     forgot:
       password:
@@ -328,6 +328,8 @@ en:
       hours:
         from: Emergency hours from
         to: Emergency hours to
+      change:
+        time: Emergency service change time
     search: Search for a pharmacy
     table:
       bga:

@@ -1,5 +1,5 @@
 class Pharmacy < ActiveRecord::Base
-  attr_accessible :address, :bga_number, :email, :end_hours, :fax_number, :name, :owner_name, :phone_number, :start_hours, :website_url, :users_attributes, :emergency_group_id, :city, :zipcode, :emergency_hours_starttime, :emergency_hours_endtime
+  attr_accessible :address, :bga_number, :email, :end_hours, :fax_number, :name, :owner_name, :phone_number, :start_hours, :website_url, :users_attributes, :emergency_group_id, :city, :zipcode, :emergency_hour_change_time
   
   has_many :pharmacies_users
   has_many :users, :through => :pharmacies_users
@@ -7,7 +7,7 @@ class Pharmacy < ActiveRecord::Base
   has_many :events, :dependent => :destroy
   accepts_nested_attributes_for :users, :emergency_group, :events
   
-  validates :address, :bga_number, :name, :owner_name, :phone_number, :emergency_hours_starttime, :emergency_hours_endtime, :address, presence: true
+  validates :address, :bga_number, :name, :owner_name, :phone_number, :emergency_hour_change_time, :address, presence: true
   
   default_scope { where(account_id: Account.current_id) }
   

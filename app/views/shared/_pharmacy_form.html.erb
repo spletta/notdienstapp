@@ -48,28 +48,18 @@
   </tr>
   <tr> 
 		<td><%= f.label t('pharmacies.open') %></td>
-	  <td><%= f.text_field :start_hours %></td>	
+	  <td><%= f.datetime_picker :start_hours, :dateFormat => "dd-mm-yy" %></td>	
   </tr>
   <tr> 
 		<td><%= f.label t('pharmacies.closed') %></td>
-	  <td><%= f.text_field :end_hours %></td>	
+	  <td><%= f.datetime_picker :end_hours, :dateFormat => "dd-mm-yy" %></td>	
 	</tr>
 	<tr> 
-		<td><%= f.label t('pharmacies.emergency.hours.from') %></td>
+		<td><%= f.label t('pharmacies.emergency.change.time') %></td>
 	  <td>
-		  <div class="input-append bootstrap-timepicker-component">
-        <%= f.text_field :emergency_hours_starttime, :required => true, :class => 'timepicker-1 input-small' %><span class="add-on"><i class="icon-time"></i></span>
-      </div>
+        <%= f.datetime_picker :emergency_hour_change_time, :dateFormat => "dd-mm-yy" %>
 		</td>	
   </tr>
-  <tr> 
-		<td><%= f.label t('pharmacies.emergency.hours.to') %></td>
-	  <td>
-		  <div class="input-append bootstrap-timepicker-component">
-        <%= f.text_field :emergency_hours_endtime, :required => true, :class => 'timepicker-1 input-small' %><span class="add-on"><i class="icon-time"></i></span>
-      </div>
-		</td>	
-	</tr>
 </table>
 <%= link_to t('pharmacies.back.button'), pharmacies_path, class: "btn btn-mini" %>
 <%= link_to t('pharmacies.show.button'), @pharmacy, :class => 'btn btn-mini' %>

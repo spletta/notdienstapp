@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121108133601) do
+ActiveRecord::Schema.define(:version => 20121115211008) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
@@ -58,15 +58,14 @@ ActiveRecord::Schema.define(:version => 20121108133601) do
     t.time     "start_hours"
     t.time     "end_hours"
     t.integer  "bga_number"
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
     t.integer  "emergency_group_id"
     t.integer  "event_id"
     t.string   "city"
     t.string   "zipcode"
-    t.time     "emergency_hours_starttime"
-    t.time     "emergency_hours_endtime"
     t.integer  "account_id"
+    t.time     "emergency_hour_change_time"
   end
 
   add_index "pharmacies", ["account_id"], :name => "index_pharmacies_on_account_id"
