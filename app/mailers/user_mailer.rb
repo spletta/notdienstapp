@@ -12,6 +12,7 @@ class UserMailer < ActionMailer::Base
     @user = user
     @contact = "https://notdienstapp.com/contact"
     @url = "https://#{account.subdomain}.notdienstapp.com"
+    @reset_url = "https://#{account.subdomain}.notdienstapp.com/password_resets/new"
     mail(to: user.email, subject: "Welcome to Notdienst Touch, #{user.name}")
   end
   

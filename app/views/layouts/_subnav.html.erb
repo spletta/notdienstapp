@@ -3,16 +3,16 @@
   <nav>
     <ul class="nav nav-tabs">
 	    <% if request.path == welcome_path || request.path == dashboard_path || request.path == referrals_path %>
-        <li class="<%= 'active' if current_page?(welcome_path) %>"><%= link_to t('welcome.link', default: "Welcome"), welcome_path %></li>
+        <li class="<%= 'active' if current_page?(welcome_path) %>"><%= link_to t('welcome.link'), welcome_path %></li>
         <li class="<%= 'active' if current_page?(dashboard_path) %>"><%= link_to "Dashboard", dashboard_path %></li>
-        <li class="<%= 'active' if current_page?(referrals_path) %>"><%= link_to t('referrals.link', default: "Referrals"), referrals_path %></li>
+        <li class="<%= 'active' if current_page?(referrals_path) %>"><%= link_to t('referrals.link'), referrals_path %></li>
       <% elsif request.path == manage_path || 
 								request.path == pharmacies_path || 
 								request.path == emergency_groups_path ||
 								request.path == customer_service_path %>
-				<li class="<%= 'active' if current_page?(pharmacies_path) %>"><%= link_to t('pharmacies.link', default: "Pharmacies"), pharmacies_path %></li>
-				<li class="<%= 'active' if current_page?(emergency_groups_path) %>"><%= link_to t('emergency.group.link', default: "Emergency Groups"), emergency_groups_path %></li>
-				<li class="<%= 'active' if current_page?(customer_service_path) %>"><%= link_to t('customer.service.feed.link', default: "Customer service feed"), customer_service_path %></li>
+				<li class="<%= 'active' if current_page?(pharmacies_path) %>"><%= link_to t('pharmacies.link'), pharmacies_path %></li>
+				<li class="<%= 'active' if current_page?(emergency_groups_path) %>"><%= link_to t('emergency.group.link'), emergency_groups_path %></li>
+				<li class="<%= 'active' if current_page?(customer_service_path) %>"><%= link_to t('customer.service.feed.link'), customer_service_path %></li>
       <% else %>
         <%# //.. %>
       <% end %>

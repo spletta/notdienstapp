@@ -1,11 +1,11 @@
 <% provide(:title, 'All Events') %>
 
-<p><%= link_to "New Event", new_event_path, :class => 'btn btn-mini btn-primary' %>
+<p><%= link_to t("event.new"), new_event_path, :class => 'btn btn-mini btn-primary' %>
 </p>
 <div id="events">
   <h2 id="month">
     <%= link_to "<", date: @date.prev_month, :class => 'btn btn-mini' %>
-    <%= @date.strftime("%B %Y") %>
+    <%= l(@date, :format => "%B %Y") %>
     <%= link_to ">", date: @date.next_month, :class => 'btn btn-mini' %>
   </h2>
   <%= calendar @date do |date| %>

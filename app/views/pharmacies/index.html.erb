@@ -2,19 +2,19 @@
 <div class="row">
 	</br>
   <div class="span8 offset2">
-	  <h3c><%= t 'pharmacies.title', default: "Manage Pharmacies" %></h3c>
-		<p><%= t 'pharmacies.search', default: "Search for a pharmacy" %></p>
+	  <h3c><%= t 'pharmacies.title' %></h3c>
+		<p><%= t 'pharmacies.search' %></p>
 			<%= form_tag pharmacies_path, :method => 'get', class: "form-search" do %>
 			<p>
 			<div class="input-append">
 			    <%= text_field_tag :search, params[:search], class: "span2 search-query" %>
-			    <%= submit_tag t('pharmacies.search.button', default: "Search"), :name => nil, class: "btn" %>
+			    <%= submit_tag t('pharmacy.search.button'), :name => nil, class: "btn" %>
 			</div>
 			</p>
 			<div id="pharmacies"><%= render 'pharmacy_table' %></div>
 			<% end %>
 		</br>
-		<p><%= link_to 'Create Pharmacy', new_pharmacy_path, :class => 'btn btn-mini btn-primary' %></p>
+		<p><%= link_to t('pharmacies.create.button'), new_pharmacy_path, :class => 'btn btn-mini btn-primary' %></p>
   </div>
 </div>
 </br>

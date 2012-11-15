@@ -97,7 +97,7 @@ en:
       year: Year
   errors:
     format: ! '%{attribute} %{message}'
-    messages: &70124458672160
+    messages: &70172111218640
       accepted: must be accepted
       blank: can't be blank
       confirmation: doesn't match confirmation
@@ -125,7 +125,7 @@ en:
       wrong_length:
         one: is the wrong length (should be 1 character)
         other: is the wrong length (should be %{count} characters)
-    template: &70124458694200
+    template: &70172111212460
       body: ! 'There were problems with the following fields:'
       header:
         one: 1 error prohibited this %{model} from being saved
@@ -200,13 +200,13 @@ en:
   activemodel:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: *70124458672160
-      template: *70124458694200
+      messages: *70172111218640
+      template: *70172111212460
   activerecord:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: *70124458672160
-      template: *70124458694200
+      messages: *70172111218640
+      template: *70172111212460
   session:
     forgot:
       password:
@@ -214,6 +214,8 @@ en:
     new:
       submit: Sign in
       user: New user?
+      forgotten:
+        password: Forgotten Password
     signup: Sign up now!
     user:
       password: Password
@@ -224,3 +226,160 @@ en:
     link: Settings
   signout:
     link: Sign out
+  planner:
+    link: Planner
+  manage:
+    link: Manage
+  referrals:
+    link: Referrals
+  welcome:
+    hello: ! 'Hello, '
+    link: Welcome
+    step:
+      one:
+        desc: Define the Emergency Group your pharmacy belongs to.
+        title: Create an Emergency Group
+      three:
+        desc: Fill your Calendar with Events to display in the front window.
+        title: Add new Events to your Calendar
+      two:
+        desc: Add the pharmacies you want to keep track of in your calendar.
+        title: Create some Pharmacies
+    getting:
+      started: ! 'Here are a few simple steps to get started with Notdienst-Touch. '
+  about:
+    link: About
+  a:
+    product:
+      by: Powered by
+  contact:
+    link: Contact
+    alert:
+      content: Monday to Friday 8am to 5pm Europe/Berlin Time.
+      heading: ! 'Hours of operation:'
+    cell:
+      phone: Mobile Telephone
+    fill:
+      out: Write us an email by filling out this form or call us.
+    form:
+      heading: Write to us...
+      new:
+        customer: 
+      subtitle: We'd love to help you...
+      title: You have questions?
+    office:
+      fax: Office Fax
+      phone: Office Phone
+  help:
+    link: Help
+  news:
+    link: News
+  event:
+    new: New Event
+  '2012-11-15': what is this?
+  account:
+    name: Company Name
+    subdomain: Secure Site
+    submit: Create my account
+    index:
+      title: Account Settings
+    change:
+      password:
+        button: Change Password
+    update:
+      button: Update
+    edit:
+      title: Edit Profile
+  user:
+    name: 
+    password: Password
+  new:
+    account:
+      headline: 
+  'no':
+    email: 
+  password:
+    reset:
+      instructions:
+        title: Change or reset your password
+      button: Change or Reset
+  modal:
+    body: ! 'When you signed up for Notdienst-Touch, we sent you an email with your Secure Site. You can sign in from your Secure Site, which looks like this:'
+    link: Forget your Secure Site?
+    title: How to Sign In to Notdienst-Touch
+  pharmacies:
+    emergency:
+      group:
+        select: Please select
+        dropdown:
+          label: Please select
+        question: Still haven't added an Emergency Group? Create a
+      hours:
+        from: Emergency hours from
+        to: Emergency hours to
+    search: Search for a pharmacy
+    table:
+      bga:
+        number: 
+      name: Manage Pharmacies
+      owner:
+        name: 
+    title: Manage Pharmacies
+    link: Pharmacies
+    address: Address
+    back:
+      button: Back
+      link: Back
+    bga:
+      number: BGA Number
+    city: City
+    closed: Pharmacy closed
+    create:
+      button: Create
+      title: Create Pharmacy
+    fax:
+      number: Fax number
+    name: Pharmacy name
+    open: Open from
+    owner:
+      name: Owner
+    phone:
+      number: Phone number
+    save:
+      button: Save
+      link: Save
+    show:
+      button: Show
+    viewall:
+      button: View all
+    zipcode: Zipcode
+  emergency:
+    group:
+      link: Emergency Groups
+      index:
+        title: Manage Emergency Groups
+      name: Name
+      new:
+        button: New Group
+      group:
+        name: Group name
+      pharmacy:
+        dropdown:
+          label: Please select
+      create:
+        button: Create New
+  customer:
+    service:
+      feed:
+        link: Customer service feed
+  pharmacy:
+    search:
+      button: Search
+  emergency_group:
+    create:
+      title: Create a new Emergency Group
+  simple_form:
+    required:
+      html: 
+      mark: 
+      text: 

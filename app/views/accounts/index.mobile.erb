@@ -1,15 +1,13 @@
 <% provide(:title, 'Account Settings') %>
 <div class="row">
-  <aside class="span4">
+  <aside class="span5 offset3">
     <section>
-    <h1>Account Settings</h1>
+    <h1><%= t 'account.index.title' %></h1>
     </section>
   </aside>
-	<div class="span8">
-  </div>
 </div>
 <div class="row">
-  <div class="span8">
+  <div class="span5 offset3">
 		<table class="table table-hover">
 			  <tr><h4>Billing Information</h4></tr>
 			  <tr>
@@ -29,9 +27,9 @@
 				  <td><%= link_to "22 Mar 2012, (Notdienst Basic Plan: 1 user, EUR 15,00"%></td>
 				</tr>
 		</table>
-		<%= link_to 'Upgrade', "",:class => 'btn btn-success' %>&nbsp;
-		<%= link_to 'Change Secure Site', "", :class => 'btn' %>&nbsp;
-		<%= link_to 'Close Account', "", :method => :delete, :class => 'btn' %>
+		<%= link_to 'Upgrade', "",:class => 'btn btn-mini btn-success' %>&nbsp;
+		<%= link_to 'Change Secure Site', "", :class => 'btn btn-mini' %>&nbsp;
+		<%= link_to 'Close Account', "", :method => :delete, :class => 'btn btn-mini' %>
 		</br>
 		</br>
 		</br>
@@ -58,7 +56,7 @@
 				  <td>HH:MM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				</tr>
 		</table>
-		<%= link_to 'Edit Preferences', "",:class => 'btn btn-success' %>	
+		<%= link_to 'Edit Preferences', "",:class => 'btn btn-mini btn-success' %>	
   </div>
 </div>
 

@@ -1,41 +1,41 @@
 <%= simple_form_for(@pharmacy, :html => {:class => 'form-horizontal' }) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
-
+  <p><%= t 'pharmacies.emergency.group.question'%> <%= link_to t('emergency.group.new.button'), new_emergency_group_path, :class => 'btn btn-mini btn-primary' %></p>
 <table class="table table-hover">
   <tr>
-    <td><%= f.label t('pharmacies.emergency.group.dropdown.label', default: 'Emergency Group') %></td>
-    <td><%= f.collection_select :emergency_group_id, EmergencyGroup.all, :id, :name, :include_blank => t('pharmacies.emergency.group.select', default: 'Please select') %></td>
+    <td><%= f.label t('pharmacies.emergency.group.dropdown.label') %></td>
+    <td><%= f.collection_select :emergency_group_id, EmergencyGroup.all, :id, :name, :include_blank => t('pharmacies.emergency.group.select', default: 'Please select'), :required => true %></td>
   </tr>
   <tr> 
-	  <td><%= f.label t('pharmacies.name', default: 'Name of the Pharmacy') %></td>
-	  <td><%= f.text_field :name %></td>
+	  <td><%= f.label t('pharmacies.name') %></td>
+	  <td><%= f.text_field :name, :required => true %></td>
 	</tr>
 	<tr> 
-	  <td><%= f.label t('pharmacies.owner.name', default: "Owner's name") %></td>
-	  <td><%= f.text_field :owner_name %></td>
+	  <td><%= f.label t('pharmacies.owner.name') %></td>
+	  <td><%= f.text_field :owner_name, :required => true %></td>
 	</tr>
 	<tr> 
-		<td><%= f.label t('pharmacies.bga.number', default: 'BGA Number') %></td>
-	  <td><%= f.text_field :bga_number %></td>	
+		<td><%= f.label t('pharmacies.bga.number') %></td>
+	  <td><%= f.text_field :bga_number, :required => true %></td>	
 	</tr>
 	<tr> 
-		<td><%= f.label t('pharmacies.address', default: 'Address') %></td>
-	  <td><%= f.text_area :address, :rows => 5 %></td>
+		<td><%= f.label t('pharmacies.address') %></td>
+	  <td><%= f.text_area :address, :rows => 5, :required => true %></td>
 	</tr>
   <tr> 
-		<td><%= f.label t('pharmacies.city', default: 'City') %></td>
-	  <td><%= f.text_field :city %></td>
+		<td><%= f.label t('pharmacies.city') %></td>
+	  <td><%= f.text_field :city, :required => true %></td>
 	</tr>
   <tr> 
-		<td><%= f.label t('pharmacies.zipcode', default: 'ZIP code') %></td>
-	  <td><%= f.text_field :zipcode %></td>
+		<td><%= f.label t('pharmacies.zipcode') %></td>
+	  <td><%= f.text_field :zipcode, :required => true %></td>
 	</tr>	
 	<tr> 
-		<td><%= f.label t('pharmacies.phone.number', default: 'Phone number') %></td>
-	  <td><%= f.text_field :phone_number %></td>	
+		<td><%= f.label t('pharmacies.phone.number') %></td>
+	  <td><%= f.text_field :phone_number, :required => true %></td>	
 	</tr>
 	<tr> 
-		<td><%= f.label t('pharmacies.fax.number', default: 'Fax number') %></td>
+		<td><%= f.label t('pharmacies.fax.number') %></td>
 	  <td><%= f.text_field :fax_number %></td>	
   </tr>
   <tr> 
@@ -47,23 +47,33 @@
 	  <td><%= f.text_field :website_url %></td>	
   </tr>
   <tr> 
-		<td><%= f.label t('pharmacies.open', default: "Open daily from") %></td>
+		<td><%= f.label t('pharmacies.open') %></td>
 	  <td><%= f.text_field :start_hours %></td>	
   </tr>
   <tr> 
-		<td><%= f.label t('pharmacies.closed', default: "Closed daily at") %></td>
+		<td><%= f.label t('pharmacies.closed') %></td>
 	  <td><%= f.text_field :end_hours %></td>	
 	</tr>
 	<tr> 
-		<td><%= f.label t('pharmacies.emergency.hours.from', default: "Emergency hours from") %></td>
-	  <td><%= f.text_field :emergency_hours_starttime %></td>	
+		<td><%= f.label t('pharmacies.emergency.hours.from') %></td>
+	  <td>
+		  <div class="input-append bootstrap-timepicker-component">
+        <%= f.text_field :emergency_hours_starttime, :required => true, :class => 'timepicker-1 input-small' %><span class="add-on"><i class="icon-time"></i></span>
+      </div>
+		</td>	
   </tr>
   <tr> 
-		<td><%= f.label t('pharmacies.emergency.hours.to', default: "Emergency hours to") %></td>
-	  <td><%= f.text_field :emergency_hours_endtime %></td>	
+		<td><%= f.label t('pharmacies.emergency.hours.to') %></td>
+	  <td>
+		  <div class="input-append bootstrap-timepicker-component">
+        <%= f.text_field :emergency_hours_endtime, :required => true, :class => 'timepicker-1 input-small' %><span class="add-on"><i class="icon-time"></i></span>
+      </div>
+		</td>	
 	</tr>
 </table>
-<%= link_to t('pharmacies.back.link', default: "Back"), pharmacies_path, class: "btn btn-mini" %>
-<%= f.submit t('pharmacies.save', default: "Save"), class: "btn btn-mini btn-primary" %>
+<%= link_to t('pharmacies.back.button'), pharmacies_path, class: "btn btn-mini" %>
+<%= link_to t('pharmacies.show.button'), @pharmacy, :class => 'btn btn-mini' %>
+<%= link_to t('pharmacies.viewall.button'), pharmacies_path, :class => 'btn btn-mini' %>
+<%= f.submit t('pharmacies.save.button'), class: "btn btn-mini btn-primary" %>
 <% end %>
 

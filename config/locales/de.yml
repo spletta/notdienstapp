@@ -95,7 +95,7 @@ de:
       month: Monat
       second: Sekunden
       year: Jahr
-  errors: &errors
+  errors:
     format: ! '%{attribute} %{message}'
     messages:
       accepted: muss akzeptiert werden
@@ -194,10 +194,216 @@ de:
       long: ! '%A, %d. %B %Y, %H:%M Uhr'
       short: ! '%d. %B, %H:%M Uhr'
     pm: nachmittags
-  # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
   activemodel:
     errors:
-      <<: *errors
+      format: ! '%{attribute} %{message}'
+      messages: &70172103623720
+        accepted: muss akzeptiert werden
+        blank: muss ausgefüllt werden
+        confirmation: stimmt nicht mit der Bestätigung überein
+        empty: muss ausgefüllt werden
+        equal_to: muss genau %{count} sein
+        even: muss gerade sein
+        exclusion: ist nicht verfügbar
+        greater_than: muss größer als %{count} sein
+        greater_than_or_equal_to: muss größer oder gleich %{count} sein
+        inclusion: ist kein gültiger Wert
+        invalid: ist nicht gültig
+        less_than: muss kleiner als %{count} sein
+        less_than_or_equal_to: muss kleiner oder gleich %{count} sein
+        not_a_number: ist keine Zahl
+        not_an_integer: muss ganzzahlig sein
+        odd: muss ungerade sein
+        record_invalid: ! 'Gültigkeitsprüfung ist fehlgeschlagen: %{errors}'
+        taken: ist bereits vergeben
+        too_long: ist zu lang (nicht mehr als %{count} Zeichen)
+        too_short: ist zu kurz (nicht weniger als %{count} Zeichen)
+        wrong_length: hat die falsche Länge (muss genau %{count} Zeichen haben)
+      template: &70172104286160
+        body: ! 'Bitte überprüfen Sie die folgenden Felder:'
+        header:
+          one: ! 'Konnte %{model} nicht speichern: ein Fehler.'
+          other: ! 'Konnte %{model} nicht speichern: %{count} Fehler.'
   activerecord:
     errors:
-      <<: *errors
+      format: ! '%{attribute} %{message}'
+      messages: *70172103623720
+      template: *70172104286160
+  manage:
+    link: Verwalten
+  planner:
+    link: Planer
+  session:
+    forgot:
+      password:
+        question: oder Passwort vergessen?
+    new:
+      submit: Sign in
+      user: Neue Nutzer?
+      forgotten:
+        password: Passwort vergessen
+    signup: Jetzt anmelden!
+    user:
+      password: Passwort
+  sessions:
+    new:
+      title: Sign in
+  settings:
+    link: Einstellungen
+  signout:
+    link: Sign out
+  referrals:
+    link: Empfehlungen
+  welcome:
+    hello: ! 'Hallo, '
+    link: Willkommen
+    step:
+      one:
+        desc: Definieren Sie eine Notdienst Gruppe für all Apotheken in Ihre Gruppe.
+        title: Erstellen Sie alle Apotheken in Ihre Notdienst Gruppe.
+      three:
+        desc: Füllen Sie Ihre Kalender mit Events um Ihre Notdienst Bereitschaftsdienst im Fester zu zeigen.
+        title: Neue Events im Kalender einpflegen
+      two:
+        desc: Erstellen Sie alle Apotheken in Ihre Notdienst Gruppe.
+        title: Apotheken erstellen
+    getting:
+      started: Unten sind die ersten Schritten mit Notdienst-Touch anfangen zu können.
+  about:
+    link: Über uns
+  a:
+    product:
+      by: Angetrieben von
+  contact:
+    link: Kontakt
+    alert:
+      content: Montags bis Freitags 8Uhr bis 17Uhr MEZ.
+      heading: ! 'Öffnungszeiten:'
+    cell:
+      phone: Mobiltelefon
+    fill:
+      out: Schreiben Sie uns eine E-Mail oder rufen Sie uns an.
+    form:
+      heading: Schreiben Sie uns...
+      new:
+        customer:
+          two: You're already a Notdienst-Touch customer and have questions about your account?
+      subtitle: Wir helfen Ihnen gerne...
+      title: Sie haben fragen?
+    office:
+      fax: Büro Fax
+      phone: Büro Tel.
+  help:
+    link: Hilfe
+  news:
+    link: Neuigkeiten
+  event:
+    new: Neues Event
+  '2012-11-15': what is this?
+  account:
+    name: Firma Name
+    subdomain: Secure Site
+    submit: Account erstellen
+    index:
+      title: Konto Einstellungen
+    change:
+      password:
+        button: Password Ändern
+    update:
+      button: Aktualisierung
+    edit:
+      title: Profile ändern
+  user:
+    name: Vollständiger Name
+    password: Password
+  new:
+    account:
+      headline: Create Account
+  'no':
+    email: I do not have an E-Mail
+  password:
+    reset:
+      instructions:
+        title: Ihre Password ändern oder zurücksetzen
+      button: Ändern oder Zurücksetzen
+  modal:
+    body: ! 'Als Sie sich angemeldet haben bei Notdienst-Touch haben wir Ihnen einen E-Mail geschickt mit Ihrer Secure Site. Sie können von da aus einloggen. Es seiht so aus:'
+    link: Secure Site vergessen?
+    title: Wir man sich einloggen kann im Notdienst-Touch
+  pharmacies:
+    emergency:
+      group:
+        select: Bitte selectieren
+        dropdown:
+          label: Bitte auswählen
+        question: Haben Sie noch keine Notdienst Gruppe erstellt? Erstellen Sie eine
+      hours:
+        from: Notdienstzeiten von
+        to: Notdienstzeiten bis
+    search: Suchen Sie nach eine Apotheke
+    table:
+      bga:
+        number: BGA Number
+      name: Apotheken Verwalten
+      owner:
+        name: Owner's Name
+      city: City
+    title: Apotheken Verwalten
+    link: Apotheken
+    address: Adresse
+    back:
+      button: Zurück
+      link: Zurück
+    bga:
+      number: BGA nummer
+    city: Stadt
+    closed: geschlossen um
+    create:
+      button: Erstellen
+      title: Apotheke erstellen
+    fax:
+      number: Faxnummer
+    name: Name der Apotheke
+    open: geöffnet von
+    owner:
+      name: Inhaber/in
+    phone:
+      number: Telefonnummer
+    save:
+      button: Speichern
+      link: Speichern
+    show:
+      button: Zeigen
+    viewall:
+      button: Alle anzeigen
+    zipcode: Postleitzahl
+  emergency:
+    group:
+      link: Notdienst Gruppen
+      index:
+        title: Notdienst Gruppen verwalten
+      name: Name
+      new:
+        button: Neue Gruppe
+      group:
+        name: Gruppe Name
+      pharmacy:
+        dropdown:
+          label: Bitte auswählen
+      create:
+        button: Neue erstellen
+  customer:
+    service:
+      feed:
+        link: Kundeninfos
+  pharmacy:
+    search:
+      button: Suchen
+  emergency_group:
+    create:
+      title: Neue Notdienst Gruppe erstellen
+  simple_form:
+    required:
+      html: <abbr title="required">*</abbr>
+      mark: ! '*'
+      text: required

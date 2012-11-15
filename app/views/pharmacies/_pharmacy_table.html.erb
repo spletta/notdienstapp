@@ -2,10 +2,10 @@
 <%= hidden_field_tag :sort, params[:sort] %>
 <table class="table table-hover">
 	<tr>
-		<th><%=  t "pharmacies.table.bga.number", default: "BGA Number" %></th>
-		<th><%=  t "pharmacies.table.name", deafult: "Name" %></th>
-		<th><%=  t "pharmacies.table.owner.name", default: "Owner's Name" %></th>
-		<th><%=  t "pharmacies.table.city", default: "City" %></th>
+		<th><%=  t "pharmacies.table.bga.number" %></th>
+		<th>Name</th>
+		<th><%=  t "pharmacies.table.owner.name" %></th>
+		<th><%=  t "pharmacies.table.city" %></th>
 		<th>&nbsp;</th>
 	<tr>
 <% for pharmacy in @pharmacies %>
@@ -15,8 +15,8 @@
 	  <td><%= pharmacy.owner_name %></td>
 	  <td><%= pharmacy.city %></td>
 	  <td>
-		  <%= link_to t('pharmacies.edit', default: "Edit"), edit_pharmacy_path(pharmacy), class: "btn btn-mini" %>
-	    <%= link_to t('pharmacies.delete', default: "Destroy"), pharmacy_path(pharmacy), :confirm => t('pharmacies.confirm.delete', default: 'Are you sure?'), :method => :delete, class: "btn btn-mini btn-danger" %>
+		  <%= link_to t('pharmacies.edit'), edit_pharmacy_path(pharmacy), class: "btn btn-mini" %>
+	    <%= link_to t('pharmacies.delete'), pharmacy_path(pharmacy), :confirm => t('pharmacies.confirm.delete'), :method => :delete, class: "btn btn-mini btn-danger" %>
     </td>
 		</tr>	
 	<% end %>

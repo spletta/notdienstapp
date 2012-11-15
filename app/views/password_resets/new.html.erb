@@ -1,14 +1,14 @@
 
 <div class="row">
-  <aside class="span6 offset3">
-	<h3c>Send reset password instructions</h3c>
+  <aside class="span5 offset3">
+	<h3c><%= t 'password.reset.instructions.title' %></h3c>
     <section>
       <%= form_tag password_resets_path, :method => :post do %>
 			  <div class="field">
 			    <%= label_tag :email %>
 			    <%= text_field_tag :email, params[:email] %>
 			  </div>
-			  <div class="actions"><%= submit_tag "Reset Password", class: 'btn btn-mini btn-danger' %></div>
+			  <div class="actions"><%= submit_tag t('password.reset.button'), class: 'btn btn-mini btn-primary' %></div>
 			<% end %>
     </section>
   </aside>

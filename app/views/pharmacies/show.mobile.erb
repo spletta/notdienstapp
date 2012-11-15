@@ -1,26 +1,54 @@
 <% provide(:title, @pharmacy.name) %>
-<div class="row">
-  <aside class="span4">
-    <section>
-      <h1>
-        <%= @pharmacy.name %>
-      </h1>
-    </section>
-  </aside>
-	<div class="span8">
-  
-    <strong>Emergency Group:</strong>
-		<ul>
-      <% if @pharmacy.emergency_group.nil? %>
-		    <li>This Pharmacy is currently not associated with an Emergency Group, go <%= link_to "here", edit_pharmacy_path %> to change that.</li>
-      <% else %>
-        <li><%= @pharmacy.emergency_group.name %></li>
-      <% end %>
-		</ul>
-      <ol class="pharmacies">
-        <%= render @pharmacy %>
-      </ol>
-      
+	<div class="span6 offset3">      
+<table class="table table-striped">
+  <tbody>
+	  <tr>
+	    <td><h6>Emergency Group:</h6></td>
+	      <% if @pharmacy.emergency_group.nil? %>
+		      <td>This Pharmacy is currently not associated with an Emergency Group, go <%= link_to "here", edit_pharmacy_path %> to change that.</td>
+        <% else %>
+          <td><i class="icon-th"></i> <%= @pharmacy.emergency_group.name %></td>
+        <% end %>
+	  </tr>
+		<tr>
+	      <td><h6>Name:</h6></td>
+	      <td><i class="icon-user"></i> <%= @pharmacy.name %></td>
+	  </tr>
+		<tr>
+	      <td><h6>Owner Name:</h6></td>
+	      <td><i class="icon-user"></i> <%= @pharmacy.owner_name %></td>
+	  </tr>
+		<tr>
+	      <td><h6>BGA Number:</h6></td>
+	      <td><i class="icon-user"></i> <%= @pharmacy.bga_number %></td>
+	  </tr>
+	  <tr>
+	      <td><h6>Tel:</h6></td>
+	      <td><i class="icon-home"></i> <%= @pharmacy.phone_number %></td>
+	  </tr>
+	  <tr>
+	      <td><h6>Fax:</h6></td>
+	      <td><i class="icon-home"></i> <%= @pharmacy.fax_number %></td>
+	  </tr>
+	  <tr>
+	      <td><h6>Email:</h6></td>
+	      <td><i class="icon-envelope"></i> <%= @pharmacy.email %></td>
+	  </tr>
+	  	  <tr>
+	      <td><h6>Address:</h6></td>
+	      <td><i class="icon-home"></i>
+		      <%= @pharmacy.address %>,
+		      <%= @pharmacy.zipcode %> <%= @pharmacy.city %>
+		    </td>
+	  </tr>
+  </tbody>
+</table>
+<p>
+ <%= link_to t('pharmacies.back.button'), pharmacies_path, :class => 'btn btn-mini' %>
+ <%= link_to t('pharmacies.edit.button'), edit_pharmacy_path(@pharmacy), :class => 'btn btn-mini' %>
+ <%= link_to t('pharmacies.destroy.button'), pharmacy_path(@pharmacy), :method => :delete, :class => 'btn btn-mini btn-danger' %>
+</p>
+
 
   </div>
 </div>

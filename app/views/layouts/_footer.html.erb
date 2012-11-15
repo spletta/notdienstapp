@@ -1,23 +1,23 @@
 <footer class="footer">
   <small>
-	  <%= t "a.product.by", default: "Powered by" %>
+	  <%= t "a.product.by" %>
     <a href="http://signaleast.com/">Signal East</a>
   </small>
   <nav>
     <ul>
       <li>
-        <%= link_to about_path do %>
-	        <%= t "about.link", default: "About" %>
+        <%= link_to contact_path do %>
+	        <%= t "about.link" %>
 	      <% end %>
 	    </li>
       <li>
         <%= link_to contact_path do %>
-          <%= t "contact.link", default: "Contact" %>
+          <%= t "contact.link" %>
         <% end %>
       </li>
       <li>
 	      <%= link_to "https://www.facebook.com/pages/Signal-East/438692912836281?ref=ts" do %>
-	        <%= t "news.link", default: "News" %>
+	        <%= t "news.link" %>
 	      <% end %>
 	    </li>
     </ul>

@@ -13,7 +13,7 @@
 		</ul>
 </p>
 <p>
-  <%= link_to "Edit", edit_emergency_group_path(@emergency_group) %> |
-  <%= link_to "Destroy", @emergency_group, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", emergency_groups_path %>
+  <%= link_to t('pharmacies.edit.button'), edit_emergency_group_path(@emergency_group) %> |
+  <%= link_to t('pharmacies.destroy.button'), @emergency_group, :confirm => t('pharmacies.confirm.delete'), :method => :delete %> |
+  <%= link_to t('pharmacies.viewall.button'), emergency_groups_path %>
 </p>

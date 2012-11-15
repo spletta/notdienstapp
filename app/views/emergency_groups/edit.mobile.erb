@@ -1,7 +1,7 @@
 <% provide(:title, 'Edit Emergency Group') %>
 <div class="row">
   <aside class="span6 offset3">
-	<h3c><%= t 'emergency.group.edit.title', default: "Edit Emergency Group" %></h3c>
+	<h3c><%= t 'emergency.group.edit.title' %></h3c>
     <section>
       <%= render 'form' %>
     </section>
@@ -10,6 +10,6 @@
   </div>
 </div>
 <p>
-  <%= link_to "Show", @emergency_group %> |
-  <%= link_to "View All", emergency_groups_path %>
+  <%= link_to t('pharmacies.show.link'), @emergency_group %> |
+  <%= link_to t('pharmacies.viewall.link'), emergency_groups_path %>
 </p>

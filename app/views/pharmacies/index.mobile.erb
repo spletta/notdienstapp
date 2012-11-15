@@ -2,8 +2,8 @@
 <div class="row">
 	</br>
   <div class="span8 offset2">
-	  <h3c><%= t 'pharmacies.title', default: "Manage Pharmacies" %></h3c>
-		<p><%= t 'pharmacies.search', default: "Search for a pharmacy" %></p>
+	  <h3c><%= t 'pharmacies.title' %></h3c>
+		<p><%= t 'pharmacies.search' %></p>
 			<%= form_tag pharmacies_path, :method => 'get', class: "form-search" do %>
 			<p>
 			<div class="input-append">
@@ -14,7 +14,7 @@
 			<div id="pharmacies"><%= render 'pharmacy_table' %></div>
 			<% end %>
 		</br>
-		<p><%= t 'pharmacies.add.text', default: 'Add a new pharmacy ' %><%= link_to t('pharmacies.add.link', default: "here"), new_pharmacy_path %>.</p>
+		<p><%= link_to t('pharmacies.create.button'), new_pharmacy_path, :class => 'btn btn-mini btn-primary' %></p>
   </div>
 </div>
 </br>

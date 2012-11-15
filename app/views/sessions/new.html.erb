@@ -1,6 +1,6 @@
 <% provide(:title, "Sign in") %>
 <div class="row">
-  <div class="span6 offset3">
+  <div class="span3 offset4">
 	  <h2c><%= t 'sessions.new.title', default: 'Sign in' %></h2c>
 	  
     <%= form_tag sessions_path do %>
@@ -16,7 +16,7 @@
               <%= link_to t('session.new.submit', default: 'Sign in'),  "#myModal", :data => {:toggle=>"modal"}, class: "btn btn-mini btn-primary" %>
             <% end %>
       <%= link_to t('session.signup', default: 'Sign up now!'), signup_path, class: 'btn btn-mini' %>
-      <%= link_to 'Forgotten Password', new_password_reset_path, class: 'btn btn-mini' %>
+      <%= link_to t('session.new.forgotten.password'), new_password_reset_path, class: 'btn btn-mini' %>
     <% end %>
   </div>
 </div>

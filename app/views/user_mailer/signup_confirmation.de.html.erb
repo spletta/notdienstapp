@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Willkommen bei Notdienst Touch,  <%= @user.name %></h1>
+    <p>
+	    Sie haben sich erfolgreich angemeldet bei Notdienst Touch.</br>
+	    Ihre Benuztername ist gleichzeitig Ihre E-Mail Adresse: <%= @user.email %></br>
+      Ihre Passwort würde automatische gestellt und lautet: 8RttoTriz</br>
+      
+      Sie können Ihre Passwort hier ändern: <%= @reset_url %>.
+    <br/>
+    </p>
+    <p>
+	    Um in Iher neue Konto einzuloggen, folgen Sie die folgender Link: <%= @url %>.
+	    Wenn Sie einen iPad nuzten können Sie mit das Safari Browser Ihre Webanwendung auf Ihrer Homepage speichern wie unten ins Bild geziegt wurde.
+    </p>
+    <p>
+	    <%= image_tag attachments['add-to-homescreen.png'].url %>
+	  </p>
+    <p>Vielen Dank und schönen Tag noch!</p>
+  </body>
+</html>
