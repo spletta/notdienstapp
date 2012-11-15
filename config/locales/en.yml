@@ -97,7 +97,7 @@ en:
       year: Year
   errors:
     format: ! '%{attribute} %{message}'
-    messages: &70172111218640
+    messages: &70130211803840
       accepted: must be accepted
       blank: can't be blank
       confirmation: doesn't match confirmation
@@ -125,7 +125,7 @@ en:
       wrong_length:
         one: is the wrong length (should be 1 character)
         other: is the wrong length (should be %{count} characters)
-    template: &70172111212460
+    template: &70130221162320
       body: ! 'There were problems with the following fields:'
       header:
         one: 1 error prohibited this %{model} from being saved
@@ -200,28 +200,32 @@ en:
   activemodel:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: *70172111218640
-      template: *70172111212460
+      messages: *70130211803840
+      template: *70130221162320
   activerecord:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: *70172111218640
-      template: *70172111212460
+      messages: *70130211803840
+      template: *70130221162320
   session:
     forgot:
       password:
         question: or Forgot Password?
     new:
-      submit: Sign in
+      submit: Sign In
       user: New user?
       forgotten:
         password: Forgotten Password
-    signup: Sign up now!
+    signup: Sign Up
     user:
       password: Password
+    forget:
+      password: Get it here.
+    destroy:
+      submit: Logout
   sessions:
     new:
-      title: Sign in
+      title: Sign In
   settings:
     link: Settings
   signout:
@@ -276,9 +280,15 @@ en:
     link: News
   event:
     new: New Event
+    allday: All day?
+    endtime: End
+    pharmacy: Pharmacy
+    starttime: ! 'Start '
+    title:
+      new: New Event
   '2012-11-15': what is this?
   account:
-    name: Company Name
+    name: Company
     subdomain: Secure Site
     submit: Create my account
     index:
@@ -291,13 +301,14 @@ en:
     edit:
       title: Edit Profile
   user:
-    name: 
+    name: Full Name
     password: Password
+    confirmation: Repeat password
   new:
     account:
-      headline: 
+      headline: Create new account
   'no':
-    email: 
+    email: I do not have an E-Mail
   password:
     reset:
       instructions:
@@ -310,9 +321,9 @@ en:
   pharmacies:
     emergency:
       group:
-        select: Please select
+        select: Select Emergency Group
         dropdown:
-          label: Please select
+          label: Emergency Group
         question: Still haven't added an Emergency Group? Create a
       hours:
         from: Emergency hours from
@@ -320,10 +331,11 @@ en:
     search: Search for a pharmacy
     table:
       bga:
-        number: 
+        number: BGA Number
       name: Manage Pharmacies
       owner:
-        name: 
+        name: Owner's Name
+      city: City
     title: Manage Pharmacies
     link: Pharmacies
     address: Address
@@ -333,14 +345,14 @@ en:
     bga:
       number: BGA Number
     city: City
-    closed: Pharmacy closed
+    closed: Closed
     create:
       button: Create
       title: Create Pharmacy
     fax:
       number: Fax number
     name: Pharmacy name
-    open: Open from
+    open: Open
     owner:
       name: Owner
     phone:
@@ -353,6 +365,13 @@ en:
     viewall:
       button: View all
     zipcode: Zipcode
+    confirm:
+      delete: Are your sure?
+    delete: Destroy
+    edit: Edit
+    website:
+      url: Website
+    email: Email
   emergency:
     group:
       link: Emergency Groups
@@ -366,8 +385,12 @@ en:
       pharmacy:
         dropdown:
           label: Please select
+        multiselect: Pharmacies
       create:
         button: Create New
+      website:
+        note: Website footer
+        title: Website title
   customer:
     service:
       feed:
@@ -380,6 +403,6 @@ en:
       title: Create a new Emergency Group
   simple_form:
     required:
-      html: 
-      mark: 
-      text: 
+      html: Required
+      mark: ! '*'
+      text: this is a required field

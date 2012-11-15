@@ -4,7 +4,7 @@
 <table class="table table-hover">
   <tr>
     <td><%= f.label t('pharmacies.emergency.group.dropdown.label') %></td>
-    <td><%= f.collection_select :emergency_group_id, EmergencyGroup.all, :id, :name, :include_blank => t('pharmacies.emergency.group.select', default: 'Please select'), :required => true %></td>
+    <td><%= f.collection_select :emergency_group_id, EmergencyGroup.all, :id, :name, :include_blank => t('pharmacies.emergency.group.select'), :required => true %></td>
   </tr>
   <tr> 
 	  <td><%= f.label t('pharmacies.name') %></td>
@@ -39,11 +39,11 @@
 	  <td><%= f.text_field :fax_number %></td>	
   </tr>
   <tr> 
-		<td><%= f.label :email %></td>
+		<td><%= f.label t('pharmacies.email') %></td>
 	  <td><%= f.text_field :email %></td>	
   </tr>
   <tr> 
-		<td><%= f.label :website_url %></td>
+		<td><%= f.label t('pharmacies.website.url') %></td>
 	  <td><%= f.text_field :website_url %></td>	
   </tr>
   <tr> 

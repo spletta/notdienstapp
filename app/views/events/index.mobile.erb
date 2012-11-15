@@ -1,3 +1,4 @@
+<% if event != nil %>
 <% @events.each do |event| %>
   <% if event.starttime == Date.today %>
     <div class="mc"></div>
@@ -28,4 +29,7 @@
 			</center>
 		</div>
 	<% end %>
+<% end %>
+<% else %>
+<h2><%= t 'no.event' %></h2>
 <% end %>

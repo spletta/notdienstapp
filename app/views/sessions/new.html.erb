@@ -1,7 +1,7 @@
 <% provide(:title, "Sign in") %>
 <div class="row">
-  <div class="span3 offset4">
-	  <h2c><%= t 'sessions.new.title', default: 'Sign in' %></h2c>
+  <div class="span4 offset4">
+	  <h2c><%= t 'sessions.new.title' %></h2c>
 	  
     <%= form_tag sessions_path do %>
     </br>
@@ -11,11 +11,11 @@
       <%= label_tag t 'session.user.password', default: 'Password' %>
       <%= password_field_tag :password %>
             <% if request.subdomain.present? %>
-              <%= submit_tag t('session.new.submit', default: 'Sign in'), class: "btn btn-mini btn-primary" %>
+              <%= submit_tag t('session.new.submit'), class: "btn btn-mini btn-primary" %>
             <% else %>
-              <%= link_to t('session.new.submit', default: 'Sign in'),  "#myModal", :data => {:toggle=>"modal"}, class: "btn btn-mini btn-primary" %>
+              <%= link_to t('session.new.submit'),  "#myModal", :data => {:toggle=>"modal"}, class: "btn btn-mini btn-primary" %>
             <% end %>
-      <%= link_to t('session.signup', default: 'Sign up now!'), signup_path, class: 'btn btn-mini' %>
+      <%= link_to t('session.signup'), signup_path, class: 'btn btn-mini' %>
       <%= link_to t('session.new.forgotten.password'), new_password_reset_path, class: 'btn btn-mini' %>
     <% end %>
   </div>

@@ -16,7 +16,6 @@ NdtAppV6::Application.routes.draw do
     end   
       
     resources :password_resets    
-    root to: 'events#index'
     
     match 'contact' => 'contact#new', :as => 'contact', :via => :get
     match 'contact' => 'contact#create', :as => 'contact', :via => :post
@@ -55,6 +54,7 @@ NdtAppV6::Application.routes.draw do
     resources :sessions, only: [:new, :create, :destroy]
     resources :accounts, only: [:new, :create, :destroy, :index, :edit, :update]
     
+    root to: 'static_pages#welcome'
   end
   match '*path', to: redirect("/#{I18n.default_locale}/%{path}"), 
                  constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }

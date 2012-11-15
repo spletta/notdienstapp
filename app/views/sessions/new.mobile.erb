@@ -1,18 +1,22 @@
 <% provide(:title, "Sign in") %>
 <div class="row">
-  <div class="span6 offset3">
-	  <h1><%= t 'sessions.new.title', default: 'Sign in' %></h1>
+  <div class="span4 offset3">
+	  <h2c><%= t 'sessions.new.title' %></h2c>
+	  
     <%= form_tag sessions_path do %>
-
+    </br>
       <%= label_tag :email %>
       <%= text_field_tag :email %>
 
       <%= label_tag t 'session.user.password', default: 'Password' %>
       <%= password_field_tag :password %>
-
-      <%= submit_tag t('session.new.submit', default: 'Sign in'), class: "btn btn-large btn-primary" %>
+            <% if request.subdomain.present? %>
+              <%= submit_tag t('session.new.submit'), class: "btn btn-mini btn-primary" %>
+            <% else %>
+              <%= link_to t('session.new.submit'),  "#myModal", :data => {:toggle=>"modal"}, class: "btn btn-mini btn-primary" %>
+            <% end %>
+      <%= link_to t('session.signup'), signup_path, class: 'btn btn-mini' %>
+      <%= link_to t('session.new.forgotten.password'), new_password_reset_path, class: 'btn btn-mini' %>
     <% end %>
-
-    <p><%= t 'session.new.user', default: 'New user?' %> <%= link_to t('session.signup', default: 'Sign up now!'), signup_path %> <%= t 'session.forgot.password.question', default: 'or Forgot Password?' %> <%= link_to t('session.forget.password', default: 'Get it here.'), signup_path %></p> 
   </div>
 </div>

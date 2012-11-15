@@ -3,31 +3,31 @@
 <table class="table table-striped">
   <tbody>
 	  <tr>
-	    <td><h6>Pharmacy's Emergency Group:</h6></td>
+	    <td><h6><%= t 'events.show.emergency.group' %></h6></td>
 	      <% if @event.pharmacy.emergency_group.nil? %>
-		      <td>This Event is currently associated with a Pharmacy that does not belong to an Emergency Group, go <%= link_to "here", edit_pharmacy_path %> to change that.</td>
+		      <td><%= t 'events.show.emergency.group.sentence' %><%= link_to t('emergency.group.new.button'), new_emergency_group_path, :class => 'btn btn-mini btn-primary' %></td>
         <% else %>
           <td><i class="icon-th"></i> <%= @event.pharmacy.emergency_group.name %></td>
         <% end %>
 	  </tr>
 		<tr>
-	      <td><h6>Event Start:</h6></td>
+	      <td><h6><%= t 'event.starttime' %></h6></td>
 	      <td><i class="icon-time"></i> <%= @event.starttime %></td>
 	  </tr>
 		<tr>
-	      <td><h6>Event End:</h6></td>
+	      <td><h6><%= t 'event.endtime' %></h6></td>
 	      <td><i class="icon-time"></i> <%= @event.endtime %></td>
 	  </tr>
 		<tr>
-	      <td><h6>BGA Number:</h6></td>
+	      <td><h6><%= 'event.allday' %></h6></td>
 	      <td><i class="icon-cog"></i> <%= @event.all_day %></td>
 	  </tr>
   </tbody>
 </table>
 </p>
-  <%= link_to "View All", events_path, :class => 'btn btn-mini' %>
-  <%= link_to "Edit", edit_event_path(@event), :class => 'btn btn-mini' %>
-  <%= link_to "Destroy", @event, :confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-mini btn-danger' %>
+  <%= link_to t('pharmacies.viewall.button'), events_path, :class => 'btn btn-mini' %>
+  <%= link_to t('pharmacies.edit.button'), edit_event_path(@event), :class => 'btn btn-mini' %>
+  <%= link_to t('pharmacies.destroy.button'), @event, :confirm => t('pharmacies.confirm.delete'), :method => :delete, :class => 'btn btn-mini btn-danger' %>
 </p>
   </div>
 </div>

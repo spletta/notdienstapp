@@ -197,7 +197,7 @@ de:
   activemodel:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: &70172103623720
+      messages: &70130230400240
         accepted: muss akzeptiert werden
         blank: muss ausgefüllt werden
         confirmation: stimmt nicht mit der Bestätigung überein
@@ -219,7 +219,7 @@ de:
         too_long: ist zu lang (nicht mehr als %{count} Zeichen)
         too_short: ist zu kurz (nicht weniger als %{count} Zeichen)
         wrong_length: hat die falsche Länge (muss genau %{count} Zeichen haben)
-      template: &70172104286160
+      template: &70130230414740
         body: ! 'Bitte überprüfen Sie die folgenden Felder:'
         header:
           one: ! 'Konnte %{model} nicht speichern: ein Fehler.'
@@ -227,8 +227,8 @@ de:
   activerecord:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: *70172103623720
-      template: *70172104286160
+      messages: *70130230400240
+      template: *70130230414740
   manage:
     link: Verwalten
   planner:
@@ -238,16 +238,20 @@ de:
       password:
         question: oder Passwort vergessen?
     new:
-      submit: Sign in
+      submit: Anmelden
       user: Neue Nutzer?
       forgotten:
         password: Passwort vergessen
-    signup: Jetzt anmelden!
+    signup: Registrieren
     user:
       password: Passwort
+    forget:
+      password: Get it here.
+    destroy:
+      submit: Abmelden
   sessions:
     new:
-      title: Sign in
+      title: Anmelden
   settings:
     link: Einstellungen
   signout:
@@ -259,16 +263,16 @@ de:
     link: Willkommen
     step:
       one:
-        desc: Definieren Sie eine Notdienst Gruppe für all Apotheken in Ihre Gruppe.
-        title: Erstellen Sie alle Apotheken in Ihre Notdienst Gruppe.
+        desc: Definieren Sie eine Notdiestgruppe für alle Apotheken.
+        title: Notdienst Gruppe erstellen
       three:
-        desc: Füllen Sie Ihre Kalender mit Events um Ihre Notdienst Bereitschaftsdienst im Fester zu zeigen.
-        title: Neue Events im Kalender einpflegen
+        desc: Tragen Sie alle Termine für die entsprechenden Apotheken ein.
+        title: Neue Termine im Kalender einpflegen
       two:
-        desc: Erstellen Sie alle Apotheken in Ihre Notdienst Gruppe.
+        desc: Erfassen Sie alle Notdienst-Apotheken Ihres Bereiches
         title: Apotheken erstellen
     getting:
-      started: Unten sind die ersten Schritten mit Notdienst-Touch anfangen zu können.
+      started: Hier sind die ersten Schritte um den Notdienst-Touch zu nuzten.
   about:
     link: Über uns
   a:
@@ -298,12 +302,18 @@ de:
   news:
     link: Neuigkeiten
   event:
-    new: Neues Event
+    new: Neuer Termin
+    allday: Ganzen Tag?
+    endtime: Ende
+    pharmacy: Apotheke
+    starttime: Anfang
+    title:
+      new: Neuer Termin
   '2012-11-15': what is this?
   account:
-    name: Firma Name
-    subdomain: Secure Site
-    submit: Account erstellen
+    name: Firma
+    subdomain: Sichere Seite
+    submit: Konto erstellen
     index:
       title: Konto Einstellungen
     change:
@@ -315,39 +325,40 @@ de:
       title: Profile ändern
   user:
     name: Vollständiger Name
-    password: Password
+    password: Passwort
+    confirmation: Passwort wiederholen
   new:
     account:
-      headline: Create Account
+      headline: Neue Konto erstellen
   'no':
-    email: I do not have an E-Mail
+    email: Ich habe keine E-Mail-Adresse
   password:
     reset:
       instructions:
         title: Ihre Password ändern oder zurücksetzen
       button: Ändern oder Zurücksetzen
   modal:
-    body: ! 'Als Sie sich angemeldet haben bei Notdienst-Touch haben wir Ihnen einen E-Mail geschickt mit Ihrer Secure Site. Sie können von da aus einloggen. Es seiht so aus:'
-    link: Secure Site vergessen?
-    title: Wir man sich einloggen kann im Notdienst-Touch
+    body: ! 'Als Sie sich bei Notdienst-Touch angemeldet haben wir Ihnen eine E-Mail geschickt mit die Adresse zu Ihre Sichere Seite. Sie können sich nur von Ihre eigene Sicher Seite aus einloggen. Unten ist ein beispeil:'
+    link: Sichere Seite vergessen?
+    title: Wir man sich im Notdienst-Touch einloggen kann.
   pharmacies:
     emergency:
       group:
-        select: Bitte selectieren
+        select: Notdienstgruppe auswählen
         dropdown:
-          label: Bitte auswählen
-        question: Haben Sie noch keine Notdienst Gruppe erstellt? Erstellen Sie eine
+          label: Notdienstgruppe
+        question: Haben Sie noch keine Notdienstgruppe erstellt? Erstellen Sie eine
       hours:
         from: Notdienstzeiten von
         to: Notdienstzeiten bis
     search: Suchen Sie nach eine Apotheke
     table:
       bga:
-        number: BGA Number
+        number: BGA-Nummer
       name: Apotheken Verwalten
       owner:
-        name: Owner's Name
-      city: City
+        name: Inhaber/in
+      city: Stadt
     title: Apotheken Verwalten
     link: Apotheken
     address: Adresse
@@ -357,14 +368,14 @@ de:
     bga:
       number: BGA nummer
     city: Stadt
-    closed: geschlossen um
+    closed: Geschlossen
     create:
-      button: Erstellen
+      button: Neue erstellen
       title: Apotheke erstellen
     fax:
       number: Faxnummer
     name: Name der Apotheke
-    open: geöffnet von
+    open: Geöffnet
     owner:
       name: Inhaber/in
     phone:
@@ -377,21 +388,32 @@ de:
     viewall:
       button: Alle anzeigen
     zipcode: Postleitzahl
+    confirm:
+      delete: Sind Sie sicher?
+    delete: Löschen
+    edit: Bearbeiten
+    website:
+      url: Webseite
+    email: E-Mail
   emergency:
     group:
-      link: Notdienst Gruppen
+      link: Notdienstgruppen
       index:
-        title: Notdienst Gruppen verwalten
+        title: Notdienstgruppen verwalten
       name: Name
       new:
         button: Neue Gruppe
       group:
-        name: Gruppe Name
+        name: Gruppenname
       pharmacy:
         dropdown:
           label: Bitte auswählen
+        multiselect: Apotheken
       create:
         button: Neue erstellen
+      website:
+        note: Webseite Fußzeile
+        title: Webseite Titel
   customer:
     service:
       feed:
@@ -401,7 +423,7 @@ de:
       button: Suchen
   emergency_group:
     create:
-      title: Neue Notdienst Gruppe erstellen
+      title: Neue Notdienstgruppe erstellen
   simple_form:
     required:
       html: <abbr title="required">*</abbr>
