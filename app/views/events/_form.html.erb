@@ -3,7 +3,7 @@
 <table class="table table-hover">
     <tr>
     <td><%= f.label t 'event.pharmacy' %></td>
-    <td><%= f.collection_select :pharmacy_id, Pharmacy.all, :id, :name, :include_blank => t('pharmacies.emergency.group.select'), :required => true %></td>
+    <td><%= f.collection_select :pharmacy_id, Pharmacy.all, :id, :name, :include_blank => t('event.group.pharmacy.select'), :required => true %></td>
   </tr>
   <tr>
   	<td><%= f.label t 'event.starttime' %></td>

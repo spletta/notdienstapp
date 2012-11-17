@@ -97,7 +97,7 @@ en:
       year: Year
   errors:
     format: ! '%{attribute} %{message}'
-    messages: &70318848484000
+    messages: &70131345940280
       accepted: must be accepted
       blank: can't be blank
       confirmation: doesn't match confirmation
@@ -125,7 +125,7 @@ en:
       wrong_length:
         one: is the wrong length (should be 1 character)
         other: is the wrong length (should be %{count} characters)
-    template: &70318848472160
+    template: &70131345932800
       body: ! 'There were problems with the following fields:'
       header:
         one: 1 error prohibited this %{model} from being saved
@@ -200,13 +200,13 @@ en:
   activemodel:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: *70318848484000
-      template: *70318848472160
+      messages: *70131345940280
+      template: *70131345932800
   activerecord:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: *70318848484000
-      template: *70318848472160
+      messages: *70131345940280
+      template: *70131345932800
   session:
     forgot:
       password:
@@ -288,6 +288,9 @@ en:
     starttime: ! 'Start '
     title:
       new: New Event
+    group:
+      pharmacy:
+        select: Select Pharmacy
   '2012-11-15': what is this?
   account:
     name: Company
@@ -376,6 +379,8 @@ en:
     website:
       url: Website
     email: Email
+    destroy:
+      button: 
   emergency:
     group:
       link: Emergency Groups
@@ -390,11 +395,18 @@ en:
         dropdown:
           label: Please select
         multiselect: Pharmacies
+        select: 
       create:
         button: Create New
       website:
         note: Website footer
         title: Website title
+      destroy:
+        button: Destroy
+      edit:
+        button: Edit
+      confirm:
+        delete: Are you sure?
   customer:
     service:
       feed:
@@ -416,3 +428,25 @@ en:
     name: Full Name
     subject: Subject
     send: Send
+  admin_user:
+    unauthenticated: 
+  devise:
+    registrations:
+      inactive_signed_up: 
+      reasons: {}
+  required: required
+  destroy:
+    button: 
+  edit:
+    button: 
+  events:
+    show:
+      emergency:
+        group: Emergency Group
+      pharmacy: Pharmacy
+    destroy:
+      button: Destroy
+    edit:
+      button: Edit
+    viewall:
+      button: View all

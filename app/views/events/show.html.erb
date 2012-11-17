@@ -10,6 +10,14 @@
           <td><i class="icon-th"></i> <%= @event.pharmacy.emergency_group.name %></td>
         <% end %>
 	  </tr>
+	  <tr>
+	    <td><h6><%= t 'events.show.pharmacy' %></h6></td>
+	      <% if @event.pharmacy.nil? %>
+		      <td><%= t 'events.show.pharmacy.sentence' %><%= link_to t('emergency.group.new.button'), new_pharmacy_path, :class => 'btn btn-mini btn-primary' %></td>
+        <% else %>
+          <td><i class="icon-home"></i> <%= @event.pharmacy.name %></td>
+        <% end %>
+	  </tr>
 		<tr>
 	      <td><h6><%= t 'event.starttime' %></h6></td>
 	      <td><i class="icon-time"></i> <%= @event.starttime %></td>
@@ -19,15 +27,15 @@
 	      <td><i class="icon-time"></i> <%= @event.endtime %></td>
 	  </tr>
 		<tr>
-	      <td><h6><%= 'event.allday' %></h6></td>
+	      <td><h6><%= t 'event.allday' %></h6></td>
 	      <td><i class="icon-cog"></i> <%= @event.all_day %></td>
 	  </tr>
   </tbody>
 </table>
 </p>
-  <%= link_to t('pharmacies.viewall.button'), events_path, :class => 'btn btn-mini' %>
-  <%= link_to t('pharmacies.edit.button'), edit_event_path(@event), :class => 'btn btn-mini' %>
-  <%= link_to t('pharmacies.destroy.button'), @event, :confirm => t('pharmacies.confirm.delete'), :method => :delete, :class => 'btn btn-mini btn-danger' %>
+  <%= link_to t('events.viewall.button'), events_path, :class => 'btn btn-mini' %>
+  <%= link_to t('events.edit.button'), edit_event_path(@event), :class => 'btn btn-mini' %>
+  <%= link_to t('events.destroy.button'), @event, :confirm => t('pharmacies.confirm.delete'), :method => :delete, :class => 'btn btn-mini btn-danger' %>
 </p>
   </div>
 </div>

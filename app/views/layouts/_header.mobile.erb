@@ -13,14 +13,14 @@
 					</li>				
 					
 					<li class="<%= 'active' if current_page?(events_path) %>">
-					<% if signed_in? %><%= link_to "Planner", events_path %><% end %>
+					<% if signed_in? %><%= link_to t('planner.link'), events_path %><% end %>
 					</li>
 					
 					<li class="<%= 'active' if current_page?(manage_path) || 
 					                           current_page?(pharmacies_path) || 
 					                           current_page?(emergency_groups_path) ||
 					                           current_page?(customer_service_path) %>">
-					<% if signed_in? %><%= link_to "Manage", pharmacies_path %><% end %>
+					<% if signed_in? %><%= link_to t('manage.link'), pharmacies_path %><% end %>
 					</li>
         </ul>
         <ul class="nav pull-right">
@@ -55,13 +55,13 @@
                 <li class="divider"></li>
                 <li>
                   <%= link_to signout_path, method: "delete" do %>
-                    <%= t "signout.link", default: "Sign out" %>
+                    <%= t'session.destroy.submit' %>
                   <% end %>
                 </li>
               </ul>
             </li>
           <% else %>
-            <li><%= link_to "Sign in", signin_path %></li>
+            <li><%= link_to t('session.new.submit'), signin_path %></li>
           <% end %>
           <li id="fat-menu" class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">

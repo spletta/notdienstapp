@@ -197,7 +197,7 @@ de:
   activemodel:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: &70318835585980
+      messages: &70131352350340
         accepted: muss akzeptiert werden
         blank: muss ausgefüllt werden
         confirmation: stimmt nicht mit der Bestätigung überein
@@ -219,7 +219,7 @@ de:
         too_long: ist zu lang (nicht mehr als %{count} Zeichen)
         too_short: ist zu kurz (nicht weniger als %{count} Zeichen)
         wrong_length: hat die falsche Länge (muss genau %{count} Zeichen haben)
-      template: &70318835599520
+      template: &70131352347740
         body: ! 'Bitte überprüfen Sie die folgenden Felder:'
         header:
           one: ! 'Konnte %{model} nicht speichern: ein Fehler.'
@@ -227,8 +227,8 @@ de:
   activerecord:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: *70318835585980
-      template: *70318835599520
+      messages: *70131352350340
+      template: *70131352347740
   manage:
     link: Verwalten
   planner:
@@ -272,12 +272,12 @@ de:
         desc: Erfassen Sie alle Notdienst-Apotheken Ihres Bereiches
         title: Apotheken erstellen
     getting:
-      started: Hier sind die ersten Schritte um den Notdienst-Touch zu nuzten.
+      started: Hier sind die ersten Schritte um den Notdienst-Touch zu nutzen.
   about:
     link: Über uns
   a:
     product:
-      by: Angetrieben von
+      by: Powered by
   contact:
     link: Kontakt
     alert:
@@ -311,6 +311,9 @@ de:
     starttime: Anfang
     title:
       new: Neuer Termin
+    group:
+      pharmacy:
+        select: Apotheke auswählen
   '2012-11-15': what is this?
   account:
     name: Firma
@@ -399,6 +402,8 @@ de:
     website:
       url: Webseite
     email: E-Mail
+    destroy:
+      button: 
   emergency:
     group:
       link: Notdienstgruppen
@@ -413,11 +418,18 @@ de:
         dropdown:
           label: Bitte auswählen
         multiselect: Apotheken
+        select: 
       create:
         button: Neue erstellen
       website:
         note: Webseite Fußzeile
         title: Webseite Titel
+      destroy:
+        button: Löschen
+      edit:
+        button: Bearbeiten
+      confirm:
+        delete: Sind Sie sicher?
   customer:
     service:
       feed:
@@ -439,3 +451,25 @@ de:
     name: Vollständiger Name
     subject: Betreff
     send: Schicken
+  admin_user:
+    unauthenticated: 
+  devise:
+    registrations:
+      inactive_signed_up: 
+      reasons: 
+  required: required
+  destroy:
+    button: 
+  edit:
+    button: 
+  events:
+    show:
+      emergency:
+        group: Notdienstgruppe
+      pharmacy: Apotheke
+    destroy:
+      button: Löschen
+    edit:
+      button: Bearbeiten
+    viewall:
+      button: Alle anzeigen

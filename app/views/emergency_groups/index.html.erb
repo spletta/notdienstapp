@@ -12,8 +12,8 @@
 			  <tr>
 				  <td><%= emergency_group.name %></td>
 				  <td>
-					  <%= link_to t('pharmacies.edit.button'), edit_emergency_group_path(emergency_group), class: "btn btn-mini" %>
-				    <%= link_to t('pharmacies.destroy.button'), emergency_group, :confirm => t('pharmacies.confirm.delete'), :method => :delete, class: "btn btn-mini btn-danger" %>
+					  <%= link_to t('emergency.group.edit.button'), edit_emergency_group_path(emergency_group), class: "btn btn-mini" %>
+				    <%= link_to t('emergency.group.destroy.button'), emergency_group, :confirm => t('emergency.group.confirm.delete'), :method => :delete, class: "btn btn-mini btn-danger" %>
 			    </td> 
 				</tr>
 			<% end %>

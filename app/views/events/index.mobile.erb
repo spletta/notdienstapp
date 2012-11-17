@@ -1,4 +1,3 @@
-<% if event != nil %>
 <% @events.each do |event| %>
   <% if event.starttime == Date.today %>
     <div class="mc"></div>
@@ -13,8 +12,8 @@
 				<h2b><%= event.pharmacy.name %></h2b>
 			</center><br>
 			<center>
-				<h3b>Von <%= l(event.starttime, :format => '%A, %d.%B %Y') %> <%= event.pharmacy.emergency_hours_starttime.strftime('%H:%M') %> Uhr<br>
-		         bis <%= l(event.endtime, :format => '%A, %d.%B %Y') %> <%= event.pharmacy.emergency_hours_endtime.strftime('%H:%M') %> Uhr</h3b>
+				<h3b>Von <%= l(event.starttime, :format => '%A, %d.%B %Y') %> <%= event.pharmacy.emergency_hour_change_time.strftime('%H:%M') %> Uhr<br>
+		         bis <%= l(event.endtime, :format => '%A, %d.%B %Y') %> <%= event.pharmacy.emergency_hour_change_time.strftime('%H:%M') %> Uhr</h3b>
 		  </center>
 		  <center>
 			  <h3b><%= event.pharmacy.address %><br>
@@ -29,7 +28,4 @@
 			</center>
 		</div>
 	<% end %>
-<% end %>
-<% else %>
-<h2><%= t 'no.event' %></h2>
 <% end %>
