@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :name, :password, :password_confirmation, :pharmacy_ids, :pharmacy_tokens
   has_secure_password
+  attr_accessible :email, :name, :password, :password_confirmation, :pharmacy_ids, :pharmacy_tokens
   
   has_many :pharmacies_users
   has_many :pharmacies, :through => :pharmacies_users
@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   before_save { self.email.downcase! }
   before_save :create_remember_token
   
-  validates :name, :email, presence: true, length: { maximum: 50 }
+  validates :name, presence: true, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, 
                     format: { with: VALID_EMAIL_REGEX }, 
@@ -32,7 +32,10 @@ class User < ActiveRecord::Base
           :length   => { :minimum => 6, :allow_nil => true }
 
       
-  validates :password_confirmation, :presence => { :on => :create }
+  validates :password_confirmation, 
+            :presence => { :on => :create },
+            # allow_nil for length (presence will handle it on create)
+            :length   => { :minimum => 6, :allow_nil => true }
 
   validates :account, :presence => true
 
