@@ -1,7 +1,9 @@
 class Account < ActiveRecord::Base
-  attr_accessible :name, :subdomain, :users_attributes
+  attr_accessible :name, :subdomain, :users_attributes, :terms
   has_many :users, :inverse_of => :account, :dependent => :destroy
   before_create :downcase_stuff
+  
+  validates_acceptance_of :terms
   
   accepts_nested_attributes_for :users
   

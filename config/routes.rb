@@ -24,6 +24,7 @@ NdtAppV6::Application.routes.draw do
     match '/signin',  to: 'sessions#new'
     match '/signout', to: 'sessions#destroy', via: :delete
 
+    match '/terms', to: 'static_pages#terms'
     match '/welcome', to: 'static_pages#welcome'
     match '/dashboard', to: 'static_pages#dashboard'
     match '/referrals', to: 'static_pages#referrals'

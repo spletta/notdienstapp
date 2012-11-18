@@ -197,7 +197,7 @@ de:
   activemodel:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: &70131352350340
+      messages: &70167121414300
         accepted: muss akzeptiert werden
         blank: muss ausgefüllt werden
         confirmation: stimmt nicht mit der Bestätigung überein
@@ -219,7 +219,7 @@ de:
         too_long: ist zu lang (nicht mehr als %{count} Zeichen)
         too_short: ist zu kurz (nicht weniger als %{count} Zeichen)
         wrong_length: hat die falsche Länge (muss genau %{count} Zeichen haben)
-      template: &70131352347740
+      template: &70167121412400
         body: ! 'Bitte überprüfen Sie die folgenden Felder:'
         header:
           one: ! 'Konnte %{model} nicht speichern: ein Fehler.'
@@ -227,8 +227,8 @@ de:
   activerecord:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: *70131352350340
-      template: *70131352347740
+      messages: *70167121414300
+      template: *70167121412400
   manage:
     link: Verwalten
   planner:
@@ -473,3 +473,8 @@ de:
       button: Bearbeiten
     viewall:
       button: Alle anzeigen
+  terms:
+    link: Allgemeine Geschäftsbedingungen (AGB's)
+    sentence: Ich akzeptiere die
+    footer:
+      link: AGB's

@@ -97,7 +97,7 @@ en:
       year: Year
   errors:
     format: ! '%{attribute} %{message}'
-    messages: &70131345940280
+    messages: &70167123800920
       accepted: must be accepted
       blank: can't be blank
       confirmation: doesn't match confirmation
@@ -125,7 +125,7 @@ en:
       wrong_length:
         one: is the wrong length (should be 1 character)
         other: is the wrong length (should be %{count} characters)
-    template: &70131345932800
+    template: &70167119955400
       body: ! 'There were problems with the following fields:'
       header:
         one: 1 error prohibited this %{model} from being saved
@@ -200,13 +200,13 @@ en:
   activemodel:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: *70131345940280
-      template: *70131345932800
+      messages: *70167123800920
+      template: *70167119955400
   activerecord:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: *70131345940280
-      template: *70131345932800
+      messages: *70167123800920
+      template: *70167119955400
   session:
     forgot:
       password:
@@ -450,3 +450,8 @@ en:
       button: Edit
     viewall:
       button: View all
+  terms:
+    link: Terms of Service
+    sentence: I accept the
+    footer:
+      link: Terms

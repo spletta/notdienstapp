@@ -16,4 +16,6 @@
     <%= user_form.label t "user.confirmation" %>
     <%= user_form.password_field :password_confirmation %>
   <% end %>
+  <%= t 'terms.sentence' %> <%= link_to t('terms.link'), terms_path %> <%= check_box("account", "terms") %>
+</br>
 </br>
