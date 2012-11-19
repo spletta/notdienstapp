@@ -7,13 +7,15 @@ class UserMailer < ActionMailer::Base
   #   en.user_mailer.signup_confirmation.subject
   #
   def signup_confirmation(account, user)
-    attachments.inline['add-to-homescreen.png'] = File.read('app/assets/images/add-to-homescreen.png')
+    #attachments.inline['add-to-homescreen.png'] = File.read('app/assets/images/add-to-homescreen.png')
+    attachments['anleitung.pdf'] = File.read('app/assets/documents/anleitung.pdf')
+    attachments['bestellfomular.pdf'] = File.read('app/assets/documents/bestellfomular.pdf')
     @account = account
     @user = user
     @contact = "https://notdienstapp.com/contact"
     @url = "https://#{account.subdomain}.notdienstapp.com"
     @reset_url = "https://#{account.subdomain}.notdienstapp.com/password_resets/new"
-    mail(to: user.email, subject: "Welcome to Notdienst Touch, #{user.name}")
+    mail(to: user.email, subject: "Willkommen bei Notdienst Touch, #{user.name}")
   end
   
   def password_reset(user, account)

@@ -20,10 +20,10 @@ class User < ActiveRecord::Base
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, 
                     format: { with: VALID_EMAIL_REGEX }, 
-                    #uniqueness: { scope: :account_id, case_sensitive: false }
+                    uniqueness: { scope: :account_id, case_sensitive: false }
                     # the below makes sure even other accounts can't have an email
                     # address that has already been taken...
-                    uniqueness: { case_sensitive: false }
+                    #uniqueness: { case_sensitive: false }
                     
   validates :password, 
           # you only need presence on create

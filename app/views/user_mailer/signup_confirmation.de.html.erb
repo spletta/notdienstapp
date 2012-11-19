@@ -8,18 +8,15 @@
     <p>
 	    Sie haben sich erfolgreich angemeldet bei Notdienst Touch.</br>
 	    Ihr Benuztername ist gleichzeitig Ihre E-Mail Adresse: <%= @user.email %></br>
-      Ihr Passwort ist automatisch erstellt worden und lautet: 8RttoTriz</br>
-      **Sollten Sie sich bereits angemeldet haben entfällt das automatische Passwort.**</br>
+	    **In Falle eine automatische Kontoerstellung wird Ihr Passwort auch automatisch erstellt**</br>
+      Ihr automatisch erstelltes Passwort lautet: 8RttoTriz</br>
       Sie können Ihre Passwort hier ändern: <%= @reset_url %>.
     <br/>
     </p>
     <p>
 	    Um sich in Ihren neue Konto einzuloggen, folgen Sie dem Link: <%= @url %>.
-	    Wenn Sie ein iPad nutzen, können Sie mit dem Safari Browser Ihre Webanwendung auf Ihrer Homepage speichern, so wie unten im Bild angezeigt.
+	    Wenn Sie ein iPad nutzen, können Sie mit dem Safari Browser Ihre Webanwendung auf Ihrer Homepage speichern, so wie in der beigefügten Anleitung angezeigt.
     </p>
-    <p>
-	    <%= image_tag attachments['add-to-homescreen.png'].url %>
-	  </p>
     <p>Vielen Dank und einen schönen Tag!</p>
   </body>
 </html>
