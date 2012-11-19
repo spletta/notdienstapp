@@ -197,7 +197,7 @@ de:
   activemodel:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: &70167121414300
+      messages: &70188059565600
         accepted: muss akzeptiert werden
         blank: muss ausgefüllt werden
         confirmation: stimmt nicht mit der Bestätigung überein
@@ -219,7 +219,7 @@ de:
         too_long: ist zu lang (nicht mehr als %{count} Zeichen)
         too_short: ist zu kurz (nicht weniger als %{count} Zeichen)
         wrong_length: hat die falsche Länge (muss genau %{count} Zeichen haben)
-      template: &70167121412400
+      template: &70188059579180
         body: ! 'Bitte überprüfen Sie die folgenden Felder:'
         header:
           one: ! 'Konnte %{model} nicht speichern: ein Fehler.'
@@ -227,8 +227,8 @@ de:
   activerecord:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: *70167121414300
-      template: *70167121412400
+      messages: *70188059565600
+      template: *70188059579180
   manage:
     link: Verwalten
   planner:
@@ -264,13 +264,16 @@ de:
     step:
       one:
         desc: Definieren Sie eine Notdiestgruppe für alle Apotheken.
-        title: Notdienst Gruppe erstellen
+        title: Notdienstgruppe erstellen
       three:
         desc: Tragen Sie alle Termine für die entsprechenden Apotheken ein.
         title: Neue Termine im Kalender einpflegen
       two:
         desc: Erfassen Sie alle Notdienst-Apotheken Ihres Bereiches
         title: Apotheken erstellen
+      four:
+        desc: Dadurch erstellen Sie ein Lesezeichen. Danach ist das iPad für die Präsentation bereit.
+        title: Fügen Sie die Notdienst-Touch App in Ihr iPad Homescreen hinzu
     getting:
       started: Hier sind die ersten Schritte um den Notdienst-Touch zu nutzen.
   about:

@@ -97,7 +97,7 @@ en:
       year: Year
   errors:
     format: ! '%{attribute} %{message}'
-    messages: &70167123800920
+    messages: &70188059278640
       accepted: must be accepted
       blank: can't be blank
       confirmation: doesn't match confirmation
@@ -125,7 +125,7 @@ en:
       wrong_length:
         one: is the wrong length (should be 1 character)
         other: is the wrong length (should be %{count} characters)
-    template: &70167119955400
+    template: &70188059289120
       body: ! 'There were problems with the following fields:'
       header:
         one: 1 error prohibited this %{model} from being saved
@@ -200,13 +200,13 @@ en:
   activemodel:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: *70167123800920
-      template: *70167119955400
+      messages: *70188059278640
+      template: *70188059289120
   activerecord:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: *70167123800920
-      template: *70167119955400
+      messages: *70188059278640
+      template: *70188059289120
   session:
     forgot:
       password:
@@ -249,6 +249,9 @@ en:
       two:
         desc: Add the pharmacies you want to keep track of in your calendar.
         title: Create some Pharmacies
+      four:
+        desc: This will create a bookmark for you to access before presenting the iPad to your customers
+        title: Add Notdienst-Touch to your iPad Homescreen
     getting:
       started: ! 'Here are a few simple steps to get started with Notdienst-Touch. '
   about:

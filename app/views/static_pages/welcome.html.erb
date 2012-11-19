@@ -2,22 +2,26 @@
 <div class="row">
   <div class="span8 offset2">
 	  <br/>
-	  <h3c><strong><%= t 'welcome.hello', default: 'Hello, ' %><%= current_user.name + '!' %></strong></h3c>
+	  <h3c><strong><%= t 'welcome.hello' %><%= current_user.name + '!' %></strong></h3c>
 	  </br>
 	  <br/>
-    <h2e><%= t 'welcome.getting.started', default: 'Here are a few simple steps to get started with Notdienst-Touch.' %></h2e>
+    <h2e><%= t 'welcome.getting.started' %></h2e>
     <br/>
     <br/>
     <br/>
     <h2d><%= link_to t('welcome.step.two.title'), new_pharmacy_path %></h2d></br>
-    <%= t 'welcome.step.two.desc', default: "Add the pharmacies you want to keep track of in your calendar." %>
+    <%= t 'welcome.step.two.desc' %>
 		</br>
 		</br>
 		<h2d><%= link_to t('welcome.step.one.title'), new_emergency_group_path %></h2d></br>
-    <%= t 'welcome.step.one.desc', default: "Define the Emergency Group your pharmacy belongs to." %>
+    <%= t 'welcome.step.one.desc' %>
     </br>
 		</br>
     <h2d><%= link_to t('welcome.step.three.title'), new_event_path %></h2d></br>
-    <%= t 'welcome.step.three.desc', default: "Fill your Calendar with Events to display in the front window." %>
+    <%= t 'welcome.step.three.desc' %>
+    </br>
+		</br>
+    <h2d><%= link_to t('welcome.step.four.title'), help_path %></h2d></br>
+    <%= t 'welcome.step.four.desc' %>
   </div>
 </div>
