@@ -6,6 +6,6 @@
       <%= render 'fields', f: f %>
       <%= f.submit t("account.submit"), class: "btn btn-mini btn-primary" %> <%= link_to t('no.email'), 'https://accounts.google.com', :class => "btn btn-mini" %>
     <% end %>
-    <p>Sie können unsere Bestellformula auch als PDF unterladen <%= link_to "bestellfomular.pdf", "https://#{request.domain}#{request.port_string}/bestellfomular.pdf" %></p>
+    <p>Sie können unsere Bestellformular auch als PDF unterladen <%= link_to "bestellfomular.pdf", "https://#{request.domain}#{request.port_string}/bestellfomular.pdf" %></p>
   </div>
 </div>

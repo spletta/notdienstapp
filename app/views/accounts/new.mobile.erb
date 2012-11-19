@@ -1,10 +1,11 @@
 <% provide(:title, 'Create Account') %>
 <div class="row">
-  <div class="span4 offset3">
+  <div class="span5 offset4">
 	  <h2c><%= t "new.account.headline" %></h2c>
     <%= form_for(@account) do |f| %>
       <%= render 'fields', f: f %>
       <%= f.submit t("account.submit"), class: "btn btn-mini btn-primary" %> <%= link_to t('no.email'), 'https://accounts.google.com', :class => "btn btn-mini" %>
     <% end %>
+    <p>Sie können unsere Bestellformular auch als PDF unterladen <%= link_to "bestellfomular.pdf", "https://#{request.domain}#{request.port_string}/bestellfomular.pdf" %></p>
   </div>
 </div>
