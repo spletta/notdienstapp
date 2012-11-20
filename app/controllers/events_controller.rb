@@ -6,7 +6,7 @@ class EventsController < ApplicationController
   
   def index
     @events = Event.all
-    @events_by_date = @events.group_by(&:starttime)
+    @events_by_date = @events.group_by {|e| e.starttime.to_date }
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
   end
 
