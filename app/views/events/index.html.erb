@@ -12,10 +12,11 @@
     <%= date.day %>
     <% if @events_by_date[date] %>
         <% @events_by_date[date].each do |event| %>
-          <% if event.pharmacy != nil %>
-          </br>
-          <center><%= link_to event.pharmacy.name, event, :class => 'btn btn-mini btn-primary' %></center>
-          <% end %>
+          <ul>
+            <% if event.pharmacy != nil %>
+              <li><%= link_to event.pharmacy.name, event %></li>
+            <% end %>
+          </ul>
         <% end %>
     <% end %>
   <% end %>	
