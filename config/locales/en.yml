@@ -97,7 +97,7 @@ en:
       year: Year
   errors:
     format: ! '%{attribute} %{message}'
-    messages: &70188059278640
+    messages: &70271321462240
       accepted: must be accepted
       blank: can't be blank
       confirmation: doesn't match confirmation
@@ -125,7 +125,7 @@ en:
       wrong_length:
         one: is the wrong length (should be 1 character)
         other: is the wrong length (should be %{count} characters)
-    template: &70188059289120
+    template: &70271312262480
       body: ! 'There were problems with the following fields:'
       header:
         one: 1 error prohibited this %{model} from being saved
@@ -200,13 +200,13 @@ en:
   activemodel:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: *70188059278640
-      template: *70188059289120
+      messages: *70271321462240
+      template: *70271312262480
   activerecord:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: *70188059278640
-      template: *70188059289120
+      messages: *70271321462240
+      template: *70271312262480
   session:
     forgot:
       password:
@@ -294,10 +294,12 @@ en:
     group:
       pharmacy:
         select: Select Pharmacy
+    edit:
+      title: Edit Event
   '2012-11-15': what is this?
   account:
     name: Company
-    subdomain: Secure Site
+    subdomain: Secure Site (https://COMPANYNAME.notdienstapp.com)
     submit: Create my account
     index:
       title: Account Settings
@@ -372,8 +374,10 @@ en:
       link: Save
     show:
       button: Show
+      link: 
     viewall:
       button: View all
+      link: 
     zipcode: Zipcode
     confirm:
       delete: Are your sure?
@@ -408,8 +412,13 @@ en:
         button: Destroy
       edit:
         button: Edit
+        title: Edit Emergency Group
       confirm:
         delete: Are you sure?
+    show:
+      link: Show
+    viewall:
+      link: View all
   customer:
     service:
       feed:

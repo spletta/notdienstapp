@@ -3,8 +3,7 @@
 	<%= f.label t "account.name" %>
 	<%= f.text_field :name %>
 	<%= f.label t "account.subdomain" %>
-	<span class="notdienst-sub">.notdienstapp.com</span>
-	<%= f.text_field :subdomain, :class => "account-url" %>
+	<%= f.text_field :subdomain %>
 
   <%= f.fields_for :users do |user_form| %>
     <%= user_form.label(:name, t("user.name") %>

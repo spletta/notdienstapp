@@ -197,7 +197,7 @@ de:
   activemodel:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: &70188059565600
+      messages: &70271331278260
         accepted: muss akzeptiert werden
         blank: muss ausgefüllt werden
         confirmation: stimmt nicht mit der Bestätigung überein
@@ -219,7 +219,7 @@ de:
         too_long: ist zu lang (nicht mehr als %{count} Zeichen)
         too_short: ist zu kurz (nicht weniger als %{count} Zeichen)
         wrong_length: hat die falsche Länge (muss genau %{count} Zeichen haben)
-      template: &70188059579180
+      template: &70271331292540
         body: ! 'Bitte überprüfen Sie die folgenden Felder:'
         header:
           one: ! 'Konnte %{model} nicht speichern: ein Fehler.'
@@ -227,8 +227,8 @@ de:
   activerecord:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: *70188059565600
-      template: *70188059579180
+      messages: *70271331278260
+      template: *70271331292540
   manage:
     link: Verwalten
   planner:
@@ -317,10 +317,12 @@ de:
     group:
       pharmacy:
         select: Apotheke auswählen
+    edit:
+      title: Termin bearbeiten
   '2012-11-15': what is this?
   account:
     name: Firma
-    subdomain: Sichere Seite
+    subdomain: Gewünschte Webseite Name (https://FIRMA.notdienstapp.com)
     submit: Konto erstellen
     index:
       title: Konto Einstellungen
@@ -395,8 +397,10 @@ de:
       link: Speichern
     show:
       button: Zeigen
+      link: 
     viewall:
       button: Alle anzeigen
+      link: 
     zipcode: Postleitzahl
     confirm:
       delete: Sind Sie sicher?
@@ -431,8 +435,13 @@ de:
         button: Löschen
       edit:
         button: Bearbeiten
+        title: Notdienstgruppe bearbeiten
       confirm:
         delete: Sind Sie sicher?
+    show:
+      link: Zeigen
+    viewall:
+      link: Alle anzeigen
   customer:
     service:
       feed:
