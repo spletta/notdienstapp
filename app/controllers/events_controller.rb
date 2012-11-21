@@ -3,7 +3,7 @@ class EventsController < ApplicationController
   before_filter :correct_user,    only: [:index, :edit, :update, :new, :destroy]
   #before_filter :admin_user,      only: [:index, :edit, :update, :new, :destroy]
   before_filter :prepare_for_mobile, :only => [:index] 
-  
+
   def index
     @events = Event.all
     @events_by_date = @events.group_by {|e| e.starttime.to_date }

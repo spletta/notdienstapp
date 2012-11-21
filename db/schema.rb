@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121115211008) do
+ActiveRecord::Schema.define(:version => 20121120185238) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
@@ -37,8 +37,8 @@ ActiveRecord::Schema.define(:version => 20121115211008) do
 
   create_table "events", :force => true do |t|
     t.integer  "pharmacy_id"
-    t.date     "starttime"
-    t.date     "endtime"
+    t.datetime "starttime"
+    t.datetime "endtime"
     t.boolean  "all_day"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false

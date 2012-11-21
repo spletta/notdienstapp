@@ -6,4 +6,9 @@ class Event < ActiveRecord::Base
   accepts_nested_attributes_for :pharmacy
   
   default_scope { where(account_id: Account.current_id) }
+ 
+# not sure if this is correct [rs]  
+#  def endtime=(endtime)
+#    start_date.strftime('%d.%m.%Y HH:mm')
+#  end
 end
