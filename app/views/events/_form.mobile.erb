@@ -3,15 +3,19 @@
 <table class="table table-hover">
     <tr>
     <td><%= f.label t 'event.pharmacy' %></td>
-    <td><%= f.collection_select :pharmacy_id, Pharmacy.all, :id, :name, :include_blank => t('pharmacies.emergency.group.select'), :required => true %></td>
+    <td><%= f.collection_select :pharmacy_id, Pharmacy.all, :id, :name, :include_blank => t('event.group.pharmacy.select'), :required => true %></td>
+  </tr>
+  <tr>
+  	<td><%= f.label t 'event.color' %></td>
+    <td><%= f.select(:color, Event::COLORS) %></td>
   </tr>
   <tr>
   	<td><%= f.label t 'event.starttime' %></td>
-    <td><%= f.text_field :starttime %></td>
+    <td><%= f.datetime_picker :starttime %></td>
   </tr>
   <tr>
   	<td><%= f.label t 'event.endtime' %></td>
-    <td><%= f.text_field :endtime %></td>
+    <td><%= f.datetime_picker :endtime %></td>
   </tr>
   <tr>
   	<td><%= f.label t 'event.allday' %></td>
@@ -22,4 +26,3 @@
 <%= link_to t('pharmacies.show.button'), @event, :class => 'btn btn-mini' %>
 <%= f.submit t('pharmacies.save.button'), class: "btn btn-mini btn-primary" %>
 <% end %>
-
