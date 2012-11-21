@@ -23,6 +23,7 @@ gem 'thin'
 gem 'localeapp'
 gem 'seed-fu'
 gem 'jquery_datepicker'
+gem 'has_enumeration'
 
 group :development, :test do
   gem 'rspec-rails', '2.11.0'

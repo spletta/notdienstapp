@@ -6,6 +6,10 @@
     <td><%= f.collection_select :pharmacy_id, Pharmacy.all, :id, :name, :include_blank => t('event.group.pharmacy.select'), :required => true %></td>
   </tr>
   <tr>
+  	<td><%= f.label t 'event.color' %></td>
+    <td><%= f.select(:color, Event::COLORS) %></td>
+  </tr>
+  <tr>
   	<td><%= f.label t 'event.starttime' %></td>
     <td><%= f.datetime_picker :starttime %></td>
   </tr>

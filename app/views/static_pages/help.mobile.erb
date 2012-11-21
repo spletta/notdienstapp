@@ -1,8 +1,216 @@
-<% provide(:title, 'Help') %>
-<h1>Help</h1>
-<p>
-  Get help on the Ruby on Rails Tutorial at the
-  <a href="http://railstutorial.org/help">Rails Tutorial help page</a>.
-  To get help on this sample app, see the
-  <a href="http://railstutorial.org/book">Rails Tutorial book</a>.
-</p>
+<div class="hero-unit">
+<p>Sie können dieses Anleitung auch als PDF unterladen <%= link_to "anlietung.pdf", "https://#{request.domain}#{request.port_string}/anleitung.pdf" %></p>
+<h2><strong><%= t 'welcome.step.two.title' %></strong></h2>
+<p><%= t 'welcome.step.two.desc' %></p>
+<div class="accordion" id="accordion1">
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne">
+        Apotheke anlegen
+      </a>
+    </div>
+    <div id="collapseOne" class="accordion-body collapse">
+      <div class="accordion-inner">
+        <center><%= image_tag 'pharmacy-1.png' %></center>	
+      </div>
+    </div>
+  </div>
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseTwo">
+        Alle nötigen Daten einpflegen
+      </a>
+    </div>
+    <div id="collapseTwo" class="accordion-body collapse">
+      <div class="accordion-inner">
+        <p>
+	        <center><%= image_tag 'pharmacy-2.png' %></center>	
+				</p>
+				<p>
+				<center><%= image_tag 'pharmacy-3a.png' %></center>	
+				</p>
+				<p>
+				<center><%= image_tag 'pharmacy-3b.png' %></center>	
+				</p>
+      </div>
+    </div>
+  </div>
+<div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseThree">
+        Fertig!
+      </a>
+    </div>
+    <div id="collapseThree" class="accordion-body collapse">
+      <div class="accordion-inner">
+	    <p>
+        <center><%= image_tag 'pharmacy-4.png' %></center>
+	    </p>
+      </div>
+    </div>
+  </div>
+</div>
+</br>
+<h2><strong><%= t 'welcome.step.one.title' %></strong></h2>
+<p><%= t 'welcome.step.one.desc' %></p>
+<div class="accordion" id="accordion2">
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">
+        Notdienstgruppe anlegen
+      </a>
+    </div>
+    <div id="collapseFour" class="accordion-body collapse">
+      <div class="accordion-inner">
+        <center><%= image_tag 'emergency-1.png' %></center>	
+      </div>
+    </div>
+  </div>
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFive">
+        Alle nötigen Daten einpflegen
+      </a>
+    </div>
+    <div id="collapseFive" class="accordion-body collapse">
+      <div class="accordion-inner">
+        <p>
+	        <center><%= image_tag 'emergency-2.png' %></center>	
+				</p>
+      </div>
+    </div>
+  </div>
+<div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSix">
+        Fertig!
+      </a>
+    </div>
+    <div id="collapseSix" class="accordion-body collapse">
+      <div class="accordion-inner">
+	    <p>
+        <center><%= image_tag 'emergency-3.png' %></center>
+	    </p>
+      </div>
+    </div>
+  </div>
+</div>
+</br>
+<h2><strong><%= t 'welcome.step.three.title' %></strong></h2>
+<p><%= t 'welcome.step.three.desc' %></p>
+<div class="accordion" id="accordion3">
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseSeven">
+        Termin anlegen
+      </a>
+    </div>
+    <div id="collapseSeven" class="accordion-body collapse">
+      <div class="accordion-inner">
+        <center><%= image_tag 'event-1.png' %></center>	
+      </div>
+    </div>
+  </div>
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseEight">
+        Alle nötigen Daten einpflegen
+      </a>
+    </div>
+    <div id="collapseEight" class="accordion-body collapse">
+      <div class="accordion-inner">
+        <p>
+	        <center><%= image_tag 'event-2.png' %></center>	
+				</p>
+      </div>
+    </div>
+  </div>
+<div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseNine">
+        Fertig!
+      </a>
+    </div>
+    <div id="collapseNine" class="accordion-body collapse">
+      <div class="accordion-inner">
+	    <p>
+        <center><%= image_tag 'event-3.png' %></center>
+	    </p>
+      </div>
+    </div>
+  </div>
+</div>
+</br>
+<h2><strong><%= t 'welcome.step.four.title' %></strong></h2>
+<p><%= t 'welcome.step.four.desc' %></p>
+<div class="accordion" id="accordion4">
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion4" href="#collapseTen">
+        Mit Ihrem iPad und dem Safari Browser loggen Sie sich ein. Dann auf "Planer” drücken.
+      </a>
+    </div>
+    <div id="collapseTen" class="accordion-body collapse">
+      <div class="accordion-inner">
+        <center><%= image_tag 'ipad-1.png' %></center>	
+      </div>
+    </div>
+  </div>
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion4" href="#collapseEleven">
+        In Safari auf das "Share" Icon drücken und dann auf das Notdienst-Touch logo drücken
+      </a>
+    </div>
+    <div id="collapseEleven" class="accordion-body collapse">
+      <div class="accordion-inner">
+        <p>
+	        <center><%= image_tag 'ipad-2.png' %></center>	
+				</p>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion4" href="#collapseTwelve">
+        Auf "Add" oder "Hinzufügen" drücken
+      </a>
+    </div>
+    <div id="collapseTwelve" class="accordion-body collapse">
+      <div class="accordion-inner">
+	    <p>
+        <center><%= image_tag 'ipad-3.png' %></center>
+	    </p>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-group">
+	  <div class="accordion-heading">
+	    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion4" href="#collapseThirteen">
+	      Drücken Sie das neue "NDT App" icon und stellen Sie das iPad für Ihre Kunden hin
+	    </a>
+	  </div>
+	  <div id="collapseThirteen" class="accordion-body collapse">
+	    <div class="accordion-inner">
+		    <p>
+	        <center><%= image_tag 'ipad-4.png' %></center>
+		    </p>
+	    </div>
+	  </div>
+  </div>
+  <div class="accordion-group">
+	  <div class="accordion-heading">
+	    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion4" href="#collapseFourteen">
+	      Fertig!
+	    </a>
+	    </div>
+	    <div id="collapseFourteen" class="accordion-body collapse">
+	      <div class="accordion-inner">
+		    <p>
+	        <center><%= image_tag 'ipad-5.png' %></center>
+		    </p>
+	      </div>
+	    </div>
+	  </div>
+  </div>
+</div>

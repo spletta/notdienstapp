@@ -97,7 +97,7 @@ en:
       year: Year
   errors:
     format: ! '%{attribute} %{message}'
-    messages: &70271321462240
+    messages: &70243533916380
       accepted: must be accepted
       blank: can't be blank
       confirmation: doesn't match confirmation
@@ -125,7 +125,7 @@ en:
       wrong_length:
         one: is the wrong length (should be 1 character)
         other: is the wrong length (should be %{count} characters)
-    template: &70271312262480
+    template: &70243533926480
       body: ! 'There were problems with the following fields:'
       header:
         one: 1 error prohibited this %{model} from being saved
@@ -200,13 +200,13 @@ en:
   activemodel:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: *70271321462240
-      template: *70271312262480
+      messages: *70243533916380
+      template: *70243533926480
   activerecord:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: *70271321462240
-      template: *70271312262480
+      messages: *70243533916380
+      template: *70243533926480
   session:
     forgot:
       password:
@@ -296,6 +296,7 @@ en:
         select: Select Pharmacy
     edit:
       title: Edit Event
+    color: Color
   '2012-11-15': what is this?
   account:
     name: Company
