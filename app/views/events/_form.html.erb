@@ -11,11 +11,11 @@
   </tr>
   <tr>
   	<td><%= f.label t 'event.starttime' %></td>
-    <td><%= f.datetime_picker :starttime %></td>
+        <td><%= f.datetime_picker :starttime, :value => l(@event.starttime || Time.now, :format => :input) %></td>
   </tr>
   <tr>
   	<td><%= f.label t 'event.endtime' %></td>
-    <td><%= f.datetime_picker :endtime %></td>
+        <td><%= f.datetime_picker :endtime, :value => l(@event.endtime || Time.now, :format => :input)  %></td>
   </tr>
   <tr>
   	<td><%= f.label t 'event.allday' %></td>

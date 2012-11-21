@@ -10,5 +10,13 @@ class Event < ActiveRecord::Base
   accepts_nested_attributes_for :pharmacy
   
   default_scope { where(account_id: Account.current_id) }
+
+  def starttime=(v)
+    write_attribute :starttime, DateTime.strptime(v, '%d.%m.%Y %H:%M')
+  end
+
+  def endtime=(v)
+    write_attribute :endtime, DateTime.strptime(v, '%d.%m.%Y %H:%M')
+  end
  
 end
