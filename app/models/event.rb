@@ -27,13 +27,21 @@ class Event < ActiveRecord::Base
     super(v.blank? ? nil : DateTime.strptime(v, '%d.%m.%Y %H:%M'))
   end
 
-  #SELECT current_date + s.i * interval '1 day', e.id FROM events e JOIN generate_series(0,30) AS s(i) ON (extract('hour' from (DATE_TRUNC('day', current_date + s.i * interval '1 day') - DATE_TRUNC('day',e.starttime)) / e.recurring_period) = 0);
-  scope :recurring_events_within_month, lambda { |date|
-    pg_date = date.iso8601
+  scope :recurring_events_within_month_for_day, lambda { |date, type, n|
+    pg_date = date.beginning_of_month.iso8601
     base_date = "DATE('#{pg_date}') + s.i * interval '1 day'"
-    select("#{base_date} as recurring_date, events.id").
+    diff = "(DATE_TRUNC('day', #{base_date}) - DATE_TRUNC('day',starttime)) / (recurring_period * #{n})"
+    select("#{base_date} as recurring_date, events.*").
       joins("JOIN generate_series(0,30) AS s(i) " +
-          "ON (extract('hour' from (DATE_TRUNC('day', #{base_date}) - DATE_TRUNC('day',events.starttime)) / events.recurring_period) = 0)")
+          "ON (extract(hour from #{diff}) = 0 AND extract(minute from #{diff}) = 0)").
+      where("recurring AND (recurring_endtime > #{base_date} OR recurring_endtime IS NULL)" +
+        " AND recurring_interval = '#{type}' AND starttime < #{base_date}")
   }
+
+  def self.recurring_events_within_month(date)
+    { day:1, week: 7, month: 30, year: 365 }.map { |type, n|
+      self.recurring_events_within_month_for_day(date, type, n)
+    }.flatten(1)
+  end
  
 end
