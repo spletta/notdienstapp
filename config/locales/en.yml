@@ -298,6 +298,15 @@ en:
     edit:
       title: Edit Event
     color: Color
+    recurring: Repeating
+    recurring_interval: Repeats
+    day: Daily
+    week: Weekly
+    month: Monthly
+    year: Annually
+    recurring_period: Repeat every
+    recurring_endtime: Repeat ends
+    recurring_endtime_hint: leave empty for unlimited repeating
   '2012-11-15': what is this?
   account:
     name: Company
