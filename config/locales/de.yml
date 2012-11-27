@@ -198,7 +198,7 @@ de:
   activemodel:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: &70243553126240
+      messages: &70201966308980
         accepted: muss akzeptiert werden
         blank: muss ausgefüllt werden
         confirmation: stimmt nicht mit der Bestätigung überein
@@ -220,7 +220,7 @@ de:
         too_long: ist zu lang (nicht mehr als %{count} Zeichen)
         too_short: ist zu kurz (nicht weniger als %{count} Zeichen)
         wrong_length: hat die falsche Länge (muss genau %{count} Zeichen haben)
-      template: &70243553124300
+      template: &70201966306140
         body: ! 'Bitte überprüfen Sie die folgenden Felder:'
         header:
           one: ! 'Konnte %{model} nicht speichern: ein Fehler.'
@@ -228,8 +228,8 @@ de:
   activerecord:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: *70243553126240
-      template: *70243553124300
+      messages: *70201966308980
+      template: *70201966306140
   manage:
     link: Verwalten
   planner:
@@ -309,7 +309,7 @@ de:
     link: Neuigkeiten
   event:
     new: Neuer Termin
-    allday: Ganzen Tag?
+    allday: Ganztägig
     endtime: Ende
     pharmacy: Apotheke
     starttime: Anfang
@@ -321,6 +321,15 @@ de:
     edit:
       title: Termin bearbeiten
     color: Farbe
+    day: Tag
+    month: Monat
+    recurring: Wiederholung
+    recurring_endtime: Beendet
+    recurring_endtime_hint: Dieser Termin wird sich bis zum Ende des oben genannten Zeitpunkts wiederholen.
+    recurring_interval: Intervall
+    recurring_period: Häufigkeit
+    week: Woche
+    year: Jahr
   '2012-11-15': what is this?
   account:
     name: Firma
@@ -427,7 +436,7 @@ de:
         dropdown:
           label: Bitte auswählen
         multiselect: Apotheken
-        select: 
+        select: Apotheken
       create:
         button: Neue erstellen
       website:
@@ -466,16 +475,16 @@ de:
     subject: Betreff
     send: Schicken
   admin_user:
-    unauthenticated: 
+    unauthenticated: Leider haben Sie nicht die rechte diese Seite zu sehen.
   devise:
     registrations:
       inactive_signed_up: 
       reasons: 
   required: required
   destroy:
-    button: 
+    button: Löschen
   edit:
-    button: 
+    button: Bearbeiten
   events:
     show:
       emergency:
@@ -492,3 +501,7 @@ de:
     sentence: Ich akzeptiere die
     footer:
       link: AGB's
+  day: Tag
+  month: Monat
+  week: 
+  year: 

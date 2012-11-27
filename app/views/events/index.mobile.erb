@@ -1,5 +1,5 @@
 <% @events.each do |event| %>
-  <% if event.starttime <= Time.now && event.endtime >= Time.now %>
+  <% if event.starttime <= Time.zone.now && event.endtime >= Time.zone.now %>
     <div class="mc"></div>
 		<div class="white_container">
 		  <center>

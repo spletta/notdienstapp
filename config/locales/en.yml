@@ -97,7 +97,7 @@ en:
       year: Year
   errors:
     format: ! '%{attribute} %{message}'
-    messages: &70243533916380
+    messages: &70201970203800
       accepted: must be accepted
       blank: can't be blank
       confirmation: doesn't match confirmation
@@ -125,7 +125,7 @@ en:
       wrong_length:
         one: is the wrong length (should be 1 character)
         other: is the wrong length (should be %{count} characters)
-    template: &70243533926480
+    template: &70201970231860
       body: ! 'There were problems with the following fields:'
       header:
         one: 1 error prohibited this %{model} from being saved
@@ -201,13 +201,13 @@ en:
   activemodel:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: *70243533916380
-      template: *70243533926480
+      messages: *70201970203800
+      template: *70201970231860
   activerecord:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: *70243533916380
-      template: *70243533926480
+      messages: *70201970203800
+      template: *70201970231860
   session:
     forgot:
       password:
@@ -286,7 +286,7 @@ en:
     link: News
   event:
     new: New Event
-    allday: All day?
+    allday: All day
     endtime: End
     pharmacy: Pharmacy
     starttime: ! 'Start '
@@ -298,15 +298,15 @@ en:
     edit:
       title: Edit Event
     color: Color
-    recurring: Repeating
-    recurring_interval: Repeats
-    day: Daily
-    week: Weekly
-    month: Monthly
-    year: Annually
-    recurring_period: Repeat every
-    recurring_endtime: Repeat ends
-    recurring_endtime_hint: leave empty for unlimited repeating
+    recurring: Recurrence
+    recurring_interval: Repeats every
+    day: Day
+    week: Week
+    month: Month
+    year: Year
+    recurring_period: Repeats
+    recurring_endtime: Ends
+    recurring_endtime_hint: This event will repeat itself until the end date above.
   '2012-11-15': what is this?
   account:
     name: Company
@@ -413,7 +413,7 @@ en:
         dropdown:
           label: Please select
         multiselect: Pharmacies
-        select: 
+        select: Pharmacies
       create:
         button: Create New
       website:
@@ -452,16 +452,16 @@ en:
     subject: Subject
     send: Send
   admin_user:
-    unauthenticated: 
+    unauthenticated: Sorry, you are unauthorized to view this page.
   devise:
     registrations:
       inactive_signed_up: 
       reasons: {}
   required: required
   destroy:
-    button: 
+    button: Destroy
   edit:
-    button: 
+    button: Edit
   events:
     show:
       emergency:
@@ -478,3 +478,7 @@ en:
     sentence: I accept the
     footer:
       link: Terms
+  day: Day
+  month: Month
+  week: 
+  year: 
