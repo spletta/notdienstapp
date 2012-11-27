@@ -1,6 +1,7 @@
 <%= simple_form_for @event do |f| %>
 <%= render 'shared/error_messages', object: f.object %>
 <table class="table table-hover">
+    <col width="110"/>
     <tr>
     <td><%= f.label t 'event.pharmacy' %></td>
     <td><%= f.collection_select :pharmacy_id, Pharmacy.all, :id, :name, :include_blank => t('event.group.pharmacy.select'), :required => true %></td>
@@ -20,6 +21,25 @@
   <tr>
   	<td><%= f.label t 'event.allday' %></td>
     <td><%= f.check_box :all_day %></td>
+  </tr>
+  <tr>
+  	<td><%= f.label t 'event.recurring' %></td>
+    <td><%= f.check_box :recurring %></td>
+  </tr>
+  <tr class="tr-recurring">
+  	<td><%= f.label t 'event.recurring_interval' %></td>
+        <td><%= f.select(:recurring_interval, Event::INTERVALS.map{|i| [t("event.#{i}"), i] }) %></td>
+  </tr>
+  <tr class="tr-recurring">
+  	<td><%= f.label t 'event.recurring_period' %></td>
+    <td><%= f.select(:recurring_period, Event::PERIODS) %></td>
+  </tr>
+  <tr class="tr-recurring">
+  	<td><%= f.label t 'event.recurring_endtime' %></td>
+        <td>
+          <%= f.datetime_picker :recurring_endtime, :value => @event.recurring_endtime ? l(@event.recurring_endtime, :format => :input) : '' %>
+          <span class="help-inline"><%= t 'event.recurring_endtime_hint' %></span>
+        </td>
   </tr>
 </table>
 <%= link_to t('pharmacies.back.button'), events_path, :class => 'btn btn-mini' %>

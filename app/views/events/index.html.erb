@@ -4,29 +4,17 @@
 </p>
 <div id="events">
   <h2 id="month">
-    <%= link_to "<", date: @date.prev_month, :class => 'btn btn-mini' %>
+    <%= link_to "<", events_path(date: @date.prev_month), :class => 'btn btn-mini' %>
     <%= l(@date, :format => "%B %Y") %>
-    <%= link_to ">", date: @date.next_month, :class => 'btn btn-mini' %>
+    <%= link_to ">", events_path(date: @date.next_month), :class => 'btn btn-mini' %>
   </h2>
   <%= calendar @date do |date| %>
     <%= date.day %>
     <% if @events_by_date[date] %>
-        <% @events_by_date[date].each do |event| %>
+        <% @events_by_date[date].uniq.each do |event| %>
             <% if event.pharmacy != nil %>
-              <% if event.color == "Weiss" %>
-                <center><%= link_to event.pharmacy.name, edit_event_path(event), :class => 'btn btn-mini' %></center>
-              <% elsif event.color == "Blau" %>
-                <center><%= link_to event.pharmacy.name, edit_event_path(event), :class => 'btn btn-mini btn-primary' %></center>
-              <% elsif event.color == "Hellblau" %>
-                <center><%= link_to event.pharmacy.name, edit_event_path(event), :class => 'btn btn-mini btn-info' %></center>
-              <% elsif event.color == "Gruen" %>
-                <center><%= link_to event.pharmacy.name, edit_event_path(event), :class => 'btn btn-mini btn-success' %></center>
-              <% elsif event.color == "Gelb" %>
-                <center><%= link_to event.pharmacy.name, edit_event_path(event), :class => 'btn btn-mini btn-warning' %></center>
-              <% elsif event.color == "Rot" %>
-                <center><%= link_to event.pharmacy.name, edit_event_path(event), :class => 'btn btn-mini btn-danger' %></center>
-              <% elsif event.color == "Grau" %>
-                <center><%= link_to event.pharmacy.name, edit_event_path(event), :class => 'btn btn-mini btn-inverse' %></center>
+              <% if btn_class = bs_button_for_color(event.color) %>
+                <center><%= link_to event.pharmacy.name, edit_event_path(event), :class => "btn btn-mini #{btn_class}" %></center>
               <% else %>
                 <ul>
                 <li><%= link_to event.pharmacy.name, edit_event_path(event) %></li>
