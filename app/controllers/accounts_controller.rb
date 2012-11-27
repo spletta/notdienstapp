@@ -2,8 +2,7 @@ class AccountsController < ApplicationController
   
   def new
     @account = Account.new
-    @account.users.build(params[:user]) # build a blank user or the child form won't display
-    #respond_with(@user)
+    @account.users.build(params[:user])
   end
 
   def edit

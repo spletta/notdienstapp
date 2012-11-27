@@ -341,6 +341,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f3f3f', end
   background-color: #3f3f3f;
 }
 
+.navbar .nav > li > a:hover {
+    color: #ffffff;
+    background-color: #3f3f3f;
+ }
+
 .navbar .nav > li > a {
     color: #ffffff;
     }

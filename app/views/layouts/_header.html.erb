@@ -31,7 +31,7 @@
               <%= link_to "Mobile", root_path(:mobile => 1) %>
             <% end %>
 		      </li>
-          <li>
+          <li class="<%= 'active' if current_page?(help_path) %>">
           <%= link_to help_path do %>
             <%= t "help.link" %>
           <% end %>
