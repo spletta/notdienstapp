@@ -24,6 +24,7 @@ gem 'localeapp'
 gem 'seed-fu'
 gem 'jquery_datepicker'
 gem 'has_enumeration'
+gem 'cancan'
 
 group :development, :test do
   gem 'rspec-rails', '2.11.0'

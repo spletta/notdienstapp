@@ -2,10 +2,6 @@
 <%= f.label "First Name" %>
 <%= f.text_field :name %>
 
-<%= f.fields_for :accounts do |account_form| %>
-  <%= render :partial => 'shared/account', :locals => { :form => account_form } %>
-<% end %>
-
 <%= f.label :email %>
 <%= f.text_field :email %>
 
@@ -16,5 +12,14 @@
   <%= t "confirm.password", default: "Confirm Password" %>
 <% end %>
 <%= f.password_field :password_confirmation %>
+
+<% if current_user.roles_mask == 1 && !current_user?(user) %>
+<%= f.label "Roles" %>
+<% for role in User::ROLES %>
+  <%= check_box_tag "user[roles][]", role, @user.roles.include?(role) %>
+  <%=h role.humanize %><br />
+<% end %>
+<%= hidden_field_tag "user[roles][]", "" %>
+<% end %>
 
 <br />

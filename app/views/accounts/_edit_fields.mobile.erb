@@ -1,14 +1,7 @@
-  <%= render 'shared/error_messages', :object => f.object %>
-  </br>
-	<%= f.label t "account.name" %>
-	<%= f.text_field :name %>
-	<%= f.label t "account.subdomain" %>
-	<%= f.text_field :subdomain %>
-
-  <%= f.fields_for :users do |user_form| %>
-    <%= user_form.label(:name, t("user.name") %>
-    <%= user_form.text_field :name %>
-    <%= user_form.label "E-Mail" %>
-    <%= user_form.email_field :email %>
-  <% end %>
+<%= render 'shared/error_messages', :object => f.object %>
+</br>
+<%= f.label t "account.name" %>
+<%= f.text_field :name %>
+<%= f.label t "account.subdomain" %>
+<%= f.text_field :subdomain %>
 </br>

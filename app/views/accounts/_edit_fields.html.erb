@@ -4,11 +4,4 @@
 	<%= f.text_field :name %>
 	<%= f.label t "account.subdomain" %>
 	<%= f.text_field :subdomain %>
-
-  <%= f.fields_for :users do |user_form| %>
-    <%= user_form.label(:name, t("user.name") %>
-    <%= user_form.text_field :name %>
-    <%= user_form.label "E-Mail" %>
-    <%= user_form.email_field :email %>
-  <% end %>
-</br>
+  </br>

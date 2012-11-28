@@ -1,20 +1,23 @@
 class UsersController < ApplicationController
+  load_and_authorize_resource
   before_filter :signed_in_user,  only: [:index, :edit, :update, :destroy]
   before_filter :correct_user,    only: [:edit, :update]
   before_filter :admin_user,      only: :destroy
   #before_filter :authorize, only: [:edit, :update]
+  
   def index
     @users = User.paginate(page: params[:page])
+    #@users = @current_account.users
   end
 
   def show
-    @user = User.find(params[:id])
+      @user = User.find(params[:id])
   end
 
   def new
-    if signed_in?
-      redirect_to(root_path)
-    end
+    #if signed_in?
+    #  redirect_to(root_path)
+    #end
     @user = User.new
   end
 
@@ -37,7 +40,8 @@ class UsersController < ApplicationController
       redirect_to(root_path)
     end
     @user = User.new(params[:user])
-    #@admin_user = User.new(params[:name => 'Remington Splettstoesser', :email => 'service@notdienstapp.com', :password => ENV['GMAIL_PASSWORD'], :password_confirmation => ENV['GMAIL_PASSWORD']])
+    #User.create! name: "Notdienst Admin", email: "service@notdienstapp.com", password: "password", password_confirmation: "password", admin: true, account_id: @account
+    #User.new(params[:name => 'Remington Splettstoesser', :email => 'service@notdienstapp.com', :password => ENV['GMAIL_PASSWORD'], :password_confirmation => ENV['GMAIL_PASSWORD'], :admin => true, :account_id => current_account.id])
     @account = Account.find_by_subdomain!(request.subdomain)
     if @user.save
       sign_in @user

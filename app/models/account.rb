@@ -20,5 +20,5 @@ class Account < ActiveRecord::Base
   private
     def downcase_stuff
       self.subdomain.downcase!
-     end
+    end
 end

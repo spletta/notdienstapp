@@ -55,11 +55,12 @@ class ApplicationController < ActionController::Base
     
     def correct_user
       @user = User.find_by_remember_token(cookies[:remember_token])
-      redirect_to(root_path) unless current_user?(@user)
+      redirect_to(root_path) unless current_user?(@user) || current_user.roles_mask == 1
     end
+    #helper_method :correct_user
     
     def admin_user
-      redirect_to(root_path) unless current_user.admin?
+      redirect_to(root_path) unless current_user.roles_mask == 1
     end
     
     def authorize

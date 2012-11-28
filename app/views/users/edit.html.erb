@@ -1,8 +1,10 @@
 <% provide(:title, "Edit user") %> 
 
 <div class="row">
-  <div class="span4 offset3">
-	  <h2c><%= t "update.your.profile", default: "Update your profile" %></h2c>
+  <div class="span4 offset4">
+	  <h2c><%= t "update.your.profile"%></h2c>
+	  </br>
+	  </br>
     <%= form_for(@user) do |f| %>
       <%= render 'fields', f: f %>
       <%= f.submit class: "btn btn-mini btn-primary" %>

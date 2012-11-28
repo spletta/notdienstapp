@@ -198,7 +198,7 @@ de:
   activemodel:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: &70201966308980
+      messages: &70151477929160
         accepted: muss akzeptiert werden
         blank: muss ausgefüllt werden
         confirmation: stimmt nicht mit der Bestätigung überein
@@ -220,7 +220,7 @@ de:
         too_long: ist zu lang (nicht mehr als %{count} Zeichen)
         too_short: ist zu kurz (nicht weniger als %{count} Zeichen)
         wrong_length: hat die falsche Länge (muss genau %{count} Zeichen haben)
-      template: &70201966306140
+      template: &70151477927020
         body: ! 'Bitte überprüfen Sie die folgenden Felder:'
         header:
           one: ! 'Konnte %{model} nicht speichern: ein Fehler.'
@@ -228,8 +228,8 @@ de:
   activerecord:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: *70201966308980
-      template: *70201966306140
+      messages: *70151477929160
+      template: *70151477927020
   manage:
     link: Verwalten
   planner:
@@ -344,6 +344,8 @@ de:
       button: Aktualisierung
     edit:
       title: Profile ändern
+    company:
+      name: 
   user:
     name: Vollständiger Name
     password: Passwort
@@ -505,3 +507,15 @@ de:
   month: Monat
   week: 
   year: 
+  confirm:
+    password: Confirm Password
+  update:
+    your:
+      profile: Update your profile
+  user[accounts]:
+    Secure Site: 
+    de, account:
+      company:
+        name: 
+  unauthorized:
+    default: You are not authorized to access this page.

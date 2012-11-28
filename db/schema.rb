@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121123130833) do
+ActiveRecord::Schema.define(:version => 20121128112327) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
@@ -19,14 +19,6 @@ ActiveRecord::Schema.define(:version => 20121123130833) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "user_id"
-  end
-
-  add_index "accounts", ["user_id"], :name => "index_accounts_on_user_id"
-
-  create_table "carts", :force => true do |t|
-    t.datetime "purchased_at"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
   end
 
   create_table "emergency_groups", :force => true do |t|
@@ -57,49 +49,6 @@ ActiveRecord::Schema.define(:version => 20121123130833) do
   end
 
   add_index "events", ["account_id"], :name => "index_events_on_account_id"
-
-  create_table "line_items", :force => true do |t|
-    t.decimal  "unit_price"
-    t.integer  "product_id"
-    t.integer  "cart_id"
-    t.integer  "quantity"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "order_transactions", :force => true do |t|
-    t.integer  "order_id"
-    t.string   "action"
-    t.integer  "amount"
-    t.boolean  "success"
-    t.string   "authorization"
-    t.string   "message"
-    t.text     "params"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-  end
-
-  create_table "orders", :force => true do |t|
-    t.integer  "cart_id"
-    t.string   "ip_address"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "card_type"
-    t.date     "card_expires_on"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
-    t.string   "express_token"
-    t.string   "express_payer_id"
-  end
-
-  create_table "payment_notifications", :force => true do |t|
-    t.text     "params"
-    t.integer  "card_id"
-    t.string   "status"
-    t.string   "transaction_id"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
-  end
 
   create_table "pharmacies", :force => true do |t|
     t.string   "name"
@@ -132,15 +81,6 @@ ActiveRecord::Schema.define(:version => 20121123130833) do
     t.datetime "updated_at",  :null => false
   end
 
-  create_table "products", :force => true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.decimal  "price"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-    t.string   "color"
-  end
-
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
@@ -152,9 +92,9 @@ ActiveRecord::Schema.define(:version => 20121123130833) do
     t.integer  "account_id"
     t.string   "password_reset_token"
     t.datetime "password_reset_sent_at"
+    t.integer  "roles_mask"
   end
 
-  add_index "users", ["account_id"], :name => "index_users_on_account_id"
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
 
 end

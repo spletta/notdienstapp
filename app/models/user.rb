@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   has_secure_password
-  attr_accessible :email, :name, :password, :password_confirmation, :pharmacy_ids, :pharmacy_tokens
+  attr_accessible :email, :name, :password, :password_confirmation, :pharmacy_ids, :pharmacy_tokens, :roles, :account, :account_id, :roles_mask
   
   has_many :pharmacies_users
   has_many :pharmacies, :through => :pharmacies_users
@@ -13,8 +13,24 @@ class User < ActiveRecord::Base
   
   default_scope { where(account_id: Account.current_id) }
   
-  before_save { self.email.downcase! }
+  #before_save { self.email.downcase! }
   before_save :create_remember_token
+  
+  scope :with_role, lambda { |role| {:conditions => "roles_mask & #{2**ROLES.index(role.to_s)} > 0"} }
+  
+  ROLES = %w[admin]
+  
+  def roles=(roles)
+    self.roles_mask = (roles & ROLES).map { |r| 2**ROLES.index(r) }.sum
+  end
+  
+  def roles
+    ROLES.reject { |r| ((roles_mask || 0) & 2**ROLES.index(r)).zero? }
+  end
+  
+  def role?(role)
+    roles.include? role.to_s
+  end
   
   validates :name, presence: true, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
