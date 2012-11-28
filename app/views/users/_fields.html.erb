@@ -13,7 +13,7 @@
 <% end %>
 <%= f.password_field :password_confirmation %>
 
-<% if current_user.roles_mask == 1 && !current_user?(user) %>
+<% if current_user.roles_mask == 1 %>
 <%= f.label "Roles" %>
 <% for role in User::ROLES %>
   <%= check_box_tag "user[roles][]", role, @user.roles.include?(role) %>
