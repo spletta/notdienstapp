@@ -61,7 +61,7 @@
               </ul>
             </li>
           <% else %>
-            <% if request.subdomain.present? %>
+            <% if request.subdomain.present? && request.subdomain != 'www' && request.subdomain != 'ndt-staging' %>
               <li><%= link_to t('session.new.submit'), signin_path %></li>
             <% else %>
               <li>
