@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   private
 
     def current_account
-      if request.subdomain.present? && request.subdomain != 'ndt-staging'
+      if request.subdomain.present? && request.subdomain != 'www' && request.subdomain != 'ndt-staging'
         @account ||= Account.find_by_subdomain!(request.subdomain)
         #!Account.reserved_subdomain?(request.subdomain)
       #Account.find_by_subdomain! request.subdomain
@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
     helper_method :current_account
   
     def scope_current_account
-      if request.subdomain.present? && request.subdomain != 'ndt-staging'
+      if request.subdomain.present? && request.subdomain != 'www' && request.subdomain != 'ndt-staging'
         Account.current_id = current_account.id   
       end
       yield
