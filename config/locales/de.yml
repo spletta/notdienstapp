@@ -198,7 +198,7 @@ de:
   activemodel:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: &70151477929160
+      messages: &70202774372200
         accepted: muss akzeptiert werden
         blank: muss ausgefüllt werden
         confirmation: stimmt nicht mit der Bestätigung überein
@@ -220,7 +220,7 @@ de:
         too_long: ist zu lang (nicht mehr als %{count} Zeichen)
         too_short: ist zu kurz (nicht weniger als %{count} Zeichen)
         wrong_length: hat die falsche Länge (muss genau %{count} Zeichen haben)
-      template: &70151477927020
+      template: &70202772503000
         body: ! 'Bitte überprüfen Sie die folgenden Felder:'
         header:
           one: ! 'Konnte %{model} nicht speichern: ein Fehler.'
@@ -228,8 +228,8 @@ de:
   activerecord:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: *70151477929160
-      template: *70151477927020
+      messages: *70202774372200
+      template: *70202772503000
   manage:
     link: Verwalten
   planner:
@@ -361,7 +361,7 @@ de:
         title: Ihre Password ändern oder zurücksetzen
       button: Ändern oder Zurücksetzen
   modal:
-    body: ! 'Als Sie sich bei Notdienst-Touch angemeldet, haben wir Ihnen eine E-Mail geschickt mit die Adresse zu Ihre Sichere Seite. Sie können sich nur von Ihre eigene Sicher Seite aus einloggen. Unten ist ein beispeil:'
+    body: ! 'Wir haben Ihnen eine E-Mail geschickt mit die Adresse zu Ihre Sichere Seite. Sie können sich nur von Ihre eigene Sichere Seite aus einloggen. Unten ist ein beispeil wie es aussehen kann:'
     link: Sichere Seite vergessen?
     title: Wir man sich im Notdienst-Touch einloggen kann.
   pharmacies:
