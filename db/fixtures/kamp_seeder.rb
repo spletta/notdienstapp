@@ -4,8 +4,8 @@
 Account.delete_all
 Account.seed(:id,
   { :id => 1,
-    :name => "Test Company",
-    :subdomain => "test"
+    :name => "Muster",
+    :subdomain => "muster"
   }
 )
 puts "Account loaded"
@@ -14,7 +14,7 @@ User.unscoped.delete_all
 User.seed(:id,
   { :id => 1,
     :name => "Max Muster",
-    :email => "remi500@freenet.de",
+    :email => "max@muster.de",
     :password => "pasewalk",
     :password_confirmation => "pasewalk",
     :account_id => 1
