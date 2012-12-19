@@ -1,0 +1,18 @@
+<% provide(:title, @info.title) %>
+<p>
+  <strong><%= t 'information.form-title' %>:</strong>
+  <%= @info.title %>
+</p>
+<p>
+  <strong><%= t 'information.form-description' %>:</strong>
+  <%= @info.description %>
+</p>
+<p>
+  <strong><%= t 'information.form-footer' %>:</strong>
+  <%= @info.footer %>
+</p>
+<p>
+	<%= link_to t('pharmacies.viewall.button'), infos_path, :class => 'btn btn-mini' %>
+  <%= link_to t('edit.button'), edit_info_path(@info), :class => 'btn btn-mini' %>
+  <%= link_to t('destroy.button'), @info, :confirm => t('pharmacies.confirm.delete'), :method => :delete, :class => 'btn btn-mini btn-danger' %>
+</p>

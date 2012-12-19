@@ -5,7 +5,7 @@ class Event < ActiveRecord::Base
   attr_accessible :pharmacy_id, :starttime, :endtime, :description, :title, :all_day, :color,
     :recurring, :recurring_interval, :recurring_period, :recurring_endtime
   belongs_to :pharmacy
-  validates :pharmacy_id, presence: true
+  #validates :pharmacy_id, presence: true
   
   COLORS = ["Weiss", "Blau", "Hellblau", "Gruen", "Gelb", "Rot", "Grau", "Standard" ]
   INTERVALS = [:day, :week, :month, :year]

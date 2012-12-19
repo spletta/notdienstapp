@@ -198,7 +198,7 @@ de:
   activemodel:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: &70114109735260
+      messages: &70142748202280
         accepted: muss akzeptiert werden
         blank: muss ausgefüllt werden
         confirmation: stimmt nicht mit der Bestätigung überein
@@ -220,7 +220,7 @@ de:
         too_long: ist zu lang (nicht mehr als %{count} Zeichen)
         too_short: ist zu kurz (nicht weniger als %{count} Zeichen)
         wrong_length: hat die falsche Länge (muss genau %{count} Zeichen haben)
-      template: &70114109732340
+      template: &70142748200160
         body: ! 'Bitte überprüfen Sie die folgenden Felder:'
         header:
           one: ! 'Konnte %{model} nicht speichern: ein Fehler.'
@@ -228,8 +228,8 @@ de:
   activerecord:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: *70114109735260
-      template: *70114109732340
+      messages: *70142748202280
+      template: *70142748200160
   manage:
     link: Verwalten
   planner:
@@ -519,3 +519,11 @@ de:
         name: 
   unauthorized:
     default: You are not authorized to access this page.
+  information:
+    create-title: Kundeninfos erstellen
+    form-description: Beschreibung
+    form-footer: Fußzeile
+    form-title: Titel
+    index-title: Kundeninfos verwalten
+    title: Titel
+    edit-title: Kundeninfos bearbeiten

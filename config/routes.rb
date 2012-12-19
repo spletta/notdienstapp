@@ -49,6 +49,7 @@ NdtAppV6::Application.routes.draw do
       #match '/events/ipad', to: 'events#ipad'
     #end
     
+    resources :infos
     resources :emergency_groups
     resources :users
     
