@@ -2,13 +2,13 @@
 <%= render 'shared/error_messages', object: f.object %>
 <table class="table table-hover">
   <col width="110"/>
-  <% if @event.event_type == 'Notdienst' %>
+  <% if Event::EVENT_TYPES == 'Notdienst' %>
   <tr>
 	  <% disabled_options = ['Kundeninfos', 'Werbung'] %>
   	<td><%= f.label t 'event.type' %></td>
 		<td><%= f.select(:event_type, Event::EVENT_TYPES, :include_blank => t('event.type-select'), :required => true, :disabled => disabled_options) %></td>
   </tr>
-  <% elsif @event.event_type == 'Kundeninfos' %>
+  <% elsif Event::EVENT_TYPES == 'Kundeninfos' %>
   <tr>
 	  <% disabled_options = ['Notdienst', 'Werbung'] %>
   	<td><%= f.label t 'event.type' %></td>
