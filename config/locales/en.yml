@@ -97,7 +97,7 @@ en:
       year: Year
   errors:
     format: ! '%{attribute} %{message}'
-    messages: &70142763437800
+    messages: &70297052789640
       accepted: must be accepted
       blank: can't be blank
       confirmation: doesn't match confirmation
@@ -125,7 +125,7 @@ en:
       wrong_length:
         one: is the wrong length (should be 1 character)
         other: is the wrong length (should be %{count} characters)
-    template: &70142763030180
+    template: &70297052783160
       body: ! 'There were problems with the following fields:'
       header:
         one: 1 error prohibited this %{model} from being saved
@@ -201,13 +201,13 @@ en:
   activemodel:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: *70142763437800
-      template: *70142763030180
+      messages: *70297052789640
+      template: *70297052783160
   activerecord:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: *70142763437800
-      template: *70142763030180
+      messages: *70297052789640
+      template: *70297052783160
   session:
     forgot:
       password:
@@ -307,6 +307,10 @@ en:
     recurring_period: Repeats
     recurring_endtime: Ends
     recurring_endtime_hint: This event will repeat itself until the end date above.
+    info: Customer Information
+    type: Event Type
+    info-select: Choose Customer Information
+    type-select: Choose Type
   '2012-11-15': what is this?
   account:
     name: Company
@@ -322,7 +326,7 @@ en:
     edit:
       title: Edit Profile
     company:
-      name: 
+      name: Company Name
   user:
     name: Full Name
     password: Password
@@ -482,18 +486,18 @@ en:
       link: Terms
   day: Day
   month: Month
-  week: 
-  year: 
+  week: Week
+  year: Year
   confirm:
     password: 
   update:
     your:
       profile: 
   user[accounts]:
-    Secure Site: 
+    Secure Site: Secure Site
     de, account:
       company:
-        name: 
+        name: Company
   unauthorized:
     default: 
   information:

@@ -1,7 +1,7 @@
 <% @events.each do |event| %>
   <% if event.starttime <= Time.zone.now && event.endtime >= Time.zone.now %>
     <% if event.event_type == 'Notdienst' %>
-     <div class="rotating-item">
+     <div id="emergency_service">
       <div class="mc"></div>
 			<div class="white_container">
 			  <center>
@@ -33,7 +33,7 @@
 	    </div>
 	  </div>
     <% else %>
-    <div class="rotating-item">
+    <div id="customer_info">
       <div class="mc"></div>
 			<div class="white_container">
 			  <center>

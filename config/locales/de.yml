@@ -198,7 +198,7 @@ de:
   activemodel:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: &70142748202280
+      messages: &70297054044120
         accepted: muss akzeptiert werden
         blank: muss ausgefüllt werden
         confirmation: stimmt nicht mit der Bestätigung überein
@@ -220,7 +220,7 @@ de:
         too_long: ist zu lang (nicht mehr als %{count} Zeichen)
         too_short: ist zu kurz (nicht weniger als %{count} Zeichen)
         wrong_length: hat die falsche Länge (muss genau %{count} Zeichen haben)
-      template: &70142748200160
+      template: &70297054042260
         body: ! 'Bitte überprüfen Sie die folgenden Felder:'
         header:
           one: ! 'Konnte %{model} nicht speichern: ein Fehler.'
@@ -228,8 +228,8 @@ de:
   activerecord:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: *70142748202280
-      template: *70142748200160
+      messages: *70297054044120
+      template: *70297054042260
   manage:
     link: Verwalten
   planner:
@@ -330,6 +330,10 @@ de:
     recurring_period: Häufigkeit
     week: Woche
     year: Jahr
+    info: Kundeninfos
+    type: Termine Typ
+    info-select: Kundeninfos auswählen
+    type-select: Typ auswählen
   '2012-11-15': what is this?
   account:
     name: Firma
@@ -345,7 +349,7 @@ de:
     edit:
       title: Profile ändern
     company:
-      name: 
+      name: Firma
   user:
     name: Vollständiger Name
     password: Passwort
@@ -505,18 +509,18 @@ de:
       link: AGB's
   day: Tag
   month: Monat
-  week: 
-  year: 
+  week: Woche
+  year: Jahr
   confirm:
     password: Confirm Password
   update:
     your:
       profile: Update your profile
   user[accounts]:
-    Secure Site: 
+    Secure Site: Website
     de, account:
       company:
-        name: 
+        name: Firma
   unauthorized:
     default: You are not authorized to access this page.
   information:

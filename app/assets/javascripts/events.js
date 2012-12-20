@@ -53,4 +53,72 @@ $('#event_recurring').on('change', function() {
     }
 }).trigger('change');
 
+// show/hide pharmacy and customer info tr's
+if($('#event_event_type').val() == 'Kundeninfos') {
+$('.tr-pharmacy').hide(); //hide field on start
+}
+
+if($('#event_event_type').val() == 'Notdienst') {
+$('.tr-info').hide(); //hide field on start
+}
+
+$('#event_event_type').change(function() {
+
+ var $index = $('#event_event_type').index(this);
+
+ if($('#event_event_type').val() != 'Notdienst') { //if this value is NOT selected
+ $('.tr-pharmacy').hide(); //this field is hidden
+ } 
+ else {
+ $('.tr-pharmacy').show();//else it is shown
+ }
+
+ if($('#event_event_type').val() != 'Kundeninfos') { //if this value is NOT selected
+ $('.tr-info').hide(); //this field is hidden
+ } 
+ else {
+ $('.tr-info').show();//else it is shown
+ }
+});
+
+// show/hide multiple events for one day on the mobile version
+var InfiniteRotator =
+    {
+        init: function()
+        {	        
+            //initial fade-in time (in milliseconds)
+            var initialFadeIn = 100;
+ 
+            //interval between items (in milliseconds)
+            var itemInterval = 8000;
+ 
+            //cross-fade time (in milliseconds)
+            var fadeTime = 2500;
+ 
+            //count number of items
+            var numberOfItems = $('.rotating-item').length;
+ 
+            //set current item
+            var currentItem = 0;
+ 
+            //show first item
+            $('.rotating-item').eq(currentItem).fadeIn(initialFadeIn);
+ 
+            //loop through the items
+            var infiniteLoop = setInterval(function(){
+                $('.rotating-item').eq(currentItem).hide();
+ 
+                if(currentItem == numberOfItems -1){
+                    currentItem = 0;
+                }else{
+                    currentItem++;
+                }
+                $('.rotating-item').eq(currentItem).show();
+ 
+            }, itemInterval);
+        }
+    };
+ 
+    InfiniteRotator.init();
+
 });

@@ -3,15 +3,17 @@
 class Event < ActiveRecord::Base
   attr_accessor :recurring_date
   attr_accessible :pharmacy_id, :starttime, :endtime, :description, :title, :all_day, :color,
-    :recurring, :recurring_interval, :recurring_period, :recurring_endtime
+    :recurring, :recurring_interval, :recurring_period, :recurring_endtime, :event_type, :info_id
   belongs_to :pharmacy
-  #validates :pharmacy_id, presence: true
+  belongs_to :info
+  validates :event_type, presence: true
   
-  COLORS = ["Weiss", "Blau", "Hellblau", "Gruen", "Gelb", "Rot", "Grau", "Standard" ]
+  EVENT_TYPES = ["Notdienst", "Kundeninfos", "Werbung"]
+  COLORS = ["Weiss", "Blau", "Hellblau", "Gruen", "Gelb", "Rot", "Grau", "Standard"]
   INTERVALS = [:day, :week, :month, :year]
   PERIODS = (1..30).to_a
   
-  accepts_nested_attributes_for :pharmacy
+  accepts_nested_attributes_for :pharmacy, :info
   
   default_scope { where(account_id: Account.current_id) }
 

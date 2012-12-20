@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121219100119) do
+ActiveRecord::Schema.define(:version => 20121219114912) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
@@ -46,6 +46,8 @@ ActiveRecord::Schema.define(:version => 20121219100119) do
     t.string   "recurring_interval"
     t.integer  "recurring_period"
     t.datetime "recurring_endtime"
+    t.integer  "info_id"
+    t.string   "event_type"
   end
 
   add_index "events", ["account_id"], :name => "index_events_on_account_id"

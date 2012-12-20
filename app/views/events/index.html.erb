@@ -23,5 +23,19 @@
             <% end %>
         <% end %>
     <% end %>
+    <br />
+		<% if @events_by_date[date] %>
+        <% @events_by_date[date].uniq.each do |event| %>
+            <% if event.info != nil %>
+              <% if btn_class = bs_button_for_color(event.color) %>
+                <center><%= link_to event.info.title, edit_event_path(event), :class => "btn btn-mini #{btn_class}" %></center>
+              <% else %>
+                <ul>
+                <li><%= link_to event.info.title, edit_event_path(event) %></li>
+                </ul>
+              <% end %>
+            <% end %>
+        <% end %>
+    <% end %>
   <% end %>	
 </div>
