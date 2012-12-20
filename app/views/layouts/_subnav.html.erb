@@ -12,7 +12,7 @@
 								request.path == customer_service_path %>
 				<li class="<%= 'active' if current_page?(pharmacies_path) %>"><%= link_to t('pharmacies.link'), pharmacies_path %></li>
 				<li class="<%= 'active' if current_page?(emergency_groups_path) %>"><%= link_to t('emergency.group.link'), emergency_groups_path %></li>
-				<li class="<%= 'active' if current_page?(customer_service_path) %>"><%= link_to t('customer.service.feed.link'), customer_service_path %></li>
+				<li class="<%= 'active' if current_page?(customer_service_path) %>"><%= link_to t('customer.service.feed.link'), infos_path %></li>
       <% else %>
         <%# //.. %>
       <% end %>
