@@ -54,12 +54,22 @@ $('#event_recurring').on('change', function() {
 }).trigger('change');
 
 // show/hide pharmacy and customer info tr's
-if($('#event_event_type').val() == 'Kundeninfos') {
+if($('#event_event_type').val() == '') {
 $('.tr-pharmacy').hide(); //hide field on start
+$('.tr-info').hide(); //hide field on start
+$('.tr-ad').hide(); //hide field on start
 }
 
-if($('#event_event_type').val() == 'Notdienst') {
-$('.tr-info').hide(); //hide field on start
+if($('#event_event_type').val() != 'Notdienst') { //if this value is NOT selected
+$('.tr-pharmacy').hide(); //this field is hidden
+}
+
+if($('#event_event_type').val() != 'Kundeninfos') { //if this value is NOT selected
+$('.tr-info').hide(); //this field is hidden
+}
+
+if($('#event_event_type').val() != 'Werbung') { //if this value is NOT selected
+$('.tr-ad').hide(); //this field is hidden
 }
 
 $('#event_event_type').change(function() {
@@ -78,6 +88,13 @@ $('#event_event_type').change(function() {
  } 
  else {
  $('.tr-info').show();//else it is shown
+ }
+
+ if($('#event_event_type').val() != 'Werbung') { //if this value is NOT selected
+ $('.tr-ad').hide(); //this field is hidden
+ } 
+ else {
+ $('.tr-ad').show();//else it is shown
  }
 });
 

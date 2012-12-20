@@ -97,7 +97,7 @@ en:
       year: Year
   errors:
     format: ! '%{attribute} %{message}'
-    messages: &70297052789640
+    messages: &70333022428320
       accepted: must be accepted
       blank: can't be blank
       confirmation: doesn't match confirmation
@@ -125,7 +125,7 @@ en:
       wrong_length:
         one: is the wrong length (should be 1 character)
         other: is the wrong length (should be %{count} characters)
-    template: &70297052783160
+    template: &70333023020460
       body: ! 'There were problems with the following fields:'
       header:
         one: 1 error prohibited this %{model} from being saved
@@ -201,13 +201,13 @@ en:
   activemodel:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: *70297052789640
-      template: *70297052783160
+      messages: *70333022428320
+      template: *70333023020460
   activerecord:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: *70297052789640
-      template: *70297052783160
+      messages: *70333022428320
+      template: *70333023020460
   session:
     forgot:
       password:
@@ -311,6 +311,8 @@ en:
     type: Event Type
     info-select: Choose Customer Information
     type-select: Choose Type
+    ad: Advertisement
+    ad-select: Choose Advertisement
   '2012-11-15': what is this?
   account:
     name: Company
@@ -508,3 +510,9 @@ en:
     index-title: Manage Customer Information
     title: Title
     edit-title: Edit Customer Information
+  ad:
+    index-title: Manage Advertisements
+    subnav-link: Advertisements
+    title: Title
+    create-title: Create Advertisement
+    edit-title: Edit Advertisement

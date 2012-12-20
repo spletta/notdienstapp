@@ -14,11 +14,16 @@
   	<td><%= f.label t 'event.type' %></td>
 		<td><%= f.select(:event_type, Event::EVENT_TYPES, :include_blank => t('event.type-select'), :required => true, :disabled => disabled_options) %></td>
   </tr>
-  <% else %>
+  <% elsif Event::EVENT_TYPES == 'Werbung' %>
   <tr>
-	  <% disabled_options = ['Werbung'] %>
+	  <% disabled_options = ['Notdienst', 'Kundeninfos'] %>
   	<td><%= f.label t 'event.type' %></td>
 		<td><%= f.select(:event_type, Event::EVENT_TYPES, :include_blank => t('event.type-select'), :required => true, :disabled => disabled_options) %></td>
+  </tr>
+  <% else %>
+  <tr>
+  	<td><%= f.label t 'event.type' %></td>
+		<td><%= f.select(:event_type, Event::EVENT_TYPES, :include_blank => t('event.type-select'), :required => true ) %></td>
   </tr>
   <% end %>
   <tr class="tr-pharmacy">
@@ -28,6 +33,10 @@
   <tr class="tr-info">
     <td><%= f.label t 'event.info' %></td>
     <td><%= f.collection_select :info_id, Info.all, :id, :title, :include_blank => t('event.info-select') %></td>
+  </tr>
+  <tr class="tr-ad">
+    <td><%= f.label t 'event.ad' %></td>
+    <td><%= f.collection_select :ad_id, Ad.all, :id, :title, :include_blank => t('event.ad-select') %></td>
   </tr>
   <tr>
   	<td><%= f.label t 'event.color' %></td>

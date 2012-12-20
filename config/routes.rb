@@ -50,6 +50,7 @@ NdtAppV6::Application.routes.draw do
     #end
     
     resources :infos
+    resources :ads
     resources :emergency_groups
     resources :users
     

@@ -198,7 +198,7 @@ de:
   activemodel:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: &70297054044120
+      messages: &70332995311140
         accepted: muss akzeptiert werden
         blank: muss ausgefüllt werden
         confirmation: stimmt nicht mit der Bestätigung überein
@@ -220,7 +220,7 @@ de:
         too_long: ist zu lang (nicht mehr als %{count} Zeichen)
         too_short: ist zu kurz (nicht weniger als %{count} Zeichen)
         wrong_length: hat die falsche Länge (muss genau %{count} Zeichen haben)
-      template: &70297054042260
+      template: &70332995308820
         body: ! 'Bitte überprüfen Sie die folgenden Felder:'
         header:
           one: ! 'Konnte %{model} nicht speichern: ein Fehler.'
@@ -228,8 +228,8 @@ de:
   activerecord:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: *70297054044120
-      template: *70297054042260
+      messages: *70332995311140
+      template: *70332995308820
   manage:
     link: Verwalten
   planner:
@@ -334,6 +334,8 @@ de:
     type: Termine Typ
     info-select: Kundeninfos auswählen
     type-select: Typ auswählen
+    ad: Webung
+    ad-select: Werbung auswählen
   '2012-11-15': what is this?
   account:
     name: Firma
@@ -531,3 +533,9 @@ de:
     index-title: Kundeninfos verwalten
     title: Titel
     edit-title: Kundeninfos bearbeiten
+  ad:
+    index-title: Werbung verwalten
+    subnav-link: Werbung
+    title: Titel
+    create-title: Werbung erstellen
+    edit-title: Werbung bearbeiten

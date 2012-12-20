@@ -1,0 +1,27 @@
+<% provide(:title, 'Advertisements') %>
+<div class="row">
+	</br>
+  <div class="span8 offset2">
+	  <h3c><%= t 'ad.index-title' %></h3c>
+		<table class="table table-hover">
+		  <tr>
+				<th><%=  t "ad.title" %></th>
+				<th>&nbsp;</th>
+	    <tr>
+			<% @ads.each do |ad| %>
+			  <tr>
+				  <td><%= ad.title %></td>
+				  <td>
+					  <%= link_to t('emergency.group.edit.button'), edit_ad_path(ad), class: "btn btn-mini" %>
+				    <%= link_to t('emergency.group.destroy.button'), ad, :confirm => t('emergency.group.confirm.delete'), :method => :delete, class: "btn btn-mini btn-danger" %>
+			    </td> 
+				</tr>
+			<% end %>
+		</table>
+		</br>
+		<p><%= link_to t('emergency.group.create.button'), new_ad_path, :class => 'btn btn-mini btn-primary' %></p>
+  </div>
+</div>
+
+
+

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121219114912) do
+ActiveRecord::Schema.define(:version => 20121220132039) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
@@ -19,6 +19,14 @@ ActiveRecord::Schema.define(:version => 20121219114912) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "user_id"
+  end
+
+  create_table "ads", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "footer"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "emergency_groups", :force => true do |t|
@@ -48,6 +56,7 @@ ActiveRecord::Schema.define(:version => 20121219114912) do
     t.datetime "recurring_endtime"
     t.integer  "info_id"
     t.string   "event_type"
+    t.integer  "ad_id"
   end
 
   add_index "events", ["account_id"], :name => "index_events_on_account_id"

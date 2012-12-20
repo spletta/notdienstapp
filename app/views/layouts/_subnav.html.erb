@@ -9,10 +9,12 @@
       <% elsif request.path == manage_path || 
 								request.path == pharmacies_path || 
 								request.path == emergency_groups_path ||
-								request.path == customer_service_path %>
+								request.path == infos_path ||
+								request.path == ads_path %>
 				<li class="<%= 'active' if current_page?(pharmacies_path) %>"><%= link_to t('pharmacies.link'), pharmacies_path %></li>
 				<li class="<%= 'active' if current_page?(emergency_groups_path) %>"><%= link_to t('emergency.group.link'), emergency_groups_path %></li>
-				<li class="<%= 'active' if current_page?(customer_service_path) %>"><%= link_to t('customer.service.feed.link'), infos_path %></li>
+				<li class="<%= 'active' if current_page?(infos_path) %>"><%= link_to t('customer.service.feed.link'), infos_path %></li>
+				<li class="<%= 'active' if current_page?(ads_path) %>"><%= link_to t('ad.subnav-link'), ads_path %></li>
       <% else %>
         <%# //.. %>
       <% end %>

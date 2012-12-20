@@ -1,0 +1,18 @@
+<% provide(:title, @ad.title) %>
+<p>
+  <strong><%= t 'information.form-title' %>:</strong>
+  <%= @ad.title %>
+</p>
+<p>
+  <strong><%= t 'information.form-description' %>:</strong>
+  <%= @ad.description %>
+</p>
+<p>
+  <strong><%= t 'information.form-footer' %>:</strong>
+  <%= @ad.footer %>
+</p>
+<p>
+	<%= link_to t('pharmacies.viewall.button'), ads_path, :class => 'btn btn-mini' %>
+  <%= link_to t('edit.button'), edit_ad_path(@ad), :class => 'btn btn-mini' %>
+  <%= link_to t('destroy.button'), @ad, :confirm => t('pharmacies.confirm.delete'), :method => :delete, :class => 'btn btn-mini btn-danger' %>
+</p>

@@ -3,9 +3,10 @@
 class Event < ActiveRecord::Base
   attr_accessor :recurring_date
   attr_accessible :pharmacy_id, :starttime, :endtime, :description, :title, :all_day, :color,
-    :recurring, :recurring_interval, :recurring_period, :recurring_endtime, :event_type, :info_id
+    :recurring, :recurring_interval, :recurring_period, :recurring_endtime, :event_type, :info_id, :ad_id
   belongs_to :pharmacy
   belongs_to :info
+  belongs_to :ad
   validates :event_type, presence: true
   
   EVENT_TYPES = ["Notdienst", "Kundeninfos", "Werbung"]
@@ -13,7 +14,7 @@ class Event < ActiveRecord::Base
   INTERVALS = [:day, :week, :month, :year]
   PERIODS = (1..30).to_a
   
-  accepts_nested_attributes_for :pharmacy, :info
+  accepts_nested_attributes_for :pharmacy, :info, :ad
   
   default_scope { where(account_id: Account.current_id) }
 

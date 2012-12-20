@@ -32,7 +32,7 @@
 		    </center>
 	    </div>
 	  </div>
-    <% else %>
+    <% elsif event.event_type == 'Kundeninfos' %>
     <div class="rotating-item">
       <div class="mc"></div>
 			<div class="white_container">
@@ -53,6 +53,27 @@
 				</center>
 			</div>
 		</div>
-    <% end %>
+    <% else %>
+    <div class="rotating-item">
+      <div class="mc"></div>
+			<div class="white_container">
+			  <center>
+				  <h1b><strong><%= event.ad.title %></strong></h1b>
+				</center>
+			</div>
+			<div class="mb"></div>
+			<div class="white_container_middle">
+				<center>
+					<h3b><%= event.ad.description %></h3b>
+			  </center>
+			</div>	
+			<div class="mb"></div>
+			<div class="white_container">
+			  <center>
+				  <h4b><%= event.ad.footer %></h4b>
+				</center>
+			</div>
+		</div>
+		<% end %>
   <% end %>
 <% end %>
