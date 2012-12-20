@@ -26,6 +26,8 @@ gem 'jquery_datepicker'
 gem 'has_enumeration'
 gem 'cancan'
 gem 'google-analytics-rails'
+gem "paperclip", "~> 3.0"
+gem 'aws-sdk', '~> 1.3.4'
 
 group :development, :test do
   gem 'rspec-rails', '2.11.0'
