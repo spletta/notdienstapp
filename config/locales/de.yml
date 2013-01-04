@@ -198,7 +198,7 @@ de:
   activemodel:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: &70332995311140
+      messages: &70120933502620
         accepted: muss akzeptiert werden
         blank: muss ausgefüllt werden
         confirmation: stimmt nicht mit der Bestätigung überein
@@ -220,7 +220,7 @@ de:
         too_long: ist zu lang (nicht mehr als %{count} Zeichen)
         too_short: ist zu kurz (nicht weniger als %{count} Zeichen)
         wrong_length: hat die falsche Länge (muss genau %{count} Zeichen haben)
-      template: &70332995308820
+      template: &70120933500080
         body: ! 'Bitte überprüfen Sie die folgenden Felder:'
         header:
           one: ! 'Konnte %{model} nicht speichern: ein Fehler.'
@@ -228,8 +228,8 @@ de:
   activerecord:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: *70332995311140
-      template: *70332995308820
+      messages: *70120933502620
+      template: *70120933500080
   manage:
     link: Verwalten
   planner:
@@ -539,3 +539,5 @@ de:
     title: Titel
     create-title: Werbung erstellen
     edit-title: Werbung bearbeiten
+  next_label: nächste
+  previous_label: bisherig
