@@ -7,6 +7,8 @@ class Account < ActiveRecord::Base
   
   accepts_nested_attributes_for :users
   
+  validates :name, :subdomain, presence: true
+  
   def self.current_id=(id)
     Thread.current[:account_id] = id
   end

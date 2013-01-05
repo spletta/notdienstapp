@@ -16,4 +16,6 @@
 //= require jquery-ui-timepicker-addon.js
 //= jquery-ui-sliderAccess.js
 //= require bootstrap
+//= require rails.validations
+//= require rails.validations.simple_form
 //= require_tree .

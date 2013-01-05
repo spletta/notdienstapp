@@ -13,12 +13,14 @@
   <body>
     <%= render 'layouts/header' %>
     <%= render 'layouts/subnav' %>
+    <div class="content">
     <div class="container">
 			<% flash.each do |key, value| %>
         <%= content_tag(:div, value, class: "alert alert-#{key}") %>
       <% end %>
       <%= yield %>
       <%= render 'layouts/footer' %>
+    </div>
     </div>
     <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		    <div class="modal-header">

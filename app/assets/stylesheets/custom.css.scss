@@ -372,6 +372,56 @@ h4b {
   font-family: 'BitterRegular', Georgia, sans-serif;
 }
 
+/* More custom styles by Remington */
+.section-large .section-header {
+height: 55px;
+line-height: 55px;
+}
+
+.section-header {
+background-color: #F7F7F7;
+background-image: -moz-linear-gradient(top, #FAFAFA, #F2F2F2);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#FAFAFA), to(#F2F2F2));
+background-image: -webkit-linear-gradient(top, #FAFAFA, #F2F2F2);
+background-image: -o-linear-gradient(top, #FAFAFA, #F2F2F2);
+background-image: linear-gradient(to bottom, #FAFAFA,#F2F2F2);
+background-repeat: repeat-x;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFAFAFA', endColorstr='#FFF2F2F2', GradientType=0);
+border-top: 1px solid white;
+border-bottom: 1px solid #CCC;
+-webkit-border-top-left-radius: 4px;
+-moz-border-radius-topleft: 4px;
+border-top-left-radius: 4px;
+-webkit-border-top-right-radius: 4px;
+-moz-border-radius-topright: 4px;
+border-top-right-radius: 4px;
+height: 46px;
+padding: 0 15px 0;
+}
+
+.section-large .section-content, .section-large .section-body {
+padding: 18px 20px 0;
+}
+
+.section-header + .section-content, .section .section-content:first-child {
+border-top: 0;
+}
+
+.section-content {
+border-top: 1px solid #EBEBEB;
+}
+
+.section-content, .section-body {
+min-height: 18px;
+padding: 9px 15px 0;
+}
+
+.content {
+background: transparent url("/assets/bg.jpg") 0 0 repeat-x;
+padding-top: 18px;
+min-height: 402px;
+}
+
 /*.modal-backdrop, .modal-backdrop.fade.in { background-color: rgba(0,0,0,0); }*/
 
 /* importing mobile responsive style at the end on purpose */

@@ -1,58 +1,63 @@
 <% provide(:title, 'Create Account') %>
-<div class="row">
-  <div class="span5 offset1">
-	  <h2c><%= t "new.account.headline" %></h2c>
-    <%= form_for(@account) do |f| %>
-      <%= render 'fields', f: f %>
-      <%= f.submit t("account.submit"), class: "btn btn-mini btn-primary" %> <%= link_to t('no.email'), 'https://accounts.google.com', :class => "btn btn-mini" %>
-    <% end %>
-    <p>Sie können unsere Bestellformular auch als PDF unterladen <%= link_to "bestellfomular.pdf", "https://#{request.domain}#{request.port_string}/bestellfomular.pdf" %></p>
+<div class="section section-large">
+  <div class="section-header">
+    <h3>
+      Create your free account
+    </h3>
   </div>
-	<div class="span5">
-		<!-- 	<p>
-				<h2c><strong><%= t 'contact.form.title'%></strong></h2c></br>
-			  <h2c><strong><%= t 'contact.form.subtitle'%></h2c></strong></br>
-			</p>
-			</br>-->
-	<p>
-		<%= image_tag('ndt-v9-470.png') %>
-	</p>
-  </br>
-        <table class="table table-striped">
-				  <tbody>
-						<tr>
-					      <td><h6>Product Manager:</h6></td>
-					      <td><i class="icon-user"></i> <a href="#employees/2">Remington Splettstößer</a></td>
-					  </tr>
-					  <tr>
-					      <td><h6><%= t 'contact.office.phone' %>:</h6></td>
-					      <td><i class="icon-home"></i> +49 3973 436 3398</td>
-					  </tr>
-					  <tr>
-					      <td><h6><%= t 'contact.cell.phone' %>:</h6></td>
-					      <td><i class="icon-headphones"></i> +49 151 4042 7103</td>
-					  </tr>
-					  <tr>
-					      <td><h6><%= t 'contact.office.fax' %>:</h6></td>
-					      <td><i class="icon-home"></i> +49 3221 1226 80808</td>
-					  </tr>
-					  <tr>
-					      <td><h6><%= t 'contact.phone.us' %>:</h6></td>
-					      <td><i class="icon-home"></i> +1 650 318 3882</td>
-					  </tr>
-					  <tr>
-					      <td><h6>Email:</h6></td>
-					      <td><i class="icon-envelope"></i> <a href="mailto:service@notdienstapp.com">service@notdienstapp.com</a></td>
-					  </tr>
-				  </tbody>
-				</table>
-        <h4><%= t 'contact.fill.out'%></h4></br>
-        <div class="alert alert-success">
-          <h4 class="alert-heading"><%= t 'contact.alert.heading' %></h4>
-          <%= t 'contact.alert.content' %>
-        </div>
-        <div class="alert alert-info">
-          <h3c class="alert-heading"><%= link_to "Schreiben Sie uns an", contact_path %></h3c>
-        </div>
-  </div>
+  <div class="section-content">
+	  <div class="row">
+	    <div class="span8">
+		    <h2c><%= t "new.account.headline" %></h2c>
+	      <%= form_for @account, :validate => true do |f| %>
+	        <%= render 'fields', f: f %>
+	        <%= f.submit t("account.submit"), class: "btn btn-mini btn-primary" %> <%= link_to t('no.email'), 'https://accounts.google.com', :class => "btn btn-mini" %>
+	      <% end %>
+	      <p>Sie können unsere Bestellformular auch als PDF unterladen <%= link_to "bestellfomular.pdf", "https://#{request.domain}#{request.port_string}/bestellfomular.pdf" %></p>
+	    </div>
+	    <div class="span4">
+		    <div class="well well-small">
+				  <p class="pull-right">
+				    <small><a href="http://www.fleetio.com/pricing">Change Plan</a></small>
+				  </p>
+				  <h4>
+				    <i class="picons-24-basic2-012"></i>
+				    Plan Info
+				  </h4>
+				  <h5>
+				    Free Fleet
+				    <small class="text-success">
+				      $0 USD/month
+				    </small>
+				  </h5>
+				  <ul>
+				    <li>5 Vehicles</li>
+				    <li>2 Users</li>
+				  </ul>
+				  <p>You can easily change your plan or cancel your account at any time.</p>
+				</div>
+				<div class="well well-small">
+				  <h4>
+				    <i class="picons-24-basic2-088"></i>
+				    Have questions?
+				    <small>We're here to help!</small>
+				  </h4>
+				  <ul class="unstyled">
+				    <li>
+				      <i class="picons-16-basic1-042"></i>
+				      <script type="text/javascript">eval(decodeURIComponent('%64%6f%63%75%6d%65%6e%74%2e%77%72%69%74%65%28%27%3c%61%20%68%72%65%66%3d%5c%22%6d%61%69%6c%74%6f%3a%68%65%6c%6c%6f%40%66%6c%65%65%74%69%6f%2e%63%6f%6d%5c%22%3e%68%65%6c%6c%6f%40%66%6c%65%65%74%69%6f%2e%63%6f%6d%3c%5c%2f%61%3e%27%29%3b'))</script><a href="mailto:hello@fleetio.com">hello@fleetio.com</a>
+				    </li>
+				    <li>
+				      <i class="picons-16-basic2-191"></i>
+				      1-800-975-5304
+				    </li>
+				    <li>
+				      <i class="picons-16-basic2-050"></i>
+				      <a href="http://www.fleetio.com/demo">Get a demo</a>
+				    </li>
+				  </ul>
+				</div>
+		  </div>
+	  </div>
+	</div>
 </div>
