@@ -16,8 +16,15 @@ User.seed(:id,
   { :id => 1,
     :name => "Wolfgang Steyer",
     :email => "weitling.apotheke@gmail.com",
-    :password => "pasewalk",
-    :password_confirmation => "pasewalk",
+    :password => ENV['WEITLING_PASSWORD'],
+    :password_confirmation => ENV['WEITLING_PASSWORD'],
+    :account_id => 9
+  },
+  { :id => 2,
+    :name => "Admin",
+    :email => "service@notdienstapp.com",
+    :password => ENV['GMAIL_PASSWORD'],
+    :password_confirmation => ENV['GMAIL_PASSWORD'],
     :account_id => 9
   }
 )
