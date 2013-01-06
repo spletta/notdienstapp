@@ -14,8 +14,8 @@
 			    <h2b><%= event.pharmacy.name %></h2b>
 			  </center><br>
 		    <center>
-			    <h3b>Von <%= l(event.starttime, :format => '%A, %d.%B %Y') %> <%= event.pharmacy.emergency_hour_change_time.strftime('%H:%M') %> Uhr<br>
-			    bis <%= l(event.endtime, :format => '%A, %d.%B %Y') %> <%= event.pharmacy.emergency_hour_change_time.strftime('%H:%M') %> Uhr</h3b>
+			    <h3b>Von <%= l(event.starttime, :format => '%A, %d. %B %Y') %> <%= event.pharmacy.emergency_hour_change_time.strftime('%H:%M') %> Uhr<br>
+			    bis <%= l(event.endtime, :format => '%A, %d. %B %Y') %> <%= event.pharmacy.emergency_hour_change_time.strftime('%H:%M') %> Uhr</h3b>
 			  </center>
 			  <center>
 		      <h3b>
