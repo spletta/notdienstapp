@@ -23,8 +23,8 @@ User.seed(:id,
   { :id => 4,
     :name => "Admin",
     :email => "service@notdienstapp.com",
-    :password => 'pasewalk',#ENV['GMAIL_PASSWORD'],
-    :password_confirmation => 'pasewalk',#ENV['GMAIL_PASSWORD'],
+    :password => ENV['GMAIL_PASSWORD'],
+    :password_confirmation => ENV['GMAIL_PASSWORD'],
     :account_id => 1
   }
 )
