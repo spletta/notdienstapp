@@ -2,7 +2,7 @@
 #user = User.unscoped.find_by_email("remi500@freenet.de")
 #account = Account.unscoped.find_by_user_id(user.id)
 
-Account.unscoped.delete_all(:account_id => 9)
+Account.unscoped.delete_all(:id => 9)
 Account.seed(:id,
   { :id => 9,
     :name => "Weitling Apotheke",
