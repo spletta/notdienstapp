@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(:version => 20121227120058) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "user_id"
-    t.integer  "plan_id"
   end
 
   create_table "ads", :force => true do |t|
@@ -55,8 +54,8 @@ ActiveRecord::Schema.define(:version => 20121227120058) do
     t.string   "recurring_interval"
     t.integer  "recurring_period"
     t.datetime "recurring_endtime"
-    t.integer  "info_id"
     t.string   "event_type"
+    t.integer  "info_id"
     t.integer  "ad_id"
   end
 
@@ -100,16 +99,6 @@ ActiveRecord::Schema.define(:version => 20121227120058) do
     t.integer  "position"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
-  end
-
-  create_table "plans", :force => true do |t|
-    t.string   "name"
-    t.decimal  "price"
-    t.integer  "ads"
-    t.integer  "infos"
-    t.integer  "groups"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|

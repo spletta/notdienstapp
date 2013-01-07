@@ -20,7 +20,8 @@ class ApplicationController < ActionController::Base
   
     def scope_current_account
       if request.subdomain.present? && request.subdomain != 'www' && request.subdomain != 'ndt-staging'
-        Account.current_id = current_account.id   
+        Account.current_id = current_account.id
+        #current_account.scope_schema("public", &block) 
       end
       yield
     ensure

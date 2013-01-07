@@ -2,7 +2,7 @@
 #user = User.unscoped.find_by_email("remi500@freenet.de")
 #account = Account.unscoped.find_by_user_id(user.id)
 
-Account.delete_all
+#Account.delete_all
 Account.seed(:id,
   { :id => 9,
     :name => "Weitling Apotheke",
@@ -11,7 +11,7 @@ Account.seed(:id,
 )
 puts "Loaded Weitling Account for development machine only"
 
-User.unscoped.delete_all
+#User.unscoped.delete_all
 User.seed(:id,
   { :id => 1,
     :name => "Wolfgang Steyer",
@@ -26,7 +26,7 @@ puts "Loaded User for development"
 puts "Weitling Apotheke (weitling-apotheke.notdienstapp.com), Account ID: 9"
 puts "Loading Pharmacies, Emergency Groups, and Events for 2013..."
 
-Pharmacy.unscoped.delete_all
+#Pharmacy.unscoped.delete_all
 Pharmacy.seed(:id,
   ###########  
   # Group 1 #
@@ -525,7 +525,7 @@ Pharmacy.seed(:id,
 )
 puts "Pharmacies loaded"
 
-EmergencyGroup.unscoped.delete_all
+#EmergencyGroup.unscoped.delete_all
 EmergencyGroup.seed(:id,
   { :id => 1,
     :account_id => 9, 

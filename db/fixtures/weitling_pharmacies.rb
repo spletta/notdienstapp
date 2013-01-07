@@ -2,7 +2,7 @@
 #user = User.unscoped.find_by_email("remi500@freenet.de")
 #account = Account.unscoped.find_by_user_id(user.id)
 
-Account.delete_all
+Account.unscoped.delete_all(:account_id => 9)
 Account.seed(:id,
   { :id => 9,
     :name => "Weitling Apotheke",
@@ -11,7 +11,7 @@ Account.seed(:id,
 )
 puts "Loaded Weitling Account for development machine only"
 
-User.unscoped.delete_all
+User.unscoped.delete_all(:account_id => 9)
 User.seed(:id,
   { :id => 1,
     :name => "Wolfgang Steyer",
@@ -33,7 +33,7 @@ puts "Loaded User for development"
 puts "Weitling Apotheke (weitling-apotheke.notdienstapp.com), Account ID: 9"
 puts "Loading Pharmacies, Emergency Groups, and Events for 2013..."
 
-Pharmacy.unscoped.delete_all
+Pharmacy.unscoped.delete_all(:account_id => 9)
 Pharmacy.seed(:id,
   ###########  
   # Group 1 #
@@ -48,7 +48,7 @@ Pharmacy.seed(:id,
     :city => "Berlin",
     :phone_number => "(030) 52279760",
     :fax_number => "(030) 52279761",
-    :emergency_hour_change_time => "2000-01-01 08:00:00 +0100" },
+    :emergency_hour_change_time => "2000-01-01 09:00:00 +0100" },
   { :id => 27,
     :account_id => 9, 
     :emergency_group_id => 1,   
@@ -59,7 +59,7 @@ Pharmacy.seed(:id,
     :city => "Berlin",
     :phone_number => "(030) 5102323",
     :fax_number => "(030) 51062743",
-    :emergency_hour_change_time => "2000-01-01 08:00:00 +0100" },
+    :emergency_hour_change_time => "2000-01-01 09:00:00 +0100" },
   ###########  
   # Group 2 #
   ###########
@@ -73,7 +73,7 @@ Pharmacy.seed(:id,
     :city => "Berlin",
     :phone_number => "(030) 5509195",
     :fax_number => "(030) 5509196",
-    :emergency_hour_change_time => "2000-01-01 08:00:00 +0100" },
+    :emergency_hour_change_time => "2000-01-01 09:00:00 +0100" },
   ###########  
   # Group 3 #
   ###########
@@ -87,7 +87,7 @@ Pharmacy.seed(:id,
     :city => "Berlin",
     :phone_number => "(030) 5588751",
     :fax_number => "(030) 55488860",
-    :emergency_hour_change_time => "2000-01-01 08:00:00 +0100" },
+    :emergency_hour_change_time => "2000-01-01 09:00:00 +0100" },
   { :id => 30,
     :account_id => 9, 
     :emergency_group_id => 1,   
@@ -97,7 +97,7 @@ Pharmacy.seed(:id,
     :district => "Karlshorst",
     :city => "Berlin",
     :phone_number => "(030) 50378600",
-    :emergency_hour_change_time => "2000-01-01 08:00:00 +0100" },
+    :emergency_hour_change_time => "2000-01-01 09:00:00 +0100" },
   ###########  
   # Group 4 #
   ###########
@@ -111,7 +111,7 @@ Pharmacy.seed(:id,
     :city => "Berlin",
     :phone_number => "(030) 5138203",
     :fax_number => "(030) 51591623",
-    :emergency_hour_change_time => "2000-01-01 08:00:00 +0100" },
+    :emergency_hour_change_time => "2000-01-01 09:00:00 +0100" },
   ###########  
   # Group 5 #
   ###########
@@ -124,7 +124,7 @@ Pharmacy.seed(:id,
     :district => "Lichtenberg",
     :city => "Berlin",
     :phone_number => "(030) 4226470",
-    :emergency_hour_change_time => "2000-01-01 08:00:00 +0100" },
+    :emergency_hour_change_time => "2000-01-01 09:00:00 +0100" },
   ###########  
   # Group 6 #
   ###########
@@ -137,7 +137,7 @@ Pharmacy.seed(:id,
     :district => "Lichtenberg",
     :city => "Berlin",
     :phone_number => "(030) 5589462",
-    :emergency_hour_change_time => "2000-01-01 08:00:00 +0100" },
+    :emergency_hour_change_time => "2000-01-01 09:00:00 +0100" },
   ###########  
   # Group 7 #
   ###########
@@ -151,7 +151,7 @@ Pharmacy.seed(:id,
     :city => "Berlin",
     :phone_number => "(030) 53699193",
     :fax_number => "(030) 53699194",
-    :emergency_hour_change_time => "2000-01-01 08:00:00 +0100" },
+    :emergency_hour_change_time => "2000-01-01 09:00:00 +0100" },
   ###########  
   # Group 8 #
   ###########
@@ -165,7 +165,7 @@ Pharmacy.seed(:id,
     :city => "Berlin",
     :phone_number => "(030) 50898250",
     :fax_number => "(030) 50898251",
-    :emergency_hour_change_time => "2000-01-01 08:00:00 +0100" },
+    :emergency_hour_change_time => "2000-01-01 09:00:00 +0100" },
   { :id => 29,
     :account_id => 9, 
     :emergency_group_id => 1,   
@@ -175,7 +175,7 @@ Pharmacy.seed(:id,
     :district => "Friedrichsfelde",
     :city => "Berlin",
     :phone_number => "(030) 51589995",
-    :emergency_hour_change_time => "2000-01-01 08:00:00 +0100" },
+    :emergency_hour_change_time => "2000-01-01 09:00:00 +0100" },
   ###########  
   # Group 9 #
   ###########
@@ -188,7 +188,7 @@ Pharmacy.seed(:id,
     :district => "Fennpfuhl",
     :city => "Berlin",
     :phone_number => "(030) 97105429",
-    :emergency_hour_change_time => "2000-01-01 08:00:00 +0100" },
+    :emergency_hour_change_time => "2000-01-01 09:00:00 +0100" },
   ###########  
   # Group 10 #
   ###########
@@ -202,7 +202,7 @@ Pharmacy.seed(:id,
     :city => "Berlin",
     :phone_number => "(030) 5099644",
     :fax_number => "(030) 5087975",
-    :emergency_hour_change_time => "2000-01-01 08:00:00 +0100" },
+    :emergency_hour_change_time => "2000-01-01 09:00:00 +0100" },
   { :id => 31,
     :account_id => 9, 
     :emergency_group_id => 1,   
@@ -212,7 +212,7 @@ Pharmacy.seed(:id,
     :district => "Fennpfuhl",
     :city => "Berlin",
     :phone_number => "(030) 98195444",
-    :emergency_hour_change_time => "2000-01-01 08:00:00 +0100" },
+    :emergency_hour_change_time => "2000-01-01 09:00:00 +0100" },
   ###########  
   # Group 11 #
   ###########
@@ -226,7 +226,7 @@ Pharmacy.seed(:id,
     :city => "Berlin",
     :phone_number => "(030) 55397336",
     :fax_number => "(030) 55397338",
-    :emergency_hour_change_time => "2000-01-01 08:00:00 +0100" },
+    :emergency_hour_change_time => "2000-01-01 09:00:00 +0100" },
   ###########  
   # Group 12 #
   ###########
@@ -239,7 +239,7 @@ Pharmacy.seed(:id,
     :district => "Lichtenberg",
     :city => "Berlin",
     :phone_number => "(030) 5536041",
-    :emergency_hour_change_time => "2000-01-01 08:00:00 +0100" },
+    :emergency_hour_change_time => "2000-01-01 09:00:00 +0100" },
   { :id => 32,
     :account_id => 9, 
     :emergency_group_id => 1,   
@@ -249,7 +249,7 @@ Pharmacy.seed(:id,
     :district => "Lichtenberg",
     :city => "Berlin",
     :phone_number => "(030) 5592832",
-    :emergency_hour_change_time => "2000-01-01 08:00:00 +0100" },
+    :emergency_hour_change_time => "2000-01-01 09:00:00 +0100" },
   { :id => 33,
     :account_id => 9, 
     :emergency_group_id => 1,   
@@ -259,7 +259,7 @@ Pharmacy.seed(:id,
     :district => "Lichtenberg",
     :city => "Berlin",
     :phone_number => "(030) 5779886",
-    :emergency_hour_change_time => "2000-01-01 08:00:00 +0100" },
+    :emergency_hour_change_time => "2000-01-01 09:00:00 +0100" },
   ###########  
   # Group 13 #
   ###########
@@ -273,7 +273,7 @@ Pharmacy.seed(:id,
     :city => "Berlin",
     :phone_number => "(030) 52279730",
     :fax_number => "(030) 52279732",
-    :emergency_hour_change_time => "2000-01-01 08:00:00 +0100" },
+    :emergency_hour_change_time => "2000-01-01 09:00:00 +0100" },
   { :id => 34,
     :account_id => 9, 
     :emergency_group_id => 1,   
@@ -283,7 +283,7 @@ Pharmacy.seed(:id,
     :district => "Fennpfuhl",
     :city => "Berlin",
     :phone_number => "(030) 971809 ext. 11",
-    :emergency_hour_change_time => "2000-01-01 08:00:00 +0100" },
+    :emergency_hour_change_time => "2000-01-01 09:00:00 +0100" },
   ###########  
   # Group 14 #
   ###########
@@ -297,7 +297,7 @@ Pharmacy.seed(:id,
     :city => "Berlin",
     :phone_number => "(030) 5125132",
     :fax_number => "(030) 51009946",
-    :emergency_hour_change_time => "2000-01-01 08:00:00 +0100" },
+    :emergency_hour_change_time => "2000-01-01 09:00:00 +0100" },
   { :id => 35,
     :account_id => 9, 
     :emergency_group_id => 1,   
@@ -307,7 +307,7 @@ Pharmacy.seed(:id,
     :district => "Fennpfuhl",
     :city => "Berlin",
     :phone_number => "(030) 97603331",
-    :emergency_hour_change_time => "2000-01-01 08:00:00 +0100" },
+    :emergency_hour_change_time => "2000-01-01 09:00:00 +0100" },
   ###########  
   # Group 15 #
   ###########
@@ -321,7 +321,7 @@ Pharmacy.seed(:id,
     :city => "Berlin",
     :phone_number => "(030) 9759449",
     :fax_number => "(030) 9759279",
-    :emergency_hour_change_time => "2000-01-01 08:00:00 +0100" },
+    :emergency_hour_change_time => "2000-01-01 09:00:00 +0100" },
   { :id => 36,
     :account_id => 9, 
     :emergency_group_id => 1,   
@@ -331,7 +331,7 @@ Pharmacy.seed(:id,
     :district => "Karlshorst",
     :city => "Berlin",
     :phone_number => "(030) 50159099",
-    :emergency_hour_change_time => "2000-01-01 08:00:00 +0100" },
+    :emergency_hour_change_time => "2000-01-01 09:00:00 +0100" },
   ###########  
   # Group 16 #
   ###########
@@ -345,7 +345,7 @@ Pharmacy.seed(:id,
     :city => "Berlin",
     :phone_number => "(030) 51097270",
     :fax_number => "(030) 51097271",
-    :emergency_hour_change_time => "2000-01-01 08:00:00 +0100" },
+    :emergency_hour_change_time => "2000-01-01 09:00:00 +0100" },
   ###########  
   # Group 17 #
   ###########
@@ -359,7 +359,7 @@ Pharmacy.seed(:id,
     :city => "Berlin",
     :phone_number => "(030) 98694441",
     :fax_number => "(030) 98694442",
-    :emergency_hour_change_time => "2000-01-01 08:00:00 +0100" },
+    :emergency_hour_change_time => "2000-01-01 09:00:00 +0100" },
   ###########  
   # Group 18 #
   ###########
@@ -373,7 +373,7 @@ Pharmacy.seed(:id,
     :city => "Berlin",
     :phone_number => "(030) 51597722",
     :fax_number => "(030) 51597723",
-    :emergency_hour_change_time => "2000-01-01 08:00:00 +0100" },
+    :emergency_hour_change_time => "2000-01-01 09:00:00 +0100" },
   { :id => 37,
     :account_id => 9, 
     :emergency_group_id => 1,   
@@ -383,7 +383,7 @@ Pharmacy.seed(:id,
     :district => "Friedrichsfelde",
     :city => "Berlin",
     :phone_number => "(030) 27491804",
-    :emergency_hour_change_time => "2000-01-01 08:00:00 +0100" },
+    :emergency_hour_change_time => "2000-01-01 09:00:00 +0100" },
   ###########  
   # Group 19 #
   ###########
@@ -397,7 +397,7 @@ Pharmacy.seed(:id,
     :city => "Berlin",
     :phone_number => "(030) 5252926",
     :fax_number => "(030) 5253982",
-    :emergency_hour_change_time => "2000-01-01 08:00:00 +0100" },
+    :emergency_hour_change_time => "2000-01-01 09:00:00 +0100" },
   ###########  
   # Group 20 #
   ###########
@@ -410,7 +410,7 @@ Pharmacy.seed(:id,
     :district => "Lichtenberg",
     :city => "Berlin",
     :phone_number => "(030) 55487020",
-    :emergency_hour_change_time => "2000-01-01 08:00:00 +0100" },
+    :emergency_hour_change_time => "2000-01-01 09:00:00 +0100" },
   ###########  
   # Group 21 #
   ###########
@@ -424,7 +424,7 @@ Pharmacy.seed(:id,
     :city => "Berlin",
     :phone_number => "(030) 50012614",
     :fax_number => "(030) 50012615",
-    :emergency_hour_change_time => "2000-01-01 08:00:00 +0100" },
+    :emergency_hour_change_time => "2000-01-01 09:00:00 +0100" },
   ###########  
   # Group 22 #
   ###########
@@ -438,7 +438,7 @@ Pharmacy.seed(:id,
     :city => "Berlin",
     :phone_number => "(030) 67302370",
     :fax_number => "(030) 67302371",
-    :emergency_hour_change_time => "2000-01-01 08:00:00 +0100" },
+    :emergency_hour_change_time => "2000-01-01 09:00:00 +0100" },
   { :id => 38,
     :account_id => 9, 
     :emergency_group_id => 1,   
@@ -448,7 +448,7 @@ Pharmacy.seed(:id,
     :district => "Feenpfuhl",
     :city => "Berlin",
     :phone_number => "(030) 97104101",
-    :emergency_hour_change_time => "2000-01-01 08:00:00 +0100" },
+    :emergency_hour_change_time => "2000-01-01 09:00:00 +0100" },
   ###########  
   # Group 23 #
   ###########
@@ -462,7 +462,7 @@ Pharmacy.seed(:id,
     :city => "Berlin",
     :phone_number => "(030) 5129106",
     :fax_number => "(030) 51009435",
-    :emergency_hour_change_time => "2000-01-01 08:00:00 +0100" },
+    :emergency_hour_change_time => "2000-01-01 09:00:00 +0100" },
   ###########  
   # Group 24 #
   ###########
@@ -476,7 +476,7 @@ Pharmacy.seed(:id,
     :city => "Berlin",
     :phone_number => "(030) 51061424",
     :fax_number => "(030) 51061425",
-    :emergency_hour_change_time => "2000-01-01 08:00:00 +0100" },
+    :emergency_hour_change_time => "2000-01-01 09:00:00 +0100" },
   ###########  
   # Group 25 #
   ###########
@@ -490,7 +490,7 @@ Pharmacy.seed(:id,
     :city => "Berlin",
     :phone_number => "(030) 5588844",
     :fax_number => "(030) 5536877",
-    :emergency_hour_change_time => "2000-01-01 08:00:00 +0100" },
+    :emergency_hour_change_time => "2000-01-01 09:00:00 +0100" },
   ###########  
   # Group 26 #
   ###########
@@ -504,7 +504,7 @@ Pharmacy.seed(:id,
     :city => "Berlin",
     :phone_number => "(030) 5251461",
     :fax_number => "(030) 53010076",
-    :emergency_hour_change_time => "2000-01-01 08:00:00 +0100" },
+    :emergency_hour_change_time => "2000-01-01 09:00:00 +0100" },
   { :id => 39,
     :account_id => 9, 
     :emergency_group_id => 1,   
@@ -514,7 +514,7 @@ Pharmacy.seed(:id,
     :district => "Fennpfuhl",
     :city => "Berlin",
     :phone_number => "(030) 97106847",
-    :emergency_hour_change_time => "2000-01-01 08:00:00 +0100" },
+    :emergency_hour_change_time => "2000-01-01 09:00:00 +0100" },
   ###########  
   # Group 27 #
   ###########
@@ -528,11 +528,11 @@ Pharmacy.seed(:id,
     :city => "Berlin",
     :phone_number => "(030) 9710820",
     :fax_number => "(030) 97108244",
-    :emergency_hour_change_time => "2000-01-01 08:00:00 +0100" }
+    :emergency_hour_change_time => "2000-01-01 09:00:00 +0100" }
 )
 puts "Pharmacies loaded"
 
-EmergencyGroup.unscoped.delete_all
+EmergencyGroup.unscoped.delete_all(:account_id => 9)
 EmergencyGroup.seed(:id,
   { :id => 1,
     :account_id => 9, 
