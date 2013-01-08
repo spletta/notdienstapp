@@ -1,5 +1,5 @@
 <% @events.each do |event| %>
-  <% if event.starttime <= Time.zone.now && event.endtime >= Time.zone.now %>
+  <% if event.starttime.in_time_zone <= Time.zone.now && event.endtime.in_time_zone >= Time.zone.now %>
     <% if event.event_type == 'Notdienst' %>
      <div class="rotating-item">
       <div class="mc"></div>

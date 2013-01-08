@@ -1,7 +1,7 @@
 jQuery(function($) {
 
 $('#datetimepicker').datetimepicker({
-  timeFormat: 'HH:mm z'
+  timeFormat: 'HH:mm'
 });
 
 $.datepicker.regional['de'] = {
@@ -34,6 +34,7 @@ $.timepicker.regional['de'] = {
 	secondText: 'Sekunde',
 	millisecText: 'Milisekunde',
 	timezoneText: 'Zeitzone',
+	defaultTimezone: '+0100',
 	currentText: 'Jetzt',
 	closeText: 'Schließen',
 	timeFormat: 'HH:mm',

@@ -34,6 +34,9 @@ module NdtAppV6
     config.i18n.default_locale = :de
 
     config.active_record.time_zone_aware_attributes = false
+   
+    # save in local timezone
+    config.active_record.default_timezone = :local
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
