@@ -138,9 +138,10 @@ var InfiniteRotator =
  
     InfiniteRotator.init();
 
+	// 60000ms = 60 seconds
+	setTimeout(function(){
+	  window.location.reload()
+	}, 60000);
+
 });
 
-// 60000ms = 60 seconds
-setTimeout(function(){
-  window.location.reload()
-}, 60000);
