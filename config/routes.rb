@@ -9,13 +9,14 @@ NdtAppV6::Application.routes.draw do
         match '/signup', :to => redirect {|params| "https://www.notdienstapp.com/#{params[:path]}"}
       end
     else
-      constraints(:host => /ndt.dev/) do
+      constraints(:host => /localhost:3000/) do
+      #constraints(:host => /ndt.dev/) do
         root :to => 'accounts#new'
         match '/signup', :to => redirect {|params| "http://ndt.dev/#{params[:path]}"}
       end
     end   
       
-    resources :password_resets    
+    resources :password_resets
     
     match 'contact' => 'contact#new', :as => 'contact', :via => :get
     match 'contact' => 'contact#create', :as => 'contact', :via => :post
