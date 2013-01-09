@@ -1,9 +1,3 @@
-GIT
-  remote: git://github.com/arsduo/rack-offline.git
-  revision: 562573d862a535061d156f0bbf79f5d71912197d
-  specs:
-    rack-offline (0.6.1)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -245,7 +239,6 @@ DEPENDENCIES
   nifty-generators
   paperclip (~> 3.0)
   pg (= 0.12.2)
-  rack-offline!
   rails (= 3.2.8)
   rspec-rails (= 2.11.0)
   sass-rails (= 3.2.5)
