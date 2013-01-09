@@ -1,4 +1,8 @@
 NdtAppV6::Application.routes.draw do
+  get "errors/error_404"
+
+  get "errors/error_500"
+
   scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
     match '', to: 'events#index', constraints: lambda { |r| r.subdomain.present? && r.subdomain != 'www' }
     #match '/signup', to: 'accounts#new', constraints: lambda { |r| r.subdomain.present? && r.subdomain != 'www' }
@@ -58,6 +62,10 @@ NdtAppV6::Application.routes.draw do
     resources :accounts, only: [:new, :create, :destroy, :index, :edit, :update]
     
     root to: 'static_pages#welcome'
+    
+    unless Rails.application.config#.consider_all_requests_local
+      match '*not_found', to: 'errors#error_404'
+    end
   end
   match '*path', to: redirect("/#{I18n.default_locale}/%{path}"), 
                  constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }
