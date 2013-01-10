@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121227120058) do
+ActiveRecord::Schema.define(:version => 20130110081420) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(:version => 20121227120058) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "user_id"
-    t.integer  "plan_id"
   end
 
   create_table "ads", :force => true do |t|
@@ -55,8 +54,8 @@ ActiveRecord::Schema.define(:version => 20121227120058) do
     t.string   "recurring_interval"
     t.integer  "recurring_period"
     t.datetime "recurring_endtime"
-    t.integer  "info_id"
     t.string   "event_type"
+    t.integer  "info_id"
     t.integer  "ad_id"
   end
 
@@ -102,16 +101,6 @@ ActiveRecord::Schema.define(:version => 20121227120058) do
     t.datetime "updated_at",  :null => false
   end
 
-  create_table "plans", :force => true do |t|
-    t.string   "name"
-    t.decimal  "price"
-    t.integer  "ads"
-    t.integer  "infos"
-    t.integer  "groups"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
@@ -124,6 +113,7 @@ ActiveRecord::Schema.define(:version => 20121227120058) do
     t.string   "password_reset_token"
     t.datetime "password_reset_sent_at"
     t.integer  "roles_mask"
+    t.string   "last_name"
   end
 
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"

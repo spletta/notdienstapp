@@ -422,3 +422,19 @@ h4b {
 
 /* importing mobile responsive style at the end on purpose */
 @import "bootstrap-responsive";
+
+.last {
+margin: 125px 0px 0px -20px;
+}
+
+.clearfix::after {
+content: ".";
+display: block;
+height: 0;
+clear: both;
+visibility: hidden;
+}
+
+.offset3header {
+margin-left: 300px;
+}

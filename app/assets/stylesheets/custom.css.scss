@@ -205,10 +205,20 @@ h1c {
 }
 
 h2c {
-  font-size: 2.4em;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 2.7em;
   letter-spacing: -1px;
-  line-height: 1em;
+  line-height: 1.2em;
   margin-bottom: 8px;
+}
+
+h2c .subhead {
+font-weight: 100;
+font-size: 22px;
+line-height: 40px;
+letter-spacing: -0.5px;
+color: #333;
+display: block;
 }
 
 h3c {
@@ -421,6 +431,75 @@ background: transparent url("/assets/bg.jpg") 0 0 repeat-x;
 padding-top: 18px;
 min-height: 402px;
 }*/
+
+
+.signup-form-field label {
+display: block;
+float: left;
+font-weight: bold;
+line-height: 30px;
+width: 115px;
+}
+
+.signup-form-field input[type="text"], .signup-form-field input[type="password"], .signup-form-field input[type="email"] {
+width: 320px;
+}
+
+.signup-form-field input[type="text"].account_subdomain-url, .signup-form-field input[type="password"].account_subdomain, .signup-form-field input[type="email"].account_subdomain {
+width: 204px;
+}
+
+input, textarea {
+background: white;
+border: 1px solid #BBB;
+font-size: 13px;
+line-height: 16px;
+padding: 6px;
+width: 50%;
+-moz-border-radius: 3px;
+-webkit-border-radius: 3px;
+border-radius: 3px;
+}
+
+.signup-form-submit {
+margin: 30px 0 60px 115px;
+}
+
+.signup-form-field .harvest-sub {
+left: 500px;
+line-height: 32px;
+position: absolute;
+}
+
+.last {
+margin-right: 0;
+margin-left: -330px;
+}
+
+.signup-reasons {
+color: #777;
+font-size: 11px;
+}
+
+.offsetminus3 {
+margin-left: -330px;
+}
+
+.rounded-gray {
+background: #EEE;
+padding: 15px;
+margin-bottom: 15px;
+-moz-border-radius: 6px;
+-webkit-border-radius: 6px;
+border-radius: 6px;
+}
+
+.signup-final {
+border-top: 1px solid #DDD;
+font-size: 11px;
+color: #666;
+padding: 5px 0 10px;
+}
 
 /*.modal-backdrop, .modal-backdrop.fade.in { background-color: rgba(0,0,0,0); }*/
 
