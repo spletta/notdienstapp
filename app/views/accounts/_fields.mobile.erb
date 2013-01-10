@@ -1,20 +1,33 @@
-  <%= render 'shared/error_messages', :object => f.object %>
-  </br>
-	<%= f.label t "account.name" %>
-	<%= f.text_field :name %>
-	<%= f.label t "account.subdomain" %>
-	<%= f.text_field :subdomain %>
+<%= render 'shared/error_messages', :object => f.object %>
+</br>
+<div class="signup-form-field">
+  <%= f.label t "account.name" %>
+<%= f.text_field :name %>
+</div>
+<div class="signup-form-field">
+ <%= f.label t "account.subdomain" %>
+ <%= f.text_field :subdomain, :placeholder => "muster-apotheke" %>
+</div>
 
-  <%= f.fields_for :users do |user_form| %>
-    <%= user_form.label t "user.name" %>
-    <%= user_form.text_field :name %>
-    <%= user_form.label "E-Mail" %>
-    <%= user_form.email_field :email %>
-    <%= user_form.label t "user.password" %>
-    <%= user_form.password_field :password %>
-    <%= user_form.label t "user.confirmation" %>
-    <%= user_form.password_field :password_confirmation %>
-  <% end %>
-  <%= t 'terms.sentence' %> <%= link_to t('terms.link'), terms_path %> <%= check_box("account", "terms") %>
-</br>
-</br>
+<%= f.fields_for :users do |user_form| %>
+	<div class="signup-form-field">
+	  <%= user_form.label t "user.name" %>
+	  <%= user_form.text_field :name %>
+	</div>
+	<div class="signup-form-field">
+	  <%= user_form.label t "user.last_name" %>
+	  <%= user_form.text_field :last_name %>
+	</div>
+	<div class="signup-form-field">
+	  <%= user_form.label "E-Mail" %>
+	  <%= user_form.email_field :email %>
+	</div>
+	<div class="signup-form-field">
+	  <%= user_form.label t "user.password" %>
+	  <%= user_form.password_field :password %>
+	</div>
+	<div class="signup-form-submit signup-form-field">
+	  <%= f.submit t("account.submit"), class: "btn btn-success" %>
+	</div>
+<% end %>
+

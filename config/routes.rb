@@ -1,6 +1,6 @@
 NdtAppV6::Application.routes.draw do
   scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
-    match '', to: 'events#index', constraints: lambda { |r| r.subdomain.present? && r.subdomain != 'www' }
+    match '', to: 'static_pages#welcome', constraints: lambda { |r| r.subdomain.present? && r.subdomain != 'www' }
     #match '/signup', to: 'accounts#new', constraints: lambda { |r| r.subdomain.present? && r.subdomain != 'www' }
     
     if Rails.env.production?

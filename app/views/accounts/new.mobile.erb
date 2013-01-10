@@ -1,11 +1,38 @@
 <% provide(:title, 'Create Account') %>
 <div class="row">
-  <div class="span5 offset4">
-	  <h2c><%= t "new.account.headline" %></h2c>
-    <%= form_for(@account) do |f| %>
-      <%= render 'fields', f: f %>
-      <%= f.submit t("account.submit"), class: "btn btn-mini btn-primary" %> <%= link_to t('no.email'), 'https://accounts.google.com', :class => "btn btn-mini" %>
-    <% end %>
-    <p>Sie können unsere Bestellformular auch als PDF unterladen <%= link_to "bestellfomular.pdf", "https://#{request.domain}#{request.port_string}/bestellfomular.pdf" %></p>
+	<div id="signup_form" class="clearfix">
+	  <div class="span5 offset3">
+		  <br />
+		  <br />
+		  <h2c><%= t "new.account.headline" %>
+				<span class="subhead">
+				  <%= t "new.account.subline" %>
+				  </span>
+			</h2c>
+	    <%= form_for @account, :validate => true do |f| %>
+	      <%= render 'fields', f: f %>
+	    <% end %>
+	  </div>
+	  <div class="span2half last">
+      <div class="rounded-gray signup-reasons">
+        <h3c><%= t "new.account.5reasons-title1" %><br><%= t "new.account.5reasons-title2" %></h3c>
+        <ol>
+          <li><%= t "new.account.5reasons-reason1" %></li>
+          <li><%= t "new.account.5reasons-reason2" %></li>
+          <li><%= t "new.account.5reasons-reason3" %></li>
+          <li><%= t "new.account.5reasons-reason4" %></li>
+          <li><%= t "new.account.5reasons-reason5" %></li>
+        </ol>
+      </div>
+    </div>
   </div>
+</div>
+<div class="row">
+<div class="span7 offset3">
+<div class="signup-final">
+	   <%= t "new.account.signup-final" %>
+    <%= link_to t("new.account.terms"), terms_path %> <%= t "new.account.and" %>
+    <%= link_to t("new.account.privacy"), terms_path %>.
+</div>
+</div>
 </div>

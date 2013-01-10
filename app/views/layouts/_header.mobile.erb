@@ -7,32 +7,28 @@
 					                           current_page?(welcome_path) || 
 					                           current_page?(dashboard_path) || 
 					                           current_page?(referrals_path) %>">
-			    <%= link_to welcome_path do %>
+			    <%= link_to welcome_path(:mobile => 0) do %>
 			      <i class="icon-home icon-white"></i>
 			    <% end %>
 					</li>				
 					
 					<li class="<%= 'active' if current_page?(events_path) %>">
-					<% if signed_in? %><%= link_to t('planner.link'), events_path %><% end %>
+					<% if signed_in? %><%= link_to t('planner.link'), events_path(:mobile => 0) %><% end %>
 					</li>
 					
 					<li class="<%= 'active' if current_page?(manage_path) || 
 					                           current_page?(pharmacies_path) || 
 					                           current_page?(emergency_groups_path) ||
 					                           current_page?(customer_service_path) %>">
-					<% if signed_in? %><%= link_to t('manage.link'), pharmacies_path %><% end %>
+					<% if signed_in? %><%= link_to t('manage.link'), pharmacies_path(:mobile => 0) %><% end %>
 					</li>
         </ul>
+        <div class="login-button pull-right">
+					  <%= link_to t('nav.back'), events_path(:mobile => 0), :class => 'btn btn-large btn-inverse', :data => {:toggle=>"button" } %>
+				</div>
         <ul class="nav pull-right">
-	        <li>
-	          <% if mobile_device? %>
-              <%= link_to "Desktop", :mobile => 0 %>
-            <% else %>
-              <%= link_to "Mobile", root_path(:mobile => 1) %>
-            <% end %>
-		      </li>
           <li>
-          <%= link_to help_path do %>
+          <%= link_to help_path(:mobile => 0) do %>
             <%= t "help.link", default: "Help" %>
           <% end %>
           </li>
@@ -43,18 +39,18 @@
 							              <% end %>
               <ul class="dropdown-menu">
 	              <div class="user-information">
-		              <strong><%= current_user.name %></strong><br />
-		              <span>Company Name</span>
+		              <strong><%= current_user.name %> <%= current_user.last_name %></strong><br />
+		              <span><%= current_account.name %></span>
 		            </div>
-                <li><%= link_to "Profile", current_user %></li>
+                <li><%= link_to "Profile", edit_user_path(current_user, :mobile => 0) %></li>
                 <li>
-                  <%= link_to edit_user_path(current_user) do %>
+                  <%= link_to edit_user_path(current_user, :mobile => 0) do %>
                     <%= t "settings.link", default: "Settings" %>
                   <% end %>
                 </li>
                 <li class="divider"></li>
                 <li>
-                  <%= link_to signout_path, method: "delete" do %>
+                  <%= link_to signout_path(:mobile => 0), method: "delete" do %>
                     <%= t'session.destroy.submit' %>
                   <% end %>
                 </li>

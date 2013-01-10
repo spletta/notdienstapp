@@ -10,7 +10,7 @@
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
     <%= render 'layouts/shim' %>
-    <% if "#{request.fullpath}" == "/de?mobile=1" || "#{request.fullpath}" == "/en?mobile=1" || "#{request.fullpath}" == "/de/events" || "#{request.fullpath}" == "/en/events"  %>
+    <% if "#{request.fullpath}" == "/de/events?mobile=1" || "#{request.fullpath}" == "/en/events?mobile=1" || "#{request.fullpath}" == "/de/events" || "#{request.fullpath}" == "/en/events"  %>
         <style>
           html { background: transparent }
           body { background: #E81212; }
