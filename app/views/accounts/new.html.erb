@@ -1,58 +1,38 @@
 <% provide(:title, 'Create Account') %>
 <div class="row">
-  <div class="span5 offset1">
-	  <h2c><%= t "new.account.headline" %></h2c>
-    <%= form_for(@account) do |f| %>
-      <%= render 'fields', f: f %>
-      <%= f.submit t("account.submit"), class: "btn btn-mini btn-primary" %> <%= link_to t('no.email'), 'https://accounts.google.com', :class => "btn btn-mini" %>
-    <% end %>
-    <p>Sie können unsere Bestellformular auch als PDF unterladen <%= link_to "bestellfomular.pdf", "https://#{request.domain}#{request.port_string}/bestellfomular.pdf" %></p>
+	<div id="signup_form" class="clearfix">
+	  <div class="span5 offset3">
+		  <br />
+		  <br />
+		  <h2c><%= t "new.account.headline" %>
+				<span class="subhead">
+				  <%= t "new.account.subline" %>
+				  </span>
+			</h2c>
+	    <%= form_for @account, :validate => true do |f| %>
+	      <%= render 'fields', f: f %>
+	    <% end %>
+	  </div>
+	  <div class="span2half last">
+      <div class="rounded-gray signup-reasons">
+        <h3c><%= t "new.account.5reasons-title1" %><br><%= t "new.account.5reasons-title2" %></h3c>
+        <ol>
+          <li><%= t "new.account.5reasons-reason1" %></li>
+          <li><%= t "new.account.5reasons-reason2" %></li>
+          <li><%= t "new.account.5reasons-reason3" %></li>
+          <li><%= t "new.account.5reasons-reason4" %></li>
+          <li><%= t "new.account.5reasons-reason5" %></li>
+        </ol>
+      </div>
+    </div>
   </div>
-	<div class="span5">
-		<!-- 	<p>
-				<h2c><strong><%= t 'contact.form.title'%></strong></h2c></br>
-			  <h2c><strong><%= t 'contact.form.subtitle'%></h2c></strong></br>
-			</p>
-			</br>-->
-	<p>
-		<%= image_tag('ndt-v9-470.png') %>
-	</p>
-  </br>
-        <table class="table table-striped">
-				  <tbody>
-						<tr>
-					      <td><h6>Product Manager:</h6></td>
-					      <td><i class="icon-user"></i> <a href="#employees/2">Remington Splettstößer</a></td>
-					  </tr>
-					  <tr>
-					      <td><h6><%= t 'contact.office.phone' %>:</h6></td>
-					      <td><i class="icon-home"></i> +49 3973 436 3398</td>
-					  </tr>
-					  <tr>
-					      <td><h6><%= t 'contact.cell.phone' %>:</h6></td>
-					      <td><i class="icon-headphones"></i> +49 151 4042 7103</td>
-					  </tr>
-					  <tr>
-					      <td><h6><%= t 'contact.office.fax' %>:</h6></td>
-					      <td><i class="icon-home"></i> +49 3221 1226 80808</td>
-					  </tr>
-					  <tr>
-					      <td><h6><%= t 'contact.phone.us' %>:</h6></td>
-					      <td><i class="icon-home"></i> +1 650 318 3882</td>
-					  </tr>
-					  <tr>
-					      <td><h6>Email:</h6></td>
-					      <td><i class="icon-envelope"></i> <a href="mailto:service@notdienstapp.com">service@notdienstapp.com</a></td>
-					  </tr>
-				  </tbody>
-				</table>
-        <h4><%= t 'contact.fill.out'%></h4></br>
-        <div class="alert alert-success">
-          <h4 class="alert-heading"><%= t 'contact.alert.heading' %></h4>
-          <%= t 'contact.alert.content' %>
-        </div>
-        <div class="alert alert-info">
-          <h3c class="alert-heading"><%= link_to "Schreiben Sie uns an", contact_path %></h3c>
-        </div>
-  </div>
+</div>
+<div class="row">
+<div class="span7 offset3">
+<div class="signup-final">
+	   <%= t "new.account.signup-final" %>
+    <%= link_to t("new.account.terms"), terms_path %> <%= t "new.account.and" %>
+    <%= link_to t("new.account.privacy"), terms_path %>.
+</div>
+</div>
 </div>

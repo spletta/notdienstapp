@@ -7,13 +7,20 @@ class ApplicationController < ActionController::Base
   
   around_filter :scope_current_account  
   
-  private
+  rescue_from ActiveRecord::RecordNotFound, :with => :error_render_method
 
+  private
+  
+    def error_render_method
+      flash[:notice] = "Account was not found"
+      redirect_to :host => "ndt.dev", :controller => "static_pages", :action => "contact"
+    end
+  
     def current_account
       if request.subdomain.present? && request.subdomain != 'www' && request.subdomain != 'ndt-staging'
-        @account ||= Account.find_by_subdomain!(request.subdomain)
-        #!Account.reserved_subdomain?(request.subdomain)
-      #Account.find_by_subdomain! request.subdomain
+          @account ||= Account.find_by_subdomain!(request.subdomain)
+          #!Account.reserved_subdomain?(request.subdomain)
+          #Account.find_by_subdomain! request.subdomain
       end
     end
     helper_method :current_account

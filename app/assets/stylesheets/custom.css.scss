@@ -205,10 +205,20 @@ h1c {
 }
 
 h2c {
-  font-size: 2.4em;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 2.7em;
   letter-spacing: -1px;
-  line-height: 1em;
+  line-height: 1.2em;
   margin-bottom: 8px;
+}
+
+h2c .subhead {
+font-weight: 100;
+font-size: 22px;
+line-height: 40px;
+letter-spacing: -0.5px;
+color: #333;
+display: block;
 }
 
 h3c {
@@ -370,6 +380,125 @@ h4b {
   margin-bottom: 30px;
   color: #0F1CAA;
   font-family: 'BitterRegular', Georgia, sans-serif;
+}
+
+/* More custom styles by Remington */
+.section-large .section-header {
+height: 55px;
+line-height: 55px;
+}
+
+.section-header {
+background-color: #F7F7F7;
+background-image: -moz-linear-gradient(top, #FAFAFA, #F2F2F2);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#FAFAFA), to(#F2F2F2));
+background-image: -webkit-linear-gradient(top, #FAFAFA, #F2F2F2);
+background-image: -o-linear-gradient(top, #FAFAFA, #F2F2F2);
+background-image: linear-gradient(to bottom, #FAFAFA,#F2F2F2);
+background-repeat: repeat-x;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFAFAFA', endColorstr='#FFF2F2F2', GradientType=0);
+border-top: 1px solid white;
+border-bottom: 1px solid #CCC;
+-webkit-border-top-left-radius: 4px;
+-moz-border-radius-topleft: 4px;
+border-top-left-radius: 4px;
+-webkit-border-top-right-radius: 4px;
+-moz-border-radius-topright: 4px;
+border-top-right-radius: 4px;
+height: 46px;
+padding: 0 15px 0;
+}
+
+.section-large .section-content, .section-large .section-body {
+padding: 18px 20px 0;
+}
+
+.section-header + .section-content, .section .section-content:first-child {
+border-top: 0;
+}
+
+.section-content {
+border-top: 1px solid #EBEBEB;
+}
+
+.section-content, .section-body {
+min-height: 18px;
+padding: 9px 15px 0;
+}
+
+/*.content {
+background: transparent url("/assets/bg.jpg") 0 0 repeat-x;
+padding-top: 18px;
+min-height: 402px;
+}*/
+
+
+.signup-form-field label {
+display: block;
+float: left;
+font-weight: bold;
+line-height: 30px;
+width: 115px;
+}
+
+.signup-form-field input[type="text"], .signup-form-field input[type="password"], .signup-form-field input[type="email"] {
+width: 320px;
+}
+
+.signup-form-field input[type="text"].account_subdomain-url, .signup-form-field input[type="password"].account_subdomain, .signup-form-field input[type="email"].account_subdomain {
+width: 204px;
+}
+
+input, textarea {
+background: white;
+border: 1px solid #BBB;
+font-size: 13px;
+line-height: 16px;
+padding: 6px;
+width: 50%;
+-moz-border-radius: 3px;
+-webkit-border-radius: 3px;
+border-radius: 3px;
+}
+
+.signup-form-submit {
+margin: 30px 0 60px 115px;
+}
+
+.signup-form-field .harvest-sub {
+left: 500px;
+line-height: 32px;
+position: absolute;
+}
+
+.last {
+margin-right: 0;
+margin-left: -330px;
+}
+
+.signup-reasons {
+color: #777;
+font-size: 11px;
+}
+
+.offsetminus3 {
+margin-left: -330px;
+}
+
+.rounded-gray {
+background: #EEE;
+padding: 15px;
+margin-bottom: 15px;
+-moz-border-radius: 6px;
+-webkit-border-radius: 6px;
+border-radius: 6px;
+}
+
+.signup-final {
+border-top: 1px solid #DDD;
+font-size: 11px;
+color: #666;
+padding: 5px 0 10px;
 }
 
 /*.modal-backdrop, .modal-backdrop.fade.in { background-color: rgba(0,0,0,0); }*/

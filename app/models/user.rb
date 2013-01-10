@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   has_secure_password
-  attr_accessible :email, :name, :password, :password_confirmation, :pharmacy_ids, :pharmacy_tokens, :roles, :account, :account_id, :roles_mask
+  attr_accessible :email, :name, :password, :password_confirmation, :pharmacy_ids, :pharmacy_tokens, :roles, :account, :account_id, :roles_mask, :last_name
   
   has_many :pharmacies_users
   has_many :pharmacies, :through => :pharmacies_users
@@ -48,10 +48,10 @@ class User < ActiveRecord::Base
           :length   => { :minimum => 6, :allow_nil => true }
 
       
-  validates :password_confirmation, 
-            :presence => { :on => :create },
+  #validates :password_confirmation, 
+   #         :presence => { :on => :create },
             # allow_nil for length (presence will handle it on create)
-            :length   => { :minimum => 6, :allow_nil => true }
+   #         :length   => { :minimum => 6, :allow_nil => true }
 
   validates :account, :presence => true
 

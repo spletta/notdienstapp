@@ -11,14 +11,22 @@
     <%= analytics_init if Rails.env.production? %> 
   </head>
   <body>
+	<% if request.path != root_path %>
     <%= render 'layouts/header' %>
     <%= render 'layouts/subnav' %>
+  <% else %>
+    <%= render 'layouts/signin_header' %>
+  <% end %>
+    <div class="content">
     <div class="container">
 			<% flash.each do |key, value| %>
         <%= content_tag(:div, value, class: "alert alert-#{key}") %>
       <% end %>
       <%= yield %>
+		<% if request.path != root_path %>
       <%= render 'layouts/footer' %>
+	  <% end %>
+    </div>
     </div>
     <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		    <div class="modal-header">

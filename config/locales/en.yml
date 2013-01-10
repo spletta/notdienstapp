@@ -97,7 +97,7 @@ en:
       year: Year
   errors:
     format: ! '%{attribute} %{message}'
-    messages: &70247049956220
+    messages: &70156266101680
       accepted: must be accepted
       blank: can't be blank
       confirmation: doesn't match confirmation
@@ -125,7 +125,11 @@ en:
       wrong_length:
         one: is the wrong length (should be 1 character)
         other: is the wrong length (should be %{count} characters)
+<<<<<<< HEAD
     template: &70247048385240
+=======
+    template: &70156260208600
+>>>>>>> bugfixes
       body: ! 'There were problems with the following fields:'
       header:
         one: 1 error prohibited this %{model} from being saved
@@ -201,6 +205,7 @@ en:
   activemodel:
     errors:
       format: ! '%{attribute} %{message}'
+<<<<<<< HEAD
       messages: *70247049956220
       template: *70247048385240
   activerecord:
@@ -208,6 +213,15 @@ en:
       format: ! '%{attribute} %{message}'
       messages: *70247049956220
       template: *70247048385240
+=======
+      messages: *70156266101680
+      template: *70156260208600
+  activerecord:
+    errors:
+      format: ! '%{attribute} %{message}'
+      messages: *70156266101680
+      template: *70156260208600
+>>>>>>> bugfixes
   session:
     forgot:
       password:
@@ -316,7 +330,7 @@ en:
   '2012-11-15': what is this?
   account:
     name: Company
-    subdomain: Secure Site (https://COMPANYNAME.notdienstapp.com)
+    subdomain: Secure Site
     submit: Create my account
     index:
       title: Account Settings
@@ -330,12 +344,25 @@ en:
     company:
       name: Company Name
   user:
-    name: Full Name
+    name: First Name
     password: Password
     confirmation: Repeat password
+    last_name: Last Name
   new:
     account:
       headline: Create new account
+      5reasons-reason1: Fast to set up and easy to use
+      5reasons-reason2: Look professional with style
+      5reasons-reason3: Your data stays safe and secure
+      5reasons-reason4: More time for other things
+      5reasons-reason5: Real people to answer your questions
+      5reasons-title1: 5 Reasons You'll
+      5reasons-title2: Love Notdienst-Touch
+      signup-final: By clicking Create My Account you agree to the
+      subline: Fully functional, no credit card required
+      and: and
+      privacy: Privacy Policy
+      terms: Terms of Service
   'no':
     email: I do not have an E-Mail
   password:

@@ -198,7 +198,7 @@ de:
   activemodel:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: &70247047199180
+      messages: &70156243640740
         accepted: muss akzeptiert werden
         blank: muss ausgefüllt werden
         confirmation: stimmt nicht mit der Bestätigung überein
@@ -220,7 +220,11 @@ de:
         too_long: ist zu lang (nicht mehr als %{count} Zeichen)
         too_short: ist zu kurz (nicht weniger als %{count} Zeichen)
         wrong_length: hat die falsche Länge (muss genau %{count} Zeichen haben)
+<<<<<<< HEAD
       template: &70247047197360
+=======
+      template: &70156243638480
+>>>>>>> bugfixes
         body: ! 'Bitte überprüfen Sie die folgenden Felder:'
         header:
           one: ! 'Konnte %{model} nicht speichern: ein Fehler.'
@@ -228,8 +232,13 @@ de:
   activerecord:
     errors:
       format: ! '%{attribute} %{message}'
+<<<<<<< HEAD
       messages: *70247047199180
       template: *70247047197360
+=======
+      messages: *70156243640740
+      template: *70156243638480
+>>>>>>> bugfixes
   manage:
     link: Verwalten
   planner:
@@ -339,7 +348,7 @@ de:
   '2012-11-15': what is this?
   account:
     name: Firma
-    subdomain: Gewünschte Webseite Name (https://FIRMA.notdienstapp.com)
+    subdomain: Webadresse
     submit: Konto erstellen
     index:
       title: Konto Einstellungen
@@ -353,12 +362,25 @@ de:
     company:
       name: Firma
   user:
-    name: Vollständiger Name
+    name: Vorname
     password: Passwort
     confirmation: Passwort wiederholen
+    last_name: Name
   new:
     account:
       headline: Neues Konto erstellen
+      5reasons-reason1: Schnell und einfach einzurichten
+      5reasons-reason2: Professionelle Eindruck mit Stil
+      5reasons-reason3: Ihre Daten bleibt sicher
+      5reasons-reason4: Mehr Zeit für andere Dinge
+      5reasons-reason5: Real Menschen Antworten Ihre Fragen
+      5reasons-title1: 5 Grunde Notdienst-Touch
+      5reasons-title2: zu Lieben
+      signup-final: ! 'Beim klicken auf Konto erstellen bestätigen Sie Ihre Einverständnis zu unsere '
+      subline: Voll funktionsfähig, keine Kreditkarte nötig
+      and: und
+      privacy: Datenschutz
+      terms: AGB
   'no':
     email: Ich habe keine E-Mail-Adresse
   password:

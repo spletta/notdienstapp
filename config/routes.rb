@@ -59,6 +59,10 @@ NdtAppV6::Application.routes.draw do
     resources :accounts, only: [:new, :create, :destroy, :index, :edit, :update]
     
     root to: 'static_pages#welcome'
+    
+    unless Rails.application.config#.consider_all_requests_local
+      match '*not_found', to: 'errors#error_404'
+    end
   end
   match '*path', to: redirect("/#{I18n.default_locale}/%{path}"), 
                  constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }

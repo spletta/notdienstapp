@@ -9,7 +9,6 @@ gem 'faker', '1.0.1'
 gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.6'
 gem 'copycopter_client', '~> 2.0.1'
-gem 'simple_form'
 gem 'jquery-rails', '2.0.2'
 gem 'jquery-ui-rails'
 gem "jquerymobile-rails"
@@ -28,6 +27,9 @@ gem 'cancan'
 gem 'google-analytics-rails'
 gem "paperclip", "~> 3.0"
 gem 'aws-sdk', '~> 1.3.4'
+gem 'simple_form'
+gem 'client_side_validations'
+gem 'client_side_validations-simple_form'
 
 group :development, :test do
   gem 'rspec-rails', '2.11.0'
