@@ -48,10 +48,10 @@ class User < ActiveRecord::Base
           :length   => { :minimum => 6, :allow_nil => true }
 
       
-  #validates :password_confirmation, 
-   #         :presence => { :on => :create },
+  validates :password_confirmation, 
+            :presence => { :on => :create },
             # allow_nil for length (presence will handle it on create)
-   #         :length   => { :minimum => 6, :allow_nil => true }
+            :length   => { :minimum => 6, :allow_nil => true }
 
   validates :account, :presence => true
 

@@ -26,6 +26,10 @@
 	  <%= user_form.label t "user.password" %>
 	  <%= user_form.password_field :password %>
 	</div>
+	<div class="signup-form-field">
+	  <%= user_form.label t "user.confirmation" %>
+	  <%= user_form.password_field :password_confirmation %>
+	</div>
 	<div class="signup-form-submit signup-form-field">
 	  <%= f.submit t("account.submit"), class: "btn btn-success" %>
 	</div>
