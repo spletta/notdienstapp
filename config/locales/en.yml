@@ -97,7 +97,7 @@ en:
       year: Year
   errors:
     format: ! '%{attribute} %{message}'
-    messages: &70156266101680
+    messages: &70201055198480
       accepted: must be accepted
       blank: can't be blank
       confirmation: doesn't match confirmation
@@ -125,11 +125,7 @@ en:
       wrong_length:
         one: is the wrong length (should be 1 character)
         other: is the wrong length (should be %{count} characters)
-<<<<<<< HEAD
-    template: &70247048385240
-=======
-    template: &70156260208600
->>>>>>> bugfixes
+    template: &70201055208200
       body: ! 'There were problems with the following fields:'
       header:
         one: 1 error prohibited this %{model} from being saved
@@ -205,23 +201,13 @@ en:
   activemodel:
     errors:
       format: ! '%{attribute} %{message}'
-<<<<<<< HEAD
-      messages: *70247049956220
-      template: *70247048385240
+      messages: *70201055198480
+      template: *70201055208200
   activerecord:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: *70247049956220
-      template: *70247048385240
-=======
-      messages: *70156266101680
-      template: *70156260208600
-  activerecord:
-    errors:
-      format: ! '%{attribute} %{message}'
-      messages: *70156266101680
-      template: *70156260208600
->>>>>>> bugfixes
+      messages: *70201055198480
+      template: *70201055208200
   session:
     forgot:
       password:
@@ -350,7 +336,7 @@ en:
     last_name: Last Name
   new:
     account:
-      headline: Create new account
+      headline: Start your free 30 day trial
       5reasons-reason1: Fast to set up and easy to use
       5reasons-reason2: Look professional with style
       5reasons-reason3: Your data stays safe and secure

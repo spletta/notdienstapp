@@ -198,7 +198,7 @@ de:
   activemodel:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: &70156243640740
+      messages: &70201066173240
         accepted: muss akzeptiert werden
         blank: muss ausgefüllt werden
         confirmation: stimmt nicht mit der Bestätigung überein
@@ -220,11 +220,7 @@ de:
         too_long: ist zu lang (nicht mehr als %{count} Zeichen)
         too_short: ist zu kurz (nicht weniger als %{count} Zeichen)
         wrong_length: hat die falsche Länge (muss genau %{count} Zeichen haben)
-<<<<<<< HEAD
-      template: &70247047197360
-=======
-      template: &70156243638480
->>>>>>> bugfixes
+      template: &70201066186800
         body: ! 'Bitte überprüfen Sie die folgenden Felder:'
         header:
           one: ! 'Konnte %{model} nicht speichern: ein Fehler.'
@@ -232,13 +228,8 @@ de:
   activerecord:
     errors:
       format: ! '%{attribute} %{message}'
-<<<<<<< HEAD
-      messages: *70247047199180
-      template: *70247047197360
-=======
-      messages: *70156243640740
-      template: *70156243638480
->>>>>>> bugfixes
+      messages: *70201066173240
+      template: *70201066186800
   manage:
     link: Verwalten
   planner:
@@ -368,7 +359,7 @@ de:
     last_name: Name
   new:
     account:
-      headline: Neues Konto erstellen
+      headline: Fang an mit Ihre 30 Tage Probelauf
       5reasons-reason1: Schnell und einfach einzurichten
       5reasons-reason2: Professionelle Eindruck mit Stil
       5reasons-reason3: Ihre Daten bleibt sicher

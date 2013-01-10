@@ -11,7 +11,7 @@
     <%= analytics_init if Rails.env.production? %> 
   </head>
   <body>
-	<% if request.path != root_path %>
+	<% if request.path != root_path && request.path != signup_path %>
     <%= render 'layouts/header' %>
     <%= render 'layouts/subnav' %>
   <% else %>
