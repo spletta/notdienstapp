@@ -1,79 +1,81 @@
-<% @events.each do |event| %>
-  <% if event.starttime <= Time.zone.now && event.endtime >= Time.zone.now %>
-    <% if event.event_type == 'Notdienst' %>
-     <div class="rotating-item">
-      <div class="mc"></div>
-			<div class="white_container">
-			  <center>
-				  <h1b><strong><%= event.pharmacy.emergency_group.website_title %></strong></h1b>
-				</center>
+<div id = "refreshable">
+	<% @events.each do |event| %>
+	  <% if event.starttime <= Time.zone.now && event.endtime >= Time.zone.now %>
+	    <% if event.event_type == 'Notdienst' %>
+	     <div class="rotating-item">
+	      <div class="mc"></div>
+				<div class="white_container">
+				  <center>
+					  <h1b><strong><%= event.pharmacy.emergency_group.website_title %></strong></h1b>
+					</center>
+				</div>
+				<div class="mb"></div>
+				<div class="white_container_middle">
+				  <center>
+				    <h2b><%= event.pharmacy.name %></h2b>
+				  </center><br>
+			    <center>
+				    <h3b>Von <%= l(event.starttime, :format => '%A, %d. %B %Y') %> <%= event.pharmacy.emergency_hour_change_time.strftime('%H:%M') %> Uhr<br>
+				    bis <%= l(event.endtime, :format => '%A, %d. %B %Y') %> <%= event.pharmacy.emergency_hour_change_time.strftime('%H:%M') %> Uhr</h3b>
+				  </center>
+				  <center>
+			      <h3b>
+			        <%= event.pharmacy.address %><br>
+				      <%= event.pharmacy.zipcode %> <%= event.pharmacy.city %><br>
+				      <strong>Tel. <%= event.pharmacy.phone_number %></strong>
+				    </h3b>
+			    </center>
+			  </div>	
+			  <div class="mb"></div>
+			  <div class="white_container">
+				  <center>
+				    <h4b><%= event.pharmacy.emergency_group.website_note %></h4b>
+			    </center>
+		    </div>
+		  </div>
+	    <% elsif event.event_type == 'Kundeninfos' %>
+	    <div class="rotating-item">
+	      <div class="mc"></div>
+				<div class="white_container">
+				  <center>
+					  <h1b><strong><%= event.info.title %></strong></h1b>
+					</center>
+				</div>
+				<div class="mb"></div>
+				<div class="white_container_middle">
+					<center>
+						<h3b><%= event.info.description %></h3b>
+				  </center>
+				</div>	
+				<div class="mb"></div>
+				<div class="white_container">
+				  <center>
+					  <h4b><%= event.info.footer %></h4b>
+					</center>
+				</div>
 			</div>
-			<div class="mb"></div>
-			<div class="white_container_middle">
-			  <center>
-			    <h2b><%= event.pharmacy.name %></h2b>
-			  </center><br>
-		    <center>
-			    <h3b>Von <%= l(event.starttime, :format => '%A, %d. %B %Y') %> <%= event.pharmacy.emergency_hour_change_time.strftime('%H:%M') %> Uhr<br>
-			    bis <%= l(event.endtime, :format => '%A, %d. %B %Y') %> <%= event.pharmacy.emergency_hour_change_time.strftime('%H:%M') %> Uhr</h3b>
-			  </center>
-			  <center>
-		      <h3b>
-		        <%= event.pharmacy.address %><br>
-			      <%= event.pharmacy.zipcode %> <%= event.pharmacy.city %><br>
-			      <strong>Tel. <%= event.pharmacy.phone_number %></strong>
-			    </h3b>
-		    </center>
-		  </div>	
-		  <div class="mb"></div>
-		  <div class="white_container">
-			  <center>
-			    <h4b><%= event.pharmacy.emergency_group.website_note %></h4b>
-		    </center>
-	    </div>
-	  </div>
-    <% elsif event.event_type == 'Kundeninfos' %>
-    <div class="rotating-item">
-      <div class="mc"></div>
-			<div class="white_container">
-			  <center>
-				  <h1b><strong><%= event.info.title %></strong></h1b>
-				</center>
+	    <% elsif event.event_type == 'Werbung' %>
+	    <div class="rotating-item">
+	      <div class="mc"></div>
+				<div class="white_container">
+				  <center>
+					  <h1b><strong><%= event.ad.title %></strong></h1b>
+					</center>
+				</div>
+				<div class="mb"></div>
+				<div class="white_container_middle">
+					<center>
+						<h3b><%= event.ad.description %></h3b>
+				  </center>
+				</div>	
+				<div class="mb"></div>
+				<div class="white_container">
+				  <center>
+					  <h4b><%= event.ad.footer %></h4b>
+					</center>
+				</div>
 			</div>
-			<div class="mb"></div>
-			<div class="white_container_middle">
-				<center>
-					<h3b><%= event.info.description %></h3b>
-			  </center>
-			</div>	
-			<div class="mb"></div>
-			<div class="white_container">
-			  <center>
-				  <h4b><%= event.info.footer %></h4b>
-				</center>
-			</div>
-		</div>
-    <% elsif event.event_type == 'Werbung' %>
-    <div class="rotating-item">
-      <div class="mc"></div>
-			<div class="white_container">
-			  <center>
-				  <h1b><strong><%= event.ad.title %></strong></h1b>
-				</center>
-			</div>
-			<div class="mb"></div>
-			<div class="white_container_middle">
-				<center>
-					<h3b><%= event.ad.description %></h3b>
-			  </center>
-			</div>	
-			<div class="mb"></div>
-			<div class="white_container">
-			  <center>
-				  <h4b><%= event.ad.footer %></h4b>
-				</center>
-			</div>
-		</div>
-		<% end %>
-  <% end %>
-<% end %>
+			<% end %>
+	  <% end %>
+	<% end %>
+</div>

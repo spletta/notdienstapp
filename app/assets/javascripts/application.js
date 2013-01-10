@@ -19,3 +19,19 @@
 //= require rails.validations
 //= require rails.validations.simple_form
 //= require_tree .
+
+$(function() {
+
+    // function timeRefresh()...
+
+    if ($('#refreshable').length) {
+        setTimeout(function(){
+		  window.location.reload()
+		}, 60000);
+    }
+});
+
+// 60000ms = 60 seconds
+//setTimeout(function(){
+//  window.location.reload()
+//}, 60000);
