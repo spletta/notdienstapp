@@ -14,6 +14,9 @@
 	<% if request.subdomain.present? && request.path != signup_path %>
     <%= render 'layouts/header' %>
     <%= render 'layouts/subnav' %>
+  <% elsif request.path == contact_path || request.path == help_path || request.path == about_path || request.path == signin_path %>
+    <%= render 'layouts/header' %>
+    <%= render 'layouts/subnav' %>
   <% else %>
     <%= render 'layouts/signin_header' %>
   <% end %>
