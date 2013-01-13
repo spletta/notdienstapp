@@ -198,7 +198,7 @@ de:
   activemodel:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: &70105388294180
+      messages: &70339857600340
         accepted: muss akzeptiert werden
         blank: muss ausgefüllt werden
         confirmation: stimmt nicht mit der Bestätigung überein
@@ -220,7 +220,7 @@ de:
         too_long: ist zu lang (nicht mehr als %{count} Zeichen)
         too_short: ist zu kurz (nicht weniger als %{count} Zeichen)
         wrong_length: hat die falsche Länge (muss genau %{count} Zeichen haben)
-      template: &70105388307340
+      template: &70339857598600
         body: ! 'Bitte überprüfen Sie die folgenden Felder:'
         header:
           one: ! 'Konnte %{model} nicht speichern: ein Fehler.'
@@ -228,8 +228,8 @@ de:
   activerecord:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: *70105388294180
-      template: *70105388307340
+      messages: *70339857600340
+      template: *70339857598600
   manage:
     link: Verwalten
   planner:
@@ -352,6 +352,8 @@ de:
       title: Profile ändern
     company:
       name: Firma
+    plan: Abo
+    type-select: Plan auswählen
   user:
     name: Vorname
     password: Passwort
@@ -560,3 +562,5 @@ de:
     login: Anmelden
     back: Zurück
     fullscreen: Vollbild
+  back:
+    button: Zurück

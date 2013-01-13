@@ -1,0 +1,27 @@
+<% provide(:title, @account.name) %>
+	<div class="span6 offset3">      
+<table class="table table-striped">
+  <tbody>
+		<tr>
+	      <td><h6>Name:</h6></td>
+	      <td><i class="icon-user"></i> <%= @account.name %></td>
+	  </tr>
+		<tr>
+	      <td><h6>Subdomain:</h6></td>
+	      <td><i class="icon-user"></i> <%= @account.subdomain %></td>
+	  </tr>
+		<tr>
+	      <td><h6>Plan:</h6></td>
+	      <td><i class="icon-user"></i> <%= @account.plan_type %></td>
+	  </tr>
+  </tbody>
+</table>
+<p>
+ <%= link_to t('back.button'), accounts_path, :class => 'btn btn-mini' %>
+ <%= link_to t('edit.button'), edit_account_path(@account), :class => 'btn btn-mini' %>
+ <%= link_to t('destroy.button'), account_path(@account), :method => :delete, :class => 'btn btn-mini btn-danger' %>
+</p>
+
+
+  </div>
+</div>

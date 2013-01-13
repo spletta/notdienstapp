@@ -56,7 +56,7 @@ NdtAppV6::Application.routes.draw do
     resources :users
     
     resources :sessions, only: [:new, :create, :destroy]
-    resources :accounts, only: [:new, :create, :destroy, :index, :edit, :update]
+    resources :accounts
     
     #root to: 'static_pages#welcome'
     root to: 'accounts#new'

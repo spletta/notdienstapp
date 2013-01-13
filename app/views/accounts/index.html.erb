@@ -8,6 +8,7 @@
 </div>
 <div class="row">
   <div class="span5 offset3">
+	<%= form_for @account do |a| %>
 		<table class="table table-hover">
 			  <tr><h4>Billing Information</h4></tr>
 			  <tr>
@@ -18,18 +19,24 @@
 				  <td>Member Since</td>
 				  <td><%= l(@account.created_at, :format => '%A, %d.%B %Y') %></td>
 				</tr>
-			  <tr>
-				  <td>Subscription Plan</td>
-				  <td><strong>Basic Plan</strong></td>
-				</tr>
-			  <tr>
+				<tr>
 				  <td>Receipts</td>
 				  <td><%= link_to "22 Mar 2012, (Notdienst Basic Plan: 1 user, EUR 15,00"%></td>
 				</tr>
+				<tr>
+				  <td>Subscription Plan</td>
+				    <td>
+				      <%= radio_button_tag(:plan_type, Account::PLAN_TYPES, :checked => (Account::PLAN_TYPES == 'Solo')? true:false) %>&nbsp;Solo
+							<%= radio_button_tag(:plan_type, Account::PLAN_TYPES, :checked => (Account::PLAN_TYPES == 'Basic')? true:false) %>&nbsp;Basic
+							<%= radio_button_tag(:plan_type, Account::PLAN_TYPES, :checked => (Account::PLAN_TYPES == 'Business')? true:false) %>&nbsp;Business				
+					  </td>
+				</tr>
 		</table>
+		<%= a.submit "Save", :class => 'btn btn-mini btn-success' %>&nbsp;
 		<%= link_to 'Upgrade', "",:class => 'btn btn-mini btn-success' %>&nbsp;
 		<%= link_to 'Change Secure Site', "", :class => 'btn btn-mini' %>&nbsp;
 		<%= link_to 'Close Account', "", :method => :delete, :class => 'btn btn-mini' %>
+		<% end %>
 		</br>
 		</br>
 		</br>
