@@ -14,7 +14,7 @@ class AccountsController < ApplicationController
     if @account.update_attributes(params[:account])
       flash[:notice] = "Successfully updated account."
     else
-      render 'edit'
+      render :action => 'edit'
     end
   end
   
