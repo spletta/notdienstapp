@@ -1,0 +1,17 @@
+<% provide(:title, 'Events') %>
+	<div class="span6 offset3">      
+<table class="table table-striped">
+  <tbody>
+	  <tr>
+	    <td><h6>name</h6></td>
+      <td><i class="icon-font"></i> <%= @account.name %></td>
+	  </tr>
+  </tbody>
+</table>
+</p>
+  <%= link_to t('events.viewall.button'), accounts_path, :class => 'btn btn-mini' %>
+  <%= link_to t('events.edit.button'), edit_account_path(@account), :class => 'btn btn-mini' %>
+  <%= link_to t('events.destroy.button'), @account, :confirm => t('pharmacies.confirm.delete'), :method => :delete, :class => 'btn btn-mini btn-danger' %>
+</p>
+  </div>
+</div>

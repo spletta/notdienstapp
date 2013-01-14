@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
     end
   
     def current_account
-      if request.subdomain.present? && request.subdomain != 'www' && request.subdomain != 'splettville'
+      if request.subdomain.present? && request.subdomain != 'www'
           @account ||= Account.find_by_subdomain!(request.subdomain)
           #!Account.reserved_subdomain?(request.subdomain)
           #Account.find_by_subdomain! request.subdomain
@@ -32,7 +32,7 @@ class ApplicationController < ActionController::Base
     helper_method :current_account
   
     def scope_current_account
-      if request.subdomain.present? && request.subdomain != 'www' && request.subdomain != 'splettville'
+      if request.subdomain.present? && request.subdomain != 'www'
         Account.current_id = current_account.id
         #current_account.scope_schema("public", &block) 
       end
