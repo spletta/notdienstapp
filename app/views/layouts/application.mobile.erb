@@ -20,10 +20,12 @@
   </head>
   <body>
 		 <% if request.path == signup_path %>
-			  <%= render 'layouts/signin_header' %>
+			 <%= render 'layouts/signin_header' %>
 		 <% elsif !request.subdomain.present? && request.path == root_path %>
-		    <%= render 'layouts/signin_header' %>
-		 <% if request.subdomain == 'www' && request.path == signup_path %>
+		   <%= render 'layouts/signin_header' %>
+		 <% elsif request.subdomain == 'www' && request.path == root_path %>
+		   <%= render 'layouts/signin_header' %>
+		 <% elsif request.subdomain == 'www' && request.path == signup_path %>
 			  <%= render 'layouts/signin_header' %>
 		 <% else %>
 		   <%= render 'layouts/header' %>
