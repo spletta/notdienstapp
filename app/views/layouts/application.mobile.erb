@@ -19,7 +19,12 @@
     <%= analytics_init if Rails.env.production? %>
   </head>
   <body>
-    <%= render 'layouts/header' %>
+    <% if request.path == signup_path || request.path == root_path %>
+		  <%= render 'layouts/signin_header' %>
+	  <% else %>
+	    <%= render 'layouts/header' %>
+	    <%= render 'layouts/subnav' %>
+	  <% end %>
     <div class="container">
 			<% flash.each do |key, value| %>
         <%= content_tag(:div, value, class: "alert alert-#{key}") %>

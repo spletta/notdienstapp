@@ -11,14 +11,11 @@
     <%= analytics_init if Rails.env.production? %> 
   </head>
   <body>
-	<% if request.subdomain.present? && request.path != signup_path %>
-    <%= render 'layouts/header' %>
-    <%= render 'layouts/subnav' %>
-  <% elsif request.path == contact_path || request.path == help_path || request.path == about_path || request.path == signin_path %>
-    <%= render 'layouts/header' %>
-    <%= render 'layouts/subnav' %>
+	<% if request.path == signup_path || request.path == root_path %>
+	  <%= render 'layouts/signin_header' %>
   <% else %>
-    <%= render 'layouts/signin_header' %>
+    <%= render 'layouts/header' %>
+    <%= render 'layouts/subnav' %>
   <% end %>
     <div class="content">
     <div class="container">
