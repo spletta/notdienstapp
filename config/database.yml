@@ -1,14 +1,19 @@
 development:
-          adapter: postgresql
-          database: ndt_app_v6_development
-          host: localhost
+        adapter: postgresql
+        database: ndt_app_v6_development
+        host: localhost
           
 test:
         adapter: postgresql
-        database: ndt_app_v6_test
+        database: ndt_app_v6_test_real
         host: localhost
         
 production:
         adapter: postgresql
         database: ndt_app_v6_test
+        host: localhost
+        
+staging:
+        adapter: postgresql
+        database: ndt_app_v6_staging
         host: localhost
