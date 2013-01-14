@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   include SessionsHelper
   
+  before_filter :require_http_basic_auth if Rails.env == "staging"
   before_filter :set_locale
   before_filter :prepare_for_mobile
   
@@ -10,7 +11,17 @@ class ApplicationController < ActionController::Base
   rescue_from ActiveRecord::RecordNotFound, :with => :error_render_method
 
   private
-  
+
+    def require_http_basic_auth
+      authenticate_or_request_with_http_basic do |email, password|
+        if user = User.find_by_email(email)
+          user.valid_password?(password)
+        else
+          false
+        end
+      end
+    end
+    
     def error_render_method
       flash[:notice] = "Account was not found"
       if Rails.env.staging?

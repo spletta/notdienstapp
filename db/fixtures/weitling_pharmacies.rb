@@ -1,34 +1,31 @@
-### Get Account (scope) ###
-#user = User.unscoped.find_by_email("remi500@freenet.de")
-#account = Account.unscoped.find_by_user_id(user.id)
+Account.unscoped.delete_all(:id => 9)
+Account.seed(:id,
+  { :id => 9,
+    :name => "Weitling Apotheke",
+    :subdomain => "weitling-apotheke"
+  }
+)
+puts "Loaded Weitling Account for development machine only"
 
-#Account.unscoped.delete_all(:id => 9)
-#Account.seed(:id,
-#  { :id => 9,
-#    :name => "Weitling Apotheke",
-#    :subdomain => "weitling-apotheke"
-#  }
-#)
-#puts "Loaded Weitling Account for development machine only"
-
-#User.unscoped.delete_all(:account_id => 9)
-#User.seed(:id,
-#  { :id => 1,
-#    :name => "Wolfgang Steyer",
-#    :email => "weitling.apotheke@gmail.com",
-#    :password => ENV['WEITLING_PASSWORD'],
-#    :password_confirmation => ENV['WEITLING_PASSWORD'],
-#    :account_id => 9
-#  },
-#  { :id => 2,
-#    :name => "Admin",
-#    :email => "service@notdienstapp.com",
-#    :password => ENV['GMAIL_PASSWORD'],
-#    :password_confirmation => ENV['GMAIL_PASSWORD'],
-#   :account_id => 9
-#  }
-#)
-#puts "Loaded User for development"
+User.unscoped.delete_all(:account_id => 9)
+User.seed(:id,
+  { :id => 1,
+    :name => "Wolfgang",
+    :last_name => "Steyer",
+    :email => "weitling.apotheke@gmail.com",
+    :password => ENV['WEITLING_PASSWORD'],
+    :password_confirmation => ENV['WEITLING_PASSWORD'],
+    :account_id => 9
+  },
+  { :id => 2,
+    :name => "Admin",
+    :email => "service@notdienstapp.com",
+    :password => ENV['GMAIL_PASSWORD'],
+    :password_confirmation => ENV['GMAIL_PASSWORD'],  
+    :account_id => 9
+  }
+)
+puts "Loaded User for development"
 
 puts "Weitling Apotheke (weitling-apotheke.notdienstapp.com), Account ID: 9"
 puts "Loading Pharmacies, Emergency Groups, and Events for 2013..."

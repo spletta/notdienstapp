@@ -1,7 +1,3 @@
-### Get Account (scope) ###
-#user = User.unscoped.find_by_email("remi500@freenet.de")
-#account = Account.unscoped.find_by_user_id(user.id)
-
 Account.unscoped.delete_all(:id => 1)
 Account.seed(:id,
   { :id => 1,
@@ -14,7 +10,8 @@ puts "Loaded Neue Apotheke Account"
 User.unscoped.delete_all(:account_id => 1)
 User.seed(:id,
   { :id => 3,
-    :name => "Lutz Splettstößer",
+    :name => "Lutz",
+    :last_name => "Splettstößer",
     :email => "service@apothekevital.de",
     :password => ENV['NEUE_APOTHEKE_PASEWALK_PASSWORD'],
     :password_confirmation => ENV['NEUE_APOTHEKE_PASEWALK_PASSWORD'],

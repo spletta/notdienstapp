@@ -1,7 +1,3 @@
-### Get Account (scope) ###
-#user = User.unscoped.find_by_email("remi500@freenet.de")
-#account = Account.unscoped.find_by_user_id(user.id)
-
 Account.unscoped.delete_all(:id => 2)
 Account.seed(:id,
   { :id => 2,
@@ -14,7 +10,8 @@ puts "Loaded Muster Account"
 User.unscoped.delete_all(:account_id => 2)
 User.seed(:id,
   { :id => 5,
-    :name => "Max Muster",
+    :name => "Max", 
+    :last_name => "Muster",
     :email => "max@muster.de",
     :password => 'muster',#ENV['WEITLING_PASSWORD'],
     :password_confirmation => 'muster',#ENV['WEITLING_PASSWORD'],
