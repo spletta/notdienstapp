@@ -2,7 +2,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   include SessionsHelper
   
-  before_filter :require_http_basic_auth if Rails.env == "staging"
+  # could not figure this out... [RS]
+  #before_filter :require_http_basic_auth if Rails.env == "staging"
   before_filter :set_locale
   before_filter :prepare_for_mobile
   
