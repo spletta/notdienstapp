@@ -13,12 +13,14 @@
   <body>
 		 <% if request.path == signup_path %>
 			  <%= render 'layouts/signin_header' %>
-		  <% elsif !request.subdomain.present? && request.path == root_path %>
-			    <%= render 'layouts/signin_header' %>
-		  <% else %>
-		    <%= render 'layouts/header' %>
-		    <%= render 'layouts/subnav' %>
-		  <% end %>
+		 <% elsif !request.subdomain.present? && request.path == root_path %>
+		    <%= render 'layouts/signin_header' %>
+		 <% if request.subdomain == 'www' && request.path == signup_path %>
+			  <%= render 'layouts/signin_header' %>
+		 <% else %>
+		   <%= render 'layouts/header' %>
+		   <%= render 'layouts/subnav' %>
+		 <% end %>
     <div class="content">
     <div class="container">
 			<% flash.each do |key, value| %>

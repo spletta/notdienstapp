@@ -8,6 +8,11 @@ NdtAppV6::Application.routes.draw do
         root :to => 'accounts#new'
         match '/signup', :to => redirect {|params| "https://www.notdienstapp.com/#{params[:path]}"}
       end
+    elsif Rails.env.staging?
+      constraints(:host => /safe-forest-8379.com/) do
+        root :to => 'accounts#new'
+        match '/signup', :to => redirect {|params| "https://safe-forest-8379.com/#{params[:path]}"}
+      end
     else
       constraints(:host => /localhost:3000/) do
       #constraints(:host => /ndt.dev/) do

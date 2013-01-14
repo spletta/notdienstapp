@@ -19,14 +19,16 @@
     <%= analytics_init if Rails.env.production? %>
   </head>
   <body>
-   	 <% if request.path == signup_path %>
+		 <% if request.path == signup_path %>
 			  <%= render 'layouts/signin_header' %>
-		  <% elsif !request.subdomain.present? && request.path == root_path %>
-			    <%= render 'layouts/signin_header' %>
-		  <% else %>
-		    <%= render 'layouts/header' %>
-		    <%= render 'layouts/subnav' %>
-		  <% end %>
+		 <% elsif !request.subdomain.present? && request.path == root_path %>
+		    <%= render 'layouts/signin_header' %>
+		 <% if request.subdomain == 'www' && request.path == signup_path %>
+			  <%= render 'layouts/signin_header' %>
+		 <% else %>
+		   <%= render 'layouts/header' %>
+		   <%= render 'layouts/subnav' %>
+		 <% end %>
     <div class="container">
 			<% flash.each do |key, value| %>
         <%= content_tag(:div, value, class: "alert alert-#{key}") %>
