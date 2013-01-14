@@ -1,4 +1,8 @@
 en:
+  will_paginate:
+    previous_label: "&#8592; Previous"
+    next_label: "Next &#8594;"
+    page_gap: "&hellip;"
   date:
     abbr_day_names:
     - Sun
@@ -97,7 +101,7 @@ en:
       year: Year
   errors:
     format: ! '%{attribute} %{message}'
-    messages: &70105401708060
+    messages: &70239061704780
       accepted: must be accepted
       blank: can't be blank
       confirmation: doesn't match confirmation
@@ -125,7 +129,7 @@ en:
       wrong_length:
         one: is the wrong length (should be 1 character)
         other: is the wrong length (should be %{count} characters)
-    template: &70105402635600
+    template: &70239080629920
       body: ! 'There were problems with the following fields:'
       header:
         one: 1 error prohibited this %{model} from being saved
@@ -201,13 +205,13 @@ en:
   activemodel:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: *70105401708060
-      template: *70105402635600
+      messages: *70239061704780
+      template: *70239080629920
   activerecord:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: *70105401708060
-      template: *70105402635600
+      messages: *70239061704780
+      template: *70239080629920
   session:
     forgot:
       password:
@@ -419,7 +423,7 @@ en:
       url: Website
     email: Email
     destroy:
-      button: 
+      button: Delete
   emergency:
     group:
       link: Emergency Groups
@@ -537,3 +541,4 @@ en:
     login: Login
     back: Back
     fullscreen: Fullscreen
+  Plan: 

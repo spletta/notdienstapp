@@ -14,6 +14,6 @@
 </p>
 <p>
 	<%= link_to t('pharmacies.viewall.button'), emergency_groups_path, :class => 'btn btn-mini' %>
-  <%= link_to t('pharmacies.edit.button'), edit_emergency_group_path(@emergency_group), :class => 'btn btn-mini' %>
+  <%= link_to t('edit.button'), edit_emergency_group_path(@emergency_group), :class => 'btn btn-mini' %>
   <%= link_to t('pharmacies.destroy.button'), @emergency_group, :confirm => t('pharmacies.confirm.delete'), :method => :delete, :class => 'btn btn-mini btn-danger' %>
 </p>
