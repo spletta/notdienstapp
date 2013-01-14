@@ -25,7 +25,8 @@ class AccountsController < ApplicationController
       UserMailer.signup_confirmation(@account, @user).deliver
       AdminMailer.new_user_registration(@account, @user).deliver
       flash[:success] = "Account created"
-      redirect_to signin_path
+      sign_in @user
+      redirect_to "http://#{@account.subdomain}.#{request.domain}#{request.port_string}/welcome", notice: 'Account was successfully created.'
     else
       render 'new'
     end
