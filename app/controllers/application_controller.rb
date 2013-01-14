@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
     def error_render_method
       flash[:notice] = "Account was not found"
       if Rails.env.staging?
-        redirect_to :host => "safe-forest-8379.com", :controller => "static_pages", :action => "contact"
+        redirect_to :host => "splettville.com", :controller => "static_pages", :action => "contact"
       elsif Rails.env.production?
         redirect_to :host => "notdienstapp.com", :controller => "static_pages", :action => "contact"
       else
@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
     end
   
     def current_account
-      if request.subdomain.present? && request.subdomain != 'www' && request.subdomain != 'safe-forest-8379'
+      if request.subdomain.present? && request.subdomain != 'www' && request.subdomain != 'splettville'
           @account ||= Account.find_by_subdomain!(request.subdomain)
           #!Account.reserved_subdomain?(request.subdomain)
           #Account.find_by_subdomain! request.subdomain
@@ -32,7 +32,7 @@ class ApplicationController < ActionController::Base
     helper_method :current_account
   
     def scope_current_account
-      if request.subdomain.present? && request.subdomain != 'www' && request.subdomain != 'safe-forest-8379'
+      if request.subdomain.present? && request.subdomain != 'www' && request.subdomain != 'splettville'
         Account.current_id = current_account.id
         #current_account.scope_schema("public", &block) 
       end
