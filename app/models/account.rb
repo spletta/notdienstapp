@@ -1,16 +1,14 @@
 class Account < ActiveRecord::Base
-  attr_accessible :name, :subdomain, :users_attributes, :terms, :plan_type
+  attr_accessible :name, :subdomain, :users_attributes, :terms
   has_many :users, :inverse_of => :account, :dependent => :destroy
   before_create :downcase_stuff
   #after_create :create_schema
-                    
+  
   #validates_acceptance_of :terms
   
   accepts_nested_attributes_for :users
   
-  validates :name, :subdomain, presence: true, uniqueness: true
-  
-  PLAN_TYPES = ["Solo", "Basic", "Business"]
+  validates :name, :subdomain, presence: true
   
   def self.current_id=(id)
     Thread.current[:account_id] = id
