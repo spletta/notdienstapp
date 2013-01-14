@@ -11,12 +11,14 @@
     <%= analytics_init if Rails.env.production? %> 
   </head>
   <body>
-	<% if request.path == signup_path || request.path == root_path %>
-	  <%= render 'layouts/signin_header' %>
-  <% else %>
-    <%= render 'layouts/header' %>
-    <%= render 'layouts/subnav' %>
-  <% end %>
+		 <% if request.path == signup_path %>
+			  <%= render 'layouts/signin_header' %>
+		  <% elsif !request.subdomain.present? && request.path == root_path %>
+			    <%= render 'layouts/signin_header' %>
+		  <% else %>
+		    <%= render 'layouts/header' %>
+		    <%= render 'layouts/subnav' %>
+		  <% end %>
     <div class="content">
     <div class="container">
 			<% flash.each do |key, value| %>
