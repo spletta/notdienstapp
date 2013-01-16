@@ -101,7 +101,7 @@ en:
       year: Year
   errors:
     format: ! '%{attribute} %{message}'
-    messages: &70115521035340
+    messages: &70092700288580
       accepted: must be accepted
       blank: can't be blank
       confirmation: doesn't match confirmation
@@ -129,7 +129,7 @@ en:
       wrong_length:
         one: is the wrong length (should be 1 character)
         other: is the wrong length (should be %{count} characters)
-    template: &70115521045060
+    template: &70092709042120
       body: ! 'There were problems with the following fields:'
       header:
         one: 1 error prohibited this %{model} from being saved
@@ -205,13 +205,13 @@ en:
   activemodel:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: *70115521035340
-      template: *70115521045060
+      messages: *70092700288580
+      template: *70092709042120
   activerecord:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: *70115521035340
-      template: *70115521045060
+      messages: *70092700288580
+      template: *70092709042120
   session:
     forgot:
       password:
@@ -278,6 +278,7 @@ en:
       new:
         customer:
           other: You're interested in our product and would like more information?
+          two: You're already a Notdienst-Touch customer and have questions about your account?
       subtitle: We'd love to help you...
       title: You have questions?
     office:
