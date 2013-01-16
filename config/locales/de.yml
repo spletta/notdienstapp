@@ -1,8 +1,8 @@
 de:
   will_paginate:
-    previous_label: "&#8592; Bisherig"
-    next_label: "Nächste &#8594;"
-    page_gap: "&hellip;"
+    previous_label: ! '&#8592; Bisherig'
+    next_label: Nächste &#8594;
+    page_gap: ! '&hellip;'
   date:
     abbr_day_names:
     - So
@@ -202,7 +202,7 @@ de:
   activemodel:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: &70239052556160
+      messages: &70092693595940
         accepted: muss akzeptiert werden
         blank: muss ausgefüllt werden
         confirmation: stimmt nicht mit der Bestätigung überein
@@ -224,7 +224,7 @@ de:
         too_long: ist zu lang (nicht mehr als %{count} Zeichen)
         too_short: ist zu kurz (nicht weniger als %{count} Zeichen)
         wrong_length: hat die falsche Länge (muss genau %{count} Zeichen haben)
-      template: &70239052569120
+      template: &70092693594080
         body: ! 'Bitte überprüfen Sie die folgenden Felder:'
         header:
           one: ! 'Konnte %{model} nicht speichern: ein Fehler.'
@@ -232,8 +232,8 @@ de:
   activerecord:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: *70239052556160
-      template: *70239052569120
+      messages: *70092693595940
+      template: *70092693594080
   manage:
     link: Verwalten
   planner:
@@ -562,4 +562,4 @@ de:
     login: Anmelden
     back: Zurück
     fullscreen: Vollbild
-  Plan:
+  Plan: 

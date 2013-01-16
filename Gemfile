@@ -30,10 +30,16 @@ gem 'aws-sdk', '~> 1.3.4'
 gem 'simple_form'
 gem 'client_side_validations'
 gem 'client_side_validations-simple_form'
+gem 'rack-offline', :git => 'git://github.com/wycats/rack-offline.git' 
 
 group :development, :test do
   gem 'rspec-rails', '2.11.0'
   gem "nifty-generators"
+  gem 'pry'
+  gem 'pry-remote'
+  gem 'pry'
+  gem 'pry-rails'
+  gem 'pry-nav'
 end
 
 group :test do
