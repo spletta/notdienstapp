@@ -36,6 +36,7 @@ To test Offline functionality (or just production in general) locally
 ````
 RAILS_ENV=production rake db:setup
 RAILS_ENV=production rake db:seed_fu
+````
 
 .powenv uncomment:
 ````
