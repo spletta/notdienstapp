@@ -31,7 +31,8 @@ gem 'simple_form'
 gem 'client_side_validations'
 gem 'client_side_validations-simple_form'
 gem 'rack-offline', :git => 'git://github.com/wycats/rack-offline.git' 
-gem "figaro"
+gem 'figaro'
+gem 'heroku'
 
 group :development, :test do
   gem 'rspec-rails', '2.11.0'

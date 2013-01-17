@@ -14,12 +14,17 @@ rake db:seed_fu
 To collaborate on the heroku staging app https://devcenter.heroku.com/articles/collab#collaborating-on-an-app
 The heroku app is named: git@heroku.com:safe-forest-8379.git
 
+# To enable HTTP Authentication (recommended - to hide from google and customers)
 heroku config:add RACK_ENV=staging RAILS_ENV=staging --app safe-forest-8379
 
-To setup ENV VARS on Heroku run: rake figaro:heroku
+# To setup ENV VARS on Heroku 
+run locally first: rake figaro:heroku[safe-forest-8379]
+
+# To seed test accounts and data
+heroku run rake db:seed_fu --app safe-forest-8379
 
 # To test Offline functionality on Heroku Staging
-heroku config:add RACK_ENV=staging RAILS_ENV=staging --app safe-forest-8379
+heroku config:add RACK_ENV=production RAILS_ENV=production --app safe-forest-8379
 
 # To test Offline functionality (or just production in general) locally
 RAILS_ENV=production rake db:setup
