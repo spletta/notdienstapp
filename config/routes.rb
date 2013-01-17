@@ -1,13 +1,20 @@
 NdtAppV6::Application.routes.draw do
   
-  offline = Rack::Offline.configure :cache_interval => 120 do      
-    Rails.application.assets.each_logical_path.select{|e| not e.include? ".pdf"}.each {|e| cache "assets/" + e}
-    Rails.logger.debug(Rails.application.assets.each_logical_path.to_a)
-    network "/"  
-  end   
-    
-  match "/application.manifest" => offline  
-  
+  if Rails.env.production?
+    offline = Rack::Offline.configure :cache_interval => 120 do      
+      cache ActionController::Base.helpers.asset_path("application.css")
+      cache ActionController::Base.helpers.asset_path("application.js")
+      network "/"  
+    end
+    match "/application.manifest" => offline  
+  else
+    offline = Rack::Offline.configure :cache_interval => 120 do      
+      Rails.application.assets.each_logical_path.select{|e| not e.include? ".pdf"}.each {|e| cache "assets/" + e}
+      network "/"  
+    end    
+    match "/application.manifest" => offline  
+  end
+
   scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
     match '', to: 'static_pages#welcome', constraints: lambda { |r| r.subdomain.present? && r.subdomain != 'www' }
     #match '/signup', to: 'accounts#new', constraints: lambda { |r| r.subdomain.present? && r.subdomain != 'www' }

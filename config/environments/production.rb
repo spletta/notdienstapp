@@ -85,4 +85,11 @@ NdtAppV6::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
+  
+  # Normally you'd calculate RELEASE_NUMBER at startup.
+  RELEASE_NUMBER = 12345
+  config.action_controller.asset_path = proc { |asset_path|
+    "/#{asset_path}#{RELEASE_NUMBER}"
+  }
+        
 end
