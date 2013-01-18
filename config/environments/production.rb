@@ -31,7 +31,7 @@ NdtAppV6::Application.configure do
   GA.tracker = "UA-27048878-5"
   
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  config.force_ssl = true
+  config.force_ssl = false
 
   # If you have a longer top level domain such as "example.co.uk"
   config.action_dispatch.tld_length = 1
