@@ -41,7 +41,7 @@ function updateSite(event) {
     window.applicationCache.swapCache();
 }
 window.applicationCache.addEventListener('updateready',
-    updateSite, false);
+    updateSite, true);
 
 // Logging for offline events
 function logEvent(event) {
