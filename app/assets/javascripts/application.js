@@ -20,17 +20,6 @@
 //= require rails.validations.simple_form
 //= require_tree .
 
-$(function() {
-
-    // function timeRefresh()...
-
-    if ($('#refreshable').length) {
-        setTimeout(function(){
-		  window.location.reload()
-		}, 60000);
-    }
-});
-
 // 60000ms = 60 seconds
 //setTimeout(function(){
 //  window.location.reload()
@@ -43,6 +32,20 @@ function updateSite(event) {
 window.applicationCache.addEventListener('updateready',
     updateSite, true);
 
+$(function() {
+
+    // function timeRefresh()...
+
+    if ($('#refreshable').length) {
+        setTimeout(function(){
+		  window.location.reload()
+		}, 60000);
+		
+		window.applicationCache.addEventListener('updateready',
+		    updateSite, true);
+    }
+});
+	
 // Logging for offline events
 function logEvent(event) {
     console.log(event.type);
