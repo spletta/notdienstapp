@@ -1,4 +1,8 @@
 # Add application configuration variables here, as shown below.
 #
-# EXAMPLE_USER: 7381a978f7dd7f9a1117
-# EXAMPLE_SECRET: abdc3b896a0ffb85d373
+#SECRET_TOKEN: '20934820934823098'
+#WEITLING_PASSWORD: 'tester'
+#GMAIL_PASSWORD: 'tester'
+#NEUE_APOTHEKE_PASEWALK_PASSWORD: 'tester'
+#MY_SITE_SECRET: 'tester'
+#MY_SITE_USERNAME: 'tester'
