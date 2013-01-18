@@ -6,12 +6,19 @@ class ApplicationController < ActionController::Base
   #before_filter :require_http_basic_auth if Rails.env == "staging"
   before_filter :set_locale
   before_filter :prepare_for_mobile
+  before_filter :set_cache_buster
   
   around_filter :scope_current_account  
   
   rescue_from ActiveRecord::RecordNotFound, :with => :error_render_method
 
   private
+
+    def set_cache_buster
+      response.headers["Cache-Control"] = "no-cache, no-store, max-age=0, must-revalidate"
+      response.headers["Pragma"] = "no-cache"
+      response.headers["Expires"] = "Fri, 01 Jan 1990 00:00:00 GMT"
+    end
 
     def require_http_basic_auth
       authenticate_or_request_with_http_basic do |email, password|
