@@ -23,14 +23,24 @@ To enable HTTP Authentication (recommended - to hide from google and customers)
 heroku config:add RACK_ENV=staging RAILS_ENV=staging --app safe-forest-8379
 ````
 
-To setup ENV VARS on Heroku run locally first: 
+To setup a new pharmacy on Heroku Staging
 ````
-rake figaro:heroku[safe-forest-8379]
+git push --remote staging # or whatever name you gave it locally, git remote -v
+````
+
+To setup ENV VARS on Heroku Staging
+````
+heroku run rake config:add SOME_CONFIG=somepassword --app safe-forest-8379
 ````
 
 To seed test accounts and data
 ````
 heroku run rake db:seed_fu --app safe-forest-8379
+````
+
+To seed just a certain account use the FILTER command line option for seed_fu
+````
+heroku run rake db:seed_fu FILTER=brunnen --app safe-forest-8379
 ````
 
 To test Offline functionality on Heroku Staging
