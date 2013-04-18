@@ -33,6 +33,7 @@ gem 'client_side_validations-simple_form'
 gem 'rack-offline', :git => 'git://github.com/wycats/rack-offline.git' 
 gem 'figaro'
 gem 'heroku'
+gem 'intercom-rails', '~> 0.2.14'
 
 group :development, :test do
   gem 'rspec-rails', '2.11.0'

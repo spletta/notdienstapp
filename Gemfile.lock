@@ -114,6 +114,8 @@ GEM
       multi_json (~> 1.0)
       multi_xml
     i18n (0.6.1)
+    intercom-rails (0.2.17)
+      activesupport (> 3.0)
     journey (1.0.4)
     jquery-rails (2.0.2)
       railties (>= 3.2.0, < 5.0)
@@ -277,6 +279,7 @@ DEPENDENCIES
   google-analytics-rails
   has_enumeration
   heroku
+  intercom-rails (~> 0.2.14)
   jquery-rails (= 2.0.2)
   jquery-ui-rails
   jquery_datepicker
