@@ -70,7 +70,7 @@ Event.seed(:id,
     :all_day => false },
   { 
     :account_id => 11, 
-    :pharmacy_id => 103
+    :pharmacy_id => 103,
     :color => "Weiss", 
     :event_type => "Notdienst",  
     :starttime => '17.10.2013 09:00:00',
