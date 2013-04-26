@@ -4,16 +4,10 @@
 	    <% if event.event_type == 'Notdienst' %>
 	     <div class="rotating-item">
 	      <div class="mc"></div>
-				<div class="white_container">				  
-					<% if event.pharmacy.emergency_group.website_title != nil %>
-					  <center>
-						  <h1b><strong><%= event.pharmacy.emergency_group.website_title %></strong></h1b>
-						</center>
-					<% else %>
-					<center>
-					  <h1b><strong>Heute Notdienst</strong></h1b>
+				<div class="white_container">
+				  <center>
+					  <h1b><strong><%= event.pharmacy.emergency_group.website_title %></strong></h1b>
 					</center>
-					<% end %>	
 				</div>
 				<div class="mb"></div>
 				<div class="white_container_middle">
@@ -34,15 +28,9 @@
 			  </div>	
 			  <div class="mb"></div>
 			  <div class="white_container">
-					<% if pharmacy.emergency_group.website_note != nil %>
 				  <center>
 				    <h4b><%= event.pharmacy.emergency_group.website_note %></h4b>
 			    </center>
-					<% else %>
-					<center>
-					  <h1b><strong>Notdienstgebühr außerhalb der gesetzlichen Öffnungszeiten 2,50 €</strong></h1b>
-					</center>
-					<% end %>
 		    </div>
 		  </div>
 	    <% elsif event.event_type == 'Kundeninfos' %>
