@@ -34,7 +34,7 @@ Pharmacy.seed(:id,
   ###########  
   # Group B #
   ########### Brühl Apotheke
-  { :id => 144,
+  { :id => 158,
     :account_id => 13, 
     :emergency_group_id => 32,   
     :name => "Brühl Apotheke",
@@ -45,7 +45,7 @@ Pharmacy.seed(:id,
   ###########  
   # Group E #
   ########### Einhorn Apotheke
-  { :id => 145,
+  { :id => 159,
     :account_id => 13, 
     :emergency_group_id => 33,   
     :name => "Einhorn Apotheke",
