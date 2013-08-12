@@ -287,7 +287,7 @@ Event.seed(:id,
   },
   # Day and Night 4
   { :account_id => 13, 
-    :pharmacy_id => 144,
+    :pharmacy_id => 156,
     :color => "Weiss",
     :event_type => "Notdienst",  
     :starttime => '24.08.2013 08:00:00 +0100',
