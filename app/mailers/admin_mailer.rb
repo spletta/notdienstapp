@@ -9,7 +9,7 @@ class AdminMailer < ActionMailer::Base
   def new_user_registration(account, user)
     @account = account
     @user = user
-    @url = "https://#{account.subdomain}.notdienstapp.com"
+    @url = "http://#{account.subdomain}.notdienstapp.com"
     mail(to: "service@notdienstapp.com", subject: "New User Signup: #{user.email}")
   end
 end

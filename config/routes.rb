@@ -24,12 +24,12 @@ NdtAppV6::Application.routes.draw do
     if Rails.env.production?
       constraints(:host => /notdienstapp.com/) do
         root :to => 'accounts#new'
-        match '/signup', :to => redirect {|params| "https://www.notdienstapp.com/#{params[:path]}"}
+        match '/signup', :to => redirect {|params| "http://www.notdienstapp.com/#{params[:path]}"}
       end
     elsif Rails.env.staging?
       constraints(:host => /splettville.com/) do
         root :to => 'accounts#new'
-        match '/signup', :to => redirect {|params| "https://www.splettville.com/#{params[:path]}"}
+        match '/signup', :to => redirect {|params| "http://www.splettville.com/#{params[:path]}"}
       end
     else
       constraints(:host => /localhost:3000/) do

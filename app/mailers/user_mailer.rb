@@ -12,18 +12,18 @@ class UserMailer < ActionMailer::Base
     #attachments['bestellfomular.pdf'] = File.read('app/assets/documents/bestellfomular.pdf')
     @account = account
     @user = user
-    @contact = "https://notdienstapp.com/contact"
-    @order_form = "https://notdienstapp.com/bestellfomular.pdf"
-    @manual = "https://notdienstapp.com/anleitung.pdf"
-    @url = "https://#{account.subdomain}.notdienstapp.com"
-    @reset_url = "https://#{account.subdomain}.notdienstapp.com/password_resets/new"
+    @contact = "http://notdienstapp.com/contact"
+    @order_form = "http://notdienstapp.com/bestellfomular.pdf"
+    @manual = "http://notdienstapp.com/anleitung.pdf"
+    @url = "http://#{account.subdomain}.notdienstapp.com"
+    @reset_url = "http://#{account.subdomain}.notdienstapp.com/password_resets/new"
     mail(to: user.email, subject: "Willkommen bei Notdienst Touch, #{user.name}")
   end
   
   def password_reset(user, account)
     @user = user
     @account = account
-    @reset_url = "https://#{account.subdomain}.notdienstapp.com/password_resets/#{user.password_reset_token}/edit"
+    @reset_url = "http://#{account.subdomain}.notdienstapp.com/password_resets/#{user.password_reset_token}/edit"
     mail :to => user.email, :subject => "Password Reset"
   end
 end
