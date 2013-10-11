@@ -1,7 +1,7 @@
 # this was addd over the UI
-#    :id => 11,
-#    :name => "Revier Apotheke",
-#    :subdomain => "revier-apotheke"
+    :id => 11,
+    :name => "Revier Apotheke",
+    :subdomain => "revier-apotheke"
 
 
 # Some important notes:
