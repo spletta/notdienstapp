@@ -202,7 +202,7 @@ de:
   activemodel:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: &70092693595940
+      messages: &70224738025620
         accepted: muss akzeptiert werden
         blank: muss ausgefüllt werden
         confirmation: stimmt nicht mit der Bestätigung überein
@@ -224,7 +224,7 @@ de:
         too_long: ist zu lang (nicht mehr als %{count} Zeichen)
         too_short: ist zu kurz (nicht weniger als %{count} Zeichen)
         wrong_length: hat die falsche Länge (muss genau %{count} Zeichen haben)
-      template: &70092693594080
+      template: &70224739874300
         body: ! 'Bitte überprüfen Sie die folgenden Felder:'
         header:
           one: ! 'Konnte %{model} nicht speichern: ein Fehler.'
@@ -232,8 +232,13 @@ de:
   activerecord:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: *70092693595940
-      template: *70092693594080
+      messages: *70224738025620
+      template: *70224739874300
+    attributes:
+      event:
+        event_type: event_type
+    models:
+      event: Event
   manage:
     link: Verwalten
   planner:
