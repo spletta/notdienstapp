@@ -19,25 +19,7 @@ NdtAppV6::Application.routes.draw do
 
   scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
     match '', to: 'static_pages#welcome', constraints: lambda { |r| r.subdomain.present? && r.subdomain != 'www' }
-    #match '/signup', to: 'accounts#new', constraints: lambda { |r| r.subdomain.present? && r.subdomain != 'www' }
-    
-    if Rails.env.production?
-      constraints(:host => /notdienstapp.com/) do
-        root :to => 'accounts#new'
-        match '/signup', :to => redirect {|params| "http://www.notdienstapp.com/#{params[:path]}"}
-      end
-    elsif Rails.env.staging?
-      constraints(:host => /splettville.com/) do
-        root :to => 'accounts#new'
-        match '/signup', :to => redirect {|params| "http://www.splettville.com/#{params[:path]}"}
-      end
-    else
-      constraints(:host => /localhost:3000/) do
-      #constraints(:host => /ndt.dev/) do
-        root :to => 'accounts#new'
-        match '/signup', :to => redirect {|params| "http://ndt.dev/#{params[:path]}"}
-      end
-    end   
+    #match '/signup', to: 'accounts#new', constraints: lambda { |r| r.subdomain.present? && r.subdomain != 'www' } 
       
     resources :password_resets
     
@@ -88,6 +70,25 @@ NdtAppV6::Application.routes.draw do
     #  match '*not_found', to: 'errors#error_404'
     #end
   end
+  
+  if Rails.env.production?
+    constraints(:host => /notdienstapp.com/) do
+      root :to => 'accounts#new'
+      match '/signup', :to => redirect {|params| "https://www.notdienstapp.com/#{params[:path]}"}
+    end
+  elsif Rails.env.staging?
+    constraints(:host => /splettville.com/) do
+      root :to => 'accounts#new'
+      match '/signup', :to => redirect {|params| "http://www.splettville.com/#{params[:path]}"}
+    end
+  else
+    constraints(:host => /localhost:3000/) do
+    #constraints(:host => /ndt.dev/) do
+      root :to => 'accounts#new'
+      match '/signup', :to => redirect {|params| "http://ndt.dev/#{params[:path]}"}
+    end
+  end
+  
   match '*path', to: redirect("/#{I18n.default_locale}/%{path}"), 
                  constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }
   match '', to: redirect("/#{I18n.default_locale}")
