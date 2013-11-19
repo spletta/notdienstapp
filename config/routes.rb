@@ -71,23 +71,23 @@ NdtAppV6::Application.routes.draw do
     #end
   end
   
-  if Rails.env.production?
-    constraints(:host => /notdienstapp.com/) do
-      root :to => 'accounts#new'
-      match '/signup', :to => redirect {|params| "https://www.notdienstapp.com/#{params[:path]}"}
-    end
-  elsif Rails.env.staging?
-    constraints(:host => /splettville.com/) do
-      root :to => 'accounts#new'
-      match '/signup', :to => redirect {|params| "http://www.splettville.com/#{params[:path]}"}
-    end
-  else
-    constraints(:host => /localhost:3000/) do
-    #constraints(:host => /ndt.dev/) do
-      root :to => 'accounts#new'
-      match '/signup', :to => redirect {|params| "http://ndt.dev/#{params[:path]}"}
-    end
-  end
+  #if Rails.env.production?
+  #  constraints(:host => /notdienstapp.com/) do
+  #    root :to => 'accounts#new'
+  #    match '/signup', :to => redirect {|params| "https://www.notdienstapp.com/#{params[:path]}"}
+  #  end
+  #elsif Rails.env.staging?
+  #  constraints(:host => /splettville.com/) do
+  #    root :to => 'accounts#new'
+  #    match '/signup', :to => redirect {|params| "http://www.splettville.com/#{params[:path]}"}
+  #  end
+  #else
+  #  constraints(:host => /localhost:3000/) do
+  #  #constraints(:host => /ndt.dev/) do
+  #    root :to => 'accounts#new'
+  #    match '/signup', :to => redirect {|params| "http://ndt.dev/#{params[:path]}"}
+  #  end
+  #end
   
   match '*path', to: redirect("/#{I18n.default_locale}/%{path}"), 
                  constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }
