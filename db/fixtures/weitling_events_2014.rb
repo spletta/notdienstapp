@@ -1641,7 +1641,7 @@ Event.seed(:id,
     :color => "Weiss", 
     :event_type => "Notdienst",  
     :starttime => '01.12.2014 09:00:00',
-    :endtime => '01.12.2014 08:59:00',
+    :endtime => '02.12.2014 08:59:00',
     :all_day => false },
   { 
     :account_id => 9, 
@@ -1756,7 +1756,7 @@ Event.seed(:id,
     :color => "Weiss", 
     :event_type => "Notdienst",  
     :starttime => '01.12.2014 09:00:00',
-    :endtime => '01.12.2014 08:59:00',
+    :endtime => '02.12.2014 08:59:00',
     :all_day => false },
   { 
     :account_id => 9, 
@@ -2238,7 +2238,7 @@ Event.seed(:id,
     :color => "Weiss", 
     :event_type => "Notdienst",  
     :starttime => '31.12.2014 09:00:00',
-    :endtime => '01.01.2014 08:59:00',
+    :endtime => '01.01.2015 08:59:00',
     :all_day => false }
 )
 puts "Group 4 Loaded"
@@ -2350,14 +2350,6 @@ Event.seed(:id,
     :event_type => "Notdienst",  
     :starttime => '05.12.2014 09:00:00',
     :endtime => '06.12.2014 08:59:00',
-    :all_day => false },
-  { 
-    :account_id => 9, 
-    :pharmacy_id => 24,
-    :color => "Weiss", 
-    :event_type => "Notdienst",  
-    :starttime => '01.01.2014 09:00:00',
-    :endtime => '02.01.2014 08:59:00',
     :all_day => false }
 )
 puts "Group 5 Loaded"
@@ -2469,14 +2461,6 @@ Event.seed(:id,
     :event_type => "Notdienst",  
     :starttime => '06.12.2014 09:00:00',
     :endtime => '07.12.2014 08:59:00',
-    :all_day => false },
-  { 
-    :account_id => 9, 
-    :pharmacy_id => 25,
-    :color => "Weiss", 
-    :event_type => "Notdienst",  
-    :starttime => '02.01.2014 09:00:00',
-    :endtime => '03.01.2014 08:59:00',
     :all_day => false }
 )
 puts "Group 6 Loaded"
@@ -2588,14 +2572,6 @@ Event.seed(:id,
     :event_type => "Notdienst",  
     :starttime => '07.12.2014 09:00:00',
     :endtime => '08.12.2014 08:59:00',
-    :all_day => false },
-  { 
-    :account_id => 9, 
-    :pharmacy_id => 2,
-    :color => "Weiss", 
-    :event_type => "Notdienst",  
-    :starttime => '03.01.2014 09:00:00',
-    :endtime => '04.01.2014 08:59:00',
     :all_day => false }
 )
 puts "Group 7 Loaded"
@@ -2713,8 +2689,8 @@ Event.seed(:id,
     :pharmacy_id => 26,
     :color => "Weiss", 
     :event_type => "Notdienst",  
-    :starttime => '04.01.2014 09:00:00',
-    :endtime => '05.01.2014 08:59:00',
+    :starttime => '01.12.2015 09:00:00',
+    :endtime => '02.12.2015 08:59:00',
     :all_day => false },
   ################  
   # 2nd Pharmacy #
@@ -2828,20 +2804,20 @@ Event.seed(:id,
     :pharmacy_id => 29,
     :color => "Weiss", 
     :event_type => "Notdienst",  
-    :starttime => '04.01.2014 09:00:00',
-    :endtime => '05.01.2014 08:59:00',
+    :starttime => '01.12.2015 09:00:00',
+    :endtime => '02.12.2015 08:59:00',
     :all_day => false }
 )
 puts "Group 8 Loaded"
 
 Event.seed(:id,
   ############  
-  # Group 19 #
+  # Group 9 #
   ############
   { 
     :account_id => 9, 
     :pharmacy_id => 28,
-:color => "Weiss",
+    :color => "Weiss",
     :event_type => "Notdienst",  
     :starttime => '19.01.2014 09:00:00',
     :endtime => '20.01.2014 08:59:00',
@@ -2941,21 +2917,13 @@ Event.seed(:id,
     :event_type => "Notdienst",  
     :starttime => '09.12.2014 09:00:00',
     :endtime => '10.12.2014 08:59:00',
-    :all_day => false },
-  { 
-    :account_id => 9, 
-    :pharmacy_id => 28,
-    :color => "Weiss", 
-    :event_type => "Notdienst",  
-    :starttime => '05.01.2014 09:00:00',
-    :endtime => '06.01.2014 08:59:00',
     :all_day => false }
 )
-puts "Group 19 Loaded"
+puts "Group 9 Loaded"
 
 Event.seed(:id,
   ############  
-  # Group 20 #
+  # Group 10 #
   ############
   { 
     :account_id => 9, 
@@ -3061,14 +3029,9 @@ Event.seed(:id,
     :starttime => '10.12.2014 09:00:00',
     :endtime => '11.12.2014 08:59:00',
     :all_day => false },
-  { 
-    :account_id => 9, 
-    :pharmacy_id => 3,
-    :color => "Weiss", 
-    :event_type => "Notdienst",  
-    :starttime => '06.01.2014 09:00:00',
-    :endtime => '07.01.2014 08:59:00',
-    :all_day => false },
+    ################
+    # 2nd Pharmacy #
+    ################
   { 
     :account_id => 9, 
     :pharmacy_id => 31,
@@ -3172,21 +3135,13 @@ Event.seed(:id,
     :event_type => "Notdienst",  
     :starttime => '10.12.2014 09:00:00',
     :endtime => '11.12.2014 08:59:00',
-    :all_day => false },
-  { 
-    :account_id => 9, 
-    :pharmacy_id => 31,
-    :color => "Weiss", 
-    :event_type => "Notdienst",  
-    :starttime => '06.01.2014 09:00:00',
-    :endtime => '07.01.2014 08:59:00',
     :all_day => false }
 )
-puts "Group 20 Loaded"
+puts "Group 10 Loaded"
 
 Event.seed(:id,
   ############  
-  # Group 21 #
+  # Group 11 #
   ############
   { 
     :account_id => 9, 
@@ -3291,21 +3246,13 @@ Event.seed(:id,
     :event_type => "Notdienst",  
     :starttime => '11.12.2014 09:00:00',
     :endtime => '12.12.2014 08:59:00',
-    :all_day => false },
-  { 
-    :account_id => 9, 
-    :pharmacy_id => 4,
-    :color => "Weiss", 
-    :event_type => "Notdienst",  
-    :starttime => '07.01.2014 09:00:00',
-    :endtime => '08.01.2014 08:59:00',
     :all_day => false }
 )
-puts "Group 21 Loaded"
+puts "Group 11 Loaded"
 
 Event.seed(:id,
   ############  
-  # Group 22 #
+  # Group 12 #
   ############
   { 
     :account_id => 9, 
@@ -3410,14 +3357,6 @@ Event.seed(:id,
     :event_type => "Notdienst",  
     :starttime => '12.12.2014 09:00:00',
     :endtime => '13.12.2014 08:59:00',
-    :all_day => false },
-  { 
-    :account_id => 9, 
-    :pharmacy_id => 5,
-    :color => "Weiss", 
-    :event_type => "Notdienst",  
-    :starttime => '08.01.2014 09:00:00',
-    :endtime => '09.01.2014 08:59:00',
     :all_day => false },
   ################  
   # 2nd Pharmacy #
@@ -3525,14 +3464,6 @@ Event.seed(:id,
     :event_type => "Notdienst",  
     :starttime => '12.12.2014 09:00:00',
     :endtime => '13.12.2014 08:59:00',
-    :all_day => false },
-  { 
-    :account_id => 9, 
-    :pharmacy_id => 32,
-    :color => "Weiss", 
-    :event_type => "Notdienst",  
-    :starttime => '08.01.2014 09:00:00',
-    :endtime => '09.01.2014 08:59:00',
     :all_day => false },
   ################  
   # 3rd Pharmacy #
@@ -3640,21 +3571,13 @@ Event.seed(:id,
     :event_type => "Notdienst",  
     :starttime => '12.12.2014 09:00:00',
     :endtime => '13.12.2014 08:59:00',
-    :all_day => false },
-  { 
-    :account_id => 9, 
-    :pharmacy_id => 33,
-    :color => "Weiss", 
-    :event_type => "Notdienst",  
-    :starttime => '08.01.2014 09:00:00',
-    :endtime => '09.01.2014 08:59:00',
     :all_day => false }
 )
-puts "Group 22 Loaded"
+puts "Group 12 Loaded"
 
 Event.seed(:id,
   ############  
-  # Group 23 #
+  # Group 13 #
   ############
   { 
     :account_id => 9, 
@@ -3759,14 +3682,6 @@ Event.seed(:id,
     :event_type => "Notdienst",  
     :starttime => '13.12.2014 09:00:00',
     :endtime => '14.12.2014 08:59:00',
-    :all_day => false },
-  { 
-    :account_id => 9, 
-    :pharmacy_id => 6,
-    :color => "Rot", 
-    :event_type => "Notdienst",  
-    :starttime => '09.01.2014 09:00:00',
-    :endtime => '10.01.2014 08:59:00',
     :all_day => false },
   ################  
   # 2nd Pharmacy #
@@ -3874,21 +3789,13 @@ Event.seed(:id,
     :event_type => "Notdienst",  
     :starttime => '13.12.2014 09:00:00',
     :endtime => '14.12.2014 08:59:00',
-    :all_day => false },
-  { 
-    :account_id => 9, 
-    :pharmacy_id => 34,
-    :color => "Weiss", 
-    :event_type => "Notdienst",  
-    :starttime => '09.01.2014 09:00:00',
-    :endtime => '10.01.2014 08:59:00',
     :all_day => false }
 )
-puts "Group 23 Loaded"
+puts "Group 13 Loaded"
 
 Event.seed(:id,
   ############  
-  # Group 24 #
+  # Group 14 #
   ############
   { 
     :account_id => 9, 
@@ -3993,14 +3900,6 @@ Event.seed(:id,
     :event_type => "Notdienst",  
     :starttime => '14.12.2014 09:00:00',
     :endtime => '15.12.2014 08:59:00',
-    :all_day => false },
-  { 
-    :account_id => 9, 
-    :pharmacy_id => 7,
-    :color => "Weiss", 
-    :event_type => "Notdienst",  
-    :starttime => '10.01.2014 09:00:00',
-    :endtime => '11.01.2014 08:59:00',
     :all_day => false },
   ################  
   # 2nd Pharamcy #
@@ -4108,21 +4007,13 @@ Event.seed(:id,
     :event_type => "Notdienst",  
     :starttime => '14.12.2014 09:00:00',
     :endtime => '15.12.2014 08:59:00',
-    :all_day => false },
-  { 
-    :account_id => 9, 
-    :pharmacy_id => 35,
-    :color => "Weiss", 
-    :event_type => "Notdienst",  
-    :starttime => '10.01.2014 09:00:00',
-    :endtime => '11.01.2014 08:59:00',
     :all_day => false }
 )
-puts "Group 24 Loaded"
+puts "Group 14 Loaded"
 
 Event.seed(:id,
   ############  
-  # Group 25 #
+  # Group 15 #
   ############
   { 
     :account_id => 9, 
@@ -4228,17 +4119,9 @@ Event.seed(:id,
     :starttime => '15.12.2014 09:00:00',
     :endtime => '16.12.2014 08:59:00',
     :all_day => false },
-  { 
-    :account_id => 9, 
-    :pharmacy_id => 8,
-    :color => "Weiss", 
-    :event_type => "Notdienst",  
-    :starttime => '11.01.2014 09:00:00',
-    :endtime => '12.01.2014 08:59:00',
-    :all_day => false },
-  ############  
-  # Group 25 #
-  ############
+  ################  
+  # 2nd Pharmacy #
+  ################
   { 
     :account_id => 9, 
     :pharmacy_id => 36,
@@ -4342,21 +4225,13 @@ Event.seed(:id,
     :event_type => "Notdienst",  
     :starttime => '15.12.2014 09:00:00',
     :endtime => '16.12.2014 08:59:00',
-    :all_day => false },
-  { 
-    :account_id => 9, 
-    :pharmacy_id => 36,
-    :color => "Weiss", 
-    :event_type => "Notdienst",  
-    :starttime => '11.01.2014 09:00:00',
-    :endtime => '12.01.2014 08:59:00',
     :all_day => false }
 )
-puts "Group 25 Loaded"
+puts "Group 15 Loaded"
 
 Event.seed(:id,
   ############  
-  # Group 26 #
+  # Group 16 #
   ############
   { 
     :account_id => 9, 
@@ -4461,21 +4336,13 @@ Event.seed(:id,
     :event_type => "Notdienst",  
     :starttime => '16.12.2014 09:00:00',
     :endtime => '17.12.2014 08:59:00',
-    :all_day => false },
-  { 
-    :account_id => 9, 
-    :pharmacy_id => 9,
-    :color => "Weiss", 
-    :event_type => "Notdienst",  
-    :starttime => '12.01.2014 09:00:00',
-    :endtime => '13.01.2014 08:59:00',
     :all_day => false }
 )
-puts "Group 26 Loaded"
+puts "Group 16 Loaded"
 
 Event.seed(:id,
   ############  
-  # Group 27 #
+  # Group 17 #
   ############
   { 
     :account_id => 9, 
@@ -4580,14 +4447,6 @@ Event.seed(:id,
     :event_type => "Notdienst",  
     :starttime => '17.12.2014 09:00:00',
     :endtime => '18.12.2014 08:59:00',
-    :all_day => false },
-  { 
-    :account_id => 9, 
-    :pharmacy_id => 10,
-    :color => "Weiss", 
-    :event_type => "Notdienst",  
-    :starttime => '13.01.2015 09:00:00',
-    :endtime => '14.01.2015 08:59:00',
     :all_day => false }
 )
-puts "Group 27 Loaded"
+puts "Group 17 Loaded"

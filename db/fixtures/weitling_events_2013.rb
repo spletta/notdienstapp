@@ -1756,7 +1756,7 @@ Event.seed(:id,
     :color => "Weiss", 
     :event_type => "Notdienst",  
     :starttime => '01.12.2013 09:00:00',
-    :endtime => '01.12.2013 08:59:00',
+    :endtime => '02.12.2013 08:59:00',
     :all_day => false },
   { 
     :account_id => 9, 
