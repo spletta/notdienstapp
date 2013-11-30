@@ -9,6 +9,14 @@ Event.seed(:id,
     :event_type => "Notdienst",
     :starttime => '14.12.2013 09:00:00',
     :endtime => '15.12.2013 08:59:00',
+    :all_day => false },
+  { 
+    :account_id => 14, 
+    :pharmacy_id => 99,
+    :color => "Weiss", 
+    :event_type => "Notdienst",
+    :starttime => '14.12.2013 09:00:00',
+    :endtime => '15.12.2013 08:59:00',
     :all_day => false }
 )
 puts "Group 1 Loaded"
@@ -17,7 +25,7 @@ Event.seed(:id,
   # Group 2
   { 
     :account_id => 14, 
-    :pharmacy_id => 99,
+    :pharmacy_id => 100,
     :color => "Weiss", 
     :event_type => "Notdienst",
     :starttime => '15.12.2013 09:00:00',
@@ -25,7 +33,7 @@ Event.seed(:id,
     :all_day => false },
   { 
     :account_id => 14, 
-    :pharmacy_id => 100,
+    :pharmacy_id => 101,
     :color => "Weiss", 
     :event_type => "Notdienst",
     :starttime => '15.12.2013 09:00:00',
@@ -38,7 +46,7 @@ Event.seed(:id,
   # Group 3
   { 
     :account_id => 14, 
-    :pharmacy_id => 101,
+    :pharmacy_id => 102,
     :color => "Weiss", 
     :event_type => "Notdienst",
     :starttime => '16.12.2013 09:00:00',
@@ -51,7 +59,7 @@ Event.seed(:id,
   # Group 4
   { 
     :account_id => 14, 
-    :pharmacy_id => 102,
+    :pharmacy_id => 103,
     :color => "Weiss", 
     :event_type => "Notdienst",
     :starttime => '17.12.2013 09:00:00',
@@ -59,7 +67,7 @@ Event.seed(:id,
     :all_day => false },
   { 
     :account_id => 14, 
-    :pharmacy_id => 103,
+    :pharmacy_id => 104,
     :color => "Weiss", 
     :event_type => "Notdienst",
     :starttime => '17.12.2013 09:00:00',
@@ -72,7 +80,15 @@ Event.seed(:id,
   # Group 5
   { 
     :account_id => 14, 
-    :pharmacy_id => 103,
+    :pharmacy_id => 105,
+    :color => "Weiss", 
+    :event_type => "Notdienst",
+    :starttime => '18.12.2013 09:00:00',
+    :endtime => '19.12.2013 08:59:00',
+    :all_day => false },
+  { 
+    :account_id => 14, 
+    :pharmacy_id => 106,
     :color => "Weiss", 
     :event_type => "Notdienst",
     :starttime => '18.12.2013 09:00:00',
