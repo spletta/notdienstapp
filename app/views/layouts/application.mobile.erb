@@ -11,22 +11,26 @@
     <%= csrf_meta_tags %>
     <%= render 'layouts/shim' %>
     <% if "#{request.fullpath}" == "/de/events?mobile=1" || "#{request.fullpath}" == "/en/events?mobile=1" || "#{request.fullpath}" == "/de/events" || "#{request.fullpath}" == "/en/events"  %>
-        <style>
-          html { background: transparent }
-          body { background: #E81212; }
-        </style>
+
     <% end %>
     <%= analytics_init if Rails.env.production? %>
   </head>
-  <!--#if expr="(${Mozilla/5.0 (iPad; CPU OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5355d Safari/8536.25} = /iPad/)"-->
-    <style type="text/css">
-       body {padding-top: 20px}
+  <% if browser.tablet? && browser.safari? %>
+    <style>
+      html { background: transparent }
+      body { background: #E81212; padding-top: 10px; }
     </style>
-  <!-- #else -->
-    <style type="text/css">
-      body {padding-top: 10px}
+  <% elsif browser.tablet? && browser.chrome? %>
+    <style>
+      html { background: transparent }
+      body { background: #E81212; padding-top: 10px; }
     </style>
-  <!-- #endif -->
+  <% else %>
+    <style>
+      html { background: transparent }
+      body { background: #E81212; padding-top: 40px; }
+    </style>
+  <% end %>
 		 <% if request.path == signup_path %>
 			 <%= render 'layouts/signin_header' %>
 		 <% elsif !request.subdomain.present? && request.path == root_path %>

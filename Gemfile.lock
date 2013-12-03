@@ -49,6 +49,7 @@ GEM
       will_paginate
     bourne (1.1.2)
       mocha (= 0.10.5)
+    browser (0.2.1)
     builder (3.0.4)
     cancan (1.6.8)
     capybara (1.1.2)
@@ -266,6 +267,7 @@ DEPENDENCIES
   bcrypt-ruby (= 3.0.1)
   bootstrap-sass (= 2.0.4)
   bootstrap-will_paginate (= 0.0.6)
+  browser
   cancan
   capybara (= 1.1.2)
   chosen-rails
