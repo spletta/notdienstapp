@@ -11,24 +11,24 @@
     <%= csrf_meta_tags %>
     <%= render 'layouts/shim' %>
     <% if "#{request.fullpath}" == "/de/events?mobile=1" || "#{request.fullpath}" == "/en/events?mobile=1" || "#{request.fullpath}" == "/de/events" || "#{request.fullpath}" == "/en/events"  %>
-
+    <style>
+      html { background: transparent }
+      body { background: #E81212; }
+    </style>
     <% end %>
     <%= analytics_init if Rails.env.production? %>
   </head>
-  <% if browser.mobile? && browser.safari? && !browser.chrome? %>
+  <% if browser.tablet? && browser.mobile? && browser.safari? && !browser.chrome? && !browser.andriod? %>
     <style>
-      html { background: transparent }
-      body { background: #E81212; padding-top: 20px; }
+      body { padding-top: 30px; }
     </style>
-  <% elsif browser.mobile? %>
+  <% elsif browser.tablet? && browser.mobile? && !browser.safari? && browser.chrome? && browser.andriod? %>
     <style>
-      html { background: transparent }
-      body { background: #E81212; padding-top: 10px; }
+      body { padding-top: 10px; }
     </style>
   <% else %>
     <style>
-      html { background: transparent }
-      body { background: #E81212; padding-top: 40px; }
+      body { padding-top: 40px; }
     </style>
   <% end %>
 		 <% if request.path == signup_path %>
