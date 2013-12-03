@@ -10,7 +10,7 @@
     <%= render 'layouts/shim' %>   
     <%= analytics_init if Rails.env.production? %> 
   </head>
-  <body>
+  <body style="padding-top: 60px">
 		 <% if request.path == signup_path %>
 			 <%= render 'layouts/signin_header' %>
 		 <% elsif !request.subdomain.present? && request.path == root_path %>
