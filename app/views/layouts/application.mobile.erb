@@ -15,12 +15,12 @@
     <% end %>
     <%= analytics_init if Rails.env.production? %>
   </head>
-  <% if browser.tablet? && browser.safari? %>
+  <% if browser.ios? %>
     <style>
       html { background: transparent }
       body { background: #E81212; padding-top: 30px; }
     </style>
-  <% elsif browser.tablet? && browser.chrome? %>
+  <% elsif browser.andriod? %>
     <style>
       html { background: transparent }
       body { background: #E81212; padding-top: 10px; }
