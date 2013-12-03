@@ -1,5 +1,6 @@
 @import "bootstrap";
 
+
 /* mixins, variables, etc. */
 
 $grayMediumLight: #eaeaea;
@@ -11,6 +12,12 @@ $grayMediumLight: #eaeaea;
 }
 
 /* miscellaneous */
+
+.notdienst-sub {
+  left: 657px;
+  line-height: 32px;
+  position: absolute;
+}
 
 .account-url {
   width: 204px;
@@ -205,20 +212,10 @@ h1c {
 }
 
 h2c {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 2.7em;
+  font-size: 2.4em;
   letter-spacing: -1px;
-  line-height: 1.2em;
+  line-height: 1em;
   margin-bottom: 8px;
-}
-
-h2c .subhead {
-font-weight: 100;
-font-size: 22px;
-line-height: 40px;
-letter-spacing: -0.5px;
-color: #333;
-display: block;
 }
 
 h3c {
@@ -322,6 +319,47 @@ aside {
 
 /* ipad fullscreen styles for single event*/
 
+.navbar-inner, .navbar .btn-navbar {
+background: #3f3f3f; /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzNmM2YzZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(top,  #3f3f3f 0%, #000000 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3f3f3f), color-stop(100%,#000000)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #3f3f3f 0%,#000000 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #3f3f3f 0%,#000000 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #3f3f3f 0%,#000000 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #3f3f3f 0%,#000000 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f3f3f', endColorstr='#000000',GradientType=0 ); /* IE6-8 */
+    }
+
+.navbar .divider-vertical {
+  background-color: #3f3f3f;
+  border-right: 1px solid #000000;
+}
+
+.navbar .nav .active > a, .navbar .nav .active > a:hover {
+  background-color: #3f3f3f;
+}
+
+.navbar .nav > li > a:hover {
+    color: #ffffff;
+    background-color: #3f3f3f;
+ }
+
+.navbar .nav > li > a {
+    color: #ffffff;
+    }
+
+.navbar-fixed-top .brand {
+    color: #000000;
+    }
+
+.navbar .nav > li > a:hover {color:white;}
+
+
+.navbar .nav .active > a, .navbar .nav .active > a:hover {color:white;}
+
+
 .white_container {
 	background: #ffffff;
 	border-radius: 15px;
@@ -343,7 +381,7 @@ aside {
 }
 
 .mc {
-	margin-top:15px;
+	margin-top:0px;
 }
 
 h1b {
@@ -352,7 +390,7 @@ h1b {
   line-height: 1.27em;
   margin-bottom: 30px;
   font-family: 'BitterRegular', Georgia, sans-serif;
-  color: #0F1CAA;
+  color: #212121;
 }
 
 h2b {
@@ -361,7 +399,7 @@ h2b {
   line-height: 1em;
   margin-bottom: 30px;
   font-family: 'BitterRegular', Georgia, sans-serif;
-  color: #0F1CAA;
+  color: #212121;
 }
 
 h3b {
@@ -370,7 +408,7 @@ h3b {
   line-height: 1.7em;
   margin-bottom: 30px;
   font-family: 'BitterRegular', Georgia, sans-serif;
-  color: #0F1CAA;
+  color: #212121;
 }
 
 h4b {
@@ -378,130 +416,25 @@ h4b {
   letter-spacing: 0px;
   line-height: 1.7em;
   margin-bottom: 30px;
-  color: #0F1CAA;
+  color: #212121;
   font-family: 'BitterRegular', Georgia, sans-serif;
 }
 
-/* More custom styles by Remington */
-.section-large .section-header {
-height: 55px;
-line-height: 55px;
-}
-
-.section-header {
-background-color: #F7F7F7;
-background-image: -moz-linear-gradient(top, #FAFAFA, #F2F2F2);
-background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#FAFAFA), to(#F2F2F2));
-background-image: -webkit-linear-gradient(top, #FAFAFA, #F2F2F2);
-background-image: -o-linear-gradient(top, #FAFAFA, #F2F2F2);
-background-image: linear-gradient(to bottom, #FAFAFA,#F2F2F2);
-background-repeat: repeat-x;
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFAFAFA', endColorstr='#FFF2F2F2', GradientType=0);
-border-top: 1px solid white;
-border-bottom: 1px solid #CCC;
--webkit-border-top-left-radius: 4px;
--moz-border-radius-topleft: 4px;
-border-top-left-radius: 4px;
--webkit-border-top-right-radius: 4px;
--moz-border-radius-topright: 4px;
-border-top-right-radius: 4px;
-height: 46px;
-padding: 0 15px 0;
-}
-
-.section-large .section-content, .section-large .section-body {
-padding: 18px 20px 0;
-}
-
-.section-header + .section-content, .section .section-content:first-child {
-border-top: 0;
-}
-
-.section-content {
-border-top: 1px solid #EBEBEB;
-}
-
-.section-content, .section-body {
-min-height: 18px;
-padding: 9px 15px 0;
-}
-
-/*.content {
-background: transparent url("/assets/bg.jpg") 0 0 repeat-x;
-padding-top: 18px;
-min-height: 402px;
-}*/
-
-
-.signup-form-field label {
-display: block;
-float: left;
-font-weight: bold;
-line-height: 30px;
-width: 115px;
-}
-
-.signup-form-field input[type="text"], .signup-form-field input[type="password"], .signup-form-field input[type="email"] {
-width: 320px;
-}
-
-.signup-form-field input[type="text"].account_subdomain-url, .signup-form-field input[type="password"].account_subdomain, .signup-form-field input[type="email"].account_subdomain {
-width: 204px;
-}
-
-input, textarea {
-background: white;
-border: 1px solid #BBB;
-font-size: 13px;
-line-height: 16px;
-padding: 6px;
-width: 50%;
--moz-border-radius: 3px;
--webkit-border-radius: 3px;
-border-radius: 3px;
-}
-
-.signup-form-submit {
-margin: 30px 0 60px 115px;
-}
-
-.signup-form-field .harvest-sub {
-left: 500px;
-line-height: 32px;
-position: absolute;
-}
-
-.last {
-margin-right: 0;
-margin-left: -330px;
-}
-
-.signup-reasons {
-color: #777;
-font-size: 11px;
-}
-
-.offsetminus3 {
-margin-left: -330px;
-}
-
-.rounded-gray {
-background: #EEE;
-padding: 15px;
-margin-bottom: 15px;
--moz-border-radius: 6px;
--webkit-border-radius: 6px;
-border-radius: 6px;
-}
-
-.signup-final {
-border-top: 1px solid #DDD;
-font-size: 11px;
-color: #666;
-padding: 5px 0 10px;
-}
-
-/*.modal-backdrop, .modal-backdrop.fade.in { background-color: rgba(0,0,0,0); }*/
-
 /* importing mobile responsive style at the end on purpose */
 @import "bootstrap-responsive";
+
+.last {
+margin: 125px 0px 0px -20px;
+}
+
+.clearfix::after {
+content: ".";
+display: block;
+height: 0;
+clear: both;
+visibility: hidden;
+}
+
+.offset3header {
+margin-left: 300px;
+}
