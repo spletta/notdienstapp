@@ -46,13 +46,6 @@
 			<% flash.each do |key, value| %>
         <%= content_tag(:div, value, class: "alert alert-#{key}") %>
       <% end %>
-      <% if ipad? %>
-      <p>this is an apple mobile device</p>
-      <% elsif xoom? %>
-        <p>this is an andriod mobile device</p>
-      <% else %>
-        <p>this is a desktop browser</p>
-      <% end %>
       <%= yield %>
       <%= render 'layouts/footer' %>
     </div>
