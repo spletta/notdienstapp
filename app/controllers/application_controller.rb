@@ -12,29 +12,23 @@ class ApplicationController < ActionController::Base
   
   rescue_from ActiveRecord::RecordNotFound, :with => :error_render_method
 
-    def check_user_agent
-      @user_agent = request.env['HTTP_USER_AGENT'].downcase
-      @browser = Browser.new(:ua => @user_agent, :accept_language => "de-de")
-    end
+  def check_user_agent
+    @user_agent = request.env['HTTP_USER_AGENT']
+    @browser = Browser.new(:ua => @user_agent)
+  end
+  
 
     def ipad?
-      user_agent = request.env['HTTP_USER_AGENT'].downcase
-      ipad_2_user_agent = Browser.new(:ua => user_agent, :accept_language => "de-de")
-      if ipad_2_user_agent.ipad? && ipad_2_user_agent.ios? && ipad_2_user_agent.modern? && ipad_2_user_agent.mac? && ipad_2_user_agent.safari? && ipad_2_user_agent.webkit?
-        return true
-      end
+      self.env["HTTP_USER_AGENT"] && self.env["HTTP_USER_AGENT"][/(Mobile\/.+Safari)/]
     end
     helper_method :ipad?
     
     def xoom?
-      user_agent = request.env['HTTP_USER_AGENT'].downcase
-      xoom_2_user_agent = Browser.new(:ua => user_agent, :accept_language => "de-de")
-      if xoom_2_user_agent.chrome? && xoom_2_user_agent.modern? && xoom_2_user_agent.linux? && xoom_2_user_agent.webkit?
-        return true
-      end
+      self.env["HTTP_USER_AGENT"] && self.env["HTTP_USER_AGENT"][/(Mobile\/.+Chrome)/]
     end
     helper_method :xoom?
-    
+ 
+  
   private
     
     def set_cache_buster

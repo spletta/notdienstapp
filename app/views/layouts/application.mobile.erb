@@ -24,7 +24,7 @@
     </style>
   <% elsif ipad? %>
     <style>
-      body { padding-top: 20px; }
+      body { padding-top: 60px; }
     </style>
   <% else %>
     <style>
@@ -46,10 +46,10 @@
 			<% flash.each do |key, value| %>
         <%= content_tag(:div, value, class: "alert alert-#{key}") %>
       <% end %>
-      <% if @browser.ipad? && @browser.ios? && @browser.modern? && @browser.mac? && @browser.safari? && @browser.webkit?%>
-      <p>this is an iPad</p>
-      <% elsif @browser.chrome? && @browser.modern? && @browser.linux? && @browser.webkit?%>
-        <p>this is a Xoom</p>
+      <% if ipad? %>
+      <p>this is an apple mobile device</p>
+      <% elsif xoom? %>
+        <p>this is an andriod mobile device</p>
       <% else %>
         <p>this is a desktop browser</p>
       <% end %>
