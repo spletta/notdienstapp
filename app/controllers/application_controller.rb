@@ -12,23 +12,20 @@ class ApplicationController < ActionController::Base
   
   rescue_from ActiveRecord::RecordNotFound, :with => :error_render_method
 
-  def check_user_agent
-    @user_agent = request.env['HTTP_USER_AGENT']
-    @browser = Browser.new(:ua => @user_agent)
-  end
-  
-
     def ipad?
-      self.env["HTTP_USER_AGENT"] && self.env["HTTP_USER_AGENT"][/(iPad\/.+Safari)/]
+      user_agent = self.env['HTTP_USER_AGENT']
+      browser = Browser.new(:ua => user_agent)
+      browser.ipad? && browser.ios? && browser.modern? && browser.mac? && browser.safari? && browser.webkit?
     end
     helper_method :ipad?
     
     def xoom?
-      self.env["HTTP_USER_AGENT"] && self.env["HTTP_USER_AGENT"][/(Andriod\/.+Chrome)/]
+      user_agent = self.env['HTTP_USER_AGENT']
+      browser = Browser.new(:ua => user_agent)
+      browser.chrome? && browser.modern? && browser.linux? && browser.webkit?
     end
     helper_method :xoom?
- 
-  
+
   private
     
     def set_cache_buster

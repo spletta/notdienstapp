@@ -10,8 +10,6 @@ class EventsController < ApplicationController
     @events_by_date = @events.group_by {|e| e.starttime.to_date }
     recurrring_events_by_date = Event.recurring_events_within_month(@date).group_by {|e| e[:recurring_date].to_date }
     @events_by_date.merge!(recurrring_events_by_date) { |date, v1, v2| v1 + v2 }
-    @user_agent = request.env['HTTP_USER_AGENT']
-    @browser = Browser.new(:ua => @user_agent)
   end
 
   def show
