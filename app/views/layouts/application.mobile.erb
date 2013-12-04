@@ -18,13 +18,13 @@
     <% end %>
     <%= analytics_init if Rails.env.production? %>
   </head>
-  <% if xoom_2? == true %>
+  <% if xoom? %>
     <style>
-      body { padding-top: 10px; }
+      body { padding-top: 20px; }
     </style>
-  <% elsif ipad_2? == true %>
+  <% elsif ipad? %>
     <style>
-      body { padding-top: 40px; }
+      body { padding-top: 20px; }
     </style>
   <% else %>
     <style>
@@ -45,6 +45,13 @@
     <div class="container">
 			<% flash.each do |key, value| %>
         <%= content_tag(:div, value, class: "alert alert-#{key}") %>
+      <% end %>
+      <% if @browser.ipad? && @browser.ios? && @browser.modern? && @browser.mac? && @browser.safari? && @browser.webkit?%>
+      <p>this is an iPad</p>
+      <% elsif @browser.chrome? && @browser.modern? && @browser.linux? && @browser.webkit?%>
+        <p>this is a Xoom</p>
+      <% else %>
+        <p>this is a desktop browser</p>
       <% end %>
       <%= yield %>
       <%= render 'layouts/footer' %>

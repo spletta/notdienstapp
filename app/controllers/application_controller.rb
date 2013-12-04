@@ -12,37 +12,30 @@ class ApplicationController < ActionController::Base
   
   rescue_from ActiveRecord::RecordNotFound, :with => :error_render_method
 
-  private
+    def check_user_agent
+      @user_agent = request.env['HTTP_USER_AGENT'].downcase
+      @browser = Browser.new(:ua => @user_agent, :accept_language => "de-de")
+    end
 
-    def ipad_2?
-      user_agent = request.env['HTTP_USER_AGENT']
+    def ipad?
+      user_agent = request.env['HTTP_USER_AGENT'].downcase
       ipad_2_user_agent = Browser.new(:ua => user_agent, :accept_language => "de-de")
-      if ipad_2_user_agent.ipad? && 
-                     ipad_2_user_agent.ios? && 
-                     ipad_2_user_agent.modern? && 
-                     ipad_2_user_agent.mac? &&
-                     ipad_2_user_agent.safari? &&
-                     ipad_2_user_agent.webkit?
+      if ipad_2_user_agent.ipad? && ipad_2_user_agent.ios? && ipad_2_user_agent.modern? && ipad_2_user_agent.mac? && ipad_2_user_agent.safari? && ipad_2_user_agent.webkit?
         return true
-      else
-        false
       end
     end
-    helper_method :ipad_2?
+    helper_method :ipad?
     
-    def xoom_2?
-      user_agent = request.env['HTTP_USER_AGENT']
+    def xoom?
+      user_agent = request.env['HTTP_USER_AGENT'].downcase
       xoom_2_user_agent = Browser.new(:ua => user_agent, :accept_language => "de-de")
-      if xoom_2_user_agent.chrome? && 
-           xoom_2_user_agent.modern? && 
-           xoom_2_user_agent.linux? && 
-           xoom_2_user_agent.webkit?
+      if xoom_2_user_agent.chrome? && xoom_2_user_agent.modern? && xoom_2_user_agent.linux? && xoom_2_user_agent.webkit?
         return true
-      else
-        false
       end
     end
-    helper_method :xoom_2?
+    helper_method :xoom?
+    
+  private
     
     def set_cache_buster
       response.headers["Cache-Control"] = "no-cache, no-store, max-age=0, must-revalidate"
