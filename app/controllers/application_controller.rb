@@ -19,12 +19,12 @@ class ApplicationController < ActionController::Base
   
 
     def ipad?
-      self.env["HTTP_USER_AGENT"] && self.env["HTTP_USER_AGENT"][/(Mobile\/.+Safari)/]
+      self.env["HTTP_USER_AGENT"] && self.env["HTTP_USER_AGENT"][/(iPad\/.+Safari)/]
     end
     helper_method :ipad?
     
     def xoom?
-      self.env["HTTP_USER_AGENT"] && self.env["HTTP_USER_AGENT"][/(Mobile\/.+Chrome)/]
+      self.env["HTTP_USER_AGENT"] && self.env["HTTP_USER_AGENT"][/(Andriod\/.+Chrome)/]
     end
     helper_method :xoom?
  
