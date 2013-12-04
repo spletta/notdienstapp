@@ -17,26 +17,30 @@ class ApplicationController < ActionController::Base
     def ipad_2?
       user_agent = request.env['HTTP_USER_AGENT']
       ipad_2_user_agent = Browser.new(:ua => user_agent, :accept_language => "de-de")
-      return true if ipad_2_user_agent.ipad? && 
+      if ipad_2_user_agent.ipad? && 
                      ipad_2_user_agent.ios? && 
                      ipad_2_user_agent.modern? && 
                      ipad_2_user_agent.mac? &&
                      ipad_2_user_agent.safari? &&
                      ipad_2_user_agent.webkit?
+        return true
+      else
+        false
       end
-      false
     end
     helper_method :ipad_2?
     
     def xoom_2?
       user_agent = request.env['HTTP_USER_AGENT']
       xoom_2_user_agent = Browser.new(:ua => user_agent, :accept_language => "de-de")
-      return true if xoom_2_user_agent.chrome? && 
-                     xoom_2_user_agent.modern? && 
-                     xoom_2_user_agent.linux? && 
-                     xoom_2_user_agent.webkit?
+      if xoom_2_user_agent.chrome? && 
+           xoom_2_user_agent.modern? && 
+           xoom_2_user_agent.linux? && 
+           xoom_2_user_agent.webkit?
+        return true
+      else
+        false
       end
-      false
     end
     helper_method :xoom_2?
     
