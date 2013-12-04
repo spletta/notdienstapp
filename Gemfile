@@ -35,6 +35,7 @@ gem 'figaro'
 gem 'heroku'
 gem 'intercom-rails', '~> 0.2.14'
 gem 'browser'
+gem 'useragent'
 
 group :development, :test do
   gem 'rspec-rails', '2.11.0'
