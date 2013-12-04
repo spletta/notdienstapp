@@ -1,7 +1,11 @@
 <header class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
-      <nav>
+	    <% if browser.andriod %>
+        <nav>
+      <% else %>
+        <nav style="padding-top: 1.6em;">
+      <% end %>
 				<ul class="nav pull-left">
 					<li class="<%= 'active' if current_page?(root_path) ||
 					                           current_page?(welcome_path) || 
