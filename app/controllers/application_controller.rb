@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
     def ipad?
       user_agent = self.env['HTTP_USER_AGENT']
       browser = Browser.new(:ua => user_agent)
-      browser.ipad? && browser.ios? && browser.modern? && browser.mac? && browser.safari? && browser.webkit?
+      browser.ipad? && browser.ios? && browser.modern? && browser.mac? && browser.webkit?
     end
     helper_method :ipad?
     
