@@ -131,7 +131,7 @@ Pharmacy.seed(:id,
   ###########  
   # Group 1 #
   ###########  
-  { :id => 98,
+  { :id => 198,
     :account_id => 14, 
     :emergency_group_id => 57,   
     :name => "Apotheke im Säulenhaus",
@@ -140,7 +140,7 @@ Pharmacy.seed(:id,
     :city => "Merseburg",
     :phone_number => "(03461) 2495984",
     :emergency_hour_change_time => "2000-01-01 09:00:00 +0100" },
-  { :id => 99,
+  { :id => 199,
     :account_id => 14, 
     :emergency_group_id => 57,   
     :name => "Engel Apotheke",
@@ -152,7 +152,7 @@ Pharmacy.seed(:id,
   ###########  
   # Group 2 #
   ###########  
-  { :id => 100,
+  { :id => 200,
     :account_id => 14, 
     :emergency_group_id => 58,   
     :name => "Sonnen Apotheke",
@@ -161,7 +161,7 @@ Pharmacy.seed(:id,
     :city => "Merseburg",
     :phone_number => "(03461) 509267",
     :emergency_hour_change_time => "2000-01-01 09:00:00 +0100" },
-  { :id => 101,
+  { :id => 201,
     :account_id => 14, 
     :emergency_group_id => 58,   
     :name => "Bad Apotheke",
@@ -173,7 +173,7 @@ Pharmacy.seed(:id,
   ###########  
   # Group 3 #
   ###########  
-  { :id => 102,
+  { :id => 202,
     :account_id => 14, 
     :emergency_group_id => 59,   
     :name => "Schloß Apotheke",
@@ -185,7 +185,7 @@ Pharmacy.seed(:id,
   ###########  
   # Group 4 #
   ###########  
-  { :id => 103,
+  { :id => 203,
     :account_id => 14, 
     :emergency_group_id => 60,   
     :name => "Apotheke im E Center",
@@ -194,7 +194,7 @@ Pharmacy.seed(:id,
     :city => "Merseburg",
     :phone_number => "(03461) 823201",
     :emergency_hour_change_time => "2000-01-01 09:00:00 +0100" },
-  { :id => 104,
+  { :id => 204,
     :account_id => 14, 
     :emergency_group_id => 60,   
     :name => "Stadt Apotheke",
@@ -206,7 +206,7 @@ Pharmacy.seed(:id,
   ###########  
   # Group 5 #
   ###########  
-  { :id => 105,
+  { :id => 205,
     :account_id => 14, 
     :emergency_group_id => 61,   
     :name => "Stern Apotheke",
@@ -215,7 +215,7 @@ Pharmacy.seed(:id,
     :city => "Merseburg",
     :phone_number => "(03461) 211063",
     :emergency_hour_change_time => "2000-01-01 09:00:00 +0100" },
-  { :id => 106,
+  { :id => 206,
     :account_id => 14, 
     :emergency_group_id => 61,   
     :name => "Linden Apotheke",
@@ -227,7 +227,7 @@ Pharmacy.seed(:id,
   ###########  
   # Group 6 #
   ###########  
-  { :id => 107,
+  { :id => 207,
     :account_id => 14, 
     :emergency_group_id => 62,   
     :name => "Stadt Apotheke",
@@ -239,7 +239,7 @@ Pharmacy.seed(:id,
   ###########  
   # Group 7 #
   ###########  
-  { :id => 108,
+  { :id => 208,
     :account_id => 14, 
     :emergency_group_id => 63,   
     :name => "Süd Apotheke",
@@ -251,7 +251,7 @@ Pharmacy.seed(:id,
   ###########  
   # Group 8 #
   ###########  
-  { :id => 109,
+  { :id => 209,
     :account_id => 14,
     :emergency_group_id => 64,   
     :name => "Teich Apotheke",
@@ -260,7 +260,7 @@ Pharmacy.seed(:id,
     :city => "Merseburg",
     :phone_number => "(03461) 214123",
     :emergency_hour_change_time => "2000-01-01 09:00:00 +0100" },
-  { :id => 110,
+  { :id => 210,
     :account_id => 14, 
     :emergency_group_id => 64,   
     :name => "Apotheke Nova Eventis",
@@ -272,7 +272,7 @@ Pharmacy.seed(:id,
   ###########  
   # Group 9 #
   ###########  
-  { :id => 111,
+  { :id => 211,
     :account_id => 14, 
     :emergency_group_id => 65,   
     :name => "v. Basedow Apotheke",
@@ -284,7 +284,7 @@ Pharmacy.seed(:id,
   ###########  
   # Group 10 #
   ###########  
-  { :id => 112,
+  { :id => 212,
     :account_id => 14, 
     :emergency_group_id => 66,   
     :name => "Apotheke am Rathaus",
@@ -296,7 +296,7 @@ Pharmacy.seed(:id,
   ###########  
   # Group 11 #
   ###########  
-  { :id => 113,
+  { :id => 213,
     :account_id => 14, 
     :emergency_group_id => 67,   
     :name => "Apotheke am Brühl",
@@ -305,7 +305,7 @@ Pharmacy.seed(:id,
     :city => "Merseburg",
     :phone_number => "(03461) 204577",
     :emergency_hour_change_time => "2000-01-01 09:00:00 +0100" },
-  { :id => 114,
+  { :id => 214,
     :account_id => 14, 
     :emergency_group_id => 68,   
     :name => "Adler Apotheke",
@@ -317,7 +317,7 @@ Pharmacy.seed(:id,
   ###########  
   # Group 12 #
   ###########  
-  { :id => 115,
+  { :id => 215,
     :account_id => 14, 
     :emergency_group_id => 69,   
     :name => "Apotheke im Kaufland",
@@ -329,7 +329,7 @@ Pharmacy.seed(:id,
   ###########  
   # Group 13 #
   ###########  
-  { :id => 116,
+  { :id => 216,
     :account_id => 14, 
     :emergency_group_id => 70,   
     :name => "Domstadt Apotheke",
@@ -341,7 +341,7 @@ Pharmacy.seed(:id,
   ###########  
   # Group 14 #
   ###########  
-  { :id => 117,
+  { :id => 217,
     :account_id => 14, 
     :emergency_group_id => 71,   
     :name => "König Heinrich Apotheke",
@@ -350,7 +350,7 @@ Pharmacy.seed(:id,
     :city => "Merseburg",
     :phone_number => "(03461) 205770",
     :emergency_hour_change_time => "2000-01-01 09:00:00 +0100" },
-  { :id => 118,
+  { :id => 218,
     :account_id => 14, 
     :emergency_group_id => 72,   
     :name => "Geiseltal Apotheke",
@@ -362,7 +362,7 @@ Pharmacy.seed(:id,
   ###########  
   # Group 15 #
   ###########  
-  { :id => 119,
+  { :id => 219,
     :account_id => 14, 
     :emergency_group_id => 73,   
     :name => "Liebig Apotheke",
@@ -374,7 +374,7 @@ Pharmacy.seed(:id,
   ###########  
   # Group 16 #
   ###########  
-  { :id => 120,
+  { :id => 220,
     :account_id => 14, 
     :emergency_group_id => 74,   
     :name => "Raben Apotheke",
@@ -386,7 +386,7 @@ Pharmacy.seed(:id,
   ###########  
   # Group 17 #
   ###########  
-  { :id => 121,
+  { :id => 221,
     :account_id => 14, 
     :emergency_group_id => 75,   
     :name => "Rosental Apotheke",
@@ -395,7 +395,7 @@ Pharmacy.seed(:id,
     :city => "Merseburg",
     :phone_number => "(03461) 231539",
     :emergency_hour_change_time => "2000-01-01 09:00:00 +0100" },
-  { :id => 122,
+  { :id => 222,
     :account_id => 14, 
     :emergency_group_id => 75,   
     :name => "Schloß Apotheke",
@@ -407,7 +407,7 @@ Pharmacy.seed(:id,
   ###########  
   # Group 18 #
   ###########  
-  { :id => 123,
+  { :id => 223,
     :account_id => 14, 
     :emergency_group_id => 76,   
     :name => "Saline Apotheke",
