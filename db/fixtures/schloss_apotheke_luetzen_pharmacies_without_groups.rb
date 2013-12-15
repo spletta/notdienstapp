@@ -125,7 +125,7 @@ EmergencyGroup.seed(:id,
 )
 puts "Schloss Apotheke Lützen create groups completed."
 
-# The last pharmacy has ID: 97
+# Production DB is different.
 Pharmacy.unscoped.delete_all(:account_id => 14)
 Pharmacy.seed(:id,
   ###########  
