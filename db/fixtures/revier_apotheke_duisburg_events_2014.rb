@@ -337,7 +337,8 @@ Event.seed(:id,
     :event_type => "Notdienst",  
     :starttime => '21.01.2014 09:00:00',
     :endtime => '22.01.2014 08:59:00',
-    :all_day => false   { 
+    :all_day => false },
+  {
     :account_id => 11, 
     :pharmacy_id => 103,
     :color => "Weiss",
