@@ -92,14 +92,6 @@ Event.seed(:id,
     :starttime => '30.11.2013 09:00:00',
     :endtime => '01.12.2013 08:59:00',
     :all_day => false },
-  { 
-    :account_id => 11, 
-    :pharmacy_id => 103,
-    :color => "Weiss", 
-    :event_type => "Notdienst",  
-    :starttime => '01.01.2014 09:00:00',
-    :endtime => '02.01.2014 08:59:00',
-    :all_day => false },
   ################
   # 2nd Pharmacy #
   ################    
@@ -190,14 +182,6 @@ Event.seed(:id,
     :event_type => "Notdienst",  
     :starttime => '30.11.2013 09:00:00',
     :endtime => '01.12.2013 08:59:00',
-    :all_day => false },
-  { 
-    :account_id => 11, 
-    :pharmacy_id => 98,
-    :color => "Weiss", 
-    :event_type => "Notdienst",  
-    :starttime => '01.01.2014 09:00:00',
-    :endtime => '02.01.2014 08:59:00',
     :all_day => false }
 )
 puts "Group A Loaded"
