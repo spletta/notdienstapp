@@ -11,7 +11,7 @@
 
 #<EmergencyGroup id: 23, name: "Alle", created_at: "2013-04-26 10:18:05", updated_at: "2013-04-26 10:18:05", pharmacy_id: nil, website_title: "Heute Notdienst", website_note: "Notdienstgebühr außerhalb der gesetzlichen Öffnungs...", account_id: 11>,
 
-Pharmacy.seed(:id,
+Pharmacy.seed_once(:id,
   ##############  
   # Group Alle #
   ##############  
@@ -206,6 +206,14 @@ Pharmacy.seed(:id,
     :zipcode => "47059",
     :city => "Duisburg",
     :phone_number => "(0203) 3635178",
+    :emergency_hour_change_time => "2000-01-01 09:00:00 +0100" },
+  { :account_id => 11, 
+    :emergency_group_id => 23,   
+    :name => "Glückauf-Apotheke",
+    :address => "Friedrich-Ebert-Str. 287",
+    :zipcode => "47139",
+    :city => "Duisburg",
+    :phone_number => "(0203) 460380",
     :emergency_hour_change_time => "2000-01-01 09:00:00 +0100" }
 )
 puts "Pharmacies loaded"
