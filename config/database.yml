@@ -1,5 +1,4 @@
 production:
-  <<: *default
   database: notdienstapp_production
   username: rails
   password: <%= ENV['APP_DATABASE_PASSWORD'] %>
