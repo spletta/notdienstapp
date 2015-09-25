@@ -1,19 +1,5 @@
-development:
-        adapter: postgresql
-        database: ndt_app_v6_development
-        host: localhost
-          
-test:
-        adapter: postgresql
-        database: ndt_app_v6_test
-        host: localhost
-        
 production:
-        adapter: postgresql
-        database: ndt_app_v6_production
-        host: localhost
-        
-staging:
-        adapter: postgresql
-        database: ndt_app_v6_staging
-        host: localhost
+  <<: *default
+  database: notdienstapp_production
+  username: rails
+  password: <%= ENV['APP_DATABASE_PASSWORD'] %>
